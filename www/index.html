@@ -1,9 +1,9 @@
 <html>
 <head>
  <style type="text/css">
-/* <![CDATA[ */ 
-@import "http://www.tigris.org/branding/css/tigris.css"; 
-@import "http://www.tigris.org/branding/css/inst.css"; 
+/* <![CDATA[ */
+@import "http://www.tigris.org/branding/css/tigris.css";
+@import "http://www.tigris.org/branding/css/inst.css";
 /*  ]]> */
  </style>
   <link rel="stylesheet" type="text/css" href="http://www.tigris.org/branding/css/print.css" media="print" />
@@ -13,93 +13,114 @@
 </head>
 <body>
 
-<p>This is the initial web content for your project.  Please customize
-this to fit your project.  You don't need to answer all these questions
-or follow this exact format, but we do like to see this kind of
-information before we approve projects for public viewing.
+<h1>IDEA Simple Syntax Highlighter</H1>
+
+<h2>Mission</h2>
+<p>
+Generic syntax highlighting support for Intelli/J IDEA. Uses simple configuration files to add syntax highlighting for eg Ruby, Python, etc.
+</p>
+<p>
+In contrast to writing a full-blown IDEA plugin for every language this plugin should have a new syntax available within minutes. In contrast to the XML filetypes extension that IDEA offers, this plugin is more flexible. (But of course less flexible than writing a full-blown language-specific IDEA plugin.. :)
+</p>
+<p>
+For now it uses 'regex' based rules to define everything that should be highlighted. You can also youse 'ruby' or 'groovy' to define syntax tokens. This, however, slows down the code highlighting noticeable.
 </p>
 
-<p>Until your project is approved, only you can view it and work on
-it.
+<h2>Background</h2>
+<p>Please have a look at the IDEA related entries in my blog. They should explain the rationale of this project quite nicely: Even though I'm quite happy with IDEA overall, I think it has become too bloated and complex. With this plugin I'm trying to bring back some sanity.. :)
 </p>
 
+<h2>Status</h2>
+<p>
+This plugin is usable, but still in an early alpha stage. Major performance issues remaining. Tested only with moderately sized Ruby projects.
+</p>
+
+<h2>Example Configuration</h2>
+<p>
+Here's a part fo the example configuration included in the current release of the plugin:
+</p>
+<p>
+  <pre style="width:75%;padding:1em;overflow:auto;"><code>
+  [SimpleSyntax:V1.0]
+
+  Name: Ruby
+  Icon: Ruby.png
+  ExampleCode: Ruby.rb
+  Description: Ruby Script
+  (snip)
+
+  # Syntax Configuration
+  ruby  BLOCK_COMMENTS                => tags/BLOCK_COMMENTS.rb
+  regex LINE_COMMENTS                 => (?m)#.*$
+  ruby  DOC_COMMENTS                  => tags/DOC_COMMENTS.rb
+  ruby  SPECIAL_QUOTED_STRINGS        => tags/SPECIAL_QUOTED_STRINGS.rb
+  regex SINGLE_QUOTED_STRINGS         => \'(?:[^\']|\\')*\'
+  regex DOUBLE_QUOTED_STRINGS         => \"(?:[^\"]|\\")*\"
+  ruby  OPERATORS                     => tags/OPERATORS.rb
+  ruby  KEYWORDS                      => tags/KEYWORDS.rb
+  ruby  CORE_FUNCTIONS                => tags/CORE_FUNCTIONS.rb
+  regex CLASS_NAMES                   => [A-Z_]*(?:[A-Z][a-z]+)+
+  regex CLASS_VARIABLE                => @@[a-z_]+
+  regex INSTANCE_VARIABLE             => @[a-z_]+
+  regex SYMBOLS                       => :\w+
+  regex IDENTIFIERS                   => [a-z]\w*
+  regex NUMBERS                       => (?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)
+  regex CONSTANTS                     => [A-Z][A-Z_]*
+
+  # Element Descriptions
+  descriptions[ BLOCK_COMMENTS ] = Block comment
+  descriptions[ LINE_COMMENTS ] = Line comment
+  descriptions[ DOC_COMMENTS ] = Documentation
+  (snip)
+
+  # Element Default Attributes
+  attributes[ BLOCK_COMMENTS ] = #008000
+  attributes[ LINE_COMMENTS ] = #008000
+  attributes[ DOC_COMMENTS ] = #008000,BOLD
+  (snip)
+  </code></pre>
+</p>
+
+<h2>Open Issues</h2>
+<p>
+These are the more general issues with the current plugin version:
+</p>
 <ul>
-<li>This index.html will be used if and only if you have the "Use
-Project Home Page" option checked on the "Administer Project" page
-(click the "Admin" tab).</li>
-
-<li>To edit this file, check out your project via CVS and edit www/index.html.
-
-<li>You can 'cvs add' and commit other files under the project's "www"
-directory and they will published to your project web site.</li>
-
-<li>Also, consider starting a thread in the "dev" mailing list to get
-these discussion started.  A good one is an "introduction" thread where
-people post messages about themselves and their interest in the
-project.</li>
-
-<li>You can add a "Highlights:" line to the top of all web pages by adding a file www/project_highlights.html </li>
+  <li>Lexer doesn't cope well with some ways of changing source code. Strange..</li>
+  <li>Highlighting a longer piece of source code can be pretty slow. Especially with lots of external (ruby/groovy) rules..</li>
+  <li>Arranging syntax rules in the right order can be annoying. A simple lexer-like configuration would be cool..</li>
 </ul>
 
-
-<h3>Mission</h3>
-
-<p>What is the goal of this project?
+<h2>Road Map</h2>
+<p>
+Unfortunately my job keeps me too busy right now to make any promises about dates. But these are the things I have planned for SimpleSyntax:
 </p>
 
-<p>What is the scope of this project?
-</p>
-
-<p>For example:</p>
-
+<h3>Version 0.0: Testing [COMPLETED]</h3>
 <ul>
-<li>Develop just enough functionality to scratch a particular itch</li>
-<li>Build a tool just like XYZ, but less broken</li>
-<li>Build the best XYZ-tool ever!</li>
+  <li>Implement the basic idea of a simple highlighter.</li>
 </ul>
 
-
-<p>What are high-level features you are sure to build?
-</p>
+<h3>Version 1.0: Stability [ACTIVE]</h3>
 <ul>
-
-<li>What would you write on a billboard about your project? Users
-might only look for a few seconds.</li>
-
-<li>Use the issue tracker to track features and enhancement
-requests. It is not just for bugs, pre-populate it with feature
-descriptions so that potential contributors know what you would like them
-to work on.</li>
+  <li>Cleanup the codebase.</li>
+  <li>Fix remaining bugs/issues.</li>
+  <li>Introduce more IDEA abstractions in the codebase.</li>
+  <li>Add more configuration presets (Property files, etc).</li>
 </ul>
 
-<p>What are the high-level assumptions or ground rules for the project?
-</p>
-
-<p>For example:
-</p>
-
+<h3>Version 1.1: UI</h3>
 <ul>
-<li> we will use programming language X on operating system Y for now.
-
-<li>We will, or will not, consider certain functional areas like
-internationalization, high security, concurrency, etc.  The list of
-functional areas will depend on what you are trying to do.
-
-<li>Try to keep this part short.
+  <li>Add simple plugin configuration UI.</li>
+  <li>Make it possible to turn available configurations on and off.</li>
+  <li>Add config downloading (from plugin home - which is here, I guess).</li>
+  <li>Make init/reload more polite: Ask before overwriting files and/or overriding filetypes.</li>
 </ul>
 
-
-<h3>Related resources</h3>
-
+<h3>Version 1.2: Performance</h3>
 <ul>
-<li>Link to other stuff that you know about.  It will help you
-research requirements and provide a useful resource to potential
-contributors.</li>
-
-<li>Why reinvent the wheel? What is better about this wheel?  Is there
-any existing project that you can partner with or reuse?</li>
-
-<li>Where would you go to try to find potential contibutors?</li>
+  <li>Switch to simple lex-like syntax configuration.</li>
+  <li>Use Groovy to compile syntax configuration using JFlex.</li>
 </ul>
 
 </body>
