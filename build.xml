@@ -7,6 +7,7 @@
 
     <property name="package.base" value="net.intensicode.idea"/>
 
+    <property name="dir.ant" value="lib-ant"/>
     <property name="dir.apis" value="lib-api"/>
     <property name="dir.build" value="build"/>
     <property name="dir.config" value="config"/>
@@ -22,8 +23,6 @@
     <property name="dir.build.tests" value="${dir.build}/tests"/>
     <property name="dir.build.zip" value="${dir.build.expanded}/${output.name}/lib"/>
 
-    <property name="dir.env.junit" value="${dir.env}/junit"/>
-
     <property name="dist.file.jar" value="${dir.build.dist}/${output.name}.jar"/>
     <property name="dist.file.zip" value="${dir.build.dist}/${output.name}.zip"/>
     <property name="dist.file.full" value="${dir.build.dist}/${output.name}-dist.zip"/>
@@ -31,8 +30,8 @@
 
     <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
         <classpath>
-            <pathelement location="${dir.env.junit}/ant-junit.jar"/>
-            <pathelement location="${dir.env.junit}/junit.jar"/>
+            <pathelement location="${dir.ant}/ant-junit.jar"/>
+            <pathelement location="${dir.ant}/junit.jar"/>
         </classpath>
     </taskdef>
 

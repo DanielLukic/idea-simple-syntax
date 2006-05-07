@@ -4,8 +4,8 @@
     <defaultAnt bundledAnt="true" />
     <buildFile url="file://$PROJECT_DIR$/build.xml">
       <additionalClassPath>
-        <entry path="file://$PROJECT_DIR$/env/junit/ant-junit.jar" />
-        <entry path="file://$PROJECT_DIR$/env/junit/junit.jar" />
+        <entry path="file://$PROJECT_DIR$/lib-ant/ant-junit.jar" />
+        <entry path="file://$PROJECT_DIR$/lib-ant/junit.jar" />
       </additionalClassPath>
       <antReference projectDefault="true" />
       <customJdkName value="" />
