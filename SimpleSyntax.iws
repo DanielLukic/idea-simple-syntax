@@ -146,7 +146,17 @@
     <option name="myCurrentFavoritesList" value="SimpleSyntax" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="plugin.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="135" selection-start="871" selection-end="871" vertical-scroll-proportion="0.37574553">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -178,7 +188,7 @@
   </component>
   <component name="JspContextManager" />
   <component name="ModuleEditorState">
-    <option name="LAST_EDITED_MODULE_NAME" value="RubyIdeaTest" />
+    <option name="LAST_EDITED_MODULE_NAME" value="Testing" />
     <option name="LAST_EDITED_TAB_NAME" value="Libraries (Classpath)" />
   </component>
   <component name="NamedScopeManager" />
@@ -249,6 +259,48 @@
       <PATH_ELEMENT>
         <option name="myItemId" value="SimpleSyntax.ipr" />
         <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SimpleSyntax.ipr" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SimpleSyntax" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SimpleSyntax.ipr" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SimpleSyntax" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PsiDirectory:D:\IntensiCode\SimpleSyntax" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SimpleSyntax.ipr" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SimpleSyntax" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PsiDirectory:D:\IntensiCode\SimpleSyntax" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PsiDirectory:D:\IntensiCode\SimpleSyntax\META-INF" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
       </PATH_ELEMENT>
     </PATH>
   </component>
@@ -333,34 +385,101 @@
     <option name="referencePos" value="0" />
   </component>
   <component name="RemoteRunSessionManager" />
-  <component name="RestoreUpdateTree" />
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="5/8/06 1:22 AM" ActionInfo="Check Status">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+          <PATH>D:\IntensiCode\SimpleSyntax\SimpleSyntax.iws</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\TODO.txt</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\config\Ruby.config</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\modules\RubyIdeaTest\RubyIdeaTest.iws</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\modules\RubyIdeaTest\src\Toast.rb</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\modules\Testing\Testing.iml</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenRegEx.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+          <PATH>D:\IntensiCode\SimpleSyntax\modules\RubyIdeaTest\src\Toast.toast</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegExKEYWORDS.java</PATH>
+          <PATH>D:\IntensiCode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegExQUOTED.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
   <component name="RunManager">
     <activeType name="#org.jetbrains.idea.devkit.run.PluginConfigurationType" />
-    <tempConfiguration selected="true" default="false" name="TestLoadedConfiguration.testCreate" type="JUnit" factoryName="JUnit">
-      <module name="Testing" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="net.intensicode.idea.config" />
-      <option name="MAIN_CLASS_NAME" value="net.intensicode.idea.config.TestLoadedConfiguration" />
-      <option name="METHOD_NAME" value="testCreate" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-    </tempConfiguration>
-    <configuration selected="false" default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5000" />
-    </configuration>
     <configuration selected="false" default="true" type="JUnit" factoryName="JUnit">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -377,6 +496,11 @@
         <value defaultName="wholeProject" />
       </option>
     </configuration>
+    <configuration selected="false" default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="SimpleSyntax" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+    </configuration>
     <configuration selected="false" default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -385,6 +509,13 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="" />
+    </configuration>
+    <configuration selected="false" default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5000" />
     </configuration>
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -398,12 +529,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
-    <configuration selected="false" default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="SimpleSyntax" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-    </configuration>
-    <configuration selected="false" default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit">
+    <configuration selected="true" default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit">
       <module name="SimpleSyntax" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -485,7 +611,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="331" y="0" width="1589" height="1170" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33" order="8" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="true" internal_type="docked" type="floating" visible="false" weight="0.32986766" order="8" x="378" y="109" width="1459" height="958" />
@@ -498,7 +624,7 @@
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33" order="8" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33" order="1" />
-      <window_info id="Ant Build" active="true" anchor="right" auto_hide="false" internal_type="sliding" type="sliding" visible="true" weight="0.41872233" order="4" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="sliding" type="sliding" visible="false" weight="0.41872233" order="4" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="docked" type="floating" visible="false" weight="0.32936078" order="2" x="52" y="581" width="1595" height="550" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.25" order="5" />
       <window_info id="File View" active="false" anchor="right" auto_hide="true" internal_type="docked" type="floating" visible="false" weight="0.3297619" order="2" x="49" y="48" width="1523" height="923" />
@@ -609,100 +735,107 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/OptionsFolder.java">
+    <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="318" selection-end="318" vertical-scroll-proportion="0.47600392">
+        <state line="16" column="58" selection-start="701" selection-end="701" vertical-scroll-proportion="0.333002">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/Confirmation.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/psi/tree/IElementType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="360" selection-end="360" vertical-scroll-proportion="0.39666992">
+        <state line="40" column="23" selection-start="1417" selection-end="1438" vertical-scroll-proportion="0.2331048">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ProductionOptionsFolder.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/lang/Language.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.67678744">
+        <state line="56" column="46" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.11431412">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/SystemErrorHandler.java">
+    <entry file="file://$PROJECT_DIR$/config/tags/KEYWORDS.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="140" selection-end="140" vertical-scroll-proportion="0.23800196">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/DialogWrapper.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableLanguage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="726" column="14" selection-start="21645" selection-end="21645" vertical-scroll-proportion="0.333002">
+        <state line="53" column="0" selection-start="2095" selection-end="2095" vertical-scroll-proportion="-2.3548708">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeSystemErrorHandler.java">
+    <entry file="file://$PROJECT_DIR$/config/tags/SPECIAL_QUOTED_STRINGS.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="44" selection-start="620" selection-end="620" vertical-scroll-proportion="0.60822725">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeOptionsFolder.java">
+    <entry file="jar://D:/ENV/JDK/150/src.zip!/java/util/regex/Pattern.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="44" selection-start="811" selection-end="811" vertical-scroll-proportion="0.8354554">
+        <state line="2119" column="9" selection-start="81101" selection-end="81101" vertical-scroll-proportion="4.6699314">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/Messages.java">
+    <entry file="file://$PROJECT_DIR$/SimpleSyntax.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="20" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.333002">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ProductionSystemErrorHandler.java">
+    <entry file="file://$PROJECT_DIR$/config/tags/BLOCK_COMMENTS.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="90" selection-start="3119" selection-end="3119" vertical-scroll-proportion="1.3437806">
+        <state line="22" column="0" selection-start="537" selection-end="537" vertical-scroll-proportion="0.5817826">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestRegExKEYWORDS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="0" selection-start="2916" selection-end="2916" vertical-scroll-proportion="0.5768854">
+        <state line="37" column="0" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.9194831">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestRegExQUOTED.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="51" selection-start="2612" selection-end="2612" vertical-scroll-proportion="0.3653281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/RecognizedTokenRegEx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="976" selection-end="976" vertical-scroll-proportion="0.78844273">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/Ruby.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="378" selection-end="378" vertical-scroll-proportion="0.50244856">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.6875612">
+        <state line="15" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="0.4025845">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.26444662">
+        <state line="32" column="0" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.5504407">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="58" selection-start="701" selection-end="701" vertical-scroll-proportion="0.333002">
+        <state line="14" column="135" selection-start="871" selection-end="871" vertical-scroll-proportion="0.37574553">
           <folding />
         </state>
       </provider>

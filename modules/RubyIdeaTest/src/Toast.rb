@@ -2,14 +2,15 @@
 asdf
 =end
 
-=end
+at =begin this =end please
+
 
 
 # block comments are full line comments..
 # how funny is that? :)
 class Toast
 
-   attr_reader :w00t # simple line comment
+   attr_reader :w00t Asdfasdf # simple line comment
 
    def cheese( args )
        @mogg = args
@@ -20,11 +21,16 @@ class Toast
    end
 
    DONT_CHANGE = ILikeYouJustTheWayYouAre.new
+   DONT_CHANGE=ILikeYouJustTheWayYouAre.new
 
    def huzzle( thiz, that )
        @@schmogg = @mogg + thiz * that
        %Q!rumsel #{pumsel} testerle!
        %Q{rumsel \#\{pumsel\} testerle}
    end
+
+    def other
+        DONT_CHANGE
+    end
 
 end

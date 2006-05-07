@@ -4,6 +4,11 @@ Bugs
 
 B0.1: FileType has to be removed too? In fact: All IDEA objects have to be reused!
 B0.2: Error messages from script are not propagated properly!
+B0.3: Defining the same TOKEN ID more than once results in multiple instances of this ID being shown in the Color
+      Settings page. Preferred/expected behaviour would be one shared color setting.
+B0.4: Lexer algorithm is broken in certain situations. Eg removing/adding a single character to make a certain token
+      become a invalid/valid match. Not sure, yet, what's going on there. Maybe I have to track some state in the
+      lexerState parameter?
 
 ====
 Todo
@@ -24,6 +29,7 @@ I3: Config file with simple lexer config and compilation via jflex?
 I4: Automate Version check in build.xml? Use external change log? No idea yet..
 I5: Make configs available online and downloadable in plugin?
 I6: Plugin Config UI? How to keep this simple at first?
+I7: Add a benchmarking tool to compare regex vs ruby vs groovy.
 
 =========
 Completed

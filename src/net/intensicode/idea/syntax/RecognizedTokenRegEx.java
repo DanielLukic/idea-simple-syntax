@@ -20,22 +20,16 @@ public final class RecognizedTokenRegEx implements RecognizedToken
 
     public final boolean isFoundAt( final CharSequence aCharSequence, final int aStartOffset )
     {
-        if ( isFoundIn( aCharSequence, aStartOffset, aCharSequence.length() ) )
-        {
-            return getTokenStart() == aStartOffset;
-        }
-        return false;
+        myMatcher.reset( aCharSequence );
+        myMatcher.region( aStartOffset, aCharSequence.length() );
+        return myMatcher.lookingAt();
     }
 
     public final boolean isFoundIn( final CharSequence aCharSequence, final int aStartOffset, final int aEndOffset )
     {
         myMatcher.reset( aCharSequence );
-        if ( !myMatcher.find( aStartOffset ) ) return false;
-        if ( myMatcher.start() < aStartOffset ) return false;
-        if ( myMatcher.start() > aEndOffset ) return false;
-        if ( myMatcher.end() < aStartOffset ) return false;
-        if ( myMatcher.end() > aEndOffset ) return false;
-        return true;
+        myMatcher.region( aStartOffset, aEndOffset );
+        return myMatcher.find( aStartOffset );
     }
 
     public final int getTokenStart()
