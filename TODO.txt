@@ -18,6 +18,7 @@ T0.7: Add deploy to IntensiCode and deploy to IDEA targets.
 T0.8: Have two Ruby configs as examples: One fast (only regex), the other full. Or simply comment out some stuff.. :)
 T0.9: Put some more configs on IntensiCode site.
 T0.A: Move Groovy part in ConfigLang to GroovyUtils#makeSubclass in util.
+T0.B: Take care of the currently used Logger hack.. Use own {} based SimpleLog framework?
 
 ======
 Issues

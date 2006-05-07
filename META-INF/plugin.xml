@@ -2,14 +2,11 @@
 <idea-plugin url="http://www.intensicode.net/projects/SimpleSyntax/">
     <name>Simple Syntax Highlighting</name>
     <description>
-        Provides simple syntax highlighting based on user-definable configuration files.
-        Use 'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting.
-        Clone files in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting
-        for other languages. Use 'Reload SimpleSyntax' form Tools menu to reload
-        configuration changes.
-        ///
-        Credits: Includes the wonderful JRuby and Groovy binary distributions.
-        ///
+        Provides simple syntax highlighting based on user-definable configuration files. Use
+        'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting. Clone files
+        in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
+        languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
+        <strong>Credits:</strong> Includes the wonderful JRuby and Groovy binary distributions.
     </description>
     <change-notes>
         [ V0.12 ] Speeded up example Ruby configuration by removing all 'ruby' and adding 'regex' tokens. Improved 'regex' performance.
