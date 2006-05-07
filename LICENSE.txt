@@ -1,0 +1,43 @@
+VeggieWare License v 1.0
+
+
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS VEGGIEWARE LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
+
+THIS SOFTWARE MAY USE ADDITIONAL LIBRARIES AND/OR COMPONENTS ("3RD PARTY STUFF") WHICH ARE PROVIDED UNDER THEIR OWN LICENSES AND SITRIBUTED INCLUDING THEIR RESPECTIVE LICENSES. THIS AGREEMENT DOES NOT COVER 3RD PARTY STUFF.
+
+
+DEFINITIONS:
+
+"Vegetarian" means:
+
+    Person who does not, and does not intend to do so in the future, and has not for at least five years
+
+    - eaten any meat or fish
+    - harmed any animals
+    
+    This obviously includes vegan people.
+
+"Meat Eater" means:
+
+    Person who is not a Vegetarian :)
+
+
+PARTS OF THIS AGREEMENT:
+
+1. NO WARRANTY
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+2. COMMERCIAL USE AND COMMERCIAL DISTRIBUTION
+
+YOU MAY USE THIS SOFTWARE FOR ANY PURPOSE - INCLUDING COMMERCIAL USE AND COMMERCIAL DISTRIBUTION - IF YOU ARE A VEGETARIAN.
+
+A Meat Eater may not use this software commercially at all.
+
+3. NON-COMMERCIAL USE AND NON-COMMERCIAL DISTRIBUTION
+
+Everyone may use this software freely as long as this agreement is included in any distribution.
+
+4. CLAIMS
+
+This agreement should not be used to enforce any claims. This is not the intended use of this agreement. This agreement merely tries to make this world a better place. Seriously.. Respect life! :)

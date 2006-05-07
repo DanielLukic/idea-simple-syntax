@@ -39,47 +39,45 @@ This plugin is usable, but still in an early alpha stage. Major performance issu
 <p>
 Here's a part fo the example configuration included in the current release of the plugin:
 </p>
-<p>
-  <pre style="width:75%;padding:1em;overflow:auto;"><code>
-  [SimpleSyntax:V1.0]
+<pre style="width:75%;padding:1em;overflow:auto;"><code>
+[SimpleSyntax:V1.0]
 
-  Name: Ruby
-  Icon: Ruby.png
-  ExampleCode: Ruby.rb
-  Description: Ruby Script
-  (snip)
+Name: Ruby
+Icon: Ruby.png
+ExampleCode: Ruby.rb
+Description: Ruby Script
+(snip)
 
-  # Syntax Configuration
-  ruby  BLOCK_COMMENTS                => tags/BLOCK_COMMENTS.rb
-  regex LINE_COMMENTS                 => (?m)#.*$
-  ruby  DOC_COMMENTS                  => tags/DOC_COMMENTS.rb
-  ruby  SPECIAL_QUOTED_STRINGS        => tags/SPECIAL_QUOTED_STRINGS.rb
-  regex SINGLE_QUOTED_STRINGS         => \'(?:[^\']|\\')*\'
-  regex DOUBLE_QUOTED_STRINGS         => \"(?:[^\"]|\\")*\"
-  ruby  OPERATORS                     => tags/OPERATORS.rb
-  ruby  KEYWORDS                      => tags/KEYWORDS.rb
-  ruby  CORE_FUNCTIONS                => tags/CORE_FUNCTIONS.rb
-  regex CLASS_NAMES                   => [A-Z_]*(?:[A-Z][a-z]+)+
-  regex CLASS_VARIABLE                => @@[a-z_]+
-  regex INSTANCE_VARIABLE             => @[a-z_]+
-  regex SYMBOLS                       => :\w+
-  regex IDENTIFIERS                   => [a-z]\w*
-  regex NUMBERS                       => (?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)
-  regex CONSTANTS                     => [A-Z][A-Z_]*
+# Syntax Configuration
+ruby  BLOCK_COMMENTS                => tags/BLOCK_COMMENTS.rb
+regex LINE_COMMENTS                 => (?m)#.*$
+ruby  DOC_COMMENTS                  => tags/DOC_COMMENTS.rb
+ruby  SPECIAL_QUOTED_STRINGS        => tags/SPECIAL_QUOTED_STRINGS.rb
+regex SINGLE_QUOTED_STRINGS         => \'(?:[^\']|\\')*\'
+regex DOUBLE_QUOTED_STRINGS         => \"(?:[^\"]|\\")*\"
+ruby  OPERATORS                     => tags/OPERATORS.rb
+ruby  KEYWORDS                      => tags/KEYWORDS.rb
+ruby  CORE_FUNCTIONS                => tags/CORE_FUNCTIONS.rb
+regex CLASS_NAMES                   => [A-Z_]*(?:[A-Z][a-z]+)+
+regex CLASS_VARIABLE                => @@[a-z_]+
+regex INSTANCE_VARIABLE             => @[a-z_]+
+regex SYMBOLS                       => :\w+
+regex IDENTIFIERS                   => [a-z]\w*
+regex NUMBERS                       => (?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)
+regex CONSTANTS                     => [A-Z][A-Z_]*
 
-  # Element Descriptions
-  descriptions[ BLOCK_COMMENTS ] = Block comment
-  descriptions[ LINE_COMMENTS ] = Line comment
-  descriptions[ DOC_COMMENTS ] = Documentation
-  (snip)
+# Element Descriptions
+descriptions[ BLOCK_COMMENTS ] = Block comment
+descriptions[ LINE_COMMENTS ] = Line comment
+descriptions[ DOC_COMMENTS ] = Documentation
+(snip)
 
-  # Element Default Attributes
-  attributes[ BLOCK_COMMENTS ] = #008000
-  attributes[ LINE_COMMENTS ] = #008000
-  attributes[ DOC_COMMENTS ] = #008000,BOLD
-  (snip)
-  </code></pre>
-</p>
+# Element Default Attributes
+attributes[ BLOCK_COMMENTS ] = #008000
+attributes[ LINE_COMMENTS ] = #008000
+attributes[ DOC_COMMENTS ] = #008000,BOLD
+(snip)
+</code></pre>
 
 <h2>Open Issues</h2>
 <p>

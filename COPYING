@@ -1,0 +1,6 @@
+SimpleSyntax is released under the VeggieWare license. You can use it,
+redistribute it and/or modify it under the terms defined in LICENSE.txt.
+
+Some additional libraries distributed with SimpleSyntax are not covered
+by the VeggieWare licence. See the license files for the respective
+libraries in the 'lib' directory for more information.

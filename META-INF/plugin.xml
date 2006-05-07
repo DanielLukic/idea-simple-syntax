@@ -1,0 +1,45 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin url="http://www.intensicode.net/projects/SimpleSyntax/">
+    <name>Simple Syntax Highlighting</name>
+    <description>
+        Provides simple syntax highlighting based on user-definable configuration files.
+        Use 'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting.
+        Clone files in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting
+        for other languages. Use 'Reload SimpleSyntax' form Tools menu to reload
+        configuration changes.
+        ///
+        Credits: Includes the wonderful JRuby and Groovy binary distributions.
+        ///
+    </description>
+    <change-notes>
+        [ V0.11 ] Cleaned up resource/file access codebase. Moved configuration to 'config/options/SimpleSyntax' subfolder.
+        [ V0.10 ] Fixed groovy rule implementation. Fixed DOC_COMMENT issue.
+        [ V0.9 ] Improved Ruby example configuration. Fixed locked config file issue.
+        [ V0.8 ] Implemented global registry collision work around when using more than one configuration.
+        [ V0.7 ] Fixed minor (doc) issues after first (offical) plugin release. Fixed reloading of token colors/attributes.
+        [ V0.6 ] Added 'groovy' syntax rule.
+        [ V0.5 ] Added reload action.
+        [ V0.4 ] Added init action.
+        [ V0.3 ] Added 'ruby' syntax rule.
+        [ V0.2 ] Implemented syntax configuration loading.
+        [ V0.1 ] Initial release with hardcoded Ruby syntax.
+    </change-notes>
+    <version>0.11</version>
+    <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
+    <idea-version since-build="4192"/>
+    <application-components>
+        <component>
+            <implementation-class>net.intensicode.idea.SimpleSyntax</implementation-class>
+        </component>
+    </application-components>
+    <actions>
+        <action id="SimpleSyntaxInstall" class="net.intensicode.idea.ActionInstall"
+                text="Init SimpleSyntax" description="Install the default SimpleSyntax configuration for Ruby">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="SimpleSyntaxReload" class="net.intensicode.idea.ActionReload"
+                text="Reload SimpleSyntax" description="Purge and reload the SimpleSyntax configurations">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

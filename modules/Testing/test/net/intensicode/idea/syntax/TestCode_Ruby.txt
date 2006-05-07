@@ -1,0 +1,29 @@
+
+# comment line
+
+class Toast
+
+    def cheese( args )
+        @mogg = args
+        schlupp = 'rupp'
+        schnuff = "hussle #{hummel}"
+    end
+
+    def huzzle
+        %Q! rumsel #{pumsel} !
+    end
+
+    def schmogg
+    end
+
+end
+
+=begin
+
+some dox
+
+=end
+
+class MoxMuxMax
+
+end

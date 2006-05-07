@@ -1,0 +1,147 @@
+<!-- For now I assume a valid 1.5 JDK or later and Ant 1.6 or later. -->
+
+<project name="SimpleSyntax" default="build">
+
+    <property name="project.name" value="${ant.project.name}"/>
+    <property name="output.name" value="${project.name}"/>
+
+    <property name="package.base" value="net.intensicode.idea"/>
+
+    <property name="dir.apis" value="lib-api"/>
+    <property name="dir.build" value="build"/>
+    <property name="dir.config" value="config"/>
+    <property name="dir.env" value="env"/>
+    <property name="dir.libraries" value="lib"/>
+    <property name="dir.resources" value="res"/>
+    <property name="dir.sources" value="src"/>
+    <property name="dir.tests" value="modules/Testing/test"/>
+
+    <property name="dir.build.dist" value="${dir.build}/dist"/>
+    <property name="dir.build.classes" value="${dir.build}/classes"/>
+    <property name="dir.build.expanded" value="${dir.build}/expanded"/>
+    <property name="dir.build.tests" value="${dir.build}/tests"/>
+    <property name="dir.build.zip" value="${dir.build.expanded}/${output.name}/lib"/>
+
+    <property name="dir.env.junit" value="${dir.env}/junit"/>
+
+    <property name="dist.file.jar" value="${dir.build.dist}/${output.name}.jar"/>
+    <property name="dist.file.zip" value="${dir.build.dist}/${output.name}.zip"/>
+    <property name="dist.file.full" value="${dir.build.dist}/${output.name}-dist.zip"/>
+
+
+    <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
+        <classpath>
+            <pathelement location="${dir.env.junit}/ant-junit.jar"/>
+            <pathelement location="${dir.env.junit}/junit.jar"/>
+        </classpath>
+    </taskdef>
+
+
+    <path id="classpath.libraries">
+        <fileset id="libraries" dir="${dir.libraries}" includes="**/*.jar"/>
+    </path>
+
+    <path id="classpath.apis">
+        <fileset dir="${dir.apis}" includes="**/*.jar"/>
+    </path>
+
+    <path id="classpath.build">
+        <path refid="classpath.libraries"/>
+        <path refid="classpath.apis"/>
+    </path>
+
+    <path id="classpath.test">
+        <pathelement location="${dir.build.classes}"/>
+        <pathelement location="${dir.build.tests}"/>
+        <pathelement location="${dir.tests}"/>
+        <path refid="classpath.build"/>
+    </path>
+
+
+    <target name="_init">
+        <mkdir dir="${dir.build}"/>
+        <mkdir dir="${dir.build.classes}"/>
+        <mkdir dir="${dir.build.dist}"/>
+        <mkdir dir="${dir.build.tests}"/>
+        <mkdir dir="${dir.build.zip}"/>
+    </target>
+
+    <target name="_clean">
+        <delete dir="${dir.build}" failonerror="false"/>
+    </target>
+
+    <target name="_build_classes" depends="_init">
+        <javac source="1.5" target="1.5" srcdir="${dir.sources}" destdir="${dir.build.classes}" debug="true" classpathref="classpath.build"/>
+    </target>
+
+    <target name="_build_tests" depends="_build_classes">
+        <javac srcdir="${dir.tests}" destdir="${dir.build.tests}" debug="true" classpathref="classpath.test"/>
+    </target>
+
+    <target name="_run_tests" depends="_build_tests">
+        <junit printsummary="yes" haltonfailure="yes" showoutput="true">
+            <classpath refid="classpath.test"/>
+            <formatter type="brief" usefile="false"/>
+            <formatter type="xml" usefile="true"/>
+            <batchtest fork="yes" todir="${dir.build}">
+                <fileset dir="${dir.tests}">
+                    <include name="**/Test*.java"/>
+                    <include name="**/*Test.java"/>
+                    <exclude name="**/TestConfigurableLanguage.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="_package_core" depends="_build_classes">
+        <jar jarfile="${dist.file.jar}">
+            <fileset dir="${dir.build.classes}" includes="**/*"/>
+            <fileset dir="${dir.resources}" includes="**/*"/>
+            <fileset dir="${dir.config}" includes="**/*"/>
+            <fileset dir="." includes="META-INF/**/*"/>
+        </jar>
+    </target>
+
+    <target name="_package_plugin" depends="_package_core">
+        <copy file="${dist.file.jar}" todir="${dir.build.zip}"/>
+        <copy todir="${dir.build.zip}">
+            <!--<fileset refid="libraries"/>-->
+            <!-- I want the licenses included, too: -->
+            <fileset dir="${dir.libraries}" includes="**/*"/>
+        </copy>
+        <copy todir="${dir.build.zip}/../">
+						<fileset dir="." includes="COPYING"/>
+						<fileset dir="." includes="LICENSE.txt"/>
+        </copy>
+        <zip zipfile="${dist.file.zip}">
+            <fileset dir="${dir.build.zip}/../.."/>
+        </zip>
+    </target>
+
+    <target name="_package_distribution">
+        <zip zipfile="${dist.file.full}">
+            <fileset dir="." includes="**/*">
+                <exclude name="build/**/*"/>
+                <exclude name="build"/>
+                <exclude name="env/**/*"/>
+                <exclude name="env"/>
+                <exclude name="installation/**/*"/>
+                <exclude name="installation"/>
+                <exclude name="clean.*"/>
+                <exclude name="prompt.*"/>
+            </fileset>
+        </zip>
+    </target>
+
+
+    <target name="build" depends="_package_plugin" description="Continous build (without clean)"/>
+
+    <target name="clean" depends="_clean" description="Cleans all generated files"/>
+
+    <target name="dist" depends="rebuild,test,_package_distribution" description="Rebuild system and create distribution package"/>
+
+    <target name="rebuild" depends="clean,build" description="Clean rebuild of the system"/>
+
+    <target name="test" depends="_run_tests" description="Run the unit tests"/>
+
+</project>
