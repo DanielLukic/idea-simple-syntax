@@ -1,7 +1,7 @@
 package net.intensicode.idea.config.loaded.parser;
 
 import com.intellij.openapi.diagnostic.Logger;
-import net.intensicode.idea.core.ConfigurableSyntaxRuleSet;
+import net.intensicode.idea.core.SyntaxRuleSet;
 import net.intensicode.idea.util.LoggerFactory;
 
 
@@ -11,7 +11,7 @@ import net.intensicode.idea.util.LoggerFactory;
  */
 public final class SyntaxRuleConsumer implements LineConsumer
 {
-    public SyntaxRuleConsumer( final ConfigurableSyntaxRuleSet aRuleSet )
+    public SyntaxRuleConsumer( final SyntaxRuleSet aRuleSet )
     {
         myRuleSet = aRuleSet;
     }
@@ -32,7 +32,7 @@ public final class SyntaxRuleConsumer implements LineConsumer
 
 
 
-    private final ConfigurableSyntaxRuleSet myRuleSet;
+    private final SyntaxRuleSet myRuleSet;
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

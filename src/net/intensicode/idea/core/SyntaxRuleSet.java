@@ -8,7 +8,7 @@ import java.util.Iterator;
 /**
  * TODO: Describe this!
  */
-public final class ConfigurableSyntaxRuleSet implements Iterable<SyntaxRuleSpecification>
+public final class SyntaxRuleSet implements Iterable<SyntaxRuleSpecification>
 {
     public final void clear()
     {

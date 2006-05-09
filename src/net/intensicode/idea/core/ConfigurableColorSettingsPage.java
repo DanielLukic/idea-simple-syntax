@@ -56,7 +56,6 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     {
         if ( myLanguageConfiguration.getRecognizedTokens().size() == 0 )
         {
-            LOG.error( "No recognized tokens" );
             return NO_ATTRIBUTES_DESCRIPTORS;
         }
 
@@ -105,15 +104,20 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
 
     private final ArrayList<AttributesDescriptor> createDescriptors()
     {
+        final ArrayList<String> handledIDs = new ArrayList<String>();
+
         final ArrayList<AttributesDescriptor> descriptors = new ArrayList<AttributesDescriptor>();
         for ( final RecognizedToken token : myLanguageConfiguration.getRecognizedTokens() )
         {
             final String id = token.getTokenID();
+            if ( handledIDs.contains( id ) ) continue;
             if ( myConfiguration.isVisibleToken( id ) == false ) continue;
 
             final String description = myConfiguration.getTokenDescription( id );
             final TextAttributesKey attributesKey = myLanguageConfiguration.getTextAttributesKey( id );
             descriptors.add( new AttributesDescriptor( description, attributesKey ) );
+
+            handledIDs.add( id );
         }
         return descriptors;
     }

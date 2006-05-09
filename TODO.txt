@@ -3,8 +3,6 @@ Bugs
 ====
 
 B0.2: Error messages from scripted tokens are not propagated properly!
-B0.3: Defining the same TOKEN ID more than once results in multiple instances of this ID being shown in the Color
-      Settings page. Preferred/expected behaviour would be one shared color setting.
 B0.4: Lexer algorithm is broken in certain situations. Eg removing/adding a single character to make a certain token
       become a invalid/valid match. Not sure, yet, what's going on there. Maybe I have to track some state in the
       lexerState parameter?
@@ -36,9 +34,12 @@ Completed
 =========
 
 B0.1: FileType has to be removed too? In fact: All IDEA objects have to be reused!
- -> Solved by using same mechanisms as used for ConfigurableLanguage.
+      -> Solved by using same mechanisms as used for ConfigurableLanguage.
+B0.3: Defining the same TOKEN ID more than once results in multiple instances of this ID being shown in the Color
+      Settings page. Preferred/expected behaviour would be one shared color setting.
+      -> Simple fix. Checking for already defined AttributesDescriptor now.
 B0.5: ConfigurableLanguage class may only be used once.
- -> Solved by using Groovy to create subclasses dynamically.
+      -> Solved by using Groovy to create subclasses dynamically.
 
 T0.1: Make ResourceLoader and FileLoader available through SystemContext.
 T0.2: ResourceLoader loads from ClassPath only, FileLoader from config/options folder only.

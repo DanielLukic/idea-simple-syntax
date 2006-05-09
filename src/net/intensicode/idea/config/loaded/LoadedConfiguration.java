@@ -6,7 +6,7 @@ import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
 import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
 import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
 import net.intensicode.idea.config.loaded.parser.SyntaxRuleConsumer;
-import net.intensicode.idea.core.ConfigurableSyntaxRuleSet;
+import net.intensicode.idea.core.SyntaxRuleSet;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.core.SyntaxRuleSpecification;
 import net.intensicode.idea.syntax.RecognizedToken;
@@ -214,7 +214,7 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
 
     private final HashMap<String, String> myDescriptions = new HashMap<String, String>();
 
-    private final ConfigurableSyntaxRuleSet myRuleSet = new ConfigurableSyntaxRuleSet();
+    private final SyntaxRuleSet myRuleSet = new SyntaxRuleSet();
 
     private final ArrayList<RecognizedToken> myRecognizedTokens = new ArrayList<RecognizedToken>();
 
