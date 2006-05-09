@@ -6,7 +6,7 @@
         'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting. Clone files
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
         languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
-        <strong>Credits:</strong> Includes the wonderful JRuby and Groovy binary distributions.
+        Credits: Includes the wonderful JRuby and Groovy binary distributions.
     </description>
     <change-notes>
         [ V0.13 ] Fixed duplicate file type issue. (Occurred when using 'Reload SimpleSyntax'.)
