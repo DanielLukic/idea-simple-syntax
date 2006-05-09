@@ -22,7 +22,7 @@ public interface InstanceConfiguration
     String getExampleCode();
 
 
-    boolean isVisibleToken( final String aTokenId );
+    boolean isVisibleToken( String aTokenId );
 
     List<RecognizedToken> getRecognizedTokens();
 

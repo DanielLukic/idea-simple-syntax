@@ -1,4 +1,4 @@
-package net.intensicode.idea.core;
+package net.intensicode.idea.system;
 
 import java.io.IOException;
 import java.io.InputStream;

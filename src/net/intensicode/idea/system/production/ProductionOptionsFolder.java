@@ -1,10 +1,11 @@
-package net.intensicode.idea.core;
+package net.intensicode.idea.system.production;
 
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
 import net.intensicode.idea.util.FileUtils;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.StreamUtils;
+import net.intensicode.idea.system.OptionsFolder;
 
 import java.io.*;
 import java.util.HashMap;

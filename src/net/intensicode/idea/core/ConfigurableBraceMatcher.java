@@ -5,6 +5,7 @@ import com.intellij.lang.PairedBraceMatcher;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.BracesConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.util.LoggerFactory;
 
 import java.util.ArrayList;

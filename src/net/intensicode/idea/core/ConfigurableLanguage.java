@@ -8,14 +8,15 @@ import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.tree.IElementType;
-import groovy.lang.GroovyShell;
 import net.intensicode.idea.config.InstanceConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.syntax.SimpleSyntaxHighlighter;
+import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.util.DynamicClassHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,12 @@ import java.util.List;
 
 
 /**
- * TODO: Describe this!
+ * Adapter between IDEA Language objects and our LanguageConfiguration. Takes care of the IDEA OpenAPI quirks:
+ * <ul>
+ * <li>Circumvent the global Language registry by creating unique subclasses for each LanguageConfiguration.</li>
+ * <li>Create and manage unique IElementType/GenericElementType instances (defined tokens).</li>
+ * <li>Manage ConfigurableTextAttributes to make TextAttributesKey instances appear dynamic (color settings).</li>
+ * </ul>
  */
 public class ConfigurableLanguage extends Language implements LanguageConfiguration
 {
@@ -43,43 +49,9 @@ public class ConfigurableLanguage extends Language implements LanguageConfigurat
             return oldLanguage;
         }
 
-        // Note: These $#^Y&*#$&* JetBrainers.. (NoBrainers?) are really killing me..
-        // Instead of using the language ID as the key for their FRICKIN GLOBAL REGISTRY.. WTF!?!?!
-        // they are using the Class itself!? Thanks..
-
-        // It could be as simple as that:
-//        return new ConfigurableLanguage( aSystemContext, aConfiguration );
-
-        // But no, the NoBrainers want some hardcore BS:
-
-        final String singletonName = "ConfigurableLanguage" + name;
-
-        final StringBuilder scriptBuilder = new StringBuilder();
-        scriptBuilder.append( "import net.intensicode.idea.core.ConfigurableLanguage;\n" );
-        scriptBuilder.append( "\n" );
-        scriptBuilder.append( "class " + singletonName + " extends ConfigurableLanguage {\n" );
-        scriptBuilder.append( "\n" );
-        scriptBuilder.append( "  " + singletonName + "( context, config ) {\n" );
-        scriptBuilder.append( "    super( context, config );\n" );
-        scriptBuilder.append( "  }\n" );
-        scriptBuilder.append( "\n" );
-        scriptBuilder.append( "}\n" );
-        scriptBuilder.append( "return " + singletonName + ".class;" );
-
-        try
-        {
-            // How sick is this? :) We need the right classloader.. :)
-            final ClassLoader loader = GroovyShell.class.getClassLoader();
-
-            final String script = scriptBuilder.toString();
-            final Class singletonClass = ( Class ) new GroovyShell( loader ).evaluate( script );
-            final Constructor constructor = singletonClass.getConstructors()[ 0 ];
-            return ( ConfigurableLanguage ) constructor.newInstance( aSystemContext, aConfiguration );
-        }
-        catch ( final Throwable t )
-        {
-            throw new RuntimeException( t );
-        }
+        final String className = "ConfigurableLanguage" + name;
+        final Class clazz = ConfigurableLanguage.class;
+        return ( ConfigurableLanguage ) DynamicClassHelper.newInstance( className, clazz, aSystemContext, aConfiguration );
     }
 
     // From LanguageConfiguration
@@ -142,13 +114,15 @@ public class ConfigurableLanguage extends Language implements LanguageConfigurat
         return myCommenter;
     }
 
-    // Implementation
+    // Protected Interface
 
     protected ConfigurableLanguage( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {
         super( aConfiguration.getName() );
         reset( aSystemContext, aConfiguration );
     }
+
+    // Implementation
 
     private final void reset( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {

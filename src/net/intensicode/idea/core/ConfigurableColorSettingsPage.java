@@ -7,6 +7,7 @@ import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorDescriptor;
 import com.intellij.openapi.options.colors.ColorSettingsPage;
 import net.intensicode.idea.config.InstanceConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NotNull;

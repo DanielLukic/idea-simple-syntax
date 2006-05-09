@@ -2,7 +2,7 @@ package net.intensicode.idea.config.loaded;
 
 import net.intensicode.idea.config.ConfigurationProperties;
 import net.intensicode.idea.config.FileTypeConfiguration;
-import net.intensicode.idea.core.OptionsFolder;
+import net.intensicode.idea.system.OptionsFolder;
 
 import javax.swing.Icon;
 

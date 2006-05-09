@@ -9,6 +9,7 @@
         <strong>Credits:</strong> Includes the wonderful JRuby and Groovy binary distributions.
     </description>
     <change-notes>
+        [ V0.13 ] Fixed duplicate file type issue. (Occurred when using 'Reload SimpleSyntax'.)
         [ V0.12 ] Speeded up example Ruby configuration by removing all 'ruby' and adding 'regex' tokens. Improved 'regex' performance.
         [ V0.11 ] Cleaned up resource/file access codebase. Moved configuration to 'config/options/SimpleSyntax' subfolder.
         [ V0.10 ] Fixed groovy rule implementation. Fixed DOC_COMMENT issue.

@@ -1,6 +1,6 @@
 package net.intensicode.idea.syntax;
 
-import net.intensicode.idea.core.SystemErrorHandler;
+import net.intensicode.idea.system.SystemErrorHandler;
 
 import java.util.ArrayList;
 

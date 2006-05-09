@@ -1,6 +1,8 @@
 package net.intensicode.idea.core;
 
 import net.intensicode.idea.syntax.RecognizedToken;
+import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.Confirmation;
 
 
 
@@ -20,6 +22,21 @@ public final class FakeSystemErrorHandler implements SystemErrorHandler
     }
 
     public Confirmation onFileReplaceConfirmation( String aFileName )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public Confirmation onFileTypeReplaceConfirmation( String aFileType )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public Confirmation onFileTypeInUseConfirmation( String[] aExtensions )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public void forgetConfirmationAnswers()
     {
         throw new RuntimeException( "NYI" );
     }

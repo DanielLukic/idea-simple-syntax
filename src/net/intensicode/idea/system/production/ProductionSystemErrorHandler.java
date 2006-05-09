@@ -1,9 +1,11 @@
-package net.intensicode.idea.core;
+package net.intensicode.idea.system.production;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.ui.Messages;
 import net.intensicode.idea.syntax.RecognizedToken;
+import net.intensicode.idea.system.Confirmation;
+import net.intensicode.idea.system.SystemErrorHandler;
 import net.intensicode.idea.util.LoggerFactory;
 
 
@@ -46,17 +48,33 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
     {
         final StringBuilder messageBuilder = new StringBuilder();
         messageBuilder.append( "Target file " + aFileName + " already exists!\n" );
-        messageBuilder.append( "Replace the file? Yes or no?\n" );
-        messageBuilder.append( "Replace all following files too?\n" );
-        messageBuilder.append( "Or cancel the installation?" );
+        messageBuilder.append( "YES: Replace this file?\n" );
+        messageBuilder.append( "ALL: Replace all files?\n" );
+        messageBuilder.append( "NO: Don't replace this file?\n" );
+        messageBuilder.append( "NONE: Don't replace any files?\n" );
+        messageBuilder.append( "CANCEL: Or cancel the installation?" );
 
         final String message = messageBuilder.toString();
         final int result = Messages.showDialog( message, CONFIRMATION_TITLE, CONFIRMATION_OPTIONS, 0, null );
         if ( result == 0 ) return Confirmation.YES;
-        if ( result == 1 ) return Confirmation.NO;
-        if ( result == 2 ) return Confirmation.ALL;
+        if ( result == 1 ) return Confirmation.ALL;
+        if ( result == 2 ) return Confirmation.NO;
         if ( result == 3 ) return Confirmation.CANCEL;
         throw new RuntimeException( "NYI" );
+    }
+
+    public final Confirmation onFileTypeInUseConfirmation( final String[] aExtensions )
+    {
+        return Confirmation.YES;
+    }
+
+    public final Confirmation onFileTypeReplaceConfirmation( final String aFileType )
+    {
+        return Confirmation.YES;
+    }
+
+    public final void forgetConfirmationAnswers()
+    {
     }
 
     // Implementation
@@ -81,5 +99,5 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
 
     private static final String CONFIRMATION_TITLE = "Simple Syntax Plugin Confirmation";
 
-    private static final String[] CONFIRMATION_OPTIONS = new String[]{"YES", "NO", "ALL", "CANCEL"};
+    private static final String[] CONFIRMATION_OPTIONS = new String[]{"YES", "ALL", "NO", "NONE", "CANCEL"};
 }

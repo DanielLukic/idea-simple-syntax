@@ -4,11 +4,13 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import net.intensicode.idea.config.InstanceConfiguration;
+import net.intensicode.idea.util.DynamicClassHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -18,14 +20,37 @@ import javax.swing.Icon;
 
 
 /**
- * TODO: Describe this!
+ * Adapter between IDEA FileType objects and our InstanceConfiguration/FileTypeConfiguration.
+ * Has to be used through the ConfigurableFileTypeBuilder to take care of unregistering previous
+ * extensions/filetypes.
  */
-public final class ConfigurableFileType implements FileType
+public class ConfigurableFileType implements FileType
 {
-    public ConfigurableFileType( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    static final ConfigurableFileType getOrCreate( final InstanceConfiguration aConfiguration, final Language aLanguage )
     {
-        myLanguage = aLanguage;
-        myConfiguration = aConfiguration;
+        final String name = aConfiguration.getName();
+        final FileTypeManager manager = FileTypeManager.getInstance();
+        for ( final FileType fileType : manager.getRegisteredFileTypes() )
+        {
+            if ( fileType.getName().equals( name ) == false ) continue;
+            if ( fileType instanceof ConfigurableFileType == false ) continue;
+
+            final ConfigurableFileType oldFileType = ( ConfigurableFileType ) fileType;
+            oldFileType.reset( aConfiguration, aLanguage );
+            return oldFileType;
+        }
+
+        // TODO: Should we have an own registry here? So far IDEA seems to be OK with the current solution..
+
+        final String className = "ConfigurableFileType" + aConfiguration.getName();
+        final Class clazz = ConfigurableFileType.class;
+        return ( ConfigurableFileType ) DynamicClassHelper.newInstance( className, clazz, aConfiguration, aLanguage );
+    }
+
+    final void reset( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    {
+        myConfiguration = aConfiguration != null ? aConfiguration : NullInstanceConfiguration.INSTANCE;
+        myLanguage = aLanguage != null ? aLanguage : Language.ANY;
     }
 
     // From FileType
@@ -90,9 +115,16 @@ public final class ConfigurableFileType implements FileType
         return false;
     }
 
+    // Protected Interface
+
+    protected ConfigurableFileType( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    {
+        reset( aConfiguration, aLanguage );
+    }
 
 
-    private final Language myLanguage;
 
-    private final InstanceConfiguration myConfiguration;
+    private Language myLanguage;
+
+    private InstanceConfiguration myConfiguration;
 }

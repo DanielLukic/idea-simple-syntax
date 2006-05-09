@@ -1,4 +1,6 @@
-package net.intensicode.idea.core;
+package net.intensicode.idea.system.production;
+
+import net.intensicode.idea.system.ResourceLoader;
 
 import java.io.IOException;
 import java.io.InputStream;

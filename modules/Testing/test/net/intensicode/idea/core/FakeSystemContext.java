@@ -3,6 +3,10 @@ package net.intensicode.idea.core;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.system.ResourceLoader;
+import net.intensicode.idea.system.OptionsFolder;
 
 
 

@@ -4,7 +4,7 @@ import com.intellij.lang.Language;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.psi.tree.IElementType;
-import net.intensicode.idea.core.LanguageConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.syntax.RecognizedToken;
 
 import java.util.HashMap;

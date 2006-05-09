@@ -3,9 +3,10 @@ package net.intensicode.idea;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.diagnostic.Logger;
-import net.intensicode.idea.core.*;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
+import net.intensicode.idea.system.*;
+import net.intensicode.idea.system.production.ProductionSystemContext;
 
 import java.io.IOException;
 import java.io.InputStream;

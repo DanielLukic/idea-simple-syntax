@@ -1,5 +1,6 @@
 package net.intensicode.idea;
 
+import com.intellij.lang.Language;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
@@ -8,9 +9,9 @@ import com.intellij.openapi.options.colors.ColorSettingsPages;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.core.ConfigurableColorSettingsPage;
-import net.intensicode.idea.core.ConfigurableFileType;
+import net.intensicode.idea.core.ConfigurableFileTypeBuilder;
 import net.intensicode.idea.core.ConfigurableLanguage;
-import net.intensicode.idea.core.SystemContext;
+import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 
 
@@ -20,9 +21,11 @@ import net.intensicode.idea.util.LoggerFactory;
  */
 final class SimpleSyntaxInstance
 {
-    SimpleSyntaxInstance( final InstanceConfiguration aConfiguration )
+    SimpleSyntaxInstance( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {
+        mySystemContext = aSystemContext;
         myConfiguration = aConfiguration;
+        myFileTypeBuilder = new ConfigurableFileTypeBuilder( aSystemContext );
     }
 
     final String getName()
@@ -30,31 +33,31 @@ final class SimpleSyntaxInstance
         return myConfiguration.getName();
     }
 
-    final void init( final SystemContext aSystemContext )
+    final void init()
     {
         LOG.info( "Initializing " + myConfiguration.getName() );
-        final ConfigurableLanguage language = ConfigurableLanguage.getOrCreate( aSystemContext, myConfiguration );
-        registerFileType( aSystemContext, language );
+        final ConfigurableLanguage language = ConfigurableLanguage.getOrCreate( mySystemContext, myConfiguration );
+        registerFileType( language );
         registerColorSettingsPage( language );
     }
 
-    final void dispose( final SystemContext aSystemContext )
+    final void dispose()
     {
         LOG.info( "Disposing " + getName() );
-        unregisterFileType( aSystemContext );
+        unregisterFileType();
         myFileType = null;
     }
 
     // Implementation
 
-    private final void registerFileType( final SystemContext aSystemContext, final ConfigurableLanguage aLanguage )
+    private final void registerFileType( final Language aLanguage )
     {
-        final FileTypeManager manager = aSystemContext.getFileTypeManager();
+        final FileTypeManager manager = mySystemContext.getFileTypeManager();
         if ( manager == null ) return;
 
         LOG.info( "Registering file type " + getName() );
         final FileTypeConfiguration config = myConfiguration.getFileTypeConfiguration();
-        final FileType fileType = new ConfigurableFileType( myConfiguration, aLanguage );
+        final FileType fileType = myFileTypeBuilder.getOrCreate( myConfiguration, aLanguage );
         manager.registerFileType( fileType, config.getExtensions() );
 
         myFileType = fileType;
@@ -81,9 +84,9 @@ final class SimpleSyntaxInstance
         instance.registerPage( new ConfigurableColorSettingsPage( myConfiguration, aLanguage ) );
     }
 
-    private final void unregisterFileType( final SystemContext aSystemContext )
+    private final void unregisterFileType()
     {
-        final FileTypeManager manager = aSystemContext.getFileTypeManager();
+        final FileTypeManager manager = mySystemContext.getFileTypeManager();
         if ( manager == null || myFileType == null ) return;
 
         LOG.info( "Unregistering file type " + getName() );
@@ -98,7 +101,11 @@ final class SimpleSyntaxInstance
 
     private FileType myFileType;
 
+    private final SystemContext mySystemContext;
+
     private final InstanceConfiguration myConfiguration;
+
+    private final ConfigurableFileTypeBuilder myFileTypeBuilder;
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

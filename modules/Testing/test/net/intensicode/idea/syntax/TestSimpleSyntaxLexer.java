@@ -2,7 +2,7 @@ package net.intensicode.idea.syntax;
 
 import com.intellij.lexer.Lexer;
 import net.intensicode.idea.FakeConfigurableLanguage;
-import net.intensicode.idea.core.LanguageConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 
 import java.io.IOException;
 

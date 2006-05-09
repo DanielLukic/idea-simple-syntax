@@ -4,7 +4,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import net.intensicode.idea.util.LoggerFactory;
-import net.intensicode.idea.core.SystemContext;
+import net.intensicode.idea.system.SystemContext;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 

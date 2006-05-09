@@ -7,7 +7,7 @@ import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
 import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
 import net.intensicode.idea.config.loaded.parser.SyntaxRuleConsumer;
 import net.intensicode.idea.core.ConfigurableSyntaxRuleSet;
-import net.intensicode.idea.core.OptionsFolder;
+import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.core.SyntaxRuleSpecification;
 import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.util.LoggerFactory;

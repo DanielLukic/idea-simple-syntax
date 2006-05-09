@@ -1,5 +1,7 @@
 package net.intensicode.idea.core;
 
+import net.intensicode.idea.system.ResourceLoader;
+
 import java.io.InputStream;
 import java.io.Reader;
 

@@ -1,4 +1,4 @@
-package net.intensicode.idea.core;
+package net.intensicode.idea.config;
 
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;

@@ -5,7 +5,7 @@ import com.intellij.lexer.Lexer;
 import com.intellij.lexer.LexerPosition;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.text.CharArrayCharSequence;
-import net.intensicode.idea.core.LanguageConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 
 
 

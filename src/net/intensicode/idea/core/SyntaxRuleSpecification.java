@@ -6,6 +6,7 @@ import net.intensicode.idea.syntax.RecognizedTokenGroovy;
 import net.intensicode.idea.syntax.RecognizedTokenRegEx;
 import net.intensicode.idea.syntax.RecognizedTokenRuby;
 import net.intensicode.idea.util.LoggerFactory;
+import net.intensicode.idea.system.OptionsFolder;
 
 import java.io.IOException;
 import java.lang.reflect.Field;

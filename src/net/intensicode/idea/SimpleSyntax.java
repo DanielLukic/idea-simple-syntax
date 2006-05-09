@@ -7,9 +7,9 @@ import com.intellij.openapi.options.ConfigurationException;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.loaded.LoadedConfiguration;
-import net.intensicode.idea.core.OptionsFolder;
-import net.intensicode.idea.core.ProductionSystemContext;
-import net.intensicode.idea.core.SystemContext;
+import net.intensicode.idea.system.OptionsFolder;
+import net.intensicode.idea.system.production.ProductionSystemContext;
+import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +42,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
             {
                 for ( final SimpleSyntaxInstance instance : myInstances )
                 {
-                    instance.init( mySystemContext );
+                    instance.init();
                 }
             }
         } );
@@ -60,8 +60,9 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
 
                 for ( final SimpleSyntaxInstance instance : myInstances )
                 {
-                    instance.dispose( mySystemContext );
+                    instance.dispose();
                 }
+                mySystemContext.getErrorHandler().forgetConfirmationAnswers();
 
                 myInstances.clear();
                 myInitStatus = false;
@@ -130,7 +131,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
             final ArrayList<InstanceConfiguration> configurations = loadConfigurations();
             for ( final InstanceConfiguration config : configurations )
             {
-                myInstances.add( new SimpleSyntaxInstance( config ) );
+                myInstances.add( new SimpleSyntaxInstance( mySystemContext, config ) );
             }
             return myInitStatus = true;
         }

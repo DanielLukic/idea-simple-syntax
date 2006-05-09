@@ -1,6 +1,7 @@
 package net.intensicode.idea.core;
 
 import net.intensicode.idea.util.ReaderUtils;
+import net.intensicode.idea.system.OptionsFolder;
 
 import java.io.IOException;
 import java.io.InputStream;

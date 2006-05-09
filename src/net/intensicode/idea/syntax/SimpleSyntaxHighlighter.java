@@ -4,8 +4,8 @@ import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.psi.tree.IElementType;
-import net.intensicode.idea.core.SystemContext;
-import net.intensicode.idea.core.LanguageConfiguration;
+import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.config.LanguageConfiguration;
 import org.jetbrains.annotations.NotNull;
 
 
