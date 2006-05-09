@@ -11,10 +11,8 @@ B0.4: Lexer algorithm is broken in certain situations. Eg removing/adding a sing
 Todo
 ====
 
-T0.7: Add deploy to IntensiCode and deploy to IDEA targets.
-T0.8: Have two Ruby configs as examples: One fast (only regex), the other full. Or simply comment out some stuff.. :)
+T0.7: Add deploy to IntensiCode and deploy to IDEA Ant targets.
 T0.9: Put some more configs on IntensiCode site.
-T0.A: Move Groovy part in ConfigLang to GroovyUtils#makeSubclass in util.
 T0.B: Take care of the currently used Logger hack.. Use own {} based SimpleLog framework?
 
 ======
@@ -47,3 +45,7 @@ T0.3: Remove load/read File/Stream from SystemContext and switch to ResourceLoad
 T0.4: Make install action ask to overwrite?
 T0.5: Update IntensiCode project page: TODO Lexer Config
 T0.6: Subfolder in config/options?
+T0.8: Have two Ruby configs as examples: One fast (only regex), the other full. Or simply comment out some stuff.. :)
+      -> Useing commented out version for now.
+T0.A: Move Groovy part in ConfigLang to GroovyUtils#makeSubclass in util.
+      -> Created DynamicClassHelper in util.
