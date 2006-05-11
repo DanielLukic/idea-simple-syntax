@@ -1,145 +1,171 @@
 <html>
 
-  <head>
+<head>
     <style type="text/css">
-/* <![CDATA[ */
-@import "http://www.tigris.org/branding/css/tigris.css";
-@import "http://www.tigris.org/branding/css/inst.css";
-/*  ]]> */
+        /* <![CDATA[ */
+        @import "http://www.tigris.org/branding/css/tigris.css";
+        @import "http://www.tigris.org/branding/css/inst.css";
+        /*  ]]> */
     </style>
-    <link rel="stylesheet" type="text/css" href="http://www.tigris.org/branding/css/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="http://www.tigris.org/branding/css/print.css" media="print"/>
     <script src="http://www.tigris.org/branding/scripts/tigris.js" type="text/javascript">
     </script>
     <title>Project Overview</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="h2" id="longdescription">
+<div class="h2" id="longdescription">
 
-      <h2>Mission</h2>
-      <p>
-      Generic syntax highlighting support for Intelli/J IDEA. Uses simple configuration files to add syntax highlighting for eg Ruby, Python, etc.
-      </p>
-      <p>
-      In contrast to writing a full-blown IDEA plugin for every language this plugin should have a new syntax available within minutes. In contrast to the XML filetypes extension that IDEA offers, this plugin is more flexible. (But of course less flexible than writing a full-blown language-specific IDEA plugin.. :)
-      </p>
-      <p>
-      For now it uses 'regex' based rules to define everything that should be highlighted. You can also youse 'ruby' or 'groovy' to define syntax tokens. This, however, slows down the code highlighting noticeable.
-      </p>
+<h2>Mission</h2>
 
-      <h2>Background</h2>
-      <p>
-      Please have a look at the IDEA related entries in my blog:
-      </p>
-      <ul>
-        <li><a href="http://www.berlinfactor.com/blog/?p=11">IDEA and Ruby</a></li>
-        <li><a href="http://www.berlinfactor.com/blog/?p=12">IDEA Plugin Development</a></li>
-        <li><a href="http://www.berlinfactor.com/blog/?p=13">IDEA (Not a) Rant Part 2</a></li>
-        <li><a href="http://www.berlinfactor.com/blog/?p=14">Update: IDEA Plugin Development</a></li>
-      </ul>
-      <p>
-      This should explain the rationale of this project quite nicely: Even though I'm quite happy with IDEA overall, I think it has become too bloated and complex. With this plugin I'm trying to bring back some sanity.. :)
-      </p>
+<p>
+    Generic syntax highlighting support for Intelli/J IDEA. Uses simple configuration files to add syntax highlighting
+    for eg Ruby, Python, etc.
+</p>
 
-      <h2>Status</h2>
-      <p>
-      This plugin is usable, but still in an early alpha stage. Major performance issues remaining. Tested only with moderately sized Ruby projects.
-      </p>
+<p>
+    In contrast to writing a full-blown IDEA plugin for every language this plugin should have a new syntax available
+    within minutes. In contrast to the XML filetypes extension that IDEA offers, this plugin is more flexible. (But of
+    course less flexible than writing a full-blown language-specific IDEA plugin.. :)
+</p>
 
-      <h2>Download / Availability</h2>
-      <p>
-      The plugin is available through the IDEA Plugin Manager.
-      </p>
+<p>
+    For now it uses 'regex' based rules to define everything that should be highlighted. You can also youse 'ruby' or
+    'groovy' to define syntax tokens. This, however, slows down the code highlighting noticeable.
+</p>
 
-      <h2>Example Configuration</h2>
-      <p>
-      Here's a part fo the example configuration included in the current release of the plugin:
-      </p>
-      <pre style="margin-left:1em;padding-left:1em;overflow:auto;background:#F0F8E8;border:solid 1px;"><code>
-[SimpleSyntax:V1.0]
+<h2>Background</h2>
 
-Name: Ruby
-Icon: Ruby.png
-ExampleCode: Ruby.rb
-Description: Ruby Script
-(snip)
+<p>
+    Please have a look at the IDEA related entries in my blog:
+</p>
+<ul>
+    <li><a href="http://www.berlinfactor.com/blog/?p=11">IDEA and Ruby</a></li>
+    <li><a href="http://www.berlinfactor.com/blog/?p=12">IDEA Plugin Development</a></li>
+    <li><a href="http://www.berlinfactor.com/blog/?p=13">IDEA (Not a) Rant Part 2</a></li>
+    <li><a href="http://www.berlinfactor.com/blog/?p=14">Update: IDEA Plugin Development</a></li>
+</ul>
 
-# Syntax Configuration
-ruby  BLOCK_COMMENTS                => tags/BLOCK_COMMENTS.rb
-regex LINE_COMMENTS                 => (?m)#.*$
-ruby  DOC_COMMENTS                  => tags/DOC_COMMENTS.rb
-ruby  SPECIAL_QUOTED_STRINGS        => tags/SPECIAL_QUOTED_STRINGS.rb
-regex SINGLE_QUOTED_STRINGS         => \'(?:[^\']|\\')*\'
-regex DOUBLE_QUOTED_STRINGS         => \"(?:[^\"]|\\")*\"
-ruby  OPERATORS                     => tags/OPERATORS.rb
-ruby  KEYWORDS                      => tags/KEYWORDS.rb
-ruby  CORE_FUNCTIONS                => tags/CORE_FUNCTIONS.rb
-regex CLASS_NAMES                   => [A-Z_]*(?:[A-Z][a-z]+)+
-regex CLASS_VARIABLE                => @@[a-z_]+
-regex INSTANCE_VARIABLE             => @[a-z_]+
-regex SYMBOLS                       => :\w+
-regex IDENTIFIERS                   => [a-z]\w*
-regex NUMBERS                       => (?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)
-regex CONSTANTS                     => [A-Z][A-Z_]*
+<p>
+    This should explain the rationale of this project quite nicely: Even though I'm quite happy with IDEA overall, I
+    think it has become too bloated and complex. With this plugin I'm trying to bring back some sanity.. :)
+</p>
 
-# Element Descriptions
-descriptions[ BLOCK_COMMENTS ] = Block comment
-descriptions[ LINE_COMMENTS ] = Line comment
-descriptions[ DOC_COMMENTS ] = Documentation
-(snip)
+<h2>Status</h2>
 
-# Element Default Attributes
-attributes[ BLOCK_COMMENTS ] = #008000
-attributes[ LINE_COMMENTS ] = #008000
-attributes[ DOC_COMMENTS ] = #008000,BOLD
-(snip)
-      </code></pre>
+<p>
+    This plugin is usable, but still in an early alpha stage. Major performance issues remaining.
+    Tested only with moderately sized Ruby projects.
+</p>
 
-      <h2>Open Issues</h2>
-      <p>
-      These are the more general issues with the current plugin version:
-      </p>
-      <ul>
-        <li>Lexer doesn't cope well with some ways of changing source code. Strange..</li>
-        <li>Highlighting a longer piece of source code can be pretty slow. Especially with lots of external (ruby/groovy) rules..</li>
-        <li>Arranging syntax rules in the right order can be annoying. A simple lexer-like configuration would be cool..</li>
-      </ul>
+<h2>Contact</h2>
 
-      <h2>Road Map</h2>
-      <p>
-      Unfortunately my job keeps me too busy right now to make any promises about dates. But these are the things I have planned for SimpleSyntax:
-      </p>
+<p>
+    Please don't hesistate to contact me in case of problems with the use and/or configuration of the plugin.
+    Email me at simplesyntax [AT] intensicode [DOT] net. I'm also available as 136320506 on ICQ or thefrenchdj on AIM.
+</p>
 
-      <h3>Version 0.0: Testing [COMPLETED]</h3>
-      <ul>
-        <li>Implement the basic idea of a simple highlighter.</li>
-      </ul>
+<h2>Download / Availability</h2>
 
-      <h3>Version 1.0: Stability [ACTIVE]</h3>
-      <ul>
-        <li>Cleanup the codebase.</li>
-        <li>Fix remaining bugs/issues.</li>
-        <li>Introduce more IDEA abstractions in the codebase.</li>
-        <li>Add more configuration presets (Property files, etc).</li>
-      </ul>
+<p>
+    The plugin is available through the IDEA Plugin Manager.
+</p>
 
-      <h3>Version 1.1: UI</h3>
-      <ul>
-        <li>Add simple plugin configuration UI.</li>
-        <li>Make it possible to turn available configurations on and off.</li>
-        <li>Add config downloading (from plugin home - which is here, I guess).</li>
-        <li>Make init/reload more polite: Ask before overwriting files and/or overriding filetypes.</li>
-      </ul>
+<h2>Example Configuration</h2>
 
-      <h3>Version 1.2: Performance</h3>
-      <ul>
-        <li>Switch to simple lex-like syntax configuration.</li>
-        <li>Use Groovy to compile syntax configuration using JFlex.</li>
-      </ul>
+<p>
+    Here's a part fo the example configuration included in the current release of the plugin:
+</p>
+<pre style="margin-left:1em;padding-left:1em;overflow:auto;background:#F0F8E8;border:solid 1px;"><code>
+    [SimpleSyntax:V1.0]
 
-    </div>
+    Name: Ruby
+    Icon: Ruby.png
+    ExampleCode: Ruby.rb
+    Description: Ruby Script
+    (snip)
 
-  </body>
+    # Syntax Configuration
+    ruby BLOCK_COMMENTS => tags/BLOCK_COMMENTS.rb
+    regex LINE_COMMENTS => (?m)#.*$
+    ruby DOC_COMMENTS => tags/DOC_COMMENTS.rb
+    ruby SPECIAL_QUOTED_STRINGS => tags/SPECIAL_QUOTED_STRINGS.rb
+    regex SINGLE_QUOTED_STRINGS => \'(?:[^\']|\\')*\'
+    regex DOUBLE_QUOTED_STRINGS => \"(?:[^\"]|\\")*\"
+    ruby OPERATORS => tags/OPERATORS.rb
+    ruby KEYWORDS => tags/KEYWORDS.rb
+    ruby CORE_FUNCTIONS => tags/CORE_FUNCTIONS.rb
+    regex CLASS_NAMES => [A-Z_]*(?:[A-Z][a-z]+)+
+    regex CLASS_VARIABLE => @@[a-z_]+
+    regex INSTANCE_VARIABLE => @[a-z_]+
+    regex SYMBOLS => :\w+
+    regex IDENTIFIERS => [a-z]\w*
+    regex NUMBERS => (?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)
+    regex CONSTANTS => [A-Z][A-Z_]*
+
+    # Element Descriptions
+    descriptions[ BLOCK_COMMENTS ] = Block comment
+    descriptions[ LINE_COMMENTS ] = Line comment
+    descriptions[ DOC_COMMENTS ] = Documentation
+    (snip)
+
+    # Element Default Attributes
+    attributes[ BLOCK_COMMENTS ] = #008000
+    attributes[ LINE_COMMENTS ] = #008000
+    attributes[ DOC_COMMENTS ] = #008000,BOLD
+    (snip)
+</code></pre>
+
+<h2>Open Issues</h2>
+
+<p>
+    These are the more general issues with the current plugin version:
+</p>
+<ul>
+    <li>Lexer doesn't cope well with some ways of changing source code. Strange..</li>
+    <li>Highlighting a longer piece of source code can be pretty slow. Especially with lots of external (ruby/groovy)
+        rules..</li>
+    <li>Arranging syntax rules in the right order can be annoying. A simple lexer-like configuration would be
+        cool..</li>
+</ul>
+
+<h2>Road Map</h2>
+
+<p>
+    Unfortunately my job keeps me too busy right now to make any promises about dates. But these are the things I have
+    planned for SimpleSyntax:
+</p>
+
+<h3>Version 0.0: Testing [COMPLETED]</h3>
+<ul>
+    <li>Implement the basic idea of a simple highlighter.</li>
+</ul>
+
+<h3>Version 1.0: Stability [ACTIVE]</h3>
+<ul>
+    <li>Cleanup the codebase.</li>
+    <li>Fix remaining bugs/issues.</li>
+    <li>Introduce more IDEA abstractions in the codebase.</li>
+    <li>Add more configuration presets (Property files, etc).</li>
+</ul>
+
+<h3>Version 1.1: UI</h3>
+<ul>
+    <li>Add simple plugin configuration UI.</li>
+    <li>Make it possible to turn available configurations on and off.</li>
+    <li>Add config downloading (from plugin home - which is here, I guess).</li>
+    <li>Make init/reload more polite: Ask before overwriting files and/or overriding filetypes.</li>
+</ul>
+
+<h3>Version 1.2: Performance</h3>
+<ul>
+    <li>Switch to simple lex-like syntax configuration.</li>
+    <li>Use Groovy to compile syntax configuration using JFlex.</li>
+</ul>
+
+</div>
+
+</body>
 
 </html>

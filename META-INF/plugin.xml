@@ -1,14 +1,16 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin url="http://www.intensicode.net/projects/SimpleSyntax/">
+<idea-plugin url="http://idea-simsyn.tigris.org/">
     <name>Simple Syntax Highlighting</name>
     <description>
         Provides simple syntax highlighting based on user-definable configuration files. Use
         'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting. Clone files
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
         languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
+        ///
         Credits: Includes the wonderful JRuby and Groovy binary distributions.
     </description>
     <change-notes>
+        [ V0.15 ] Fixed more minor issues in Ruby highlighting.
         [ V0.14 ] Fixed quirk in ColorSettingsPage when defining several rules for a syntax token.
         [ V0.13 ] Fixed duplicate file type issue. (Occurred when using 'Reload SimpleSyntax'.)
         [ V0.12 ] Speeded up example Ruby configuration by removing all 'ruby' and adding 'regex' tokens. Improved 'regex' performance.
@@ -24,7 +26,7 @@
         [ V0.2 ] Implemented syntax configuration loading.
         [ V0.1 ] Initial release with hardcoded Ruby syntax.
     </change-notes>
-    <version>0.12</version>
+    <version>0.15</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
     <idea-version since-build="4192"/>
     <application-components>

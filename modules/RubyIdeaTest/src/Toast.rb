@@ -1,10 +1,3 @@
-=begin
-asdf
-=end
-
-at =begin this =end please
-
-
 
 # block comments are full line comments..
 # how funny is that? :)
