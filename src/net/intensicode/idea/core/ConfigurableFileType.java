@@ -3,8 +3,8 @@ package net.intensicode.idea.core;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
+import javax.swing.*;
 
 
 
@@ -26,7 +26,7 @@ import javax.swing.Icon;
  */
 public class ConfigurableFileType implements FileType
 {
-    static final ConfigurableFileType getOrCreate( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    public /*protected*/ static final ConfigurableFileType getOrCreate( final InstanceConfiguration aConfiguration, final Language aLanguage )
     {
         final String name = aConfiguration.getName();
         final FileTypeManager manager = FileTypeManager.getInstance();
@@ -47,7 +47,7 @@ public class ConfigurableFileType implements FileType
         return ( ConfigurableFileType ) DynamicClassHelper.newInstance( className, clazz, aConfiguration, aLanguage );
     }
 
-    final void reset( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    public final void reset( final InstanceConfiguration aConfiguration, final Language aLanguage )
     {
         myConfiguration = aConfiguration != null ? aConfiguration : NullInstanceConfiguration.INSTANCE;
         myLanguage = aLanguage != null ? aLanguage : Language.ANY;
@@ -87,16 +87,16 @@ public class ConfigurableFileType implements FileType
         return myConfiguration.getFileTypeConfiguration().getDefaultExtension();
     }
 
-    @NotNull
-    public final SyntaxHighlighter getHighlighter( final @Nullable Project project )
+    @Nullable
+    public final SyntaxHighlighter getHighlighter( final @Nullable Project aProject, final VirtualFile aVirtualFile )
     {
-        return myLanguage.getSyntaxHighlighter( project );
+        return myLanguage.getSyntaxHighlighter( aProject, aVirtualFile );
     }
 
     @Nullable
-    public final StructureViewBuilder getStructureViewBuilder( final @NotNull VirtualFile file, final @NotNull Project project )
+    public final StructureViewBuilder getStructureViewBuilder( final @NotNull VirtualFile aFile, final @NotNull Project aProject )
     {
-        final PsiFile psiFile = PsiManager.getInstance( project ).findFile( file );
+        final PsiFile psiFile = PsiManager.getInstance( aProject ).findFile( aFile );
         return psiFile == null ? null : myLanguage.getStructureViewBuilder( psiFile );
     }
 
@@ -117,7 +117,7 @@ public class ConfigurableFileType implements FileType
 
     // Protected Interface
 
-    protected ConfigurableFileType( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    public /*protected*/ ConfigurableFileType( final InstanceConfiguration aConfiguration, final Language aLanguage )
     {
         reset( aConfiguration, aLanguage );
     }

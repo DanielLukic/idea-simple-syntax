@@ -10,6 +10,7 @@
         Credits: Includes the wonderful JRuby and Groovy binary distributions.
     </description>
     <change-notes>
+        [ V0.16 ] Fixed for IDEA 6.0.
         [ V0.15 ] Fixed more minor issues in Ruby highlighting.
         [ V0.14 ] Fixed quirk in ColorSettingsPage when defining several rules for a syntax token.
         [ V0.13 ] Fixed duplicate file type issue. (Occurred when using 'Reload SimpleSyntax'.)
@@ -26,9 +27,9 @@
         [ V0.2 ] Implemented syntax configuration loading.
         [ V0.1 ] Initial release with hardcoded Ruby syntax.
     </change-notes>
-    <version>0.15</version>
+    <version>0.16</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
-    <idea-version since-build="4192"/>
+    <idea-version since-build="5766"/>
     <application-components>
         <component>
             <implementation-class>net.intensicode.idea.SimpleSyntax</implementation-class>

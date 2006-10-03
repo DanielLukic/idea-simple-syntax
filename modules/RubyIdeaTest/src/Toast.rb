@@ -1,9 +1,12 @@
+=begin
+something I haven't figured out yet.. =begin/=end comments..
+=end
 
 # block comments are full line comments..
 # how funny is that? :)
 class Toast
 
-   attr_reader :w00t Asdfasdf # simple line comment
+   attr_reader :w00t # simple line comment
 
    def cheese( args )
        @mogg = args
@@ -14,7 +17,6 @@ class Toast
    end
 
    DONT_CHANGE = ILikeYouJustTheWayYouAre.new
-   DONT_CHANGE=ILikeYouJustTheWayYouAre.new
 
    def huzzle( thiz, that )
        @@schmogg = @mogg + thiz * that
@@ -22,8 +24,5 @@ class Toast
        %Q{rumsel \#\{pumsel\} testerle}
    end
 
-    def other
-        DONT_CHANGE
-    end
-
+"?sdfd"
 end

@@ -33,6 +33,13 @@ final class PluginLogger extends Logger
         System.out.println( "[DEBUG] [" + myCategory + "] " + message );
     }
 
+    public final void debug( @NonNls String message, Throwable t )
+    {
+        if ( isDebugEnabled() == false ) return;
+        debug( message );
+        debug( t );
+    }
+
     public final void debug( final Throwable t )
     {
         if ( isDebugEnabled() == false ) return;
@@ -51,10 +58,16 @@ final class PluginLogger extends Logger
         t.printStackTrace();
     }
 
+    public final void warn( final @NonNls String message, final Throwable t )
+    {
+        System.out.println( "[WARN] [" + myCategory + "] " + message );
+        t.printStackTrace();
+    }
+
     public final void error( final @NonNls String message, final Throwable t, final @NonNls String... details )
     {
         System.out.println( "[ERROR] [" + myCategory + "] " + message );
-        t.printStackTrace();
+        error( t );
     }
 
     public final void error( final Throwable t )

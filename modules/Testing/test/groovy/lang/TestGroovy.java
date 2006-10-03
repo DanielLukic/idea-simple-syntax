@@ -32,7 +32,7 @@ public final class TestGroovy extends TestCase
     public final void testClass() throws CompilationFailedException
     {
         final GroovyShell shell = new GroovyShell();
-        assertNull( shell.evaluate( "class Queso { \n toast() { \n return 17; \n } } \n return null" ) );
+        assertNull( shell.evaluate( "class Queso { \n def toast() { \n return 17; \n } } \n return null" ) );
         assertEquals( 17, shell.evaluate( "new Queso().toast()" ) );
     }
 

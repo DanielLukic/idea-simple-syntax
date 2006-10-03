@@ -16,15 +16,15 @@ class Recognizer implements GroovyRecognizer {
         return GroovySegment.NOT_FOUND
     }
 
-    toast() {
+    def toast() {
         "queso"
     }
 
-    test1( one ) {
+    def test1( one ) {
         "test " + one
     }
 
-    test2( one, two ) {
+    def test2( one, two ) {
         "test " + one + " " + two
     }
 

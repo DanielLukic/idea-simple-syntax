@@ -8,13 +8,13 @@
         <url>file://$MODULE_DIR$/res</url>
       </containerElement>
     </containerInfo>
-    <setting name="jarPath" value="D:\IntensiCode\SimpleSyntaxPlugin\SimpleSyntax.jar" />
+    <setting name="jarUrl" value="file://$MODULE_DIR$/../SimpleSyntaxPlugin/SimpleSyntax.jar" />
     <setting name="buildJar" value="true" />
     <setting name="mainClass" value="" />
   </component>
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/META-INF/plugin.xml" />
   <component name="ModuleRootManager" />
-  <component name="NewModuleRootManager">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes" />
     <exclude-output />
     <output-test url="file://$MODULE_DIR$/build/tests" />

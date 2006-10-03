@@ -3,7 +3,6 @@ package net.intensicode.idea.core;
 import com.intellij.lang.Commenter;
 import com.intellij.lang.Language;
 import com.intellij.lang.PairedBraceMatcher;
-import com.intellij.lang.folding.FoldingBuilder;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
@@ -117,7 +116,7 @@ public class ConfigurableLanguage extends Language implements LanguageConfigurat
 
     // Protected Interface
 
-    protected ConfigurableLanguage( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
+    public /*protected*/ ConfigurableLanguage( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {
         super( aConfiguration.getName() );
         reset( aSystemContext, aConfiguration );

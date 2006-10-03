@@ -23,6 +23,8 @@ public final class DynamicClassHelper
         }
 
         final StringBuilder scriptBuilder = new StringBuilder();
+        //scriptBuilder.append( "package net.intensicode.idea.core;\n" );
+        //scriptBuilder.append( "\n" );
         scriptBuilder.append( "import net.intensicode.idea.core.ConfigurableLanguage;\n" );
         scriptBuilder.append( "\n" );
         scriptBuilder.append( "class " + aSubclassName + " extends " + className + " {\n" );
@@ -37,7 +39,6 @@ public final class DynamicClassHelper
         try
         {
             final ClassLoader loader = GroovyShell.class.getClassLoader();
-
             final String script = scriptBuilder.toString();
             final Class newClass = ( Class ) new GroovyShell( loader ).evaluate( script );
             final Constructor constructor = newClass.getConstructors()[ 0 ];
