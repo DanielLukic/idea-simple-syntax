@@ -66,7 +66,7 @@
     <orderEntryProperties />
   </component>
   <component name="PluginUploader.UploadConfigurable">
-    <option name="_archivePath" />
+    <option name="_archivePath" value="D:\Intensicode\SimpleSyntax\build\dist\SimpleSyntax.zip" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ACTIVE_VCS_NAME" value="svn" />
