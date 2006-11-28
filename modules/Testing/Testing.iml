@@ -32,6 +32,9 @@
     </orderEntry>
     <orderEntryProperties />
   </component>
+  <component name="PluginUploader.UploadConfigurable">
+    <option name="_archivePath" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ACTIVE_VCS_NAME" value="svn" />
     <option name="USE_PROJECT_VCS" value="false" />

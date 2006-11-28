@@ -1,10 +1,14 @@
 package net.intensicode.idea.config.loaded;
 
+import com.intellij.openapi.fileTypes.ExtensionFileNameMatcher;
+import com.intellij.openapi.fileTypes.FileNameMatcher;
 import net.intensicode.idea.config.ConfigurationProperties;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.system.OptionsFolder;
 
-import javax.swing.Icon;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -17,6 +21,15 @@ final class LoadedFileTypeConfiguration implements FileTypeConfiguration
     {
         myProperties = aProperties;
         myOptionsFolder = aOptionsFolder;
+
+        if ( myProperties.isValidProperty( FILE_TYPE_EXTENSIONS ) )
+        {
+            final String extensionsList = myProperties.getProperty( FILE_TYPE_EXTENSIONS );
+            for ( final String extension : extensionsList.split( ",[ \t]*" ) )
+            {
+                myExtensions.add( new ExtensionFileNameMatcher( extension ) );
+            }
+        }
     }
 
     // From FileTypeConfiguration
@@ -27,14 +40,9 @@ final class LoadedFileTypeConfiguration implements FileTypeConfiguration
         return myOptionsFolder.loadIcon( myProperties.getProperty( FILE_TYPE_ICON ) );
     }
 
-    public final String[] getExtensions()
+    public final List<FileNameMatcher> getExtensions()
     {
-        if ( myProperties.isValidProperty( FILE_TYPE_EXTENSIONS ) )
-        {
-            final String extensionsList = myProperties.getProperty( FILE_TYPE_EXTENSIONS );
-            return extensionsList.split( ",[ \t]*" );
-        }
-        return new String[0];
+        return myExtensions;
     }
 
     public final String getDefaultExtension()
@@ -43,8 +51,7 @@ final class LoadedFileTypeConfiguration implements FileTypeConfiguration
         {
             return myProperties.getProperty( FILE_TYPE_DEFAULT_EXTENSION );
         }
-        if ( getExtensions().length == 0 ) return "";
-        return getExtensions()[ 0 ];
+        return NO_EXTENSION;
     }
 
 
@@ -52,6 +59,10 @@ final class LoadedFileTypeConfiguration implements FileTypeConfiguration
     private final OptionsFolder myOptionsFolder;
 
     private final ConfigurationProperties myProperties;
+
+    private final ArrayList<FileNameMatcher> myExtensions = new ArrayList<FileNameMatcher>();
+
+    private static final String NO_EXTENSION = "";
 
     private static final String FILE_TYPE_ICON = "FileType.Icon";
 

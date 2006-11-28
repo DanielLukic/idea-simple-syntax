@@ -1,6 +1,9 @@
 package net.intensicode.idea.config;
 
-import javax.swing.Icon;
+import com.intellij.openapi.fileTypes.FileNameMatcher;
+
+import javax.swing.*;
+import java.util.List;
 
 
 
@@ -11,7 +14,7 @@ public interface FileTypeConfiguration
 {
     Icon getIcon();
 
-    String[] getExtensions();
-
     String getDefaultExtension();
+
+    List<FileNameMatcher> getExtensions();
 }

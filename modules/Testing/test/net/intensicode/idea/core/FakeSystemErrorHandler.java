@@ -3,6 +3,9 @@ package net.intensicode.idea.core;
 import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.system.SystemErrorHandler;
 import net.intensicode.idea.system.Confirmation;
+import com.intellij.openapi.fileTypes.FileNameMatcher;
+
+import java.util.List;
 
 
 
@@ -31,7 +34,7 @@ public final class FakeSystemErrorHandler implements SystemErrorHandler
         throw new RuntimeException( "NYI" );
     }
 
-    public Confirmation onFileTypeInUseConfirmation( String[] aExtensions )
+    public Confirmation onFileTypeInUseConfirmation( List<FileNameMatcher> aExtensions )
     {
         throw new RuntimeException( "NYI" );
     }

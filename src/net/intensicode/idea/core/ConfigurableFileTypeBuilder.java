@@ -2,16 +2,18 @@ package net.intensicode.idea.core;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.fileTypes.FileNameMatcher;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.util.LoggerFactory;
-import net.intensicode.idea.system.SystemErrorHandler;
-import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.system.Confirmation;
+import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.util.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -36,13 +38,13 @@ public final class ConfigurableFileTypeBuilder
 
     private final void checkExtensions( final FileTypeConfiguration aConfiguration )
     {
-        final String[] extensions = aConfiguration.getExtensions();
+        final List<FileNameMatcher> matchers = aConfiguration.getExtensions();
 
         final FileTypeManager manager = FileTypeManager.getInstance();
         for ( final FileType fileType : manager.getRegisteredFileTypes() )
         {
-            final String[] usedExtensions = findUsedExtensions( fileType, extensions );
-            if ( usedExtensions.length == 0 ) continue;
+            final List<FileNameMatcher> usedExtensions = findUsedExtensions( fileType, matchers );
+            if ( usedExtensions.size() == 0 ) continue;
 
             final Confirmation confirmation = myErrorHandler.onFileTypeInUseConfirmation( usedExtensions );
             if ( confirmation.isYes() ) unregister( fileType, usedExtensions );
@@ -75,37 +77,28 @@ public final class ConfigurableFileTypeBuilder
     private static final void unregister( final FileType aFileType )
     {
         final FileTypeManager manager = FileTypeManager.getInstance();
-        unregister( aFileType, manager.getAssociatedExtensions( aFileType ) );
+        unregister( aFileType, manager.getAssociations( aFileType ) );
     }
 
-    private static final void unregister( final FileType aFileType, final String[] aExtensions )
+    private static final void unregister( final FileType aFileType, final List<FileNameMatcher> aExtensions )
     {
         final FileTypeManager manager = FileTypeManager.getInstance();
-        for ( final String extension : aExtensions )
+        for ( final FileNameMatcher matcher : aExtensions )
         {
-            manager.removeAssociatedExtension( aFileType, extension );
+            manager.removeAssociation( aFileType, matcher );
         }
     }
 
-    private static final String[] findUsedExtensions( final FileType aFileType, final String[] aExtensions )
+    private static final List<FileNameMatcher> findUsedExtensions( final FileType aFileType, final List<FileNameMatcher> aMatchers )
     {
         final FileTypeManager manager = FileTypeManager.getInstance();
+        final List<FileNameMatcher> matchers = manager.getAssociations( aFileType );
 
-        final String[] associatedExtensions = manager.getAssociatedExtensions( aFileType );
-        final ArrayList<String> associated = toArrayList( associatedExtensions );
-
-        final ArrayList<String> result = new ArrayList<String>();
-        for ( final String extension : aExtensions )
+        final ArrayList<FileNameMatcher> result = new ArrayList<FileNameMatcher>();
+        for ( final FileNameMatcher matcher : aMatchers )
         {
-            if ( associated.contains( extension ) ) result.add( extension );
+            if ( matchers.contains( matcher ) ) result.add( matcher );
         }
-        return result.toArray( new String[result.size()] );
-    }
-
-    private static final ArrayList<String> toArrayList( final String[] aStringArray )
-    {
-        final ArrayList<String> result = new ArrayList<String>();
-        for ( final String entry : aStringArray ) result.add( entry );
         return result;
     }
 

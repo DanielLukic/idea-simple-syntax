@@ -3,10 +3,12 @@ package net.intensicode.idea.core;
 import com.intellij.lang.Commenter;
 import com.intellij.lang.Language;
 import com.intellij.lang.PairedBraceMatcher;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
@@ -14,6 +16,7 @@ import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.syntax.SimpleSyntaxHighlighter;
 import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.DynamicClassHelper;
+import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -97,7 +100,7 @@ public class ConfigurableLanguage extends Language implements LanguageConfigurat
     // From Language
 
     @NotNull
-    public final SyntaxHighlighter getSyntaxHighlighter( final Project project )
+    public final SyntaxHighlighter getSyntaxHighlighter( final Project project, final VirtualFile virtualFile )
     {
         return getSyntaxHighlighter();
     }
@@ -198,6 +201,7 @@ public class ConfigurableLanguage extends Language implements LanguageConfigurat
 
     private ConfigurableBraceMatcher myConfigurableBraceMatcher;
 
+
     private final HashMap<String, IElementType> myTokens = new HashMap<String, IElementType>();
 
     private final ArrayList<RecognizedToken> myRecognizedTokens = new ArrayList<RecognizedToken>();
@@ -207,6 +211,9 @@ public class ConfigurableLanguage extends Language implements LanguageConfigurat
     private final HashMap<IElementType, TextAttributesKey[]> myTokenHighlights = new HashMap<IElementType, TextAttributesKey[]>();
 
     private final HashMap<String, ConfigurableTextAttributes> myTextAttributes = new HashMap<String, ConfigurableTextAttributes>();
+
+
+    private static final Logger LOG = LoggerFactory.getLogger();
 
     private static final TextAttributesKey[] NO_TEXT_ATTRIBUTES = new TextAttributesKey[0];
 }

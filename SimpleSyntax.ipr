@@ -444,7 +444,7 @@
       <module fileurl="file://$PROJECT_DIR$/modules/Testing/Testing.iml" filepath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 5766" project-jdk-type="IDEA JDK" />
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 6107" project-jdk-type="IDEA JDK" />
   <component name="ProjectRunConfigurationManager" />
   <component name="RmicSettings">
     <option name="IS_EANABLED" value="false" />

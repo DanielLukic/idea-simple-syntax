@@ -1,6 +1,9 @@
 package net.intensicode.idea.system;
 
+import com.intellij.openapi.fileTypes.FileNameMatcher;
 import net.intensicode.idea.syntax.RecognizedToken;
+
+import java.util.List;
 
 
 
@@ -17,7 +20,7 @@ public interface SystemErrorHandler
 
     Confirmation onFileTypeReplaceConfirmation( String aFileType );
 
-    Confirmation onFileTypeInUseConfirmation( String[] aExtensions );
+    Confirmation onFileTypeInUseConfirmation( List<FileNameMatcher> aExtensions );
 
     /**
      * Use this to make the error handler forget 'All' and 'None' answers to confirmation questions.

@@ -7,10 +7,12 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.util.DynamicClassHelper;
+import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -100,7 +102,7 @@ public class ConfigurableFileType implements FileType
         return psiFile == null ? null : myLanguage.getStructureViewBuilder( psiFile );
     }
 
-    public final String getCharset( final VirtualFile file )
+    public final String getCharset( final VirtualFile aFile )
     {
         return null;
     }
@@ -127,4 +129,6 @@ public class ConfigurableFileType implements FileType
     private Language myLanguage;
 
     private InstanceConfiguration myConfiguration;
+
+    private static final Logger LOG = LoggerFactory.getLogger();
 }

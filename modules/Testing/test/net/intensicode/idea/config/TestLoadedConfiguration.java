@@ -31,10 +31,10 @@ public final class TestLoadedConfiguration extends TestCase
         assertEquals( "", commentConfiguration.getBlockCommentSuffix() );
 
         final FileTypeConfiguration fileTypeConfiguration = configuration.getFileTypeConfiguration();
-        assertEquals( 2, fileTypeConfiguration.getExtensions().length );
-        assertEquals( ".rb", fileTypeConfiguration.getExtensions()[ 0 ] );
-        assertEquals( ".ruby", fileTypeConfiguration.getExtensions()[ 1 ] );
-        assertEquals( ".rb", fileTypeConfiguration.getDefaultExtension() );
+        assertEquals( 2, fileTypeConfiguration.getExtensions().size() );
+        assertEquals( "*.rb", fileTypeConfiguration.getExtensions().get( 0 ).getPresentableString() );
+        assertEquals( "*.ruby", fileTypeConfiguration.getExtensions().get( 1 ).getPresentableString() );
+        assertEquals( "rb", fileTypeConfiguration.getDefaultExtension() );
         assertNotNull( fileTypeConfiguration.getIcon() );
         assertEquals( 9, fileTypeConfiguration.getIcon().getIconWidth() );
         assertEquals( 9, fileTypeConfiguration.getIcon().getIconHeight() );

@@ -3,10 +3,13 @@ package net.intensicode.idea.system.production;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.fileTypes.FileNameMatcher;
 import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.system.Confirmation;
 import net.intensicode.idea.system.SystemErrorHandler;
 import net.intensicode.idea.util.LoggerFactory;
+
+import java.util.List;
 
 
 
@@ -63,7 +66,7 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
         throw new RuntimeException( "NYI" );
     }
 
-    public final Confirmation onFileTypeInUseConfirmation( final String[] aExtensions )
+    public final Confirmation onFileTypeInUseConfirmation( final List<FileNameMatcher> aExtensions )
     {
         return Confirmation.YES;
     }

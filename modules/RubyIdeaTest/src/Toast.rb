@@ -24,5 +24,4 @@ class Toast
        %Q{rumsel \#\{pumsel\} testerle}
    end
 
-"?sdfd"
 end

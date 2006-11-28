@@ -25,29 +25,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Ruby.config" afterPath="$PROJECT_DIR$/config/Ruby.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib-api/annotations.jar" afterPath="$PROJECT_DIR$/lib-api/annotations.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestCode_FindAt.groovy" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestCode_FindAt.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/util/DynamicClassHelper.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/util/DynamicClassHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/util/PluginLogger.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/util/PluginLogger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/jruby.jar" afterPath="$PROJECT_DIR$/lib/jruby.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestCode_FindIn.groovy" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestCode_FindIn.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestCode_RECOGNIZER.groovy" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestCode_RECOGNIZER.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedFileTypeConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedFileTypeConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileTypeBuilder.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileTypeBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/SystemErrorHandler.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/SystemErrorHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeSystemErrorHandler.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeSystemErrorHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.ipr" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestGroovy.java" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestGroovy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestConfig_Ruby.config" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestConfig_Ruby.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullFileTypeConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullFileTypeConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/groovy.jar" afterPath="$PROJECT_DIR$/lib/groovy.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib-api/openapi.jar" afterPath="$PROJECT_DIR$/lib-api/openapi.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileType.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.ipr" afterPath="$PROJECT_DIR$/SimpleSyntax.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/FileTypeConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/FileTypeConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableLanguage.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableLanguage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/Testing.iml" afterPath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iml" afterPath="$PROJECT_DIR$/SimpleSyntax.iml" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\ConfigurableSyntaxConfiguration.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/production/ProductionSystemErrorHandler.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/production/ProductionSystemErrorHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestLoadedConfiguration.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestLoadedConfiguration.java" />
     </list>
   </component>
   <component name="ChangeListSynchronizer" />
@@ -198,6 +195,9 @@
     <option name="SORT_ALPHABETICALLY" value="false" />
     <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileTypeBuilder.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="InspectionManager">
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="SPLITTER_PROPORTION" value="0.5" />
@@ -251,6 +251,7 @@
     <option name="LOGIN_SILENTLY" value="false" />
     <option name="INTEGRATE_RUN_RESOLVE" value="true" />
     <option name="INTEGRATE_REVERT_UNCHANGED" value="true" />
+    <option name="SERVER_TIMEOUT" value="20000" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
@@ -287,7 +288,7 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
+      <showStructure Favorites="false" ProjectPane="false" Scope="false" PackagesPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -360,15 +361,12 @@
   <component name="RemoteRunSessionManager" />
   <component name="RestoreUpdateTree" />
   <component name="RunManager" selected="Plugin.SimpleSyntaxPlugin">
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="" />
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5000" />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -381,13 +379,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5000" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -412,6 +403,16 @@
       <module name="SimpleSyntax" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <module name="" />
     </configuration>
     <configuration default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="SimpleSyntax" />
@@ -464,6 +465,8 @@
     <option name="PROJECT" value="" />
     <option name="VIEW" value="" />
     <option name="ALTERNATIVE_WORKING_PATH" value="" />
+    <option name="LOCK_ON_CHECKOUT" value="false" />
+    <option name="UNLOCK_ON_CHECKIN" value="false" />
   </component>
   <component name="StructuralSearchPlugin" />
   <component name="StructureViewFactory">
@@ -518,15 +521,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1175" extended-state="0" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1928" height="1175" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.5640625" order="6" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936078" order="1" x="63" y="390" width="1546" height="561" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.5640625" order="6" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="1" x="63" y="390" width="1546" height="561" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="0" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32862523" order="8" x="16" y="491" width="1816" height="624" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" order="6" x="68" y="406" width="1575" height="510" />
@@ -621,6 +624,7 @@
     <GetOptions>
       <option name="REPLACE_WRITABLE" value="0" />
       <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
       <option name="ANSWER_POSITIVELY" value="false" />
       <option name="RECURSIVE" value="false" />
     </GetOptions>
@@ -658,111 +662,111 @@
     <option name="myPlainMode" value="false" />
     <option name="myLastEditedConfigurable" value="SimpleSyntax" />
   </component>
-  <component name="com.intellij.profile.ui.ErrorOptionsConfigurable" proportions="" version="1">
-    <option name="myLastEditedConfigurable" />
+  <component name="com.intellij.profile.ui.ErrorOptionsConfigurable" proportions="0.16666667,0.9114286" version="1">
+    <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestRecognizedTokenGroovy.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestConfig_Ruby.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="22" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.5722714">
+        <state line="15" column="27" selection-start="319" selection-end="319" vertical-scroll-proportion="0.3901734">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/TestDynamicClassHelper.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestLoadedConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="32" selection-start="318" selection-end="331" vertical-scroll-proportion="0.2920354">
+        <state line="36" column="23" selection-start="1819" selection-end="1819" vertical-scroll-proportion="0.63680154">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/util/DynamicClassHelper.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/diagnostic/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="9" selection-start="877" selection-end="877" vertical-scroll-proportion="0.36283186">
+        <state line="21" column="22" selection-start="774" selection-end="774" vertical-scroll-proportion="0.33301252">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/TestConfigurableLanguage.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/lang/Language.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="498" selection-end="498" vertical-scroll-proportion="0.37168142">
+        <state line="60" column="22" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/LanguageConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="27" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.7661448">
+        <state line="14" column="17" selection-start="327" selection-end="327" vertical-scroll-proportion="0.36416185">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableTextAttributes.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="411" selection-end="411" vertical-scroll-proportion="0.4660767">
+        <state line="101" column="0" selection-start="3712" selection-end="3712" vertical-scroll-proportion="2.6271677">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileType.java">
+    <entry file="file://$PROJECT_DIR$/config/Ruby.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="25" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.74336284">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/FileTypeConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="17" selection-start="191" selection-end="191" vertical-scroll-proportion="0.31213874">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/NullFileTypeConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableLanguage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="25" selection-start="4208" selection-end="4222" vertical-scroll-proportion="0.3608653">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/tags/BLOCK_COMMENTS.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="537" selection-end="537" vertical-scroll-proportion="0.5812133">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/tags/DOC_COMMENTS.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.34513274">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="9" selection-start="1567" selection-end="1567" vertical-scroll-proportion="1.0265486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="151" selection-end="151" vertical-scroll-proportion="0.15851273">
+        <state line="219" column="0" selection-start="8298" selection-end="8298" vertical-scroll-proportion="0.84393066">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileTypeBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="38" selection-start="3078" selection-end="3078" vertical-scroll-proportion="0.25663716">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableFileType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="13" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COPYING">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="29" selection-start="2439" selection-end="2439" vertical-scroll-proportion="0.96242774">
           <folding />
         </state>
       </provider>

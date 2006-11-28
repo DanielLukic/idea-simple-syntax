@@ -2,6 +2,7 @@ package net.intensicode.idea;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.fileTypes.FileNameMatcher;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.options.colors.ColorSettingsPage;
@@ -55,10 +56,14 @@ final class SimpleSyntaxInstance
         final FileTypeManager manager = mySystemContext.getFileTypeManager();
         if ( manager == null ) return;
 
+        final FileType fileType = myFileTypeBuilder.getOrCreate( myConfiguration, aLanguage );
+
         LOG.info( "Registering file type " + getName() );
         final FileTypeConfiguration config = myConfiguration.getFileTypeConfiguration();
-        final FileType fileType = myFileTypeBuilder.getOrCreate( myConfiguration, aLanguage );
-        manager.registerFileType( fileType, config.getExtensions() );
+        for ( final FileNameMatcher matcher : config.getExtensions() )
+        {
+            manager.associate( fileType, matcher );
+        }
 
         myFileType = fileType;
     }
@@ -91,9 +96,9 @@ final class SimpleSyntaxInstance
 
         LOG.info( "Unregistering file type " + getName() );
         final FileTypeConfiguration config = myConfiguration.getFileTypeConfiguration();
-        for ( final String extension : config.getExtensions() )
+        for ( final FileNameMatcher matcher : config.getExtensions() )
         {
-            manager.removeAssociatedExtension( myFileType, extension );
+            manager.removeAssociation( myFileType, matcher );
         }
     }
 
