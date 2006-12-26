@@ -14,11 +14,12 @@ public class FakeResourceLoader implements ResourceLoader
 {
     public FakeResourceLoader( final Object aReferenceObject )
     {
+        myReferenceObject = aReferenceObject;
     }
 
     public boolean isAvailable( String aResourcePath )
     {
-        throw new RuntimeException( "NYI" );
+        return stream( aResourcePath ) != null;
     }
 
     public Reader read( String aResourcePath )
@@ -28,6 +29,8 @@ public class FakeResourceLoader implements ResourceLoader
 
     public InputStream stream( String aResourcePath )
     {
-        throw new RuntimeException( "NYI" );
+        return myReferenceObject.getClass().getResourceAsStream( aResourcePath );
     }
+
+    private final Object myReferenceObject;
 }

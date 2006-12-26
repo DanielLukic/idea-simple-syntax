@@ -40,13 +40,13 @@ public class FakeOptionsFolder implements OptionsFolder
 
     public InputStream streamFile( String aRelativeFileName ) throws FileNotFoundException
     {
-        throw new RuntimeException( "NYI" );
+        return myReferenceObject.getClass().getResourceAsStream( aRelativeFileName );
     }
 
     public String readFileIntoString( String aRelativeFileName ) throws IOException
     {
-        final InputStream stream = myReferenceObject.getClass().getResourceAsStream( aRelativeFileName );
-        return ReaderUtils.readIntoString( new InputStreamReader( stream ) );
+        final InputStreamReader reader = new InputStreamReader( streamFile( aRelativeFileName ) );
+        return ReaderUtils.readIntoString( reader );
     }
 
     public void writeFileFromStream( String aRelativeFileName, InputStream aStream ) throws IOException

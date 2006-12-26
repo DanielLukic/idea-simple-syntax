@@ -167,11 +167,13 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
         {
             try
             {
-                LOG.info( "Reading groovy lexer" );
+                LOG.info( "Creating groovy lexer" );
+
                 final GroovyShell shell = new GroovyShell();
+                shell.getContext().setVariable( "context", new GroovyContext( shell, mySystemContext ) );
+
                 final Parser<Tok[]> lexer = ( Parser<Tok[]> ) shell.evaluate( streamSyntaxDefinition() );
                 mySyntaxLexer = new JParsecLexer( lexer );
-                LOG.info( "Groovy lexer created" );
             }
             catch ( final Throwable t )
             {
@@ -230,7 +232,7 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
 
     private static final boolean isValidVersion( final String aConfigHeader )
     {
-        return aConfigHeader.equals( "[SimpleSyntax:V1.0]" );
+        return aConfigHeader.equals( "[SimpleSyntax:V1.1]" );
     }
 
     private final String readExampleCode() throws Throwable

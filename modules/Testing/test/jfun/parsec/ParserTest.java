@@ -16,9 +16,9 @@ public final class ParserTest extends TestCase
     {
         final Parser<Tok[]> lexer = createLexer();
 
-        final Tok[] tokens = ( Tok[] ) Parsers.runParser( "1+1\n00a \n\r x", lexer, "" );
+        final Tok[] tokens = Parsers.runParser( "1+1\n00a \n\r x", lexer, "" );
         assertNotNull( tokens );
-        assertEquals( 11, tokens.length );
+        assertEquals( 7, tokens.length );
     }
 
     public final void testLexer()

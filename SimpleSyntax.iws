@@ -25,112 +25,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/jfun/parsec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/jparsec-1.1-src.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_SPECIAL_QUOTED_STRINGS.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/SimpleToken.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\parser\SyntaxRuleConsumer.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/syntax/SyntaxHighlighterAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Ruby.lexer" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegExQUOTED.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Ruby.config" afterPath="$PROJECT_DIR$/config/Ruby.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/production/ProductionOptionsFolder.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/production/ProductionOptionsFolder.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\config\TestLoadedRule.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/TestConfigurableLanguage.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/TestConfigurableLanguage.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\tags\DOC_COMMENTS.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/syntax/JParsecLexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/groovyparse-0.1.jar" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_FindAt.groovy" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/FakeConfiguration.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/FakeConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jparsec-1.1.jar" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\SimpleSyntaxLexer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenGroovy.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestSimpleSyntaxLexer.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestSimpleSyntaxLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.ipr" afterPath="$PROJECT_DIR$/SimpleSyntax.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullLanguageConfiguration.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegExKEYWORDS.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\TokenFinderErrorHandler.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableColorSettingsPage.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableColorSettingsPage.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/tags" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/jfun/parsec/ParserTest.java" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\LexerTestCaseBase.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestJavaScriptLexer.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestSimpleSyntaxLexer.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/GroovyContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeOptionsFolder.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeOptionsFolder.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\groovy.jar" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/groovy-all-1.0-RC-02.jar" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\tags\BLOCK_COMMENTS.rb" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.GPL" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullInstanceConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullInstanceConfiguration.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\tags\OPERATORS.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/LanguageConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/LanguageConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/production/ProductionSystemErrorHandler.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/production/ProductionSystemErrorHandler.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_KEYWORDS.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeSystemErrorHandler.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeSystemErrorHandler.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SyntaxRuleSpecification.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/jfun" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/parser" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_Token.rb" afterPath="" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_JavaScript.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestSourcing.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Ruby.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestConfig_Ruby.config" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestConfig_Ruby.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/parser/Calculator.groovy" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\TokenFinder.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/SimpleLexer.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\config\TestCode_QuotedString.rb" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\groovy-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\SimpleSyntaxHighlighter.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullSyntaxHighlighter.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\ConfigurableLanguage.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegEx.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/SystemErrorHandler.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/SystemErrorHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/core/GenericElementType.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/GenericElementType.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.LGPL" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jfunutil.jar" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_TokenReal.rb" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\tags\KEYWORDS.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/syntax/LexerAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/parser/TestGroovyCalculator.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SyntaxRuleSet.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/InstanceConfiguration.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/InstanceConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/SimpleLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/LexerTestCaseBase.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/LexerTestCaseBase.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_FindAt.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/KnownIDConsumer.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_FindIn.groovy" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestTokenFinder.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/FakeConfigurableLanguage.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/FakeConfigurableLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/SystemContext.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/SystemContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRecognizedTokenRuby.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\tags\SPECIAL_QUOTED_STRINGS.rb" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\SyntaxConfiguration.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenRuby.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iml" afterPath="$PROJECT_DIR$/SimpleSyntax.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestLoadedConfiguration.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestLoadedConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/util/DynamicClassHelper.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/util/DynamicClassHelper.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRecognizedTokenGroovy.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.CPL" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\tags\CORE_FUNCTIONS.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/system/OptionsFolder.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/system/OptionsFolder.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\jruby.jar" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/NullLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntax.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntax.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/groovy-all-1.0-RC-02-LICENSE.txt" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\ConfigurationAPI.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenRegEx.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jparsec-1.1-LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/AssignmentConsumer.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/AssignmentConsumer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Ruby.rb" afterPath="$PROJECT_DIR$/config/Ruby.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestEmptyLexer.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/syntax/TestEmptyLexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/core/SimpleAttributes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/PropertyConsumer.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/PropertyConsumer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/FakeElementType.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/FakeElementType.java" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedToken.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_OPERATORS.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeResourceLoader.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeResourceLoader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestCode_SCRIPT-2.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/jfun/parsec/ParserTest.java" afterPath="$PROJECT_DIR$/modules/Testing/test/jfun/parsec/ParserTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_Ruby.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/JParsecSyntaxBase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestCode_SCRIPT-1.groovy" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestEmptyLexer.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Intensicode\SimpleSyntax\config\Ruby.lexer" afterPath="" />
     </list>
   </component>
   <component name="ChangeListSynchronizer" />
@@ -269,26 +185,7 @@
     <option name="myCurrentFavoritesList" value="SimpleSyntax" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Ruby.config" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/Ruby.config">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.68786126">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ruby.lexer" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/Ruby.lexer">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="10" selection-start="95" selection-end="95" vertical-scroll-proportion="0.18475074">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -393,7 +290,7 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure Favorites="false" ProjectPane="false" Scope="false" PackagesPane="false" />
+      <showStructure PackagesPane="false" ProjectPane="false" Scope="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -446,11 +343,11 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.intensicode.idea" />
       <recent name="net.intensicode.idea.syntax" />
       <recent name="net.intensicode.idea.core" />
       <recent name="net.intensicode.idea.system.production" />
       <recent name="net.intensicode.idea.system" />
-      <recent name="net.intensicode.idea.config" />
     </key>
   </component>
   <component name="Regex">
@@ -465,7 +362,7 @@
   </component>
   <component name="RemoteRunSessionManager" />
   <component name="RestoreUpdateTree">
-    <UpdateInfo date="12/26/06 1:32 PM" ActionInfo="_Update">
+    <UpdateInfo date="12/26/06 4:37 PM" ActionInfo="_Update">
       <UpdatedFiles>
         <FILE-GROUP>
           <option name="myUpdateName" value="Updated from server" />
@@ -509,40 +406,13 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="MODIFIED" />
           <PATH>D:\Intensicode\SimpleSyntax\config\Ruby.config</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\Ruby.rb</PATH>
           <PATH>D:\Intensicode\SimpleSyntax\modules\RubyIdeaTest\RubyIdeaTest.iws</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\RubyIdeaTest\src\Toast.rb</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\jfun\parsec\ParserTest.java</PATH>
           <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\config\TestConfig_Ruby.config</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\config\TestLoadedConfiguration.java</PATH>
           <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\core\FakeOptionsFolder.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\core\FakeSystemErrorHandler.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\core\TestConfigurableLanguage.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\FakeConfigurableLanguage.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\FakeConfiguration.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\FakeElementType.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\LexerTestCaseBase.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestEmptyLexer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestSimpleSyntaxLexer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\SimpleSyntax.iml</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\SimpleSyntax.ipr</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\core\FakeResourceLoader.java</PATH>
           <PATH>D:\Intensicode\SimpleSyntax\SimpleSyntax.iws</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\ActionInstall.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\InstanceConfiguration.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\LanguageConfiguration.java</PATH>
           <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\LoadedConfiguration.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\parser\AssignmentConsumer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\parser\PropertyConsumer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\ConfigurableColorSettingsPage.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\GenericElementType.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\NullInstanceConfiguration.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\SimpleSyntax.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\SimpleSyntaxInstance.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\system\OptionsFolder.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\system\production\ProductionOptionsFolder.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\system\production\ProductionSystemErrorHandler.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\system\SystemContext.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\system\SystemErrorHandler.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\util\DynamicClassHelper.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Skipped" />
@@ -578,33 +448,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="LOCALLY_ADDED" />
-          <PATH>D:\Intensicode\SimpleSyntax\config\Ruby.lexer</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\groovy-all-1.0-RC-02-LICENSE.txt</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\groovy-all-1.0-RC-02.jar</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\groovyparse-0.1.jar</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jfunutil.jar</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jparsec-1.1-LICENSE.txt</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jparsec-1.1.jar</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\src</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\src\jparsec-1.1-src.zip</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\groovy\parser</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\groovy\parser\Calculator.groovy</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\groovy\parser\TestGroovyCalculator.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\jfun</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\jfun\parsec</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\jfun\parsec\ParserTest.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\parser\KnownIDConsumer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\NullLanguage.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\NullLanguageConfiguration.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\NullLexer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\NullSyntaxHighlighter.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SimpleAttributes.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SimpleLanguage.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SimpleLexer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SimpleToken.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\JParsecLexer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\LexerAdapter.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\SyntaxHighlighterAdapter.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\config\Ruby.groovy</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\groovy\lang\TestCode_SCRIPT-1.groovy</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\groovy\lang\TestCode_SCRIPT-2.groovy</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\groovy\lang\TestSourcing.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\GroovyContext.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\JParsecSyntaxBase.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Locally removed" />
@@ -612,63 +461,27 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="LOCALLY_REMOVED" />
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags\BLOCK_COMMENTS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags\CORE_FUNCTIONS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags\DOC_COMMENTS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags\KEYWORDS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags\OPERATORS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\config\tags\SPECIAL_QUOTED_STRINGS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\groovy-LICENSE.txt</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\groovy.jar</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.CPL</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.GPL</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.LGPL</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jruby-COPYING.txt</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\lib\jruby.jar</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\config\TestCode_QuotedString.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\config\TestLoadedRule.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_FindAt.groovy</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_FindAt.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_FindIn.groovy</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_KEYWORDS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_OPERATORS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_SPECIAL_QUOTED_STRINGS.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_Token.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_TokenReal.rb</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRecognizedTokenGroovy.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRecognizedTokenRuby.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegEx.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegExKEYWORDS.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestRegExQUOTED.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestTokenFinder.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\ConfigurationAPI.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\loaded\parser\SyntaxRuleConsumer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\config\SyntaxConfiguration.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\ConfigurableLanguage.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SyntaxRuleSet.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\core\SyntaxRuleSpecification.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedToken.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenGroovy.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenRegEx.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\RecognizedTokenRuby.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\SimpleSyntaxHighlighter.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\SimpleSyntaxLexer.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\TokenFinder.java</PATH>
-          <PATH>D:\Intensicode\SimpleSyntax\src\net\intensicode\idea\syntax\TokenFinderErrorHandler.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\config\Ruby.lexer</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\LexerTestCaseBase.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_JavaScript.txt</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestCode_Ruby.txt</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestEmptyLexer.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestJavaScriptLexer.java</PATH>
+          <PATH>D:\Intensicode\SimpleSyntax\modules\Testing\test\net\intensicode\idea\syntax\TestSimpleSyntaxLexer.java</PATH>
         </FILE-GROUP>
       </UpdatedFiles>
     </UpdateInfo>
   </component>
-  <component name="RunManager" selected="Plugin.SimpleSyntaxPlugin">
-    <tempConfiguration default="false" name="ParserTest.testStuff" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="jfun.parsec.*" />
+  <component name="RunManager" selected="JUnit.Run all unit tests">
+    <tempConfiguration default="false" name="TestSourcing.testRecognizer" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <pattern value="groovy.lang.*" />
       <module name="Testing" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="jfun.parsec" />
-      <option name="MAIN_CLASS_NAME" value="jfun.parsec.ParserTest" />
-      <option name="METHOD_NAME" value="testStuff" />
+      <option name="PACKAGE_NAME" value="groovy.lang" />
+      <option name="MAIN_CLASS_NAME" value="groovy.lang.TestSourcing" />
+      <option name="METHOD_NAME" value="testRecognizer" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -702,6 +515,11 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="SimpleSyntax" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -731,11 +549,6 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <module name="" />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="SimpleSyntax" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-    </configuration>
     <configuration default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="SimpleSyntax" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -761,6 +574,7 @@
       <module name="SimpleSyntax" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
+      <log_file path="C:/Documents and Settings/Daniel/.IntelliJIdea60/sandbox/system/log/idea.log" checked="false" skipped="true" show_all="false" alias="IDEA LOG" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
@@ -998,107 +812,107 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/InstanceConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestGroovy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="762" selection-end="762" vertical-scroll-proportion="0.7401347">
+        <state line="22" column="0" selection-start="629" selection-end="629" vertical-scroll-proportion="0.57225436">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/SyntaxHighlighterAdapter.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestSourcing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.76685935">
+        <state line="14" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.36416185">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/SimpleLanguage.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/core/FakeSystemContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="84" selection-start="2219" selection-end="2219" vertical-scroll-proportion="0.80154145">
+        <state line="24" column="19" selection-start="682" selection-end="682" vertical-scroll-proportion="0.17726398">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/LexerAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/system/OptionsFolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="865" selection-end="865" vertical-scroll-proportion="0.50625604">
+        <state line="22" column="26" selection-start="456" selection-end="474" vertical-scroll-proportion="0.57225436">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/JParsecLexer.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/fileTypes/FileTypeManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1263" selection-end="1263" vertical-scroll-proportion="1.039461">
+        <state line="31" column="22" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.33301252">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/jfun/parsec/ParserTest.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/system/SystemContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2045" selection-end="2219" vertical-scroll-proportion="0.8055823">
+        <state line="11" column="17" selection-start="264" selection-end="264" vertical-scroll-proportion="0.28612718">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableColorSettingsPage.java">
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/groovy/lang/TestCode_SCRIPT-1.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="35" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.3381503">
+        <state line="2" column="0" selection-start="1" selection-end="99" vertical-scroll-proportion="0.05202312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/KnownIDConsumer.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/GroovyContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="758" selection-end="758" vertical-scroll-proportion="0.7276227">
+        <state line="20" column="54" selection-start="536" selection-end="536" vertical-scroll-proportion="0.5202312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/PropertyConsumer.java">
+    <entry file="file://$PROJECT_DIR$/config/Ruby.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="746" selection-end="746" vertical-scroll-proportion="0.75360924">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/AssignmentConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="17" selection-start="925" selection-end="930" vertical-scroll-proportion="0.74879694">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="0" selection-start="6342" selection-end="6342" vertical-scroll-proportion="0.59287775">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="675" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="675" selection-end="675" vertical-scroll-proportion="0.9095284">
+        <state line="5" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.13183594">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/Ruby.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.68786126">
+        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby.lexer">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/JParsecSyntaxBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="95" selection-end="95" vertical-scroll-proportion="0.18475074">
+        <state line="36" column="0" selection-start="852" selection-end="852" vertical-scroll-proportion="0.9355149">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestConfig_Ruby.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/config/TestLoadedConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="576" selection-end="576" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="210" column="0" selection-start="6302" selection-end="6302" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://TestEmptyLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="45" selection-start="306" selection-end="306" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
