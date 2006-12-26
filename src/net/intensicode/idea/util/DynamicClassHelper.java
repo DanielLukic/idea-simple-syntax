@@ -23,9 +23,7 @@ public final class DynamicClassHelper
         }
 
         final StringBuilder scriptBuilder = new StringBuilder();
-        //scriptBuilder.append( "package net.intensicode.idea.core;\n" );
-        //scriptBuilder.append( "\n" );
-        scriptBuilder.append( "import net.intensicode.idea.core.ConfigurableLanguage;\n" );
+        scriptBuilder.append( "import net.intensicode.idea.core.SimpleLanguage;\n" );
         scriptBuilder.append( "\n" );
         scriptBuilder.append( "class " + aSubclassName + " extends " + className + " {\n" );
         scriptBuilder.append( "\n" );

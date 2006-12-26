@@ -6,6 +6,7 @@ import net.intensicode.idea.system.OptionsFolder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.FileNotFoundException;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -33,6 +34,11 @@ public class FakeOptionsFolder implements OptionsFolder
     }
 
     public boolean fileExists( String aRelativeFileName )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public InputStream streamFile( String aRelativeFileName ) throws FileNotFoundException
     {
         throw new RuntimeException( "NYI" );
     }

@@ -27,7 +27,7 @@ public final class PropertyConsumer implements LineConsumer
         final String value = aMatchedLine.getValue( 2 );
         myProperties.put( key, value );
 
-        LOG.info( "Loaded property " + key + " = " + value );
+        LOG.debug( "Loaded property " + key + " = " + value );
     }
 
 

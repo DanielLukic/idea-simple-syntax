@@ -2,9 +2,8 @@ package net.intensicode.idea.system.production;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.fileTypes.FileNameMatcher;
-import net.intensicode.idea.syntax.RecognizedToken;
+import com.intellij.openapi.ui.Messages;
 import net.intensicode.idea.system.Confirmation;
 import net.intensicode.idea.system.SystemErrorHandler;
 import net.intensicode.idea.util.LoggerFactory;
@@ -23,20 +22,6 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
     }
 
     // From SystemErrorHandler
-
-    public final void onTokenRecognizerFailed( final RecognizedToken aToken, final Throwable aThrowable )
-    {
-        final StringBuilder messageBuilder = new StringBuilder();
-        messageBuilder.append( "Token recognizer failed.\n" );
-        messageBuilder.append( "Error message is: " );
-        messageBuilder.append( aThrowable.getMessage() );
-        messageBuilder.append( '\n' );
-        messageBuilder.append( "Token recognizer ID: " );
-        messageBuilder.append( aToken.getTokenID() );
-        messageBuilder.append( '\n' );
-        messageBuilder.append( "Removing recognizer and continuing.." );
-        displayError( messageBuilder.toString() );
-    }
 
     public final void onSimpleSyntaxInstallFailed( final Throwable aThrowable )
     {
@@ -102,5 +87,5 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
 
     private static final String CONFIRMATION_TITLE = "Simple Syntax Plugin Confirmation";
 
-    private static final String[] CONFIRMATION_OPTIONS = new String[]{"YES", "ALL", "NO", "NONE", "CANCEL"};
+    private static final String[] CONFIRMATION_OPTIONS = new String[]{ "YES", "ALL", "NO", "NONE", "CANCEL" };
 }

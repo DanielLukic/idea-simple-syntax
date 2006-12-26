@@ -2,7 +2,7 @@ package net.intensicode.idea.config;
 
 import junit.framework.TestCase;
 import net.intensicode.idea.config.loaded.LoadedConfiguration;
-import net.intensicode.idea.core.FakeOptionsFolder;
+import net.intensicode.idea.core.FakeSystemContext;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,10 +14,10 @@ public final class TestLoadedConfiguration extends TestCase
 {
     public final void testCreate() throws IOException
     {
-        final FakeOptionsFolder optionsFolder = new FakeOptionsFolder( this );
+        final FakeSystemContext systemContext = new FakeSystemContext( this );
 
         final InputStream input = getClass().getResourceAsStream( "TestConfig_Ruby.config" );
-        final LoadedConfiguration configuration = new LoadedConfiguration( optionsFolder, new InputStreamReader( input ) );
+        final LoadedConfiguration configuration = new LoadedConfiguration( systemContext, new InputStreamReader( input ) );
         assertEquals( "Ruby", configuration.getName() );
         assertEquals( "Ruby Script File", configuration.getDescription() );
         assertEquals( 275, configuration.getExampleCode().length() );

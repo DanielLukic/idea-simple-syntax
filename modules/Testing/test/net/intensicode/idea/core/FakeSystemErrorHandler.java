@@ -1,9 +1,8 @@
 package net.intensicode.idea.core;
 
-import net.intensicode.idea.syntax.RecognizedToken;
-import net.intensicode.idea.system.SystemErrorHandler;
-import net.intensicode.idea.system.Confirmation;
 import com.intellij.openapi.fileTypes.FileNameMatcher;
+import net.intensicode.idea.system.Confirmation;
+import net.intensicode.idea.system.SystemErrorHandler;
 
 import java.util.List;
 
@@ -14,11 +13,6 @@ import java.util.List;
  */
 public final class FakeSystemErrorHandler implements SystemErrorHandler
 {
-    public void onTokenRecognizerFailed( RecognizedToken aToken, Throwable aThrowable )
-    {
-        throw new RuntimeException( aToken.getTokenID(), aThrowable );
-    }
-
     public void onSimpleSyntaxInstallFailed( Throwable aThrowable )
     {
         throw new RuntimeException( aThrowable );

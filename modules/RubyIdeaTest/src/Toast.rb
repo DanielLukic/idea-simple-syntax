@@ -1,8 +1,8 @@
 =begin
-something I haven't figured out yet.. =begin/=end comments..
+these things here are weird comments..
 =end
 
-# block comments are full line comments..
+# full line comments.. i like.. very nice
 # how funny is that? :)
 class Toast
 
@@ -22,6 +22,14 @@ class Toast
        @@schmogg = @mogg + thiz * that
        %Q!rumsel #{pumsel} testerle!
        %Q{rumsel \#\{pumsel\} testerle}
+   end
+
+   # A check for regex..
+   def get_current_method_name
+       if /'(.*)'/.match(caller.first)
+           return $1
+       end
+       nil
    end
 
 end

@@ -7,15 +7,12 @@ import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorDescriptor;
 import com.intellij.openapi.options.colors.ColorSettingsPage;
 import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.config.LanguageConfiguration;
-import net.intensicode.idea.syntax.RecognizedToken;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Map;
-
-import javax.swing.Icon;
 
 
 
@@ -24,18 +21,17 @@ import javax.swing.Icon;
  */
 public final class ConfigurableColorSettingsPage implements ColorSettingsPage
 {
-    public ConfigurableColorSettingsPage( final InstanceConfiguration aConfiguration, final LanguageConfiguration aLanguageConfiguration )
+    public ConfigurableColorSettingsPage( final InstanceConfiguration aConfiguration )
     {
         myConfiguration = aConfiguration;
-        myLanguageConfiguration = aLanguageConfiguration;
     }
 
-    public final void reset( final InstanceConfiguration aConfiguration, final LanguageConfiguration aLanguageConfiguration )
+    public final void reset( final InstanceConfiguration aConfiguration )
     {
         LOG.info( "Resetting color settings page" );
         myConfiguration = aConfiguration;
-        myLanguageConfiguration = aLanguageConfiguration;
         myAttributesDescriptors = null;
+        mySyntaxHighlighter = null;
     }
 
     // From ColorSettingsPage
@@ -54,7 +50,7 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     @NotNull
     public final AttributesDescriptor[] getAttributeDescriptors()
     {
-        if ( myLanguageConfiguration.getRecognizedTokens().size() == 0 )
+        if ( myConfiguration.getKnownTokenIDs().size() == 0 )
         {
             return NO_ATTRIBUTES_DESCRIPTORS;
         }
@@ -63,7 +59,7 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
         if ( myAttributesDescriptors != null ) return myAttributesDescriptors;
 
         final ArrayList<AttributesDescriptor> descriptors = createDescriptors();
-        return myAttributesDescriptors = descriptors.toArray( new AttributesDescriptor[ descriptors.size() ] );
+        return myAttributesDescriptors = descriptors.toArray( new AttributesDescriptor[descriptors.size()] );
     }
 
     @NotNull
@@ -75,7 +71,11 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     @NotNull
     public final SyntaxHighlighter getHighlighter()
     {
-        return myLanguageConfiguration.getSyntaxHighlighter();
+        if ( mySyntaxHighlighter == null )
+        {
+            mySyntaxHighlighter = myConfiguration.getLanguageConfiguration().getSyntaxHighlighter();
+        }
+        return mySyntaxHighlighter;
     }
 
     @NotNull
@@ -95,9 +95,9 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     {
         if ( myAttributesDescriptors == null ) return;
 
-        final int availableTokens = myLanguageConfiguration.getRecognizedTokens().size();
-        final int availableDescriptors = myAttributesDescriptors.length;
-        if ( availableTokens == availableDescriptors ) return;
+        //final int availableTokens = myConfiguration.getKnownTokenIDs().size();
+        //final int availableDescriptors = myAttributesDescriptors.length;
+        //if ( availableTokens == availableDescriptors ) return;
 
         myAttributesDescriptors = null;
     }
@@ -106,15 +106,16 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     {
         final ArrayList<String> handledIDs = new ArrayList<String>();
 
+        final SimpleAttributes attributes = myConfiguration.getAttributes();
+
         final ArrayList<AttributesDescriptor> descriptors = new ArrayList<AttributesDescriptor>();
-        for ( final RecognizedToken token : myLanguageConfiguration.getRecognizedTokens() )
+        for ( final String id : myConfiguration.getKnownTokenIDs() )
         {
-            final String id = token.getTokenID();
             if ( handledIDs.contains( id ) ) continue;
             if ( myConfiguration.isVisibleToken( id ) == false ) continue;
 
             final String description = myConfiguration.getTokenDescription( id );
-            final TextAttributesKey attributesKey = myLanguageConfiguration.getTextAttributesKey( id );
+            final TextAttributesKey attributesKey = attributes.getTextAttributesKey( id );
             descriptors.add( new AttributesDescriptor( description, attributesKey ) );
 
             handledIDs.add( id );
@@ -124,11 +125,11 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
 
 
 
-    private AttributesDescriptor[] myAttributesDescriptors;
+    private SyntaxHighlighter mySyntaxHighlighter;
 
     private InstanceConfiguration myConfiguration;
 
-    private LanguageConfiguration myLanguageConfiguration;
+    private AttributesDescriptor[] myAttributesDescriptors;
 
     private static final ColorDescriptor[] NO_COLOR_DESCRIPTOR = new ColorDescriptor[0];
 

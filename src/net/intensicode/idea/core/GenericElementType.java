@@ -10,8 +10,8 @@ import com.intellij.psi.tree.IElementType;
  */
 final class GenericElementType extends IElementType
 {
-    GenericElementType( final String aID, final Language aLanguage )
+    GenericElementType( final Object aID, final Language aLanguage )
     {
-        super( aID, aLanguage );
+        super( aID.toString(), aLanguage );
     }
 }

@@ -1,16 +1,12 @@
 package net.intensicode.idea;
 
-import net.intensicode.idea.config.BracesConfiguration;
-import net.intensicode.idea.config.CommentConfiguration;
-import net.intensicode.idea.config.FileTypeConfiguration;
-import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.syntax.RecognizedToken;
-import net.intensicode.idea.syntax.RecognizedTokenRegEx;
+import net.intensicode.idea.config.*;
+import net.intensicode.idea.core.SimpleAttributes;
+import net.intensicode.idea.core.SimpleLexer;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.Icon;
 
 
 
@@ -19,11 +15,11 @@ import javax.swing.Icon;
  */
 public class FakeConfiguration implements InstanceConfiguration
 {
-    public final ArrayList<RecognizedToken> recognized_tokens = new ArrayList<RecognizedToken>();
+    public final ArrayList<String> recognized_tokens = new ArrayList<String>();
 
     public FakeConfiguration()
     {
-        recognized_tokens.add( new RecognizedTokenRegEx( "FAKE_TEST", "FAKE_TEST" ) );
+        recognized_tokens.add( "FAKE_TEST" );
     }
 
     public BracesConfiguration getBracesConfiguration()
@@ -61,9 +57,14 @@ public class FakeConfiguration implements InstanceConfiguration
         return "Fake";
     }
 
-    public List<RecognizedToken> getRecognizedTokens()
+    public List<String> getKnownTokenIDs()
     {
         return recognized_tokens;
+    }
+
+    public final boolean isVisibleToken( final String aID )
+    {
+        return true;
     }
 
     public String getTokenAttributes( String aTokenID )
@@ -76,8 +77,19 @@ public class FakeConfiguration implements InstanceConfiguration
         return null;
     }
 
-    public boolean isVisibleToken( final String aTokenId )
+
+    public SimpleAttributes getAttributes()
     {
-        return false;
+        return null;
+    }
+
+    public LanguageConfiguration getLanguageConfiguration()
+    {
+        return null;
+    }
+
+    public SimpleLexer getLexer()
+    {
+        return null;
     }
 }

@@ -3,6 +3,7 @@ package net.intensicode.idea.syntax;
 import com.intellij.lexer.Lexer;
 import net.intensicode.idea.FakeConfigurableLanguage;
 import net.intensicode.idea.config.LanguageConfiguration;
+import net.intensicode.idea.core.SimpleLexer;
 
 import java.io.IOException;
 
@@ -17,7 +18,7 @@ public final class TestSimpleSyntaxLexer extends LexerTestCaseBase
     {
         final char[] rubyCodeBuffer = loadTestCode();
 
-        final SimpleSyntaxLexer lexer = createTestLexer();
+        final LexerAdapter lexer = createTestLexer();
         lexer.start( rubyCodeBuffer );
         assertEquals( rubyCodeBuffer, lexer.getBuffer() );
         assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
@@ -39,95 +40,98 @@ public final class TestSimpleSyntaxLexer extends LexerTestCaseBase
     {
         final char[] rubyCodeBuffer = loadTestCode();
 
-        final TokenFinder tokenFinder = new TokenFinder();
-        tokenFinder.register( newRecognizedToken( "WHITE_SPACE", "[ \t\r\n]+" ) );
-        final SimpleSyntaxLexer lexer = createTestLexer( tokenFinder );
-        lexer.start( rubyCodeBuffer );
-        assertEquals( rubyCodeBuffer, lexer.getBuffer() );
-        assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
+        throw new RuntimeException( "NYI" );
 
-        lexer.start( rubyCodeBuffer );
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 0, lexer.getTokenStart() );
-        assertEquals( 2, lexer.getTokenEnd() );
-        assertEquals( "WHITE_SPACE", lexer.getTokenType().toString() );
-
-        lexer.advance();
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 3, lexer.getTokenStart() );
-        assertEquals( 4, lexer.getTokenEnd() );
-        assertEquals( "WHITE_SPACE", lexer.getTokenType().toString() );
+        //final TokenFinder tokenFinder = new TokenFinder();
+        //tokenFinder.register( newRecognizedToken( "WHITE_SPACE", "[ \t\r\n]+" ) );
+        //
+        //final LexerAdapter lexer = createTestLexer( tokenFinder );
+        //lexer.start( rubyCodeBuffer );
+        //assertEquals( rubyCodeBuffer, lexer.getBuffer() );
+        //assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
+        //
+        //lexer.start( rubyCodeBuffer );
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 0, lexer.getTokenStart() );
+        //assertEquals( 2, lexer.getTokenEnd() );
+        //assertEquals( "WHITE_SPACE", lexer.getTokenType().toString() );
+        //
+        //lexer.advance();
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 3, lexer.getTokenStart() );
+        //assertEquals( 4, lexer.getTokenEnd() );
+        //assertEquals( "WHITE_SPACE", lexer.getTokenType().toString() );
     }
 
     public final void testLineComments() throws IOException
     {
         final char[] rubyCodeBuffer = loadTestCode();
 
-        final TokenFinder tokenFinder = new TokenFinder();
-        tokenFinder.register( newRecognizedToken( "LINE_COMMENT", "#.*" ) );
-        final SimpleSyntaxLexer lexer = createTestLexer( tokenFinder );
-        lexer.start( rubyCodeBuffer );
-        assertEquals( rubyCodeBuffer, lexer.getBuffer() );
-        assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
+        //final TokenFinder tokenFinder = new TokenFinder();
+        //tokenFinder.register( newRecognizedToken( "LINE_COMMENT", "#.*" ) );
+        //final LexerAdapter lexer = createTestLexer( tokenFinder );
+        //lexer.start( rubyCodeBuffer );
+        //assertEquals( rubyCodeBuffer, lexer.getBuffer() );
+        //assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
+        //
+        //lexer.start( rubyCodeBuffer );
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 2, lexer.getTokenStart() );
+        //assertEquals( 16, lexer.getTokenEnd() );
+        //assertEquals( "LINE_COMMENT", lexer.getTokenType().toString() );
+        //
+        //lexer.advance();
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 133, lexer.getTokenStart() );
+        //assertEquals( 143, lexer.getTokenEnd() );
+        //assertEquals( "LINE_COMMENT", lexer.getTokenType().toString() );
 
-        lexer.start( rubyCodeBuffer );
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 2, lexer.getTokenStart() );
-        assertEquals( 16, lexer.getTokenEnd() );
-        assertEquals( "LINE_COMMENT", lexer.getTokenType().toString() );
-
-        lexer.advance();
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 133, lexer.getTokenStart() );
-        assertEquals( 143, lexer.getTokenEnd() );
-        assertEquals( "LINE_COMMENT", lexer.getTokenType().toString() );
+        throw new RuntimeException( "NYI" );
     }
 
     public final void testVariousTokens() throws IOException
     {
         final char[] rubyCodeBuffer = loadTestCode();
 
-        final TokenFinder tokenFinder = new TokenFinder();
-        tokenFinder.register( newRecognizedToken( "LINE_COMMENT", "#.*" ) );
-        tokenFinder.register( newRecognizedToken( "DOC_COMMENT", "(?ms)^=begin$.*^=end$" ) );
-        tokenFinder.register( newRecognizedToken( "DOUBLE_QUOTED_STRING", "\"(?:[^\"]|\\\")*\"" ) );
-        tokenFinder.register( newRecognizedToken( "OPERATOR", "\\+|\\-" ) );
-        tokenFinder.register( newRecognizedToken( "CLASS_NAME", "(?:\\p{javaUpperCase}\\p{javaLowerCase}+)+" ) );
-        tokenFinder.register( newRecognizedToken( "KEYWORD", "(?:def|end|class|module)" ) );
-        tokenFinder.register( newRecognizedToken( "IDENTIFIER", "[\\p{javaLowerCase}_]+" ) );
+        throw new RuntimeException( "NYI" );
 
-        final SimpleSyntaxLexer lexer = createTestLexer( tokenFinder );
-        lexer.start( rubyCodeBuffer );
-        assertEquals( rubyCodeBuffer, lexer.getBuffer() );
-        assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
-
-        lexer.start( rubyCodeBuffer );
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 2, lexer.getTokenStart() );
-        assertEquals( 16, lexer.getTokenEnd() );
-        assertEquals( "LINE_COMMENT", lexer.getTokenType().toString() );
-        assertEquals( "# comment line", lexer.getTokenText().toString() );
-
-        lexer.advance();
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 20, lexer.getTokenStart() );
-        assertEquals( 25, lexer.getTokenEnd() );
-        assertEquals( "KEYWORD", lexer.getTokenType().toString() );
-        assertEquals( "class", lexer.getTokenText().toString() );
-
-        lexer.advance();
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 26, lexer.getTokenStart() );
-        assertEquals( 31, lexer.getTokenEnd() );
-        assertEquals( "CLASS_NAME", lexer.getTokenType().toString() );
-        assertEquals( "Toast", lexer.getTokenText().toString() );
-
-        lexer.advance();
-        assertEquals( 0, lexer.getState() );
-        assertEquals( 39, lexer.getTokenStart() );
-        assertEquals( 42, lexer.getTokenEnd() );
-        assertEquals( "KEYWORD", lexer.getTokenType().toString() );
-        assertEquals( "def", lexer.getTokenText().toString() );
+        //final TokenFinder tokenFinder = new TokenFinder();
+        //tokenFinder.register( newRecognizedToken( "LINE_COMMENT", "#.*" ) );
+        //tokenFinder.register( newRecognizedToken( "DOC_COMMENT", "(?ms)^=begin$.*^=end$" ) );
+        //tokenFinder.register( newRecognizedToken( "DOUBLE_QUOTED_STRING", "\"(?:[^\"]|\\\")*\"" ) );
+        //tokenFinder.register( newRecognizedToken( "OPERATOR", "\\+|\\-" ) );
+        //tokenFinder.register( newRecognizedToken( "CLASS_NAME", "(?:\\p{javaUpperCase}\\p{javaLowerCase}+)+" ) );
+        //tokenFinder.register( newRecognizedToken( "KEYWORD", "(?:def|end|class|module)" ) );
+        //tokenFinder.register( newRecognizedToken( "IDENTIFIER", "[\\p{javaLowerCase}_]+" ) );
+        //
+        //final LexerAdapter lexer = createTestLexer( tokenFinder );
+        //lexer.start( rubyCodeBuffer );
+        //assertEquals( rubyCodeBuffer, lexer.getBuffer() );
+        //assertEquals( rubyCodeBuffer.length, lexer.getBufferEnd() );
+        //
+        //lexer.start( rubyCodeBuffer );
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 2, lexer.getTokenStart() );
+        //assertEquals( 16, lexer.getTokenEnd() );
+        //assertEquals( "LINE_COMMENT", lexer.getTokenType().toString() );
+        //
+        //lexer.advance();
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 20, lexer.getTokenStart() );
+        //assertEquals( 25, lexer.getTokenEnd() );
+        //assertEquals( "KEYWORD", lexer.getTokenType().toString() );
+        //
+        //lexer.advance();
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 26, lexer.getTokenStart() );
+        //assertEquals( 31, lexer.getTokenEnd() );
+        //assertEquals( "CLASS_NAME", lexer.getTokenType().toString() );
+        //
+        //lexer.advance();
+        //assertEquals( 0, lexer.getState() );
+        //assertEquals( 39, lexer.getTokenStart() );
+        //assertEquals( 42, lexer.getTokenEnd() );
+        //assertEquals( "KEYWORD", lexer.getTokenType().toString() );
     }
 
     public final void testEmptyFile()
@@ -186,14 +190,16 @@ public final class TestSimpleSyntaxLexer extends LexerTestCaseBase
 
     // Implementation
 
-    private final SimpleSyntaxLexer createTestLexer()
+    private final LexerAdapter createTestLexer()
     {
-        return createTestLexer( new TokenFinder() );
+        //return createTestLexer( new TokenFinder() );
+
+        throw new RuntimeException( "NYI" );
     }
 
-    private final SimpleSyntaxLexer createTestLexer( final TokenFinder aTokenFinder )
+    private final LexerAdapter createTestLexer( final SimpleLexer aSimpleLexer )
     {
         final LanguageConfiguration langSpec = new FakeConfigurableLanguage();
-        return new SimpleSyntaxLexer( langSpec, aTokenFinder );
+        return new LexerAdapter( langSpec, aSimpleLexer );
     }
 }

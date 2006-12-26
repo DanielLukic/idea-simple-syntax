@@ -28,7 +28,7 @@ public final class TestEmptyLexer extends LexerTestCaseBase
         // Because of the way IDEA handles types internally (fucking globals! die jetbrains, die!),
         // there are no gurantees about who created a type for id 0, which could then be returned
         // here..
-//        assertEquals( null, lexer.getTokenType() );
+        //assertEquals( null, lexer.getTokenType() );
 
         lexer.advance();
         assertEquals( rubyCodeBuffer, lexer.getBuffer() );

@@ -1,14 +1,11 @@
 package net.intensicode.idea;
 
 import com.intellij.lang.Language;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.LanguageConfiguration;
-import net.intensicode.idea.syntax.RecognizedToken;
 
 import java.util.HashMap;
-import java.util.List;
 
 
 
@@ -17,7 +14,7 @@ import java.util.List;
  */
 public final class FakeConfigurableLanguage implements LanguageConfiguration
 {
-    public IElementType getToken( String aTokenId )
+    public IElementType getToken( Object aTokenId )
     {
         if ( myElementTypes.containsKey( aTokenId ) == false )
         {
@@ -26,25 +23,15 @@ public final class FakeConfigurableLanguage implements LanguageConfiguration
         return myElementTypes.get( aTokenId );
     }
 
-    public List<RecognizedToken> getRecognizedTokens()
-    {
-        return null;
-    }
-
     public SyntaxHighlighter getSyntaxHighlighter()
     {
         return null;
     }
 
-    public TextAttributesKey getTextAttributesKey( String aTokenId )
+    public Language getLanguage()
     {
         return null;
     }
 
-    public TextAttributesKey[] getTokenHighlights( IElementType tokenType )
-    {
-        return new TextAttributesKey[0];
-    }
-
-    private final HashMap<String, IElementType> myElementTypes = new HashMap<String, IElementType>();
+    private final HashMap<Object, IElementType> myElementTypes = new HashMap<Object, IElementType>();
 }

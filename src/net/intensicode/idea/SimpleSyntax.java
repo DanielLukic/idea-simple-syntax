@@ -152,7 +152,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
         {
             LOG.info( "Reading configuration file " + fileName );
 
-            final InstanceConfiguration config = LoadedConfiguration.tryLoading( optionsFolder, fileName );
+            final InstanceConfiguration config = LoadedConfiguration.tryLoading( mySystemContext, fileName );
             if ( config == null )
             {
                 LOG.info( "Failed reading configuration from " + fileName );

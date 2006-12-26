@@ -32,7 +32,7 @@ public final class AssignmentConsumer implements LineConsumer
         final String value = aMatchedLine.getValue( 3 );
         myHashMap.put( key, value );
 
-        LOG.info( "Assigned " + name + ": " + key + " = " + value );
+        LOG.debug( "Assigned " + name + ": " + key + " = " + value );
     }
 
 

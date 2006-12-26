@@ -1,15 +1,10 @@
 package net.intensicode.idea.core;
 
-import net.intensicode.idea.config.BracesConfiguration;
-import net.intensicode.idea.config.CommentConfiguration;
-import net.intensicode.idea.config.FileTypeConfiguration;
-import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.syntax.RecognizedToken;
+import net.intensicode.idea.config.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.Icon;
 
 
 
@@ -55,9 +50,14 @@ final class NullInstanceConfiguration implements InstanceConfiguration
         return NULL_STRING;
     }
 
-    public final List<RecognizedToken> getRecognizedTokens()
+    public final List<String> getKnownTokenIDs()
     {
         return NO_RECOGNIZED_TOKENS;
+    }
+
+    public final boolean isVisibleToken( final String aID )
+    {
+        return true;
     }
 
     public final String getTokenAttributes( final String aTokenID )
@@ -70,9 +70,19 @@ final class NullInstanceConfiguration implements InstanceConfiguration
         return EMPTY_STRING;
     }
 
-    public final boolean isVisibleToken( final String aTokenId )
+    public final SimpleAttributes getAttributes()
     {
-        return false;
+        throw new RuntimeException( "NYI" );
+    }
+
+    public final LanguageConfiguration getLanguageConfiguration()
+    {
+        return NullLanguageConfiguration.INSTANCE;
+    }
+
+    public final SimpleLexer getLexer()
+    {
+        throw new RuntimeException( "NYI" );
     }
 
     private NullInstanceConfiguration()
@@ -83,5 +93,5 @@ final class NullInstanceConfiguration implements InstanceConfiguration
 
     private static final String NULL_STRING = "NULL";
 
-    private static final ArrayList<RecognizedToken> NO_RECOGNIZED_TOKENS = new ArrayList<RecognizedToken>();
+    private static final ArrayList<String> NO_RECOGNIZED_TOKENS = new ArrayList<String>();
 }

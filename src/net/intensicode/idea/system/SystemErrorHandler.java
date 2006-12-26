@@ -1,7 +1,6 @@
 package net.intensicode.idea.system;
 
 import com.intellij.openapi.fileTypes.FileNameMatcher;
-import net.intensicode.idea.syntax.RecognizedToken;
 
 import java.util.List;
 
@@ -12,8 +11,6 @@ import java.util.List;
  */
 public interface SystemErrorHandler
 {
-    void onTokenRecognizerFailed( RecognizedToken aToken, Throwable aThrowable );
-
     void onSimpleSyntaxInstallFailed( Throwable aThrowable );
 
     Confirmation onFileReplaceConfirmation( String aFileName );

@@ -1,10 +1,10 @@
 package net.intensicode.idea.config;
 
-import net.intensicode.idea.syntax.RecognizedToken;
+import net.intensicode.idea.core.SimpleAttributes;
+import net.intensicode.idea.core.SimpleLexer;
 
+import javax.swing.*;
 import java.util.List;
-
-import javax.swing.Icon;
 
 
 
@@ -22,9 +22,9 @@ public interface InstanceConfiguration
     String getExampleCode();
 
 
-    boolean isVisibleToken( String aTokenId );
+    List<String> getKnownTokenIDs();
 
-    List<RecognizedToken> getRecognizedTokens();
+    boolean isVisibleToken( String aID );
 
     String getTokenAttributes( String aTokenID );
 
@@ -36,4 +36,11 @@ public interface InstanceConfiguration
     CommentConfiguration getCommentConfiguration();
 
     FileTypeConfiguration getFileTypeConfiguration();
+
+
+    LanguageConfiguration getLanguageConfiguration();
+
+    SimpleAttributes getAttributes();
+
+    SimpleLexer getLexer();
 }

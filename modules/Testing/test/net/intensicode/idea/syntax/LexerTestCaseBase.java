@@ -14,11 +14,6 @@ import java.io.IOException;
  */
 abstract class LexerTestCaseBase extends TestCase
 {
-    protected final RecognizedToken newRecognizedToken( final String aID, final String aRegEx )
-    {
-        return new RecognizedTokenRegEx( aID, aRegEx );
-    }
-
     protected final IElementType newToken( final String aID )
     {
         return Utilities.newToken( aID );

@@ -51,6 +51,12 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
         return new File( fileName ).exists();
     }
 
+    public final InputStream streamFile( String aRelativeFileName ) throws FileNotFoundException
+    {
+        final String fileName = makeAbsolute( aRelativeFileName );
+        return new FileInputStream( fileName );
+    }
+
     public final String readFileIntoString( final String aRelativeFileName ) throws IOException
     {
         final String fileName = makeAbsolute( aRelativeFileName );

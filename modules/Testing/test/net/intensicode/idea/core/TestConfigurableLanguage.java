@@ -11,7 +11,7 @@ public final class TestConfigurableLanguage extends TestCase
     {
         final FakeSystemContext context = new FakeSystemContext( this );
         final FakeConfiguration configuration = new FakeConfiguration();
-        final ConfigurableLanguage language = ConfigurableLanguage.getOrCreate( context, configuration );
-        assertEquals( "ConfigurableLanguageFake", language.getClass().getName() );
+        final SimpleLanguage language = SimpleLanguage.getOrCreate( context, configuration );
+        assertEquals( "SimpleLanguageFake", language.getClass().getName() );
     }
 }

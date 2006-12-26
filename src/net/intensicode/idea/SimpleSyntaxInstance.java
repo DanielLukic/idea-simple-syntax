@@ -9,9 +9,9 @@ import com.intellij.openapi.options.colors.ColorSettingsPage;
 import com.intellij.openapi.options.colors.ColorSettingsPages;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
+import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.core.ConfigurableColorSettingsPage;
 import net.intensicode.idea.core.ConfigurableFileTypeBuilder;
-import net.intensicode.idea.core.ConfigurableLanguage;
 import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 
@@ -37,24 +37,25 @@ final class SimpleSyntaxInstance
     final void init()
     {
         LOG.info( "Initializing " + myConfiguration.getName() );
-        final ConfigurableLanguage language = ConfigurableLanguage.getOrCreate( mySystemContext, myConfiguration );
-        registerFileType( language );
-        registerColorSettingsPage( language );
+        registerFileType();
+        registerColorSettingsPage();
     }
 
     final void dispose()
     {
         LOG.info( "Disposing " + getName() );
         unregisterFileType();
-        myFileType = null;
     }
 
     // Implementation
 
-    private final void registerFileType( final Language aLanguage )
+    private final void registerFileType()
     {
         final FileTypeManager manager = mySystemContext.getFileTypeManager();
         if ( manager == null ) return;
+
+        final LanguageConfiguration languageConfiguration = myConfiguration.getLanguageConfiguration();
+        final Language aLanguage = languageConfiguration.getLanguage();
 
         final FileType fileType = myFileTypeBuilder.getOrCreate( myConfiguration, aLanguage );
 
@@ -68,7 +69,7 @@ final class SimpleSyntaxInstance
         myFileType = fileType;
     }
 
-    private final void registerColorSettingsPage( final ConfigurableLanguage aLanguage )
+    private final void registerColorSettingsPage()
     {
         final ColorSettingsPages instance = ColorSettingsPages.getInstance();
         if ( instance == null ) return;
@@ -81,12 +82,12 @@ final class SimpleSyntaxInstance
             if ( oldPage.getDisplayName().equals( myConfiguration.getName() ) == false ) continue;
 
             LOG.info( "Updating color settings page for " + getName() );
-            oldPage.reset( myConfiguration, aLanguage );
+            oldPage.reset( myConfiguration );
             return;
         }
 
         LOG.info( "Registering color settings page for " + getName() );
-        instance.registerPage( new ConfigurableColorSettingsPage( myConfiguration, aLanguage ) );
+        instance.registerPage( new ConfigurableColorSettingsPage( myConfiguration ) );
     }
 
     private final void unregisterFileType()

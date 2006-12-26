@@ -3,10 +3,13 @@ package net.intensicode.idea;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.diagnostic.Logger;
+import net.intensicode.idea.system.Confirmation;
+import net.intensicode.idea.system.OptionsFolder;
+import net.intensicode.idea.system.ResourceLoader;
+import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.production.ProductionSystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
-import net.intensicode.idea.system.*;
-import net.intensicode.idea.system.production.ProductionSystemContext;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +34,7 @@ public final class ActionInstall extends AnAction
 
         addMatcher( "Icon:\\s*(.+)" );
         addMatcher( "ExampleCode:\\s*(.+)" );
-        addMatcher( "\\w+\\s+[A-Z_]+\\s*=>\\s*(.+)" );
+        addMatcher( "SyntaxDefinition:\\s*(.+)" );
     }
 
     // From AnAction

@@ -10,8 +10,8 @@ import com.intellij.psi.tree.IElementType;
  */
 public final class FakeElementType extends IElementType
 {
-    public FakeElementType( final String aID, final Language aLanguage )
+    public FakeElementType( final Object aID, final Language aLanguage )
     {
-        super( aID, aLanguage, false );
+        super( aID.toString(), aLanguage, false );
     }
 }

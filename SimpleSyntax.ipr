@@ -125,156 +125,17 @@
             <option name="myVal" value="100" />
           </server>
         </used_levels>
-        <inspection_tool class="UnnecessaryQualifierForThis" level="WARNING" enabled="false" />
-        <inspection_tool class="InfiniteLoopStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="TestMethodWithoutAssertion" level="WARNING" enabled="false" />
-        <inspection_tool class="StringBufferReplaceableByStringBuilder" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryLabelOnBreakStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="PointlessBooleanExpression" level="WARNING" enabled="false">
-          <option name="m_ignoreExpressionsContainingConstants" value="false" />
-        </inspection_tool>
-        <inspection_tool class="UnconditionalWait" level="WARNING" enabled="false" />
-        <inspection_tool class="StringToString" level="WARNING" enabled="false" />
-        <inspection_tool class="ReturnOfDateField" level="WARNING" enabled="false" />
-        <inspection_tool class="MisspelledEquals" level="WARNING" enabled="false" />
-        <inspection_tool class="LoopStatementsThatDontLoop" level="WARNING" enabled="false" />
-        <inspection_tool class="ResultSetIndexZero" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantTypeArguments" level="WARNING" enabled="false" />
-        <inspection_tool class="ThrowCaughtLocally" level="WARNING" enabled="false">
-          <option name="ignoreRethrownExceptions" value="false" />
-        </inspection_tool>
         <inspection_tool class="ConstantConditions" level="WARNING" enabled="false">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
         </inspection_tool>
-        <inspection_tool class="OverlyStrongTypeCast" level="WARNING" enabled="false" />
-        <inspection_tool class="RedundantImplements" level="WARNING" enabled="false" />
-        <inspection_tool class="StringToUpperWithoutLocale" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedAssignment" level="WARNING" enabled="false">
           <option name="REPORT_PREFIX_EXPRESSIONS" value="false" />
           <option name="REPORT_POSTFIX_EXPRESSIONS" value="true" />
           <option name="REPORT_REDUNDANT_INITIALIZER" value="true" />
         </inspection_tool>
-        <inspection_tool class="UnnecessaryConditionalExpression" level="WARNING" enabled="false" />
-        <inspection_tool class="ClassInitializer" level="WARNING" enabled="false" />
-        <inspection_tool class="NonShortCircuitBoolean" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessarySemicolon" level="WARNING" enabled="false" />
-        <inspection_tool class="SerializableInnerClassWithNonSerializableOuterClass" level="WARNING" enabled="false">
-          <option name="m_ignoreSerializableDueToInheritance" value="true" />
-        </inspection_tool>
-        <inspection_tool class="PointlessArithmeticExpression" level="WARNING" enabled="false">
-          <option name="m_ignoreExpressionsContainingConstants" value="false" />
-        </inspection_tool>
-        <inspection_tool class="UnnecessaryTemporaryOnConversionToString" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryContinue" level="WARNING" enabled="false" />
-        <inspection_tool class="UnusedLabel" level="WARNING" enabled="false" />
-        <inspection_tool class="ReturnFromFinallyBlock" level="WARNING" enabled="false" />
-        <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryBoxing" level="WARNING" enabled="false" />
-        <inspection_tool class="ManualArrayCopy" level="WARNING" enabled="false" />
-        <inspection_tool class="IgnoreResultOfCall" level="WARNING" enabled="false">
-          <option name="m_reportAllNonLibraryCalls" value="false" />
-          <option name="callCheckString" value="java.io.InputStream,read,java.io.InputStream,skip,java.lang.StringBuffer,toString,java.lang.StringBuilder,toString,java.lang.String,.*,java.math.BigInteger,.*,java.math.BigDecimal,.*,java.net.InetAddress,.*" />
-        </inspection_tool>
-        <inspection_tool class="ThrowFromFinallyBlock" level="WARNING" enabled="false" />
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
-        <inspection_tool class="ClassWithMultipleLoggers" level="WARNING" enabled="false">
-          <option name="loggerClassName" value="java.util.logging.Logger" />
-        </inspection_tool>
-        <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
-        <inspection_tool class="FinalStaticMethod" level="WARNING" enabled="false" />
         <inspection_tool class="SuspiciousMethodCalls" level="WARNING" enabled="false" />
-        <inspection_tool class="ResultOfObjectAllocationIgnored" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryUnboxing" level="WARNING" enabled="false" />
-        <inspection_tool class="AnonymousClassMethodCount" level="WARNING" enabled="false">
-          <option name="m_limit" value="1" />
-        </inspection_tool>
-        <inspection_tool class="NoExplicitFinalizeCalls" level="WARNING" enabled="false" />
-        <inspection_tool class="FinalPrivateMethod" level="WARNING" enabled="false" />
-        <inspection_tool class="ClassWithoutLogger" level="WARNING" enabled="false">
-          <option name="loggerClassName" value="java.util.logging.Logger" />
-          <option name="ignoreSuperLoggers" value="false" />
-        </inspection_tool>
-        <inspection_tool class="VolatileLongOrDoubleField" level="WARNING" enabled="false" />
-        <inspection_tool class="NakedNotify" level="WARNING" enabled="false" />
-        <inspection_tool class="SwitchStatementDensity" level="WARNING" enabled="false">
-          <option name="m_limit" value="20" />
-        </inspection_tool>
-        <inspection_tool class="UpperCaseFieldNameNotConstant" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryLabelOnContinueStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="SynchronizeOnNonFinalField" level="WARNING" enabled="false" />
-        <inspection_tool class="NonStaticFinalLogger" level="WARNING" enabled="false">
-          <option name="loggerClassName" value="java.util.logging.Logger" />
-        </inspection_tool>
-        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
-        <inspection_tool class="WhileLoopSpinsOnField" level="WARNING" enabled="false" />
-        <inspection_tool class="ObjectEqualsNull" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyFinallyBlock" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyStatementBody" level="WARNING" enabled="false">
-          <option name="m_reportEmptyBlocks" value="false" />
-        </inspection_tool>
-        <inspection_tool class="MismatchedCollectionQueryUpdate" level="WARNING" enabled="false" />
-        <inspection_tool class="StringEquality" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryFinalOnLocalVariable" level="WARNING" enabled="false" />
-        <inspection_tool class="AnonymousClassComplexity" level="WARNING" enabled="false">
-          <option name="m_limit" value="3" />
-        </inspection_tool>
-        <inspection_tool class="OctalLiteral" level="WARNING" enabled="false" />
-        <inspection_tool class="BigDecimalEquals" level="WARNING" enabled="false" />
-        <inspection_tool class="InfiniteRecursion" level="WARNING" enabled="false" />
-        <inspection_tool class="WaitNotInSynchronizedContext" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyCatchBlock" level="WARNING" enabled="false">
-          <option name="m_includeComments" value="true" />
-          <option name="m_ignoreTestCases" value="true" />
-        </inspection_tool>
-        <inspection_tool class="ThreadStartInConstruction" level="WARNING" enabled="false" />
-        <inspection_tool class="ExternalizableWithSerializationMethods" level="WARNING" enabled="false" />
-        <inspection_tool class="UnnecessaryTemporaryOnConversionFromString" level="WARNING" enabled="false" />
-        <inspection_tool class="MisspelledToString" level="WARNING" enabled="false" />
-        <inspection_tool class="UseOfSunClasses" level="WARNING" enabled="false" />
-        <inspection_tool class="NotifyNotInSynchronizedContext" level="WARNING" enabled="false" />
-        <inspection_tool class="ForCanBeForeach" level="WARNING" enabled="false" />
-        <inspection_tool class="TypeParameterExtendsObject" level="WARNING" enabled="false" />
-        <inspection_tool class="AssignmentToDateFieldFromParameter" level="WARNING" enabled="false">
-          <option name="ignorePrivateMethods" value="true" />
-        </inspection_tool>
-        <inspection_tool class="LimitedScopeInnerClass" level="WARNING" enabled="false" />
-        <inspection_tool class="StringBufferReplaceableByString" level="WARNING" enabled="false" />
-        <inspection_tool class="ClassNameSameAsAncestorName" level="WARNING" enabled="false" />
-        <inspection_tool class="FinalizeCallsSuperFinalize" level="WARNING" enabled="false">
-          <option name="m_ignoreForObjectSubclasses" value="false" />
-        </inspection_tool>
-        <inspection_tool class="WaitWhileHoldingTwoLocks" level="WARNING" enabled="false" />
-        <inspection_tool class="TrivialStringConcatenation" level="WARNING" enabled="false" />
-        <inspection_tool class="ConfusingOctalEscape" level="WARNING" enabled="false" />
-        <inspection_tool class="IncompatibleMask" level="WARNING" enabled="false" />
-        <inspection_tool class="BooleanConstructor" level="WARNING" enabled="false" />
-        <inspection_tool class="ExtendsObject" level="WARNING" enabled="false" />
-        <inspection_tool class="SerializableInnerClassHasSerialVersionUIDField" level="WARNING" enabled="false">
-          <option name="m_ignoreSerializableDueToInheritance" value="true" />
-        </inspection_tool>
-        <inspection_tool class="EmptyTryBlock" level="WARNING" enabled="false" />
-        <inspection_tool class="StringEqualsEmptyString" level="WARNING" enabled="false" />
-        <inspection_tool class="SynchronizeOnLock" level="WARNING" enabled="false" />
-        <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
-        <inspection_tool class="EmptyInitializer" level="WARNING" enabled="false" />
-        <inspection_tool class="StringReplaceableByStringBuffer" level="WARNING" enabled="false" />
-        <inspection_tool class="AnonymousInnerClass" level="WARNING" enabled="false" />
-        <inspection_tool class="NegatedConditional" level="WARNING" enabled="false">
-          <option name="m_ignoreNegatedNullComparison" value="true" />
-        </inspection_tool>
-        <inspection_tool class="StringConstructor" level="WARNING" enabled="false">
-          <option name="ignoreSubstringArguments" value="false" />
-        </inspection_tool>
-        <inspection_tool class="MismatchedArrayReadWrite" level="WARNING" enabled="false" />
-        <inspection_tool class="RawUseOfParameterizedType" level="WARNING" enabled="false">
-          <option name="ignoreObjectConstruction" value="true" />
-          <option name="ignoreTypeCasts" value="false" />
-        </inspection_tool>
-        <inspection_tool class="PointlessBitwiseExpression" level="WARNING" enabled="false">
-          <option name="m_ignoreExpressionsContainingConstants" value="false" />
-        </inspection_tool>
-        <inspection_tool class="ContinueOrBreakFromFinallyBlock" level="WARNING" enabled="false" />
-        <inspection_tool class="TestCaseWithNoTestMethods" level="WARNING" enabled="false" />
       </profile>
     </profiles>
   </component>
