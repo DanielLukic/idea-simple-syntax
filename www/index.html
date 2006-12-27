@@ -31,8 +31,8 @@
 </p>
 
 <p>
-    For now it uses 'regex' based rules to define everything that should be highlighted. You can also youse 'ruby' or
-    'groovy' to define syntax tokens. This, however, slows down the code highlighting noticeable.
+    Since version 0.18 a JParsec based approach is used for the lexer configuration. The syntax is specified using a
+    Groovy or JRuby script. The script creates a JParsec lexer which is then adapted to the IntelliJ lexer API.
 </p>
 
 <h2>Usage</h2>
@@ -57,7 +57,7 @@
 <h2>Background</h2>
 
 <p>
-    Please have a look at the IDEA related entries in my blog:
+    Please have a look at the IntelliJ IDEA related entries in my blog:
 </p>
 <ul>
     <li><a href="http://www.berlinfactor.com/blog/?p=11">IDEA and Ruby</a></li>
@@ -73,10 +73,15 @@
 
 <h2>Status</h2>
 
-<p>
-    This plugin is usable, but still in an early alpha stage. Major performance issues remaining.
-    Tested only with moderately sized Ruby projects.
-</p>
+<ul>
+    <li>This plugin is usable, but in an alpha stage.
+    </li>
+    <li>Highlighting fails for multi-line syntax elements. But only while editing. Reopening a file fixes these issues.
+        (Internal info: Lexer state is not handled, yet.)
+    </li>
+    <li>Performance is acceptable for source code sizes up to a few thousand LOC.
+    </li>
+</ul>
 
 <h2>Contact</h2>
 
@@ -94,60 +99,47 @@
 <h2>Example Configuration</h2>
 
 <p>
-    Here's a part fo the example configuration included in the current release of the plugin:
+    Here's a part of the example configuration included in the current release of the plugin:
 </p>
 <pre style="margin-left:1em;padding-left:1em;overflow:auto;background:#F0F8E8;border:solid 1px;"><code>
-    [SimpleSyntax:V1.0]
+    [SimpleSyntax:V1.1]
 
     Name: Ruby
     Icon: Ruby.png
-    ExampleCode: Ruby.rb
+    ExampleCode: RubyExampleCode.rb
     Description: Ruby Script
-    (snip)
 
-    # Syntax Configuration
-    ruby BLOCK_COMMENTS => tags/BLOCK_COMMENTS.rb
-    regex LINE_COMMENTS => (?m)#.*$
-    ruby DOC_COMMENTS => tags/DOC_COMMENTS.rb
-    ruby SPECIAL_QUOTED_STRINGS => tags/SPECIAL_QUOTED_STRINGS.rb
-    regex SINGLE_QUOTED_STRINGS => \'(?:[^\']|\\')*\'
-    regex DOUBLE_QUOTED_STRINGS => \"(?:[^\"]|\\")*\"
-    ruby OPERATORS => tags/OPERATORS.rb
-    ruby KEYWORDS => tags/KEYWORDS.rb
-    ruby CORE_FUNCTIONS => tags/CORE_FUNCTIONS.rb
-    regex CLASS_NAMES => [A-Z_]*(?:[A-Z][a-z]+)+
-    regex CLASS_VARIABLE => @@[a-z_]+
-    regex INSTANCE_VARIABLE => @[a-z_]+
-    regex SYMBOLS => :\w+
-    regex IDENTIFIERS => [a-z]\w*
-    regex NUMBERS => (?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)
-    regex CONSTANTS => [A-Z][A-Z_]*
+    # Braces Configuration
+    Braces.Pairs: (),[]
+    Braces.Structural: {}
+
+    # Commenter Configuration
+    Comment.Line: #
+    Comment.BlockPrefix:
+    Comment.BlockSuffix:
+
+    # FileType Configuration
+    FileType.Icon: Ruby.png
+    FileType.Extensions: rb, ruby
+    FileType.DefaultExtension: rb
+
+    # Syntax Definition
+    SyntaxDefinition: RubySyntax.rb
 
     # Element Descriptions
-    descriptions[ BLOCK_COMMENTS ] = Block comment
-    descriptions[ LINE_COMMENTS ] = Line comment
-    descriptions[ DOC_COMMENTS ] = Documentation
-    (snip)
+    descriptions[ LINE_COMMENT ] = Line comment
+    descriptions[ DOC_COMMENT ] = Documentation
+    descriptions[ SPECIAL_QUOTED_STRING ] = Special Quoted String
+    (..snip..)
+    descriptions[ NUMBER ] = Number
 
     # Element Default Attributes
-    attributes[ BLOCK_COMMENTS ] = #008000
-    attributes[ LINE_COMMENTS ] = #008000
-    attributes[ DOC_COMMENTS ] = #008000,BOLD
-    (snip)
+    attributes[ LINE_COMMENT ] = #008000
+    attributes[ DOC_COMMENT ] = #008000,BOLD
+    attributes[ SPECIAL_QUOTED_STRING ] = #008080
+    (..snip..)
+    attributes[ NUMBER ] = #800080
 </code></pre>
-
-<h2>Open Issues</h2>
-
-<p>
-    These are the more general issues with the current plugin version:
-</p>
-<ul>
-    <li>Lexer doesn't cope well with some ways of changing source code. Strange..</li>
-    <li>Highlighting a longer piece of source code can be pretty slow. Especially with lots of external (ruby/groovy)
-        rules..</li>
-    <li>Arranging syntax rules in the right order can be annoying. A simple lexer-like configuration would be
-        cool..</li>
-</ul>
 
 <h2>Road Map</h2>
 
@@ -159,28 +151,30 @@
 <h3>Version 0.0: Testing [COMPLETED]</h3>
 <ul>
     <li>Implement the basic idea of a simple highlighter.</li>
+    <li>Make init/reload more polite: Ask before overwriting files and/or overriding filetypes.</li>
 </ul>
 
-<h3>Version 1.0: Stability [ACTIVE]</h3>
+<h3>Version 1.0: Flexibility [ACTIVE]</h3>
 <ul>
-    <li>Cleanup the codebase.</li>
-    <li>Fix remaining bugs/issues.</li>
-    <li>Introduce more IDEA abstractions in the codebase.</li>
+    <li>Switch to more flexible lexer configuration.</li>
+    <li>Use Groovy and/or JRuby to build syntax configuration based on JParsec.</li>
     <li>Add more configuration presets (Property files, etc).</li>
+    <li>Investigate JFlex-based approach for maximum performance.</li>
+    <li>Work on performance.</li>
 </ul>
 
-<h3>Version 1.1: UI</h3>
+<h3>Version 2.0: GUI</h3>
 <ul>
     <li>Add simple plugin configuration UI.</li>
     <li>Make it possible to turn available configurations on and off.</li>
     <li>Add config downloading (from plugin home - which is here, I guess).</li>
-    <li>Make init/reload more polite: Ask before overwriting files and/or overriding filetypes.</li>
 </ul>
 
-<h3>Version 1.2: Performance</h3>
+<h3>Version 3.0: Completion</h3>
 <ul>
-    <li>Switch to simple lex-like syntax configuration.</li>
-    <li>Use Groovy to compile syntax configuration using JFlex.</li>
+    <li>Cleanup the codebase.</li>
+    <li>Fix remaining bugs/issues.</li>
+    <li>Introduce more IDEA abstractions in the codebase.</li>
 </ul>
 
 </div>

@@ -1,6 +1,10 @@
 package net.intensicode.idea.util;
 
 import groovy.lang.GroovyShell;
+import groovy.lang.Script;
+import jfun.parsec.Parser;
+import jfun.parsec.Tok;
+import net.intensicode.idea.syntax.JParsecLexer;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.SystemContext;
 
@@ -15,6 +19,11 @@ public final class GroovyContext
     {
         myShell = aShell;
         myFolder = aSystemContext.getOptionsFolder();
+    }
+
+    public static final JParsecLexer makeLexer( final Script aScript )
+    {
+        return new JParsecLexer( ( Parser<Tok[]> ) aScript.run() );
     }
 
     public final Object source( final String aScriptName ) throws FileNotFoundException

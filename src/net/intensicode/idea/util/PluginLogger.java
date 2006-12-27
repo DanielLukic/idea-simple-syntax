@@ -20,7 +20,7 @@ final class PluginLogger extends Logger
 
     public final boolean isDebugEnabled()
     {
-        return true;
+        return Boolean.parseBoolean( System.getProperty( "debug" ) );
     }
 
     public final void setLevel( final Level level )

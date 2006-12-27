@@ -3,8 +3,6 @@ package net.intensicode.idea.config.loaded;
 import com.intellij.openapi.diagnostic.Logger;
 import groovy.lang.GroovyShell;
 import groovy.lang.Script;
-import jfun.parsec.Parser;
-import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
 import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
@@ -13,7 +11,6 @@ import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
 import net.intensicode.idea.core.SimpleAttributes;
 import net.intensicode.idea.core.SimpleLanguage;
 import net.intensicode.idea.core.SimpleLexer;
-import net.intensicode.idea.syntax.JParsecLexer;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.GroovyContext;
@@ -23,8 +20,6 @@ import net.intensicode.idea.util.RubyContext;
 import org.jruby.IRuby;
 import org.jruby.Ruby;
 import org.jruby.ast.Node;
-import org.jruby.javasupport.JavaUtil;
-import org.jruby.runtime.builtin.IRubyObject;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -190,9 +185,7 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
                     shell.getContext().setVariable( "context", new GroovyContext( shell, mySystemContext ) );
 
                     final Script script = shell.parse( folder.streamFile( fileName ), fullFileName );
-                    final Parser<Tok[]> lexer = ( Parser<Tok[]> ) script.run();
-
-                    mySyntaxLexer = new JParsecLexer( lexer );
+                    mySyntaxLexer = GroovyContext.makeLexer( script );
                 }
                 else if ( fileName.endsWith( ".ruby" ) || fileName.endsWith( ".rb" ) )
                 {
@@ -202,10 +195,7 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
                     runtime.getTopSelf().defineSingletonMethod( "source", new RubyContext( mySystemContext ) );
 
                     final Node node = runtime.parse( folder.readFile( fileName ), fullFileName, null );
-
-                    final IRubyObject result = runtime.eval( node );
-                    final Parser<Tok[]> lexerImpl = ( Parser<Tok[]> ) JavaUtil.convertRubyToJava( result, Parser.class );
-                    mySyntaxLexer = new JParsecLexer( lexerImpl );
+                    mySyntaxLexer = RubyContext.makeLexer( runtime.eval( node ) );
                 }
                 else
                 {

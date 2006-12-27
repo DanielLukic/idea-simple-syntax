@@ -125,7 +125,7 @@ public final class ActionInstall extends AnAction
 
     private static final String SIMPLESYNTAX_RUBY_CONFIG = "Ruby.config";
 
-    private static final String[] INSTALL_FILES = new String[]{ SIMPLESYNTAX_RUBY_CONFIG, "LexerBase.rb" };
+    private static final String[] INSTALL_FILES = new String[]{ SIMPLESYNTAX_RUBY_CONFIG, "LexerBase.rb", "Example.groovy" };
 
 
     private static final Logger LOG = LoggerFactory.getLogger();

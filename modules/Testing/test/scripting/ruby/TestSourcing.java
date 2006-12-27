@@ -48,7 +48,8 @@ public final class TestSourcing extends TestCase
             final IRubyObject result = runtime.eval( node );
             final Parser<Tok[]> lexerImpl = ( Parser<Tok[]> ) JavaUtil.convertRubyToJava( result, Parser.class );
             final JParsecLexer lexer = new JParsecLexer( lexerImpl );
-            final SimpleToken token = lexer.findToken( "test".toCharArray(), 0, 4 );
+            lexer.start( "test".toCharArray(), 0, 4 );
+            final SimpleToken token = lexer.findToken( 0 );
             assertNotNull( token );
         }
         catch ( final RaiseException e )

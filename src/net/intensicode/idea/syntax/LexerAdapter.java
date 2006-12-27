@@ -3,12 +3,10 @@ package net.intensicode.idea.syntax;
 import com.intellij.lang.Language;
 import com.intellij.lexer.Lexer;
 import com.intellij.lexer.LexerPosition;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.core.SimpleLexer;
 import net.intensicode.idea.core.SimpleToken;
-import net.intensicode.idea.util.LoggerFactory;
 
 /**
  * TODO: Describe this!
@@ -87,6 +85,8 @@ public final class LexerAdapter implements Lexer
         myTokenType = null;
         myTokenStart = myTokenEnd = startOffset;
 
+        myLexer.start( buffer, startOffset, endOffset );
+
         advance();
     }
 
@@ -100,7 +100,7 @@ public final class LexerAdapter implements Lexer
 
         if ( aStartOffset >= myEndOffset ) return;
 
-        final SimpleToken foundToken = myLexer.findToken( myBuffer, aStartOffset, myEndOffset );
+        final SimpleToken foundToken = myLexer.findToken( aStartOffset );
         if ( foundToken == null )
         {
             myTokenType = DEFAULT_TOKEN;
@@ -132,6 +132,4 @@ public final class LexerAdapter implements Lexer
     private final LanguageConfiguration myLanguageConfiguration;
 
     private static final IElementType DEFAULT_TOKEN = new IElementType( "DEFAULT", Language.ANY );
-
-    private static final Logger LOG = LoggerFactory.getLogger();
 }

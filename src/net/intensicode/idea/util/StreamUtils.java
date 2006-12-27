@@ -12,6 +12,11 @@ import java.io.OutputStream;
  */
 public final class StreamUtils
 {
+    public static final String loadIntoString( final InputStream aStream ) throws IOException
+    {
+        return new String( loadFully( aStream ) );
+    }
+
     public static final byte[] loadFully( final InputStream aStream ) throws IOException
     {
         final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -21,7 +26,7 @@ public final class StreamUtils
 
     public static final void copy( final InputStream aInput, final OutputStream aOutput ) throws IOException
     {
-        final byte[] buffer = new byte[ 4096 ];
+        final byte[] buffer = new byte[4096];
         while ( true )
         {
             final int newBytes = aInput.read( buffer );

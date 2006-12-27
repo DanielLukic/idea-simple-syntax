@@ -1,4 +1,21 @@
 
+/*
+ * This is an example Groovy lexer configuration. There are some issues when using Groovy in this context:
+ *
+ * 1. You can't simply 'source' another file like in the JRuby configurations. This is because Groovy treats every
+ * script as a class. There is no global object space. There is a binding, yes. But it does not contain global methods.
+ * AFAIK there's no easy way around this. Therefore I introduced a global variable 'context' in the binding.This can be
+ * used like "context.source( aFileName )". However, you can't reference classes because they aren't available to the
+ * Groovy compiler when parsing 'this' file. The problem should become obvious now..
+ *
+ * 2. Because of the first issue, I introduced a helper class, JParsecSyntaxBase. You can use it as shown below. Of
+ * course you don't have to use it. You can create the JParsec lexer any way you like. Unfortunately I'm not sure what
+ * the best way is to load additional libs and/or classes. In other words, you can't simply load (read: import) stuff
+ * (read: classes) stored in the config/options/SimpleSyntax folder. I haven't found a nice solution for this, yet!
+ *
+ * Overall, the JRuby approach is probably the better solution for now.
+ */
+
 import jfun.parsec.*;
 import jfun.parsec.tokens.*;
 import jfun.parsec.pattern.*;

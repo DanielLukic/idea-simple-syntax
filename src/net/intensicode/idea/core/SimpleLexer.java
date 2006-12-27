@@ -5,5 +5,7 @@ package net.intensicode.idea.core;
  */
 public interface SimpleLexer
 {
-    SimpleToken findToken( char[] aBuffer, int aStartOffset, int aEndOffset );
+    void start( char[] aBuffer, int aStartOffset, int aEndOffset );
+
+    SimpleToken findToken( int aStartOffset );
 }

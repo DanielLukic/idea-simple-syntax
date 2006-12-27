@@ -7,9 +7,10 @@
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
         languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
         ///
-        Credits: Includes the wonderful JRuby and Groovy binary distributions.
+        Credits: Includes the wonderful Groovy, JRuby and JParsec systems.
     </description>
     <change-notes>
+        [ V0.18 ] Switched to Groovy and JRuby lexer configuration using JParsec.
         [ V0.17 ] Fully fixed for IDEA 6.0. Now highlighting of files works properly again.
         [ V0.16 ] Fixed for IDEA 6.0. No more crashing IDEA 6.0 and later.
         [ V0.15 ] Fixed more minor issues in Ruby highlighting.
@@ -28,7 +29,7 @@
         [ V0.2 ] Implemented syntax configuration loading.
         [ V0.1 ] Initial release with hardcoded Ruby syntax.
     </change-notes>
-    <version>0.17</version>
+    <version>0.18</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
     <idea-version since-build="6107"/>
     <application-components>

@@ -1,12 +1,14 @@
 package net.intensicode.idea.syntax;
 
-import com.intellij.util.text.CharArrayCharSequence;
 import jfun.parsec.Parser;
 import jfun.parsec.Parsers;
 import jfun.parsec.Tok;
 import jfun.parsec.tokens.TypedToken;
 import net.intensicode.idea.core.SimpleLexer;
 import net.intensicode.idea.core.SimpleToken;
+import net.intensicode.idea.util.MutableCharSequence;
+
+import java.util.ArrayList;
 
 /**
  * TODO: Describe this!
@@ -15,32 +17,82 @@ public final class JParsecLexer implements SimpleLexer
 {
     public JParsecLexer( final Parser<Tok[]> aLexer )
     {
-        if ( aLexer == null ) throw new NullPointerException();
         myLexer = aLexer;
     }
 
     // From SimpleLexer
 
-    public final SimpleToken findToken( final char[] aBuffer, final int aStartOffset, final int aEndOffset )
+    public final void start( final char[] aBuffer, final int aStartOffset, final int aEndOffset )
     {
-        final CharArrayCharSequence sequence = new CharArrayCharSequence( aBuffer, aStartOffset, aEndOffset );
+        myBuffer = aBuffer;
+        myStartOffset = aStartOffset;
+        myEndOffset = aEndOffset;
 
-        final Tok[] tokens = Parsers.runParser( sequence, myLexer, "(editor buffer)" );
-        if ( tokens == null || tokens.length == 0 ) return null;
+        myCache.clear();
+    }
 
-        final Tok firstToken = tokens[ 0 ];
-        final TypedToken token = ( TypedToken ) firstToken.getToken();
+    public final SimpleToken findToken( final int aStartOffset )
+    {
+        if ( aStartOffset < myStartOffset || aStartOffset >= myEndOffset ) throw new IllegalArgumentException();
 
-        myToken.id = token.getType();
-        myToken.start = aStartOffset + firstToken.getIndex();
-        myToken.end = myToken.start + firstToken.getLength();
+        if ( myCache.isEmpty() )
+        {
+            myCharSequence.reset( myBuffer, myStartOffset, myEndOffset );
 
-        return myToken;
+            final Tok[] tokens = Parsers.runParser( myCharSequence, myLexer, null );
+            if ( tokens == null || tokens.length == 0 ) return null;
+
+            for ( final Tok token : tokens )
+            {
+                final SimpleToken simpleToken = makeSimpleToken( myStartOffset, token );
+                myCache.add( simpleToken );
+            }
+        }
+
+        final int cacheSize = myCache.size();
+        for ( int idx = 0; idx < cacheSize; idx++ )
+        {
+            final SimpleToken token = myCache.get( idx );
+
+            if ( aStartOffset >= token.start && aStartOffset < token.end )
+            {
+                return token;
+            }
+
+            if ( aStartOffset < token.end )
+            {
+                return token;
+            }
+        }
+
+        return null;
+    }
+
+    // Implementation
+
+    private final SimpleToken makeSimpleToken( final int aStartOffset, final Tok aToken )
+    {
+        final SimpleToken newToken = new SimpleToken();
+        newToken.start = aStartOffset + aToken.getIndex();
+        newToken.end = newToken.start + aToken.getLength();
+
+        final TypedToken typedToken = ( TypedToken ) aToken.getToken();
+        newToken.id = typedToken.getType();
+
+        return newToken;
     }
 
 
 
+    private char[] myBuffer;
+
+    private int myEndOffset;
+
+    private int myStartOffset;
+
     private final Parser<Tok[]> myLexer;
 
-    private final SimpleToken myToken = new SimpleToken();
+    private final ArrayList<SimpleToken> myCache = new ArrayList<SimpleToken>();
+
+    private final MutableCharSequence myCharSequence = new MutableCharSequence();
 }
