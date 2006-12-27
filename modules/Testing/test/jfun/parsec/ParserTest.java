@@ -25,7 +25,7 @@ public final class ParserTest extends TestCase
     {
         final Parser<Tok[]> lexer = createLexer();
 
-        final Tok[] tokens = ( Tok[] ) Parsers.runParser( "test this 17 times + 4! (or not)", lexer, "" );
+        final Tok[] tokens = Parsers.runParser( "test this 17 times + 4! (or not)", lexer, "" );
         assertNotNull( tokens );
         assertEquals( 11, tokens.length );
 

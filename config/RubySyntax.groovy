@@ -3,9 +3,7 @@ import jfun.parsec.*;
 import jfun.parsec.tokens.*;
 import jfun.parsec.pattern.*;
 
-
-
-class RubySyntax extends net.intensicode.idea.JParsecSyntaxBase
+class MyRubySyntax extends net.intensicode.idea.JParsecSyntaxBase
     {
     protected void setup()
         {
@@ -35,6 +33,4 @@ class RubySyntax extends net.intensicode.idea.JParsecSyntaxBase
         }
     }
 
-
-
-return new RubySyntax().lexer()
+return new MyRubySyntax().lexer()

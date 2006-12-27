@@ -1,15 +1,10 @@
 package net.intensicode.idea.core;
 
-import net.intensicode.idea.util.ReaderUtils;
 import net.intensicode.idea.system.OptionsFolder;
+import net.intensicode.idea.util.ReaderUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.FileNotFoundException;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.io.*;
 
 
 
@@ -23,33 +18,48 @@ public class FakeOptionsFolder implements OptionsFolder
         myReferenceObject = aReferenceObject;
     }
 
-    public String[] findConfigurations()
+    public final String[] findConfigurations()
     {
         throw new RuntimeException( "NYI" );
     }
 
-    public Icon loadIcon( String aRelativeFileName )
+    public final Icon loadIcon( final String aRelativeFileName )
     {
         return new ImageIcon( myReferenceObject.getClass().getResource( aRelativeFileName ) );
     }
 
-    public boolean fileExists( String aRelativeFileName )
+    public final boolean fileExists( final String aRelativeFileName )
     {
         throw new RuntimeException( "NYI" );
     }
 
-    public InputStream streamFile( String aRelativeFileName ) throws FileNotFoundException
+    public final String makeFileName( final String aRelativeFileName )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public final Reader readFile( final String aRelativeFileName ) throws IOException
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public final InputStream streamFile( final String aRelativeFileName ) throws FileNotFoundException
     {
         return myReferenceObject.getClass().getResourceAsStream( aRelativeFileName );
     }
 
-    public String readFileIntoString( String aRelativeFileName ) throws IOException
+    public final String readFileIntoString( final String aRelativeFileName ) throws IOException
     {
         final InputStreamReader reader = new InputStreamReader( streamFile( aRelativeFileName ) );
         return ReaderUtils.readIntoString( reader );
     }
 
-    public void writeFileFromStream( String aRelativeFileName, InputStream aStream ) throws IOException
+    public final void writeFileFromStream( final String aRelativeFileName, final InputStream aStream ) throws IOException
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public String classPathBase()
     {
         throw new RuntimeException( "NYI" );
     }

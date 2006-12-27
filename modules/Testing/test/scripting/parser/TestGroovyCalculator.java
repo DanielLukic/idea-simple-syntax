@@ -1,4 +1,4 @@
-package groovy.parser;
+package scripting.parser;
 
 import groovy.lang.GroovyObject;
 import groovy.lang.GroovyShell;

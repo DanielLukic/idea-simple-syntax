@@ -2,16 +2,14 @@ package net.intensicode.idea.system.production;
 
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
+import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.util.FileUtils;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.StreamUtils;
-import net.intensicode.idea.system.OptionsFolder;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.HashMap;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 
 
@@ -35,7 +33,7 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
 
     public final synchronized Icon loadIcon( final String aRelativeFileName )
     {
-        final String fileName = makeAbsolute( aRelativeFileName );
+        final String fileName = makeFileName( aRelativeFileName );
         if ( myLoadedIcons.containsKey( fileName ) == false )
         {
             final byte[] data = tryLoadingFile( fileName );
@@ -47,25 +45,38 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
 
     public final boolean fileExists( final String aRelativeFileName )
     {
-        final String fileName = makeAbsolute( aRelativeFileName );
+        final String fileName = makeFileName( aRelativeFileName );
         return new File( fileName ).exists();
+    }
+
+
+    public final String makeFileName( final String aRelativeFileName )
+    {
+        if ( new File( aRelativeFileName ).isAbsolute() ) return aRelativeFileName;
+        final File baseFolder = getConfigurationFolder();
+        return new File( baseFolder, aRelativeFileName ).getPath();
+    }
+
+    public final Reader readFile( final String aRelativeFileName ) throws IOException
+    {
+        return new FileReader( makeFileName( aRelativeFileName ) );
     }
 
     public final InputStream streamFile( String aRelativeFileName ) throws FileNotFoundException
     {
-        final String fileName = makeAbsolute( aRelativeFileName );
+        final String fileName = makeFileName( aRelativeFileName );
         return new FileInputStream( fileName );
     }
 
     public final String readFileIntoString( final String aRelativeFileName ) throws IOException
     {
-        final String fileName = makeAbsolute( aRelativeFileName );
+        final String fileName = makeFileName( aRelativeFileName );
         return FileUtils.readIntoString( fileName );
     }
 
     public final void writeFileFromStream( final String aRelativeFileName, final InputStream aStream ) throws IOException
     {
-        final String fileName = makeAbsolute( aRelativeFileName );
+        final String fileName = makeFileName( aRelativeFileName );
 
         final File target = new File( fileName );
         target.getParentFile().mkdirs();
@@ -81,6 +92,12 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
         }
     }
 
+    public final String classPathBase()
+    {
+        return getConfigurationFolder().toString();
+    }
+
+
     // From FileNameFilter
 
     public final boolean accept( final File dir, final String name )
@@ -89,13 +106,6 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
     }
 
     // Implementation
-
-    private final String makeAbsolute( final String aFileName )
-    {
-        if ( new File( aFileName ).isAbsolute() ) return aFileName;
-        final File baseFolder = getConfigurationFolder();
-        return new File( baseFolder, aFileName ).getPath();
-    }
 
     private final byte[] tryLoadingFile( final String aFileName )
     {

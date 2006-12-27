@@ -2,6 +2,7 @@ package net.intensicode.idea.config.loaded;
 
 import com.intellij.openapi.diagnostic.Logger;
 import groovy.lang.GroovyShell;
+import groovy.lang.Script;
 import jfun.parsec.Parser;
 import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
@@ -15,11 +16,20 @@ import net.intensicode.idea.core.SimpleLexer;
 import net.intensicode.idea.syntax.JParsecLexer;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.util.GroovyContext;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
+import net.intensicode.idea.util.RubyContext;
+import org.jruby.IRuby;
+import org.jruby.Ruby;
+import org.jruby.ast.Node;
+import org.jruby.javasupport.JavaUtil;
+import org.jruby.runtime.builtin.IRubyObject;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -167,19 +177,45 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
         {
             try
             {
-                LOG.info( "Creating groovy lexer" );
+                final OptionsFolder folder = mySystemContext.getOptionsFolder();
 
-                final GroovyShell shell = new GroovyShell();
-                shell.getContext().setVariable( "context", new GroovyContext( shell, mySystemContext ) );
+                final String fileName = getProperty( SYNTAX_DEFINITION );
+                final String fullFileName = folder.makeFileName( fileName );
 
-                final Parser<Tok[]> lexer = ( Parser<Tok[]> ) shell.evaluate( streamSyntaxDefinition() );
-                mySyntaxLexer = new JParsecLexer( lexer );
+                if ( fileName.endsWith( ".groovy" ) )
+                {
+                    LOG.info( "Creating groovy lexer" );
+
+                    final GroovyShell shell = new GroovyShell();
+                    shell.getContext().setVariable( "context", new GroovyContext( shell, mySystemContext ) );
+
+                    final Script script = shell.parse( folder.streamFile( fileName ), fullFileName );
+                    final Parser<Tok[]> lexer = ( Parser<Tok[]> ) script.run();
+
+                    mySyntaxLexer = new JParsecLexer( lexer );
+                }
+                else if ( fileName.endsWith( ".ruby" ) || fileName.endsWith( ".rb" ) )
+                {
+                    LOG.info( "Creating ruby lexer" );
+
+                    final IRuby runtime = Ruby.getDefaultInstance();
+                    runtime.getTopSelf().defineSingletonMethod( "source", new RubyContext( mySystemContext ) );
+
+                    final Node node = runtime.parse( folder.readFile( fileName ), fullFileName, null );
+
+                    final IRubyObject result = runtime.eval( node );
+                    final Parser<Tok[]> lexerImpl = ( Parser<Tok[]> ) JavaUtil.convertRubyToJava( result, Parser.class );
+                    mySyntaxLexer = new JParsecLexer( lexerImpl );
+                }
+                else
+                {
+                    throw new RuntimeException( "No scripting engine available for " + fileName );
+                }
             }
-            catch ( final Throwable t )
+            catch ( final Exception t )
             {
                 LOG.info( t.toString() );
                 LOG.error( t );
-                return null;
             }
         }
         return mySyntaxLexer;
@@ -241,14 +277,6 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
 
         final String exampleCodeFileName = getProperty( EXAMPLE_CODE );
         return mySystemContext.getOptionsFolder().readFileIntoString( exampleCodeFileName );
-    }
-
-    private final InputStream streamSyntaxDefinition() throws Throwable
-    {
-        if ( isValidProperty( SYNTAX_DEFINITION ) == false ) return new ByteArrayInputStream( new byte[0] );
-
-        final String fileName = getProperty( SYNTAX_DEFINITION );
-        return mySystemContext.getOptionsFolder().streamFile( fileName );
     }
 
 

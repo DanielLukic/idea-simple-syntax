@@ -43,7 +43,7 @@ public final class ActionInstall extends AnAction
     {
         try
         {
-            copyResource( SIMPLESYNTAX_RUBY_CONFIG );
+            for ( final String fileName : INSTALL_FILES ) copyResource( fileName );
 
             final Reader config = myResourceLoader.read( SIMPLESYNTAX_RUBY_CONFIG );
             for ( final String line : ReaderUtils.readLines( config ) )
@@ -124,6 +124,8 @@ public final class ActionInstall extends AnAction
     private static final String EMPTY_INPUT = "";
 
     private static final String SIMPLESYNTAX_RUBY_CONFIG = "Ruby.config";
+
+    private static final String[] INSTALL_FILES = new String[]{ SIMPLESYNTAX_RUBY_CONFIG, "LexerBase.rb" };
 
 
     private static final Logger LOG = LoggerFactory.getLogger();

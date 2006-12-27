@@ -20,7 +20,7 @@ Issues
 ======
 
 I1: Identify more code areas where adapters between the plugin and IDEA world make sense.
-I2: Allow simple lex config and run it using groovy/jruby? Instead of limited rule based approach..
+I2: Allow simple lex config and run it using groovy/scripting? Instead of limited rule based approach..
 I3: Config file with simple lexer config and compilation via jflex?
 I4: Automate Version check in build.xml? Use external change log? No idea yet..
 I5: Make configs available online and downloadable in plugin?
