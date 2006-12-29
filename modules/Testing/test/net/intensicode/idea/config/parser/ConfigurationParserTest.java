@@ -5,7 +5,7 @@ import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
 
 
 
-public final class TestConfigurationParser extends TestCase
+public final class ConfigurationParserTest extends TestCase
 {
     public final void testGetValue() throws Exception
     {

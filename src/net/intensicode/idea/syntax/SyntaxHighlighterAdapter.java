@@ -7,8 +7,8 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
-import net.intensicode.idea.core.SimpleAttributes;
-import net.intensicode.idea.core.SimpleLexer;
+import net.intensicode.idea.core.ConfigurableAttributes;
+import net.intensicode.idea.syntax.SimpleLexer;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,7 +53,7 @@ public final class SyntaxHighlighterAdapter implements SyntaxHighlighter
 
     private Lexer myLexer;
 
-    private SimpleAttributes myAttributes;
+    private ConfigurableAttributes myAttributes;
 
     private final InstanceConfiguration myConfiguration;
 

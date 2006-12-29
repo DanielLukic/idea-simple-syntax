@@ -13,27 +13,37 @@ import java.util.List;
  */
 public final class FakeSystemErrorHandler implements SystemErrorHandler
 {
-    public void onSimpleSyntaxInstallFailed( Throwable aThrowable )
+    public final void onConfigurationError( final Throwable aThrowable )
     {
         throw new RuntimeException( aThrowable );
     }
 
-    public Confirmation onFileReplaceConfirmation( String aFileName )
+    public final void onScriptingError( final Throwable aThrowable )
+    {
+        throw new RuntimeException( aThrowable );
+    }
+
+    public final void onSimpleSyntaxInstallFailed( final Throwable aThrowable )
+    {
+        throw new RuntimeException( aThrowable );
+    }
+
+    public final Confirmation onFileReplaceConfirmation( final String aFileName )
     {
         throw new RuntimeException( "NYI" );
     }
 
-    public Confirmation onFileTypeReplaceConfirmation( String aFileType )
+    public final Confirmation onFileTypeReplaceConfirmation( final String aFileType )
     {
         throw new RuntimeException( "NYI" );
     }
 
-    public Confirmation onFileTypeInUseConfirmation( List<FileNameMatcher> aExtensions )
+    public final Confirmation onFileTypeInUseConfirmation( final List<FileNameMatcher> aExtensions )
     {
         throw new RuntimeException( "NYI" );
     }
 
-    public void forgetConfirmationAnswers()
+    public final void forgetConfirmationAnswers()
     {
         throw new RuntimeException( "NYI" );
     }

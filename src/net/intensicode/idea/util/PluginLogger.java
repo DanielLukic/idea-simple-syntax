@@ -68,7 +68,7 @@ final class PluginLogger extends Logger
     public final void error( final @NonNls String message, final Throwable t, final @NonNls String... details )
     {
         System.out.println( "[ERROR] [" + myCategory + "] " + message );
-        error( t );
+        if ( t != null ) error( t );
     }
 
     public final void error( final @NonNls Throwable t )

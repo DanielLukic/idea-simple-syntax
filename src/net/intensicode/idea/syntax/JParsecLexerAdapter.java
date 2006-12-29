@@ -4,8 +4,6 @@ import jfun.parsec.Parser;
 import jfun.parsec.Parsers;
 import jfun.parsec.Tok;
 import jfun.parsec.tokens.TypedToken;
-import net.intensicode.idea.core.SimpleLexer;
-import net.intensicode.idea.core.SimpleToken;
 import net.intensicode.idea.util.MutableCharSequence;
 
 import java.util.ArrayList;
@@ -13,9 +11,9 @@ import java.util.ArrayList;
 /**
  * TODO: Describe this!
  */
-public final class JParsecLexer implements SimpleLexer
+public final class JParsecLexerAdapter implements SimpleLexer
 {
-    public JParsecLexer( final Parser<Tok[]> aLexer )
+    public JParsecLexerAdapter( final Parser<Tok[]> aLexer )
     {
         myLexer = aLexer;
     }
@@ -53,16 +51,8 @@ public final class JParsecLexer implements SimpleLexer
         for ( int idx = 0; idx < cacheSize; idx++ )
         {
             final SimpleToken token = myCache.get( idx );
-
-            if ( aStartOffset >= token.start && aStartOffset < token.end )
-            {
-                return token;
-            }
-
-            if ( aStartOffset < token.end )
-            {
-                return token;
-            }
+            if ( aStartOffset >= token.start && aStartOffset < token.end ) return token;
+            if ( aStartOffset < token.end ) return token;
         }
 
         return null;

@@ -1,4 +1,4 @@
-package net.intensicode.idea;
+package net.intensicode.idea.syntax;
 
 import jfun.parsec.*;
 import jfun.parsec.pattern.Pattern;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 /**
  * TODO: Describe this!
  */
-public abstract class JParsecSyntaxBase
+public abstract class JParsecLexerBase
 {
-    public JParsecSyntaxBase()
+    public JParsecLexerBase()
     {
     }
 

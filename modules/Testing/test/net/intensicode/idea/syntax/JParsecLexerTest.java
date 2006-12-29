@@ -13,7 +13,7 @@ public final class JParsecLexerTest extends TestCase
     {
         final char[] chars = "word 1704 ?".toCharArray();
 
-        final JParsecLexer lexer = new JParsecLexer( createLexer() );
+        final JParsecLexerAdapter lexer = new JParsecLexerAdapter( createLexer() );
         lexer.start( chars, 0, chars.length );
 
         assertEquals( 0, lexer.findToken( 0 ).start );

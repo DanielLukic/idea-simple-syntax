@@ -17,9 +17,9 @@ import java.util.HashMap;
  * <li>Manage ConfigurableTextAttributes to make TextAttributesKey instances appear dynamic (color settings).</li>
  * </ul>
  */
-public final class SimpleAttributes
+public final class ConfigurableAttributes
 {
-    public SimpleAttributes( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
+    public ConfigurableAttributes( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {
         reset( aSystemContext, aConfiguration );
     }

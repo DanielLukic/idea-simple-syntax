@@ -1,23 +1,23 @@
 package net.intensicode.idea.config.loaded;
 
 import com.intellij.openapi.diagnostic.Logger;
+import jfun.parsec.Lexers;
 import jfun.parsec.Parser;
+import jfun.parsec.Scanners;
 import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
 import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
 import net.intensicode.idea.config.loaded.parser.KnownIDConsumer;
 import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
-import net.intensicode.idea.core.SimpleAttributes;
-import net.intensicode.idea.core.SimpleLanguage;
-import net.intensicode.idea.core.SimpleLexer;
-import net.intensicode.idea.syntax.JParsecLexer;
+import net.intensicode.idea.core.ConfigurableAttributes;
+import net.intensicode.idea.syntax.JParsecLexerAdapter;
+import net.intensicode.idea.syntax.SimpleLexer;
 import net.intensicode.idea.system.OptionsFolder;
+import net.intensicode.idea.system.ScriptSupport;
 import net.intensicode.idea.system.SystemContext;
-import net.intensicode.idea.util.GroovyContext;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
-import net.intensicode.idea.util.RubyContext;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * TODO: Describe this!
  */
-public class LoadedConfiguration implements InstanceConfiguration, ConfigurationProperties
+public final class LoadedConfiguration implements InstanceConfiguration, ConfigurationProperties
 {
     public static final LoadedConfiguration tryLoading( final SystemContext aSystemContext, final String aFileName )
     {
@@ -56,6 +56,11 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
 
         loadConfiguration( aReader );
         validateConfiguration();
+
+        myBracesConfiguration = new LoadedBracesConfiguration( this );
+        myCommentConfiguration = new LoadedCommentConfiguration( this );
+        myFileTypeConfiguration = new LoadedFileTypeConfiguration( this, aSystemContext.getOptionsFolder() );
+        myNamesValidatorConfiguration = new LoadedNamesValidatorConfiguration( aSystemContext, this );
     }
 
     // From InstanceConfiguration
@@ -76,7 +81,7 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
         return getProperty( DESCRIPTION );
     }
 
-    public synchronized final String getExampleCode()
+    public final String getExampleCode()
     {
         if ( myExampleCode == null )
         {
@@ -119,59 +124,51 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
         return description;
     }
 
-    public synchronized final BracesConfiguration getBracesConfiguration()
+    public final BracesConfiguration getBracesConfiguration()
     {
-        if ( myBracesConfiguration == null )
-        {
-            myBracesConfiguration = new LoadedBracesConfiguration( this );
-        }
         return myBracesConfiguration;
     }
 
-    public synchronized final CommentConfiguration getCommentConfiguration()
+    public final CommentConfiguration getCommentConfiguration()
     {
-        if ( myCommentConfiguration == null )
-        {
-            myCommentConfiguration = new LoadedCommentConfiguration( this );
-        }
         return myCommentConfiguration;
     }
 
-    public synchronized final FileTypeConfiguration getFileTypeConfiguration()
+    public final FileTypeConfiguration getFileTypeConfiguration()
     {
-        if ( myFileTypeConfiguration == null )
-        {
-            myFileTypeConfiguration = new LoadedFileTypeConfiguration( this, mySystemContext.getOptionsFolder() );
-        }
         return myFileTypeConfiguration;
     }
 
-    public synchronized final LanguageConfiguration getLanguageConfiguration()
+    public final NamesValidatorConfiguration getNamesValidatorConfiguration()
     {
-        if ( myLanguage == null )
-        {
-            myLanguage = SimpleLanguage.getOrCreate( this );
-        }
-        return myLanguage;
+        return myNamesValidatorConfiguration;
     }
 
-    public synchronized final SimpleAttributes getAttributes()
+    public final LanguageConfiguration getLanguageConfiguration()
     {
-        if ( mySimpleAttributes == null )
+        if ( myLanguageConfiguration == null )
         {
-            mySimpleAttributes = new SimpleAttributes( mySystemContext, this );
+            myLanguageConfiguration = new LoadedLanguageConfiguration( this );
         }
-        return mySimpleAttributes;
+        return myLanguageConfiguration;
     }
 
-    public synchronized final SimpleLexer getLexer()
+    public final ConfigurableAttributes getAttributes()
+    {
+        if ( myConfigurableAttributes == null )
+        {
+            myConfigurableAttributes = new ConfigurableAttributes( mySystemContext, this );
+        }
+        return myConfigurableAttributes;
+    }
+
+    public final SimpleLexer getLexer()
     {
         if ( mySyntaxLexer == null )
         {
             try
             {
-                final Parser<Tok[]> lexer = createLexer();
-                mySyntaxLexer = new JParsecLexer( lexer );
+                mySyntaxLexer = new JParsecLexerAdapter( createLexer() );
             }
             catch ( final Exception t )
             {
@@ -220,10 +217,8 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
     {
         for ( final String key : REQUIRED_ENTRIES )
         {
-            if ( isValidProperty( key ) == false )
-            {
-                throw new IOException( "Missing '" + key + "' entry" );
-            }
+            if ( isValidProperty( key ) ) continue;
+            throw new IOException( "Missing '" + key + "' entry" );
         }
     }
 
@@ -240,24 +235,19 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
         return mySystemContext.getOptionsFolder().readFileIntoString( exampleCodeFileName );
     }
 
-    private final Parser<Tok[]> createLexer() throws IOException
+    private final Parser<Tok[]> createLexer()
     {
-        final String fileName = getProperty( SYNTAX_DEFINITION );
-        final String script = mySystemContext.getOptionsFolder().readFileIntoString( fileName );
-
-        if ( fileName.endsWith( ".groovy" ) )
+        try
         {
-            LOG.info( "Creating Groovy lexer" );
-            return new GroovyContext( mySystemContext ).makeLexer( script );
+            final String fileName = getProperty( SYNTAX_DEFINITION );
+            final ScriptSupport scriptSupport = mySystemContext.getScriptSupport();
+            final Object lexer = scriptSupport.createObject( fileName, Parser.class );
+            return ( Parser<Tok[]> ) lexer;
         }
-        else if ( fileName.endsWith( ".ruby" ) || fileName.endsWith( ".rb" ) )
+        catch ( final Throwable t )
         {
-            LOG.info( "Creating JRuby lexer" );
-            return new RubyContext( mySystemContext ).makeLexer( script );
-        }
-        else
-        {
-            throw new RuntimeException( "No scripting engine available for " + fileName );
+            mySystemContext.getErrorHandler().onConfigurationError( t );
+            return Lexers.lexeme( Scanners.isWhitespaces(), Lexers.word() );
         }
     }
 
@@ -267,15 +257,17 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
 
     private SimpleLexer mySyntaxLexer;
 
-    private SimpleLanguage myLanguage;
+    private LanguageConfiguration myLanguageConfiguration;
 
-    private SimpleAttributes mySimpleAttributes;
+    private ConfigurableAttributes myConfigurableAttributes;
 
-    private LoadedBracesConfiguration myBracesConfiguration;
+    private final BracesConfiguration myBracesConfiguration;
 
-    private LoadedCommentConfiguration myCommentConfiguration;
+    private final CommentConfiguration myCommentConfiguration;
 
-    private LoadedFileTypeConfiguration myFileTypeConfiguration;
+    private final FileTypeConfiguration myFileTypeConfiguration;
+
+    private final NamesValidatorConfiguration myNamesValidatorConfiguration;
 
 
     private final SystemContext mySystemContext;

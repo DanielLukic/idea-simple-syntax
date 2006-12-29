@@ -1,7 +1,7 @@
 package net.intensicode.idea.config;
 
-import net.intensicode.idea.core.SimpleAttributes;
-import net.intensicode.idea.core.SimpleLexer;
+import net.intensicode.idea.core.ConfigurableAttributes;
+import net.intensicode.idea.syntax.SimpleLexer;
 
 import javax.swing.*;
 import java.util.List;
@@ -37,10 +37,12 @@ public interface InstanceConfiguration
 
     FileTypeConfiguration getFileTypeConfiguration();
 
+    NamesValidatorConfiguration getNamesValidatorConfiguration();
+
 
     LanguageConfiguration getLanguageConfiguration();
 
-    SimpleAttributes getAttributes();
+    ConfigurableAttributes getAttributes();
 
     SimpleLexer getLexer();
 }

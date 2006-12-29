@@ -1,7 +1,8 @@
-package net.intensicode.idea.config;
+package net.intensicode.idea.config.loaded;
 
 import junit.framework.TestCase;
-import net.intensicode.idea.config.loaded.LoadedConfiguration;
+import net.intensicode.idea.config.CommentConfiguration;
+import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.core.FakeSystemContext;
 
 import java.io.IOException;
@@ -10,7 +11,7 @@ import java.io.InputStreamReader;
 
 
 
-public final class TestLoadedConfiguration extends TestCase
+public final class LoadedConfigurationTest extends TestCase
 {
     public final void testCreate() throws IOException
     {

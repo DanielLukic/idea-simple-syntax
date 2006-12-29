@@ -1,4 +1,4 @@
-package net.intensicode.idea.util;
+package net.intensicode.idea.scripting;
 
 /**
  * TODO: Describe this!

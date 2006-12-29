@@ -20,7 +20,6 @@ Issues
 ======
 
 I1: Identify more code areas where adapters between the plugin and IDEA world make sense.
-I2: Allow simple lex config and run it using groovy/scripting? Instead of limited rule based approach..
 I3: Config file with simple lexer config and compilation via jflex?
 I4: Automate Version check in build.xml? Use external change log? No idea yet..
 I5: Make configs available online and downloadable in plugin?
@@ -49,3 +48,5 @@ T0.8: Have two Ruby configs as examples: One fast (only regex), the other full. 
       -> Useing commented out version for now.
 T0.A: Move Groovy part in ConfigLang to GroovyUtils#makeSubclass in util.
       -> Created DynamicClassHelper in util.
+
+I2: Allow simple lex config and run it using groovy/scripting? Instead of limited rule based approach..

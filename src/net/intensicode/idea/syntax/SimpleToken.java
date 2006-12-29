@@ -1,4 +1,4 @@
-package net.intensicode.idea.core;
+package net.intensicode.idea.syntax;
 
 /**
  * TODO: Describe this!

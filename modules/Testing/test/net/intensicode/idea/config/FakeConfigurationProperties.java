@@ -1,17 +1,21 @@
 package net.intensicode.idea.config;
 
+import java.util.HashMap;
+
 /**
  * TODO: Describe this!
  */
-final class FakeConfigurationProperties implements ConfigurationProperties
+public final class FakeConfigurationProperties implements ConfigurationProperties
 {
-    public String getProperty( String aKey )
+    public final HashMap<String, String> entries = new HashMap<String, String>();
+
+    public final String getProperty( final String aKey )
     {
-        return null;
+        return entries.get( aKey );
     }
 
-    public boolean isValidProperty( String aKey )
+    public final boolean isValidProperty( final String aKey )
     {
-        return false;
+        return entries.get( aKey ) != null;
     }
 }

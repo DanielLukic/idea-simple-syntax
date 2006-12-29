@@ -3,7 +3,7 @@ package scripting.groovy;
 import groovy.lang.GroovyShell;
 import junit.framework.TestCase;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.util.GroovyContext;
+import net.intensicode.idea.scripting.GroovyContext;
 
 import java.io.InputStream;
 

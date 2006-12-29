@@ -1,6 +1,7 @@
 package net.intensicode.idea.core;
 
 import net.intensicode.idea.config.*;
+import net.intensicode.idea.syntax.SimpleLexer;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -40,6 +41,11 @@ final class NullInstanceConfiguration implements InstanceConfiguration
         return NullFileTypeConfiguration.INSTANCE;
     }
 
+    public final NamesValidatorConfiguration getNamesValidatorConfiguration()
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
     public final Icon getIcon()
     {
         return null;
@@ -70,7 +76,7 @@ final class NullInstanceConfiguration implements InstanceConfiguration
         return EMPTY_STRING;
     }
 
-    public final SimpleAttributes getAttributes()
+    public final ConfigurableAttributes getAttributes()
     {
         throw new RuntimeException( "NYI" );
     }

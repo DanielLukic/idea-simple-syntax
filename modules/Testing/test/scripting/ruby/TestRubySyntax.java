@@ -6,13 +6,14 @@ import jfun.parsec.Tok;
 import jfun.parsec.tokens.TypedToken;
 import junit.framework.TestCase;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.util.RubyContext;
+import net.intensicode.idea.scripting.RubyContext;
 import net.intensicode.idea.util.StreamUtils;
 import org.jruby.IRuby;
 import org.jruby.Ruby;
 import org.jruby.javasupport.JavaUtil;
 import org.jruby.runtime.builtin.IRubyObject;
 
+import java.io.File;
 import java.io.IOException;
 
 public final class TestRubySyntax extends TestCase
@@ -46,11 +47,12 @@ public final class TestRubySyntax extends TestCase
     private final Tok[] getLexerOutput() throws IOException
     {
         final IRuby runtime = Ruby.getDefaultInstance();
+        runtime.setCurrentDirectory( new File( "config" ).getAbsolutePath() );
 
         final FakeSystemContext systemContext = new FakeSystemContext( this, "config" );
         runtime.getTopSelf().defineSingletonMethod( "source", new RubyContext( systemContext ) );
 
-        final IRubyObject rubyObject = runtime.evalScript( "source 'RubySyntax.rb'" );
+        final IRubyObject rubyObject = runtime.evalScript( "source 'Ruby/Syntax.rb'" );
 
         final Object javaObject = JavaUtil.convertRubyToJava( rubyObject, Parser.class );
         final Parser<Tok[]> lexerObject = ( Parser<Tok[]> ) javaObject;

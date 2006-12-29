@@ -8,7 +8,7 @@ import java.awt.Font;
 
 
 
-public final class TestConfigurableTextAttributes extends TestCase
+public final class ConfigurableTextAttributesTest extends TestCase
 {
     public final void testDefaults()
     {

@@ -8,7 +8,7 @@
  * used like "context.source( aFileName )". However, you can't reference classes because they aren't available to the
  * Groovy compiler when parsing 'this' file. The problem should become obvious now..
  *
- * 2. Because of the first issue, I introduced a helper class, JParsecSyntaxBase. You can use it as shown below. Of
+ * 2. Because of the first issue, I introduced a helper class, JParsecLexerBase. You can use it as shown below. Of
  * course you don't have to use it. You can create the JParsec lexer any way you like. Unfortunately I'm not sure what
  * the best way is to load additional libs and/or classes. In other words, you can't simply load (read: import) stuff
  * (read: classes) stored in the config/options/SimpleSyntax folder. I haven't found a nice solution for this, yet!
@@ -23,7 +23,7 @@ import jfun.parsec.*;
 import jfun.parsec.tokens.*;
 import jfun.parsec.pattern.*;
 
-class MyRubySyntax extends net.intensicode.idea.JParsecSyntaxBase
+class MyRubySyntax extends net.intensicode.idea.syntax.JParsecLexerBase
     {
     protected void setup()
         {
@@ -43,6 +43,7 @@ class MyRubySyntax extends net.intensicode.idea.JParsecSyntaxBase
 
         regex "KEYWORD",                /\b(?:alias|and|BEGIN|begin|break|case|class|def|defined|do|else|elsif|END|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)\b/
 
+        regex "REGEX_SLASHED",          /(?m:\/(?:[^\/\n\r]|\\\/)*\/)/
         regex "CONSTANT",               /\b[A-Z][A-Z_]*\b/
         regex "CLASS_NAME",             /\b[A-Z]*(?:(?:[A-Z][a-z_]+)|[A-Z])+\b/
         regex "INSTANCE_VARIABLE",      /@[a-z_]+\b/

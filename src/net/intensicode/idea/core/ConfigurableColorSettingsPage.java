@@ -106,7 +106,7 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     {
         final ArrayList<String> handledIDs = new ArrayList<String>();
 
-        final SimpleAttributes attributes = myConfiguration.getAttributes();
+        final ConfigurableAttributes attributes = myConfiguration.getAttributes();
 
         final ArrayList<AttributesDescriptor> descriptors = new ArrayList<AttributesDescriptor>();
         for ( final String id : myConfiguration.getKnownTokenIDs() )

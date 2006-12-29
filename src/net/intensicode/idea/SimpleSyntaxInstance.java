@@ -61,10 +61,7 @@ final class SimpleSyntaxInstance
 
         LOG.info( "Registering file type " + getName() );
         final FileTypeConfiguration config = myConfiguration.getFileTypeConfiguration();
-        for ( final FileNameMatcher matcher : config.getExtensions() )
-        {
-            manager.associate( fileType, matcher );
-        }
+        manager.registerFileType( fileType, config.getExtensions() );
 
         myFileType = fileType;
     }

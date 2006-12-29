@@ -1,4 +1,4 @@
-package net.intensicode.idea.util;
+package net.intensicode.idea.scripting;
 
 import groovy.lang.GroovyShell;
 
@@ -9,9 +9,9 @@ import java.lang.reflect.Constructor;
 /**
  * TODO: Describe this!
  */
-public final class DynamicClassHelper
+public final class DynamicClassFactory
 {
-    public static final Object newInstance( final String aSubclassName, final Class aClass, final Object... aParameters )
+    public static final Object newLanguage( final String aSubclassName, final Class aClass, final Object... aParameters )
     {
         final String className = aClass.getName();
 
@@ -23,7 +23,7 @@ public final class DynamicClassHelper
         }
 
         final StringBuilder scriptBuilder = new StringBuilder();
-        scriptBuilder.append( "import net.intensicode.idea.core.SimpleLanguage;\n" );
+        scriptBuilder.append( "import net.intensicode.idea.core.ConfigurableLanguage;\n" );
         scriptBuilder.append( "\n" );
         scriptBuilder.append( "class " + aSubclassName + " extends " + className + " {\n" );
         scriptBuilder.append( "\n" );

@@ -4,9 +4,9 @@ import jfun.parsec.Parser;
 import jfun.parsec.Tok;
 import junit.framework.TestCase;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.core.SimpleToken;
-import net.intensicode.idea.syntax.JParsecLexer;
-import net.intensicode.idea.util.RubyContext;
+import net.intensicode.idea.scripting.RubyContext;
+import net.intensicode.idea.syntax.JParsecLexerAdapter;
+import net.intensicode.idea.syntax.SimpleToken;
 import org.jruby.IRuby;
 import org.jruby.Ruby;
 import org.jruby.ast.Node;
@@ -45,10 +45,13 @@ public final class TestSourcing extends TestCase
         {
             final String scriptName = "Script3.rb";
             final Node node = runtime.parse( readScript( scriptName ), scriptName, null );
+
             final IRubyObject result = runtime.eval( node );
             final Parser<Tok[]> lexerImpl = ( Parser<Tok[]> ) JavaUtil.convertRubyToJava( result, Parser.class );
-            final JParsecLexer lexer = new JParsecLexer( lexerImpl );
+
+            final JParsecLexerAdapter lexer = new JParsecLexerAdapter( lexerImpl );
             lexer.start( "test".toCharArray(), 0, 4 );
+
             final SimpleToken token = lexer.findToken( 0 );
             assertNotNull( token );
         }

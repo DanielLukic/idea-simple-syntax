@@ -40,7 +40,7 @@ public final class FakeOptionsFolder implements OptionsFolder
 
     public final String makeFileName( final String aRelativeFileName )
     {
-        throw new RuntimeException( "NYI" );
+        return aRelativeFileName;
     }
 
     public final Reader readFile( final String aRelativeFileName )

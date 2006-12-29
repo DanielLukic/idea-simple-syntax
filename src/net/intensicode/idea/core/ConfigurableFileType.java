@@ -2,16 +2,16 @@ package net.intensicode.idea.core;
 
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.lang.Language;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.util.DynamicClassHelper;
+import net.intensicode.idea.scripting.DynamicClassFactory;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +46,7 @@ public class ConfigurableFileType implements FileType
 
         final String className = "ConfigurableFileType" + aConfiguration.getName();
         final Class clazz = ConfigurableFileType.class;
-        return ( ConfigurableFileType ) DynamicClassHelper.newInstance( className, clazz, aConfiguration, aLanguage );
+        return ( ConfigurableFileType ) DynamicClassFactory.newLanguage( className, clazz, aConfiguration, aLanguage );
     }
 
     public final void reset( final InstanceConfiguration aConfiguration, final Language aLanguage )
@@ -60,6 +60,7 @@ public class ConfigurableFileType implements FileType
     @NotNull
     public final Language getLanguage()
     {
+        LOG.info( "getLanguage " + myLanguage );
         return myLanguage;
     }
 
@@ -92,18 +93,21 @@ public class ConfigurableFileType implements FileType
     @Nullable
     public final SyntaxHighlighter getHighlighter( final @Nullable Project aProject, final VirtualFile aVirtualFile )
     {
+        LOG.info( "getHighlighter" );
         return myLanguage.getSyntaxHighlighter( aProject, aVirtualFile );
     }
 
     @Nullable
     public final StructureViewBuilder getStructureViewBuilder( final @NotNull VirtualFile aFile, final @NotNull Project aProject )
     {
+        LOG.info( "getStructureViewBuilder" );
         final PsiFile psiFile = PsiManager.getInstance( aProject ).findFile( aFile );
         return psiFile == null ? null : myLanguage.getStructureViewBuilder( psiFile );
     }
 
     public final String getCharset( final VirtualFile aFile )
     {
+        LOG.info( "getCharset " + aFile );
         return null;
     }
 

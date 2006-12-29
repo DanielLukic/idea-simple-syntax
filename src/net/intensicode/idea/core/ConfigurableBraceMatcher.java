@@ -5,6 +5,7 @@ import com.intellij.lang.PairedBraceMatcher;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.BracesConfiguration;
+import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.util.LoggerFactory;
 
@@ -18,15 +19,16 @@ import java.util.List;
  */
 final class ConfigurableBraceMatcher implements PairedBraceMatcher
 {
-    ConfigurableBraceMatcher( final LanguageConfiguration aLanguageConfiguration, final BracesConfiguration aConfiguration )
+    ConfigurableBraceMatcher( final InstanceConfiguration aConfiguration )
     {
-        myConfiguration = aLanguageConfiguration;
+        myLanguage = aConfiguration.getLanguageConfiguration();
 
-        final List<BracePair> bracePairs = createBracePairs( aConfiguration.getBracePairs(), false );
-        final List<BracePair> structuralPairs = createBracePairs( aConfiguration.getStructuralPairs(), true );
+        final BracesConfiguration braces = aConfiguration.getBracesConfiguration();
+        final List<BracePair> bracePairs = createBracePairs( braces.getBracePairs(), false );
+        final List<BracePair> structuralPairs = createBracePairs( braces.getStructuralPairs(), true );
         bracePairs.addAll( structuralPairs );
 
-        myPairs = new BracePair[ bracePairs.size() ];
+        myPairs = new BracePair[bracePairs.size()];
         bracePairs.toArray( myPairs );
     }
 
@@ -51,8 +53,8 @@ final class ConfigurableBraceMatcher implements PairedBraceMatcher
             }
             final char left = pair.charAt( 0 );
             final char right = pair.charAt( 1 );
-            final IElementType leftToken = myConfiguration.getToken( new String( new char[]{left} ) );
-            final IElementType rightToken = myConfiguration.getToken( new String( new char[]{right} ) );
+            final IElementType leftToken = myLanguage.getToken( new String( new char[]{ left } ) );
+            final IElementType rightToken = myLanguage.getToken( new String( new char[]{ right } ) );
             result.add( new BracePair( left, leftToken, right, rightToken, aStructural ) );
         }
         return result;
@@ -62,7 +64,7 @@ final class ConfigurableBraceMatcher implements PairedBraceMatcher
 
     private final BracePair[] myPairs;
 
-    private final LanguageConfiguration myConfiguration;
+    private final LanguageConfiguration myLanguage;
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

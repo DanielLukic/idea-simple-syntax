@@ -5,12 +5,12 @@ import net.intensicode.idea.FakeConfiguration;
 
 
 
-public final class TestConfigurableLanguage extends TestCase
+public final class ConfigurableLanguageTest extends TestCase
 {
     public final void testCreate()
     {
         final FakeConfiguration configuration = new FakeConfiguration();
-        final SimpleLanguage language = SimpleLanguage.getOrCreate( configuration );
-        assertEquals( "SimpleLanguageFake", language.getClass().getName() );
+        final ConfigurableLanguage language = ConfigurableLanguage.getOrCreate( configuration );
+        assertEquals( "ConfigurableLanguageFake", language.getClass().getName() );
     }
 }

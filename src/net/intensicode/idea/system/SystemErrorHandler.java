@@ -11,6 +11,10 @@ import java.util.List;
  */
 public interface SystemErrorHandler
 {
+    void onScriptingError( Throwable aThrowable );
+
+    void onConfigurationError( Throwable aThrowable );
+
     void onSimpleSyntaxInstallFailed( Throwable aThrowable );
 
     Confirmation onFileReplaceConfirmation( String aFileName );

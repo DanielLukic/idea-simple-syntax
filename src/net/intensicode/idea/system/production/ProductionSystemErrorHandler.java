@@ -23,13 +23,31 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
 
     // From SystemErrorHandler
 
+    public final void onScriptingError( final Throwable aThrowable )
+    {
+        final StringBuilder messageBuilder = new StringBuilder();
+        messageBuilder.append( "Script execution failed.\n" );
+        messageBuilder.append( "Error message is: " );
+        messageBuilder.append( aThrowable.getMessage() );
+        displayError( messageBuilder.toString(), aThrowable );
+    }
+
+    public final void onConfigurationError( final Throwable aThrowable )
+    {
+        final StringBuilder messageBuilder = new StringBuilder();
+        messageBuilder.append( "Configuration failed.\n" );
+        messageBuilder.append( "Error message is: " );
+        messageBuilder.append( aThrowable.getMessage() );
+        displayError( messageBuilder.toString(), aThrowable );
+    }
+
     public final void onSimpleSyntaxInstallFailed( final Throwable aThrowable )
     {
         final StringBuilder messageBuilder = new StringBuilder();
         messageBuilder.append( "Installation failed.\n" );
         messageBuilder.append( "Error message is: " );
         messageBuilder.append( aThrowable.getMessage() );
-        displayError( messageBuilder.toString() );
+        displayError( messageBuilder.toString(), aThrowable );
     }
 
     public final Confirmation onFileReplaceConfirmation( final String aFileName )
@@ -53,28 +71,32 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
 
     public final Confirmation onFileTypeInUseConfirmation( final List<FileNameMatcher> aExtensions )
     {
+        LOG.warn( "NYI onFileTypeInUseConfirmation" );
         return Confirmation.YES;
     }
 
     public final Confirmation onFileTypeReplaceConfirmation( final String aFileType )
     {
+        LOG.warn( "NYI onFileTypeReplaceConfirmation" );
         return Confirmation.YES;
     }
 
     public final void forgetConfirmationAnswers()
     {
+        LOG.warn( "NYI forgetConfirmationAnswers" );
     }
 
     // Implementation
 
-    private final void displayError( final String aMessage )
+    private final void displayError( final String aMessage, final Throwable aThrowable )
     {
         ApplicationManager.getApplication().runReadAction( new Runnable()
         {
             public final void run()
             {
                 Messages.showErrorDialog( aMessage, ERROR_TITLE );
-                ProductionSystemErrorHandler.LOG.error( aMessage );
+                LOG.error( aMessage );
+                if ( aThrowable != null ) LOG.error( aThrowable );
             }
         } );
     }

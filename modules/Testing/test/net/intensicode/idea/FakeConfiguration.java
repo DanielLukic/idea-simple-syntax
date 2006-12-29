@@ -1,8 +1,8 @@
 package net.intensicode.idea;
 
 import net.intensicode.idea.config.*;
-import net.intensicode.idea.core.SimpleAttributes;
-import net.intensicode.idea.core.SimpleLexer;
+import net.intensicode.idea.core.ConfigurableAttributes;
+import net.intensicode.idea.syntax.SimpleLexer;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -47,6 +47,11 @@ public class FakeConfiguration implements InstanceConfiguration
         return null;
     }
 
+    public final NamesValidatorConfiguration getNamesValidatorConfiguration()
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
     public Icon getIcon()
     {
         return null;
@@ -78,7 +83,7 @@ public class FakeConfiguration implements InstanceConfiguration
     }
 
 
-    public SimpleAttributes getAttributes()
+    public ConfigurableAttributes getAttributes()
     {
         return null;
     }

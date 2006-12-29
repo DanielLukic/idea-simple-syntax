@@ -11,6 +11,8 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
  */
 public interface SystemContext
 {
+    ScriptSupport getScriptSupport();
+
     OptionsFolder getOptionsFolder();
 
     ResourceLoader getResourceLoader();

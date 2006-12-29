@@ -3,10 +3,7 @@ package net.intensicode.idea.system.production;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import net.intensicode.idea.system.OptionsFolder;
-import net.intensicode.idea.system.ResourceLoader;
-import net.intensicode.idea.system.SystemContext;
-import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.*;
 
 
 
@@ -21,19 +18,28 @@ public final class ProductionSystemContext implements SystemContext
 
     // From SystemContext
 
+    public final ScriptSupport getScriptSupport()
+    {
+        if ( myScriptSupport == null )
+        {
+            myScriptSupport = new ProductionScriptSupport( this );
+        }
+        return myScriptSupport;
+    }
+
     public final OptionsFolder getOptionsFolder()
     {
-        return new ProductionOptionsFolder();
+        return myOptionsFolder;
     }
 
     public final ResourceLoader getResourceLoader()
     {
-        return new ProductionResourceLoader();
+        return myResourceLoader;
     }
 
     public final SystemErrorHandler getErrorHandler()
     {
-        return new ProductionSystemErrorHandler();
+        return mySystemErrorHandler;
     }
 
     public final FileTypeManager getFileTypeManager()
@@ -45,4 +51,14 @@ public final class ProductionSystemContext implements SystemContext
     {
         return TextAttributesKey.createTextAttributesKey( aTokenID, aAttributes );
     }
+
+
+
+    private ScriptSupport myScriptSupport;
+
+    private final OptionsFolder myOptionsFolder = new ProductionOptionsFolder();
+
+    private final ProductionResourceLoader myResourceLoader = new ProductionResourceLoader();
+
+    private final ProductionSystemErrorHandler mySystemErrorHandler = new ProductionSystemErrorHandler();
 }

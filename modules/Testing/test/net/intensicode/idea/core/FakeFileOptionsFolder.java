@@ -21,7 +21,7 @@ public class FakeFileOptionsFolder implements OptionsFolder
 
     public final File getConfigurationFolder()
     {
-        throw new RuntimeException( "NYI" );
+        return new File( myFolderPath );
     }
 
     public final String[] findConfigurations()
@@ -41,7 +41,7 @@ public class FakeFileOptionsFolder implements OptionsFolder
 
     public final String makeFileName( final String aRelativeFileName )
     {
-        throw new RuntimeException( "NYI" );
+        return new File( myFolderPath, aRelativeFileName ).getPath();
     }
 
     public final Reader readFile( final String aRelativeFileName )
