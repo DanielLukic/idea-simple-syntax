@@ -92,9 +92,11 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
         }
     }
 
-    public final String classPathBase()
+    public final File getConfigurationFolder()
     {
-        return getConfigurationFolder().toString();
+        final File configFolder = new File( PathManager.getOptionsPath(), CONFIG_SUB_FOLDER );
+        if ( configFolder.exists() == false ) configFolder.mkdirs();
+        return configFolder;
     }
 
 
@@ -117,13 +119,6 @@ final class ProductionOptionsFolder implements OptionsFolder, FilenameFilter
         {
             return null;
         }
-    }
-
-    private final File getConfigurationFolder()
-    {
-        final File configFolder = new File( PathManager.getOptionsPath(), CONFIG_SUB_FOLDER );
-        if ( configFolder.exists() == false ) configFolder.mkdirs();
-        return configFolder;
     }
 
 

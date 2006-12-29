@@ -13,6 +13,9 @@
  * the best way is to load additional libs and/or classes. In other words, you can't simply load (read: import) stuff
  * (read: classes) stored in the config/options/SimpleSyntax folder. I haven't found a nice solution for this, yet!
  *
+ * 3. Because I didn't find anything concerning 'current dir' in the GroovyShell interface, I added a variable to the
+ * binding ('currentDir') and a method to the 'context' object ('context.currentDir()').
+ *
  * Overall, the JRuby approach is probably the better solution for now.
  */
 

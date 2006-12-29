@@ -1,8 +1,8 @@
 package net.intensicode.idea.config.loaded;
 
 import com.intellij.openapi.diagnostic.Logger;
-import groovy.lang.GroovyShell;
-import groovy.lang.Script;
+import jfun.parsec.Parser;
+import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
 import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
@@ -11,15 +11,13 @@ import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
 import net.intensicode.idea.core.SimpleAttributes;
 import net.intensicode.idea.core.SimpleLanguage;
 import net.intensicode.idea.core.SimpleLexer;
+import net.intensicode.idea.syntax.JParsecLexer;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.GroovyContext;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
 import net.intensicode.idea.util.RubyContext;
-import org.jruby.IRuby;
-import org.jruby.Ruby;
-import org.jruby.ast.Node;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -152,7 +150,7 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
     {
         if ( myLanguage == null )
         {
-            myLanguage = SimpleLanguage.getOrCreate( mySystemContext, this );
+            myLanguage = SimpleLanguage.getOrCreate( this );
         }
         return myLanguage;
     }
@@ -172,35 +170,8 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
         {
             try
             {
-                final OptionsFolder folder = mySystemContext.getOptionsFolder();
-
-                final String fileName = getProperty( SYNTAX_DEFINITION );
-                final String fullFileName = folder.makeFileName( fileName );
-
-                if ( fileName.endsWith( ".groovy" ) )
-                {
-                    LOG.info( "Creating groovy lexer" );
-
-                    final GroovyShell shell = new GroovyShell();
-                    shell.getContext().setVariable( "context", new GroovyContext( shell, mySystemContext ) );
-
-                    final Script script = shell.parse( folder.streamFile( fileName ), fullFileName );
-                    mySyntaxLexer = GroovyContext.makeLexer( script );
-                }
-                else if ( fileName.endsWith( ".ruby" ) || fileName.endsWith( ".rb" ) )
-                {
-                    LOG.info( "Creating ruby lexer" );
-
-                    final IRuby runtime = Ruby.getDefaultInstance();
-                    runtime.getTopSelf().defineSingletonMethod( "source", new RubyContext( mySystemContext ) );
-
-                    final Node node = runtime.parse( folder.readFile( fileName ), fullFileName, null );
-                    mySyntaxLexer = RubyContext.makeLexer( runtime.eval( node ) );
-                }
-                else
-                {
-                    throw new RuntimeException( "No scripting engine available for " + fileName );
-                }
+                final Parser<Tok[]> lexer = createLexer();
+                mySyntaxLexer = new JParsecLexer( lexer );
             }
             catch ( final Exception t )
             {
@@ -267,6 +238,27 @@ public class LoadedConfiguration implements InstanceConfiguration, Configuration
 
         final String exampleCodeFileName = getProperty( EXAMPLE_CODE );
         return mySystemContext.getOptionsFolder().readFileIntoString( exampleCodeFileName );
+    }
+
+    private final Parser<Tok[]> createLexer() throws IOException
+    {
+        final String fileName = getProperty( SYNTAX_DEFINITION );
+        final String script = mySystemContext.getOptionsFolder().readFileIntoString( fileName );
+
+        if ( fileName.endsWith( ".groovy" ) )
+        {
+            LOG.info( "Creating Groovy lexer" );
+            return new GroovyContext( mySystemContext ).makeLexer( script );
+        }
+        else if ( fileName.endsWith( ".ruby" ) || fileName.endsWith( ".rb" ) )
+        {
+            LOG.info( "Creating JRuby lexer" );
+            return new RubyContext( mySystemContext ).makeLexer( script );
+        }
+        else
+        {
+            throw new RuntimeException( "No scripting engine available for " + fileName );
+        }
     }
 
 

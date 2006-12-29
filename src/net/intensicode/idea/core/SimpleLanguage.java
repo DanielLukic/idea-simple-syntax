@@ -10,7 +10,6 @@ import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.syntax.SyntaxHighlighterAdapter;
-import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.DynamicClassHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +28,7 @@ import java.util.HashMap;
  */
 public class SimpleLanguage extends Language implements LanguageConfiguration
 {
-    public static final SimpleLanguage getOrCreate( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
+    public static final SimpleLanguage getOrCreate( final InstanceConfiguration aConfiguration )
     {
         final String name = aConfiguration.getName();
         for ( final Language language : Language.getRegisteredLanguages() )

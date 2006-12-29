@@ -11,11 +11,16 @@ import java.io.*;
 /**
  * TODO: Describe this!
  */
-public class FakeOptionsFolder implements OptionsFolder
+public final class FakeOptionsFolder implements OptionsFolder
 {
     public FakeOptionsFolder( final Object aReferenceObject )
     {
         myReferenceObject = aReferenceObject;
+    }
+
+    public final File getConfigurationFolder()
+    {
+        throw new RuntimeException( "NYI" );
     }
 
     public final String[] findConfigurations()
@@ -38,12 +43,12 @@ public class FakeOptionsFolder implements OptionsFolder
         throw new RuntimeException( "NYI" );
     }
 
-    public final Reader readFile( final String aRelativeFileName ) throws IOException
+    public final Reader readFile( final String aRelativeFileName )
     {
         throw new RuntimeException( "NYI" );
     }
 
-    public final InputStream streamFile( final String aRelativeFileName ) throws FileNotFoundException
+    public final InputStream streamFile( final String aRelativeFileName )
     {
         return myReferenceObject.getClass().getResourceAsStream( aRelativeFileName );
     }
@@ -54,12 +59,7 @@ public class FakeOptionsFolder implements OptionsFolder
         return ReaderUtils.readIntoString( reader );
     }
 
-    public final void writeFileFromStream( final String aRelativeFileName, final InputStream aStream ) throws IOException
-    {
-        throw new RuntimeException( "NYI" );
-    }
-
-    public String classPathBase()
+    public final void writeFileFromStream( final String aRelativeFileName, final InputStream aStream )
     {
         throw new RuntimeException( "NYI" );
     }

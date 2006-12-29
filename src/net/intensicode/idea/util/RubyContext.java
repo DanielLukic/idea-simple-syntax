@@ -2,9 +2,9 @@ package net.intensicode.idea.util;
 
 import jfun.parsec.Parser;
 import jfun.parsec.Tok;
-import net.intensicode.idea.syntax.JParsecLexer;
 import net.intensicode.idea.system.SystemContext;
 import org.jruby.IRuby;
+import org.jruby.Ruby;
 import org.jruby.javasupport.JavaUtil;
 import org.jruby.runtime.Arity;
 import org.jruby.runtime.builtin.IRubyObject;
@@ -22,11 +22,15 @@ public final class RubyContext implements Callback
         mySystemContext = aSystemContext;
     }
 
-    public static final JParsecLexer makeLexer( final IRubyObject aRubyObject )
+    public final Parser<Tok[]> makeLexer( final String aScript )
     {
-        final Object javaObject = JavaUtil.convertRubyToJava( aRubyObject, Parser.class );
-        final Parser<Tok[]> lexerObject = ( Parser<Tok[]> ) javaObject;
-        return new JParsecLexer( lexerObject );
+        final IRuby runtime = Ruby.getDefaultInstance();
+        runtime.getTopSelf().defineSingletonMethod( "source", this );
+        runtime.setCurrentDirectory( mySystemContext.getOptionsFolder().getConfigurationFolder().getPath() );
+
+        final IRubyObject lexer = runtime.evalScript( aScript );
+        final Object javaObject = JavaUtil.convertRubyToJava( lexer, Parser.class );
+        return ( Parser<Tok[]> ) javaObject;
     }
 
     // From Callback

@@ -70,7 +70,8 @@
     </target>
 
     <target name="_build_classes" depends="_init">
-        <javac srcdir="${dir.sources}" destdir="${dir.build.classes}" debug="true" classpathref="classpath.build"/>
+        <javac source="1.5" target="1.5" srcdir="${dir.sources}" destdir="${dir.build.classes}"
+               debug="true" classpathref="classpath.build"/>
     </target>
 
     <target name="_build_tests" depends="_build_classes">
@@ -133,11 +134,11 @@
     </target>
 
 
-    <target name="build" depends="_package_plugin" description="Continous build (without clean)"/>
+    <target name="build" depends="test,_package_plugin" description="Continous build (without clean)"/>
 
     <target name="clean" depends="_clean" description="Cleans all generated files"/>
 
-    <target name="dist" depends="rebuild,test,_package_distribution" description="Rebuild and create distribution"/>
+    <target name="dist" depends="clean,build,_package_distribution" description="Rebuild and create distribution"/>
 
     <target name="rebuild" depends="clean,build" description="Clean rebuild of the system"/>
 

@@ -1,12 +1,13 @@
 package net.intensicode.idea.syntax;
 
-import com.intellij.lang.Language;
 import com.intellij.lexer.Lexer;
 import com.intellij.lexer.LexerPosition;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.core.SimpleLexer;
 import net.intensicode.idea.core.SimpleToken;
+import net.intensicode.idea.util.LoggerFactory;
 
 /**
  * TODO: Describe this!
@@ -96,20 +97,36 @@ public final class LexerAdapter implements Lexer
     {
         myTokenType = null;
         myTokenStart = aStartOffset;
-        myTokenEnd = Math.min( myBuffer.length, myEndOffset );
+        myTokenEnd = aStartOffset + 1;
 
-        if ( aStartOffset >= myEndOffset ) return;
+        if ( aStartOffset >= myEndOffset )
+        {
+            LOG.debug( "EOF reached - returning with myTokenType = null" );
+            myTokenStart = myTokenEnd = myEndOffset;
+            return;
+        }
 
         final SimpleToken foundToken = myLexer.findToken( aStartOffset );
         if ( foundToken == null )
         {
-            myTokenType = DEFAULT_TOKEN;
+            LOG.debug( "myLexer found no token - advancing with myTokenType = UNRECOGNIZED" );
+            myTokenType = myLanguageConfiguration.getToken( "UNRECOGNIZED" );
+            return;
+        }
+
+        // Interesting fix I needed here: In production version of IDEA it requires whitespace to be a token, too.
+        // I enfore WHITESPACE tokens in case the lexer configuration does not take care of it.
+        if ( foundToken.start > aStartOffset )
+        {
+            myTokenStart = aStartOffset;
+            myTokenEnd = foundToken.start;
+            myTokenType = myLanguageConfiguration.getToken( "WHITESPACE" );
             return;
         }
 
         myTokenType = myLanguageConfiguration.getToken( foundToken.id );
-        myTokenStart = Math.max( 0, foundToken.start );
-        myTokenEnd = Math.min( myBuffer.length, foundToken.end );
+        myTokenStart = foundToken.start;
+        myTokenEnd = foundToken.end;
     }
 
 
@@ -131,5 +148,5 @@ public final class LexerAdapter implements Lexer
 
     private final LanguageConfiguration myLanguageConfiguration;
 
-    private static final IElementType DEFAULT_TOKEN = new IElementType( "DEFAULT", Language.ANY );
+    private static final Logger LOG = LoggerFactory.getLogger();
 }

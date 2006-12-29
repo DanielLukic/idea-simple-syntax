@@ -20,6 +20,7 @@ final class PluginLogger extends Logger
 
     public final boolean isDebugEnabled()
     {
+        //return true;
         return Boolean.parseBoolean( System.getProperty( "debug" ) );
     }
 
@@ -61,7 +62,7 @@ final class PluginLogger extends Logger
     public final void warn( final @NonNls String message, final Throwable t )
     {
         System.out.println( "[WARN] [" + myCategory + "] " + message );
-        t.printStackTrace();
+        if ( t != null ) t.printStackTrace();
     }
 
     public final void error( final @NonNls String message, final Throwable t, final @NonNls String... details )
@@ -70,7 +71,7 @@ final class PluginLogger extends Logger
         error( t );
     }
 
-    public final void error( final Throwable t )
+    public final void error( final @NonNls Throwable t )
     {
         System.out.println( "[ERROR] [" + myCategory + "] " + t.getMessage() );
         t.printStackTrace();

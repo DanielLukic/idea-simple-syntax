@@ -38,6 +38,13 @@ public final class MutableCharSequence implements CharSequence
         return new MutableCharSequence( myBuffer, myStart + aStart, myStart + aEnd );
     }
 
+    // From Object
+
+    public final String toString()
+    {
+        return new String( myBuffer, myStart, myEnd - myStart );
+    }
+
 
 
     private int myEnd;

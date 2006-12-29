@@ -19,6 +19,11 @@ public class FakeFileOptionsFolder implements OptionsFolder
         myFolderPath = aFolderPath;
     }
 
+    public final File getConfigurationFolder()
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
     public final String[] findConfigurations()
     {
         throw new RuntimeException( "NYI" );
@@ -55,11 +60,6 @@ public class FakeFileOptionsFolder implements OptionsFolder
     }
 
     public final void writeFileFromStream( final String aRelativeFileName, final InputStream aStream )
-    {
-        throw new RuntimeException( "NYI" );
-    }
-
-    public String classPathBase()
     {
         throw new RuntimeException( "NYI" );
     }

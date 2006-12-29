@@ -1,10 +1,7 @@
 package net.intensicode.idea.system;
 
 import javax.swing.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
+import java.io.*;
 
 
 
@@ -13,6 +10,8 @@ import java.io.Reader;
  */
 public interface OptionsFolder
 {
+    File getConfigurationFolder();
+
     String[] findConfigurations();
 
     Icon loadIcon( String aRelativeFileName );
@@ -28,6 +27,4 @@ public interface OptionsFolder
     String readFileIntoString( String aRelativeFileName ) throws IOException;
 
     void writeFileFromStream( String aRelativeFileName, InputStream aStream ) throws IOException;
-
-    String classPathBase();
 }
