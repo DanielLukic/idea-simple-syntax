@@ -5,7 +5,7 @@ package net.intensicode.idea.scripting;
  */
 public class FakeBaseClass
 {
-    final StringBuilder result = new StringBuilder();
+    public final StringBuilder result = new StringBuilder();
 
     public FakeBaseClass( final String a1, final String a2 )
     {

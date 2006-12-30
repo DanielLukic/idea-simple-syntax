@@ -11,7 +11,7 @@ import java.lang.reflect.Constructor;
  */
 public final class DynamicClassFactory
 {
-    public static final Object newLanguage( final String aSubclassName, final Class aClass, final Object... aParameters )
+    public static final Object newInstance( final String aSubclassName, final Class aClass, final Object... aParameters )
     {
         final String className = aClass.getName();
 
@@ -23,8 +23,6 @@ public final class DynamicClassFactory
         }
 
         final StringBuilder scriptBuilder = new StringBuilder();
-        scriptBuilder.append( "import net.intensicode.idea.core.ConfigurableLanguage;\n" );
-        scriptBuilder.append( "\n" );
         scriptBuilder.append( "class " + aSubclassName + " extends " + className + " {\n" );
         scriptBuilder.append( "\n" );
         scriptBuilder.append( "  " + aSubclassName + "( " + args + " ) {\n" );
@@ -36,8 +34,8 @@ public final class DynamicClassFactory
 
         try
         {
-            final ClassLoader loader = GroovyShell.class.getClassLoader();
             final String script = scriptBuilder.toString();
+            final ClassLoader loader = GroovyShell.class.getClassLoader();
             final Class newClass = ( Class ) new GroovyShell( loader ).evaluate( script );
             final Constructor constructor = newClass.getConstructors()[ 0 ];
             return constructor.newInstance( aParameters );

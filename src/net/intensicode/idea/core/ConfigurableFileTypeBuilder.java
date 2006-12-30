@@ -1,10 +1,10 @@
 package net.intensicode.idea.core;
 
-import com.intellij.lang.Language;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileTypes.FileNameMatcher;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.lang.Language;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.system.Confirmation;
@@ -24,6 +24,7 @@ public final class ConfigurableFileTypeBuilder
 {
     public ConfigurableFileTypeBuilder( final SystemContext aContext )
     {
+        myContext = aContext;
         myErrorHandler = aContext.getErrorHandler();
     }
 
@@ -31,7 +32,7 @@ public final class ConfigurableFileTypeBuilder
     {
         checkExtensions( aConfiguration.getFileTypeConfiguration() );
         removeIncompatibleFileTypes( aConfiguration );
-        return ConfigurableFileType.getOrCreate( aConfiguration, aLanguage );
+        return ConfigurableFileType.getOrCreate( myContext, aConfiguration, aLanguage );
     }
 
     // Implementation
@@ -103,6 +104,8 @@ public final class ConfigurableFileTypeBuilder
     }
 
 
+
+    private final SystemContext myContext;
 
     private final SystemErrorHandler myErrorHandler;
 

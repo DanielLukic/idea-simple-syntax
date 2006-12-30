@@ -64,69 +64,69 @@ public /*dynamic*/ class ConfigurableLanguage extends Language
 
         final String className = "ConfigurableLanguage" + name;
         final Class clazz = ConfigurableLanguage.class;
-        return ( ConfigurableLanguage ) DynamicClassFactory.newLanguage( className, clazz, aConfiguration );
+        return ( ConfigurableLanguage ) DynamicClassFactory.newInstance( className, clazz, aConfiguration );
     }
 
     // From Language
 
     public void associateFileType( FileType type )
     {
-        LOG.warn( "associateFileType" );
+        LOG.info( "associateFileType" );
         super.associateFileType( type );
     }
 
     @Nullable
     public Annotator getAnnotator()
     {
-        LOG.warn( "getAnnotator" );
+        LOG.info( "getAnnotator" );
         return super.getAnnotator();
     }
 
     @Nullable
     public FileType getAssociatedFileType()
     {
-        LOG.warn( "getAssociatedFileType" );
+        LOG.info( "getAssociatedFileType" );
         return super.getAssociatedFileType();
     }
 
     @Nullable
     public ExternalAnnotator getExternalAnnotator()
     {
-        LOG.warn( "getExternalAnnotator" );
+        LOG.info( "getExternalAnnotator" );
         return super.getExternalAnnotator();
     }
 
     @Nullable
     public ImportOptimizer getImportOptimizer()
     {
-        LOG.warn( "getImportOptimizer" );
+        LOG.info( "getImportOptimizer" );
         return super.getImportOptimizer();
     }
 
     @NotNull
     public String getID()
     {
-        LOG.warn( "getID" );
+        LOG.info( "getID" );
         return super.getID();
     }
 
     public String[] getMimeTypes()
     {
-        LOG.warn( "getMimeTypes" );
+        LOG.info( "getMimeTypes" );
         return super.getMimeTypes();
     }
 
     @NotNull
     public SurroundDescriptor[] getSurroundDescriptors()
     {
-        LOG.warn( "getSurroundDescriptors" );
+        LOG.info( "getSurroundDescriptors" );
         return super.getSurroundDescriptors();
     }
 
     @NotNull
     public final TokenSet getReadableTextContainerElements()
     {
-        LOG.warn( "getReadableTextContainerElements" );
+        LOG.info( "getReadableTextContainerElements" );
         if ( myWordCompletionTokenSet == null )
         {
             final ArrayList<IElementType> tokenTypes = new ArrayList<IElementType>();

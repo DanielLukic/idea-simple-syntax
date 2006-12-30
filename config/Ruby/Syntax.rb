@@ -2,7 +2,7 @@
 # This script is executed in the 'options/SimpleSyntax' folder. You may also use the global function 'source' to read
 # and evaluate a Ruby script.
 
-source "LexerBase.rb"
+require "jparsec/LexerBase.rb"
 
 s_block_open = Scanners.isPattern( Patterns.regex( /(?m:^=begin)/.source ), "BLOCK_OPEN" )
 s_block_close = Scanners.isPattern( Patterns.regex( /(?m:^=end$)/.source ), "BLOCK_CLOSE" )

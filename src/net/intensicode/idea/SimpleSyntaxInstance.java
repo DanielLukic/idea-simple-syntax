@@ -9,7 +9,6 @@ import com.intellij.openapi.options.colors.ColorSettingsPage;
 import com.intellij.openapi.options.colors.ColorSettingsPages;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.core.ConfigurableColorSettingsPage;
 import net.intensicode.idea.core.ConfigurableFileTypeBuilder;
 import net.intensicode.idea.system.SystemContext;
@@ -54,10 +53,8 @@ final class SimpleSyntaxInstance
         final FileTypeManager manager = mySystemContext.getFileTypeManager();
         if ( manager == null ) return;
 
-        final LanguageConfiguration languageConfiguration = myConfiguration.getLanguageConfiguration();
-        final Language aLanguage = languageConfiguration.getLanguage();
-
-        final FileType fileType = myFileTypeBuilder.getOrCreate( myConfiguration, aLanguage );
+        final Language language = myConfiguration.getLanguageConfiguration().getLanguage();
+        final FileType fileType = myFileTypeBuilder.getOrCreate( myConfiguration, language );
 
         LOG.info( "Registering file type " + getName() );
         final FileTypeConfiguration config = myConfiguration.getFileTypeConfiguration();

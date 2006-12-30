@@ -19,4 +19,4 @@ class RubyNamesValidator
     def myKeywords = []
 }
 
-return new RubyNamesValidator( context.currentDir() )
+return new RubyNamesValidator( currentDir )

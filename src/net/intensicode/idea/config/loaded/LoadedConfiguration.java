@@ -148,7 +148,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     {
         if ( myLanguageConfiguration == null )
         {
-            myLanguageConfiguration = new LoadedLanguageConfiguration( this );
+            myLanguageConfiguration = new LoadedLanguageConfiguration( mySystemContext, this );
         }
         return myLanguageConfiguration;
     }
@@ -164,6 +164,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
 
     public final SimpleLexer getLexer()
     {
+        LOG.info( "getLexer " + mySyntaxLexer );
         if ( mySyntaxLexer == null )
         {
             try

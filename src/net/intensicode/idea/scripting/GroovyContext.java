@@ -1,6 +1,7 @@
 package net.intensicode.idea.scripting;
 
 import groovy.lang.Binding;
+import groovy.lang.GroovyClassLoader;
 import groovy.lang.GroovyShell;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.ScriptSupport;
@@ -11,6 +12,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 /**
  * TODO: Describe this!
@@ -19,8 +23,27 @@ public final class GroovyContext implements ScriptSupport
 {
     public GroovyContext( final SystemContext aSystemContext )
     {
-        mySystemContext = aSystemContext;
         myFolder = aSystemContext.getOptionsFolder();
+
+        final Binding binding = new Binding();
+        binding.setVariable( "context", this );
+        binding.setVariable( "currentDir", myFolder.getConfigurationFolder() );
+
+        try
+        {
+            final URL url1 = myFolder.getConfigurationFolder().toURL();
+            final URL url2 = new File( myFolder.getConfigurationFolder(), "lib-groovy" ).toURL();
+            final ClassLoader fuckedLoader = new URLClassLoader( new URL[]{ url2, url1 }, getClass().getClassLoader() );
+
+            final GroovyClassLoader loader = new GroovyClassLoader( fuckedLoader );
+            loader.addClasspath( myFolder.getConfigurationFolder().getPath() );
+
+            myShell = new GroovyShell( loader, binding );
+        }
+        catch ( final MalformedURLException e )
+        {
+            throw new ScriptingException( e );
+        }
     }
 
     public final Object source( final String aScriptName ) throws FileNotFoundException
@@ -28,7 +51,7 @@ public final class GroovyContext implements ScriptSupport
         return myShell.evaluate( myFolder.streamFile( aScriptName ) );
     }
 
-    public final File currentDir()
+    public final File getCurrentDir()
     {
         return myFolder.getConfigurationFolder();
     }
@@ -37,14 +60,7 @@ public final class GroovyContext implements ScriptSupport
 
     public final Object createObject( final String aScriptFileName, final Class aTargetClass ) throws IOException
     {
-        final OptionsFolder folder = mySystemContext.getOptionsFolder();
-        final String script = folder.readFileIntoString( aScriptFileName );
-
-        final Binding binding = myShell.getContext();
-        binding.setVariable( "context", this );
-        binding.setVariable( "currendDir", myFolder.getConfigurationFolder() );
-        final Object result = myShell.evaluate( script );
-
+        final Object result = source( aScriptFileName );
         try
         {
             return aTargetClass.cast( result );
@@ -60,9 +76,7 @@ public final class GroovyContext implements ScriptSupport
 
 
 
+    private final GroovyShell myShell;
+
     private final OptionsFolder myFolder;
-
-    private final SystemContext mySystemContext;
-
-    private final GroovyShell myShell = new GroovyShell();
 }

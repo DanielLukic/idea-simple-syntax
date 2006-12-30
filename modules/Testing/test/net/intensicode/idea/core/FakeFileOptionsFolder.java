@@ -4,10 +4,7 @@ import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.util.FileUtils;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
+import java.io.*;
 
 /**
  * TODO: Describe this!
@@ -49,9 +46,9 @@ public class FakeFileOptionsFolder implements OptionsFolder
         throw new RuntimeException( "NYI" );
     }
 
-    public final InputStream streamFile( final String aRelativeFileName )
+    public final InputStream streamFile( final String aRelativeFileName ) throws FileNotFoundException
     {
-        throw new RuntimeException( "NYI" );
+        return new FileInputStream( new File( myFolderPath, aRelativeFileName ) );
     }
 
     public final String readFileIntoString( final String aRelativeFileName ) throws IOException

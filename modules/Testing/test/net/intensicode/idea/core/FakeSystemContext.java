@@ -5,7 +5,6 @@ import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import net.intensicode.idea.system.*;
 import net.intensicode.idea.system.production.ProductionScriptSupport;
-import net.intensicode.idea.scripting.RubyContext;
 
 
 
@@ -57,8 +56,6 @@ public final class FakeSystemContext implements SystemContext
     {
         throw new RuntimeException( "NYI" );
     }
-
-
 
     private final Object myReferenceObject;
 

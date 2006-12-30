@@ -1,0 +1,6 @@
+
+package sub;
+
+class OtherBaseClass
+{
+}

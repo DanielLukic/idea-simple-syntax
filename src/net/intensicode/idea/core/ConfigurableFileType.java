@@ -5,13 +5,12 @@ import com.intellij.lang.Language;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.fileTypes.SyntaxHighlighter;
+import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.scripting.DynamicClassFactory;
+import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -26,9 +25,9 @@ import javax.swing.*;
  * Has to be used through the ConfigurableFileTypeBuilder to take care of unregistering previous
  * extensions/filetypes.
  */
-public class ConfigurableFileType implements FileType
+public class ConfigurableFileType extends LanguageFileType
 {
-    public /*protected*/ static final ConfigurableFileType getOrCreate( final InstanceConfiguration aConfiguration, final Language aLanguage )
+    public /*protected*/ static final ConfigurableFileType getOrCreate( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration, final Language aLanguage )
     {
         final String name = aConfiguration.getName();
         final FileTypeManager manager = FileTypeManager.getInstance();
@@ -38,7 +37,7 @@ public class ConfigurableFileType implements FileType
             if ( fileType instanceof ConfigurableFileType == false ) continue;
 
             final ConfigurableFileType oldFileType = ( ConfigurableFileType ) fileType;
-            oldFileType.reset( aConfiguration, aLanguage );
+            oldFileType.reset( aConfiguration );
             return oldFileType;
         }
 
@@ -46,23 +45,10 @@ public class ConfigurableFileType implements FileType
 
         final String className = "ConfigurableFileType" + aConfiguration.getName();
         final Class clazz = ConfigurableFileType.class;
-        return ( ConfigurableFileType ) DynamicClassFactory.newLanguage( className, clazz, aConfiguration, aLanguage );
-    }
-
-    public final void reset( final InstanceConfiguration aConfiguration, final Language aLanguage )
-    {
-        myConfiguration = aConfiguration != null ? aConfiguration : NullInstanceConfiguration.INSTANCE;
-        myLanguage = aLanguage != null ? aLanguage : Language.ANY;
+        return ( ConfigurableFileType ) DynamicClassFactory.newInstance( className, clazz, aConfiguration, aLanguage );
     }
 
     // From FileType
-
-    @NotNull
-    public final Language getLanguage()
-    {
-        LOG.info( "getLanguage " + myLanguage );
-        return myLanguage;
-    }
 
     @NotNull
     @NonNls
@@ -91,46 +77,34 @@ public class ConfigurableFileType implements FileType
     }
 
     @Nullable
-    public final SyntaxHighlighter getHighlighter( final @Nullable Project aProject, final VirtualFile aVirtualFile )
-    {
-        LOG.info( "getHighlighter" );
-        return myLanguage.getSyntaxHighlighter( aProject, aVirtualFile );
-    }
-
-    @Nullable
     public final StructureViewBuilder getStructureViewBuilder( final @NotNull VirtualFile aFile, final @NotNull Project aProject )
     {
         LOG.info( "getStructureViewBuilder" );
-        final PsiFile psiFile = PsiManager.getInstance( aProject ).findFile( aFile );
-        return psiFile == null ? null : myLanguage.getStructureViewBuilder( psiFile );
+        return super.getStructureViewBuilder( aFile, aProject );
     }
 
-    public final String getCharset( final VirtualFile aFile )
+    public final String getCharset( @NotNull final VirtualFile aFile )
     {
         LOG.info( "getCharset " + aFile );
         return null;
-    }
-
-    public final boolean isBinary()
-    {
-        return false;
-    }
-
-    public final boolean isReadOnly()
-    {
-        return false;
     }
 
     // Protected Interface
 
     public /*protected*/ ConfigurableFileType( final InstanceConfiguration aConfiguration, final Language aLanguage )
     {
-        reset( aConfiguration, aLanguage );
+        super( aLanguage );
+        reset( aConfiguration );
+    }
+
+    // Implementation
+
+    private final void reset( final InstanceConfiguration aConfiguration )
+    {
+        myConfiguration = aConfiguration != null ? aConfiguration : NullInstanceConfiguration.INSTANCE;
     }
 
 
-
-    private Language myLanguage;
 
     private InstanceConfiguration myConfiguration;
 

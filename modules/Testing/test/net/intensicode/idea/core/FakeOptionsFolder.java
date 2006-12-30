@@ -20,7 +20,7 @@ public final class FakeOptionsFolder implements OptionsFolder
 
     public final File getConfigurationFolder()
     {
-        throw new RuntimeException( "NYI" );
+        return new File( "." );
     }
 
     public final String[] findConfigurations()

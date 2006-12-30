@@ -9,4 +9,9 @@ public class ScriptingException extends RuntimeException
     {
         super( aMessage );
     }
+
+    public ScriptingException( final Throwable aThrowable )
+    {
+        super( aThrowable );
+    }
 }

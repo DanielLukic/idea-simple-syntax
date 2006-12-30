@@ -5,9 +5,10 @@ import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
-import net.intensicode.idea.core.GenericElementType;
 import net.intensicode.idea.core.ConfigurableLanguage;
+import net.intensicode.idea.core.GenericElementType;
 import net.intensicode.idea.syntax.SyntaxHighlighterAdapter;
+import net.intensicode.idea.system.SystemContext;
 
 import java.util.HashMap;
 
@@ -16,8 +17,9 @@ import java.util.HashMap;
  */
 final class LoadedLanguageConfiguration implements LanguageConfiguration
 {
-    public LoadedLanguageConfiguration( final InstanceConfiguration aConfiguration )
+    public LoadedLanguageConfiguration( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {
+        mySystemContext = aSystemContext;
         myConfiguration = aConfiguration;
     }
 
@@ -55,6 +57,8 @@ final class LoadedLanguageConfiguration implements LanguageConfiguration
     private ConfigurableLanguage myLanguage;
 
     private SyntaxHighlighter mySyntaxHighlighter;
+
+    private final SystemContext mySystemContext;
 
     private final InstanceConfiguration myConfiguration;
 

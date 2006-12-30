@@ -35,6 +35,7 @@ public final class RubyContext implements Callback, ScriptSupport
         final IRuby runtime = Ruby.getDefaultInstance();
         runtime.getTopSelf().defineSingletonMethod( "source", this );
         runtime.setCurrentDirectory( new File( folder.getConfigurationFolder().getPath() ).getAbsolutePath() );
+        runtime.getLoadService().getLoadPath().add( "lib-ruby" );
 
         final IRubyObject result = runtime.evalScript( script );
         if ( result == null ) throw new ScriptingException( "Script did not create result object" );
