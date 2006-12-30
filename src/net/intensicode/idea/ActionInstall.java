@@ -3,14 +3,12 @@ package net.intensicode.idea;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.diagnostic.Logger;
-import net.intensicode.idea.system.Confirmation;
-import net.intensicode.idea.system.OptionsFolder;
-import net.intensicode.idea.system.ResourceLoader;
-import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.*;
 import net.intensicode.idea.system.production.ProductionSystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -27,14 +25,21 @@ public final class ActionInstall extends AnAction
 {
     public ActionInstall()
     {
-        final ProductionSystemContext context = new ProductionSystemContext();
+        this( new ProductionSystemContext() );
+    }
+
+    public ActionInstall( final SystemContext aSystemContext )
+    {
+        final SystemContext context = aSystemContext;
         myErrorHandler = context.getErrorHandler();
         myResourceLoader = context.getResourceLoader();
         myOptionsFolder = context.getOptionsFolder();
 
-        addMatcher( "Icon:\\s*(.+)" );
-        addMatcher( "ExampleCode:\\s*(.+)" );
-        addMatcher( "SyntaxDefinition:\\s*(.+)" );
+        addMatcher( ".*Icon:\\s*(.+)" );
+        addMatcher( ".*ExampleCode:\\s*(.+)" );
+        addMatcher( ".*KeywordFile:\\s*(.+)" );
+        addMatcher( ".*NamesValidator:\\s*(.+)" );
+        addMatcher( ".*SyntaxDefinition:\\s*(.+)" );
     }
 
     // From AnAction
@@ -43,14 +48,21 @@ public final class ActionInstall extends AnAction
     {
         try
         {
-            for ( final String fileName : INSTALL_FILES ) copyResource( fileName );
+            final ArrayList<String> copiedFiles = new ArrayList<String>();
+            copyResource( "Ruby.config", copiedFiles );
+            copyResource( "lib-groovy/jparsec/LexerAdapter.groovy", copiedFiles );
+            copyResource( "lib-groovy/jparsec/LexerBase.groovy", copiedFiles );
+            copyResource( "lib-ruby/jparsec/LexerAdapter.rb", copiedFiles );
+            copyResource( "lib-ruby/jparsec/LexerBase.rb", copiedFiles );
 
-            final Reader config = myResourceLoader.read( SIMPLESYNTAX_RUBY_CONFIG );
-            for ( final String line : ReaderUtils.readLines( config ) )
-            {
-                final String fileName = extractFileName( line );
-                if ( fileName != null ) copyResource( fileName );
-            }
+            //final String classPath = System.getProperty( "java.class.path" );
+            //final String separator = System.getProperty( "path.separator" );
+            //final String[] entries = classPath.split( separator );
+            //for ( final String entry : entries )
+            //{
+            //    if ( entry.contains( "SimpleSyntax" ) == false ) continue;
+            //    LOG.info( "CP: " + entry );
+            //}
         }
         catch ( final Throwable t )
         {
@@ -60,33 +72,47 @@ public final class ActionInstall extends AnAction
         myAllConfirmedFlag = false;
     }
 
-    private final String extractFileName( final String aLine )
-    {
-        for ( final Matcher matcher : myMatchers )
-        {
-            if ( matcher.reset( aLine ).matches() == false ) continue;
-
-            final String fileName = matcher.group( 1 );
-            if ( myResourceLoader.isAvailable( fileName ) ) return fileName;
-        }
-        return null;
-    }
-
     // Implementation
 
     private final void addMatcher( final String aPattern )
     {
-        myMatchers.add( Pattern.compile( aPattern ).matcher( EMPTY_INPUT ) );
+        myMatchers.add( Pattern.compile( aPattern ).matcher( "" ) );
     }
 
-    private final void copyResource( final String aResourceName ) throws IOException
+    private final void copyResource( final String aResourceName, final ArrayList<String> aCopiedFiles ) throws IOException
     {
-        LOG.info( "Installing " + aResourceName );
+        if ( aCopiedFiles.contains( aResourceName ) )
+        {
+            return;
+        }
+
+        if ( myResourceLoader.isAvailable( aResourceName ) == false )
+        {
+            throw new FileNotFoundException( aResourceName );
+        }
+
+        LOG.debug( "Installing " + aResourceName );
+
         final InputStream stream = myResourceLoader.stream( aResourceName );
         try
         {
             final boolean writeConfirmed = confirmWrite( aResourceName );
-            if ( writeConfirmed ) myOptionsFolder.writeFileFromStream( aResourceName, stream );
+            if ( writeConfirmed )
+            {
+                myOptionsFolder.writeFileFromStream( aResourceName, stream );
+                aCopiedFiles.add( aResourceName );
+
+                final Reader config = myResourceLoader.read( aResourceName );
+                for ( final String line : ReaderUtils.readLines( config ) )
+                {
+                    final String fileName = extractFileName( line );
+                    if ( fileName != null ) copyResource( fileName, aCopiedFiles );
+                }
+            }
+        }
+        catch ( final Throwable t )
+        {
+            myErrorHandler.onSimpleSyntaxInstallFailed( t );
         }
         finally
         {
@@ -108,6 +134,18 @@ public final class ActionInstall extends AnAction
         throw new RuntimeException( "NYI" );
     }
 
+    private final String extractFileName( final String aLine )
+    {
+        for ( final Matcher matcher : myMatchers )
+        {
+            if ( matcher.reset( aLine ).matches() == false ) continue;
+
+            final String fileName = matcher.group( 1 );
+            if ( myResourceLoader.isAvailable( fileName ) ) return fileName;
+        }
+        return null;
+    }
+
 
 
     private boolean myAllConfirmedFlag = false;
@@ -119,13 +157,6 @@ public final class ActionInstall extends AnAction
     private final SystemErrorHandler myErrorHandler;
 
     private final ArrayList<Matcher> myMatchers = new ArrayList<Matcher>();
-
-
-    private static final String EMPTY_INPUT = "";
-
-    private static final String SIMPLESYNTAX_RUBY_CONFIG = "Ruby.config";
-
-    private static final String[] INSTALL_FILES = new String[]{ SIMPLESYNTAX_RUBY_CONFIG, "LexerBase.rb", "Example.groovy" };
 
 
     private static final Logger LOG = LoggerFactory.getLogger();

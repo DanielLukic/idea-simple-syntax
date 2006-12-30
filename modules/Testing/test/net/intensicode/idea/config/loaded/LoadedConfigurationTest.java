@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import net.intensicode.idea.config.CommentConfiguration;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.core.FakeSystemContext;
+import net.intensicode.idea.syntax.SimpleLexer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,15 +14,24 @@ import java.io.InputStreamReader;
 
 public final class LoadedConfigurationTest extends TestCase
 {
-    public final void testCreate() throws IOException
+    public final void testRuby() throws IOException
     {
-        final FakeSystemContext systemContext = new FakeSystemContext( this );
+        validate( "TestConfig_Ruby.config" );
+    }
 
-        final InputStream input = getClass().getResourceAsStream( "TestConfig_Ruby.config" );
+    public final void testGroovy() throws IOException
+    {
+        validate( "TestConfig_Groovy.config" );
+    }
+
+    private void validate( final String aConfigName ) throws IOException
+    {
+        final FakeSystemContext systemContext = new FakeSystemContext( this, "config" );
+        final InputStream input = getClass().getResourceAsStream( aConfigName );
         final LoadedConfiguration configuration = new LoadedConfiguration( systemContext, new InputStreamReader( input ) );
         assertEquals( "Ruby", configuration.getName() );
         assertEquals( "Ruby Script File", configuration.getDescription() );
-        assertEquals( 275, configuration.getExampleCode().length() );
+        assertEquals( 675, configuration.getExampleCode().length() );
         assertNotNull( configuration.getIcon() );
         assertEquals( 18, configuration.getIcon().getIconWidth() );
         assertEquals( 18, configuration.getIcon().getIconHeight() );
@@ -37,9 +47,12 @@ public final class LoadedConfigurationTest extends TestCase
         assertEquals( "*.ruby", fileTypeConfiguration.getExtensions().get( 1 ).getPresentableString() );
         assertEquals( "rb", fileTypeConfiguration.getDefaultExtension() );
         assertNotNull( fileTypeConfiguration.getIcon() );
-        assertEquals( 9, fileTypeConfiguration.getIcon().getIconWidth() );
-        assertEquals( 9, fileTypeConfiguration.getIcon().getIconHeight() );
+        assertEquals( 18, fileTypeConfiguration.getIcon().getIconWidth() );
+        assertEquals( 18, fileTypeConfiguration.getIcon().getIconHeight() );
 
         assertEquals( "Block comment", configuration.getTokenDescription( "BLOCK_COMMENT" ) );
+
+        final SimpleLexer lexer = configuration.getLexer();
+        assertNotNull( lexer );
     }
 }

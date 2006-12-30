@@ -16,17 +16,23 @@ class LexerBase
     {
         setup()
 
-        myRuleStack.add( _s( "UNRECOGNIZED", Scanners.anyChar() ) )
-
-        def parsers = new Parser[ myRuleStack.size() ]
-        for ( idx in 0..parsers.length - 1 )
+        def parsers = new Parser[ myRuleStack.size() + 1 ]
+        for ( idx in 0..parsers.length - 2 )
         {
             parsers[ idx ] = myRuleStack.get( idx )
         }
+        parsers[ parsers.length - 1 ] = _s( "UNRECOGNIZED", Scanners.anyChar() )
 
         def l_all = Parsers.alt( parsers )
         def s_whitespace = Scanners.isWhitespaces().many()
-        return Lexers.lexeme( s_whitespace, l_all )
+        def lexer = Lexers.lexeme( s_whitespace, l_all )
+
+        // We use a Groovy adapter here:
+        return new LexerAdapter( lexer )
+
+        // We could also use the Java class
+        // "net.intensicode.idea.syntax.JParsecLexerAdapter"
+        // instead.
     }
 
     def setup()

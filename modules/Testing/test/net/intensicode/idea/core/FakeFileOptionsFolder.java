@@ -28,7 +28,7 @@ public class FakeFileOptionsFolder implements OptionsFolder
 
     public final Icon loadIcon( final String aRelativeFileName )
     {
-        throw new RuntimeException( "NYI" );
+        return new ImageIcon( new File( myFolderPath, aRelativeFileName ).getPath() );
     }
 
     public final boolean fileExists( final String aRelativeFileName )

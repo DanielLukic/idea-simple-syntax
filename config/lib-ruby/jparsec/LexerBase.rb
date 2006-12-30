@@ -1,4 +1,6 @@
 
+require "jparsec/LexerAdapter.rb"
+
 require 'java'
 
 include_class "jfun.parsec.Lexers"
@@ -25,9 +27,15 @@ def lexer()
     end
 
     l_all = Parsers.alt( parsers )
-
     s_whitespace = Scanners.isWhitespaces().many()
-    return Lexers.lexeme( s_whitespace, l_all )
+    lexer = Lexers.lexeme( s_whitespace, l_all )
+
+    # We use a pure Ruby LexerAdapter here:
+    return LexerAdapter.new( lexer )
+
+    # For better performance the Java class
+    # "net.intensicode.idea.syntax.JParsecLexerAdapter"
+    # should be used instead.
 end
 
 def store( aRule )

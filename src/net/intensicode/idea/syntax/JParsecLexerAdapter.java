@@ -7,6 +7,7 @@ import jfun.parsec.tokens.TypedToken;
 import net.intensicode.idea.util.MutableCharSequence;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TODO: Describe this!
@@ -27,6 +28,13 @@ public final class JParsecLexerAdapter implements SimpleLexer
         myEndOffset = aEndOffset;
 
         myCache.clear();
+    }
+
+    public final List<SimpleToken> tokenize()
+    {
+        final ArrayList<SimpleToken> tokens = new ArrayList<SimpleToken>();
+        storeTokens( tokens, 0 );
+        return tokens;
     }
 
     public final SimpleToken findToken( final int aStartOffset )
@@ -70,6 +78,15 @@ public final class JParsecLexerAdapter implements SimpleLexer
         newToken.id = typedToken.getType();
 
         return newToken;
+    }
+
+    private final void storeTokens( final ArrayList<SimpleToken> aTokens, final int aStartOffset )
+    {
+        final SimpleToken token = findToken( aStartOffset );
+        if ( token == null ) return;
+
+        aTokens.add( token );
+        storeTokens( aTokens, token.end );
     }
 
 

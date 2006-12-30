@@ -5,8 +5,6 @@ import com.intellij.lexer.LexerPosition;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.LanguageConfiguration;
-import net.intensicode.idea.syntax.SimpleLexer;
-import net.intensicode.idea.syntax.SimpleToken;
 import net.intensicode.idea.util.LoggerFactory;
 
 /**

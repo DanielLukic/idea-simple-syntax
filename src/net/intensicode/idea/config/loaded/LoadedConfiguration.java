@@ -2,9 +2,7 @@ package net.intensicode.idea.config.loaded;
 
 import com.intellij.openapi.diagnostic.Logger;
 import jfun.parsec.Lexers;
-import jfun.parsec.Parser;
 import jfun.parsec.Scanners;
-import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
 import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
@@ -169,7 +167,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
         {
             try
             {
-                mySyntaxLexer = new JParsecLexerAdapter( createLexer() );
+                mySyntaxLexer = createLexer();
             }
             catch ( final Exception t )
             {
@@ -236,19 +234,18 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
         return mySystemContext.getOptionsFolder().readFileIntoString( exampleCodeFileName );
     }
 
-    private final Parser<Tok[]> createLexer()
+    private final SimpleLexer createLexer()
     {
         try
         {
             final String fileName = getProperty( SYNTAX_DEFINITION );
             final ScriptSupport scriptSupport = mySystemContext.getScriptSupport();
-            final Object lexer = scriptSupport.createObject( fileName, Parser.class );
-            return ( Parser<Tok[]> ) lexer;
+            return ( SimpleLexer ) scriptSupport.createObject( fileName, SimpleLexer.class );
         }
         catch ( final Throwable t )
         {
             mySystemContext.getErrorHandler().onConfigurationError( t );
-            return Lexers.lexeme( Scanners.isWhitespaces(), Lexers.word() );
+            return new JParsecLexerAdapter( Lexers.lexeme( Scanners.isWhitespaces(), Lexers.word() ) );
         }
     }
 
