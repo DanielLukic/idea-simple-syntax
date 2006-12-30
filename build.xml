@@ -53,6 +53,7 @@
         <pathelement location="${dir.build.classes}"/>
         <pathelement location="${dir.build.tests}"/>
         <pathelement location="${dir.tests}"/>
+        <pathelement location="${dir.config}"/>
         <path refid="classpath.build"/>
     </path>
 
