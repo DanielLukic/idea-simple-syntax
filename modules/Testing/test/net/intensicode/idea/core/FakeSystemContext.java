@@ -6,6 +6,8 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import net.intensicode.idea.system.*;
 import net.intensicode.idea.system.production.ProductionScriptSupport;
 
+import java.util.List;
+
 
 
 /**
@@ -27,11 +29,6 @@ public final class FakeSystemContext implements SystemContext
 
     // From SystemContext
 
-    public final ScriptSupport getScriptSupport()
-    {
-        return new ProductionScriptSupport( this );
-    }
-
     public OptionsFolder getOptionsFolder()
     {
         return myOptionsFolder;
@@ -47,14 +44,19 @@ public final class FakeSystemContext implements SystemContext
         return new FakeSystemErrorHandler();
     }
 
-    public TextAttributesKey createTextAttributesKey( String aTokenID, TextAttributes aAttributes )
-    {
-        return TextAttributesKey.find( aTokenID );
-    }
-
     public FileTypeManager getFileTypeManager()
     {
         throw new RuntimeException( "NYI" );
+    }
+
+    public final ScriptSupport createScriptSupport( final List<String> aClassPathEntries )
+    {
+        return new ProductionScriptSupport( this, aClassPathEntries );
+    }
+
+    public TextAttributesKey createTextAttributesKey( String aTokenID, TextAttributes aAttributes )
+    {
+        return TextAttributesKey.find( aTokenID );
     }
 
     private final Object myReferenceObject;

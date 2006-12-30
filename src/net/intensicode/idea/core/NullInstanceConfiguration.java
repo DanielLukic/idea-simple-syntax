@@ -2,6 +2,7 @@ package net.intensicode.idea.core;
 
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.syntax.SimpleLexer;
+import net.intensicode.idea.system.ScriptSupport;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -84,6 +85,11 @@ final class NullInstanceConfiguration implements InstanceConfiguration
     public final LanguageConfiguration getLanguageConfiguration()
     {
         return NullLanguageConfiguration.INSTANCE;
+    }
+
+    public final ScriptSupport getScriptSupport()
+    {
+        throw new RuntimeException( "NYI" );
     }
 
     public final SimpleLexer getLexer()

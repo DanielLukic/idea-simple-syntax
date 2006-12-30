@@ -4,6 +4,8 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 
+import java.util.List;
+
 
 
 /**
@@ -11,8 +13,6 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
  */
 public interface SystemContext
 {
-    ScriptSupport getScriptSupport();
-
     OptionsFolder getOptionsFolder();
 
     ResourceLoader getResourceLoader();
@@ -20,6 +20,8 @@ public interface SystemContext
     SystemErrorHandler getErrorHandler();
 
     FileTypeManager getFileTypeManager();
+
+    ScriptSupport createScriptSupport( List<String> aClassPathEntries );
 
     TextAttributesKey createTextAttributesKey( String aTokenID, TextAttributes aAttributes );
 }

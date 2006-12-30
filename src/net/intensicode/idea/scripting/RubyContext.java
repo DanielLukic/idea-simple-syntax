@@ -14,15 +14,17 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.util.List;
 
 /**
  * TODO: Describe this!
  */
 public final class RubyContext implements Callback, ScriptSupport
 {
-    public RubyContext( final SystemContext aSystemContext )
+    public RubyContext( final SystemContext aSystemContext, final List<String> aClassPathEntries )
     {
         mySystemContext = aSystemContext;
+        myClassPathEntries = aClassPathEntries;
     }
 
     // ScriptSupport
@@ -35,7 +37,11 @@ public final class RubyContext implements Callback, ScriptSupport
         final IRuby runtime = Ruby.getDefaultInstance();
         runtime.getTopSelf().defineSingletonMethod( "source", this );
         runtime.setCurrentDirectory( new File( folder.getConfigurationFolder().getPath() ).getAbsolutePath() );
-        runtime.getLoadService().getLoadPath().add( "lib-ruby" );
+        for ( final String entry : myClassPathEntries )
+        {
+            final File file = new File( folder.getConfigurationFolder(), entry );
+            runtime.getLoadService().getLoadPath().add( file.getAbsolutePath() );
+        }
 
         final IRubyObject result = runtime.evalScript( script );
         if ( result == null ) throw new ScriptingException( "Script did not create result object" );
@@ -79,4 +85,6 @@ public final class RubyContext implements Callback, ScriptSupport
 
 
     private final SystemContext mySystemContext;
+
+    private final List<String> myClassPathEntries;
 }

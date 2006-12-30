@@ -160,6 +160,15 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
         return myConfigurableAttributes;
     }
 
+    public final ScriptSupport getScriptSupport()
+    {
+        if ( myScriptSupport == null )
+        {
+            myScriptSupport = mySystemContext.createScriptSupport( getClassPathEntries() );
+        }
+        return myScriptSupport;
+    }
+
     public final SimpleLexer getLexer()
     {
         LOG.info( "getLexer " + mySyntaxLexer );
@@ -234,12 +243,28 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
         return mySystemContext.getOptionsFolder().readFileIntoString( exampleCodeFileName );
     }
 
+    private final List<String> getClassPathEntries()
+    {
+        final ArrayList<String> classPath = new ArrayList<String>();
+        if ( isValidProperty( SCRIPT_CLASS_PATH ) )
+        {
+            final String[] entries = getProperty( SCRIPT_CLASS_PATH ).split( "," );
+            for ( final String entry : entries ) classPath.add( entry );
+        }
+        else
+        {
+            classPath.add( "lib-ruby" );
+            classPath.add( "lib-groovy" );
+        }
+        return classPath;
+    }
+
     private final SimpleLexer createLexer()
     {
         try
         {
             final String fileName = getProperty( SYNTAX_DEFINITION );
-            final ScriptSupport scriptSupport = mySystemContext.getScriptSupport();
+            final ScriptSupport scriptSupport = getScriptSupport();
             return ( SimpleLexer ) scriptSupport.createObject( fileName, SimpleLexer.class );
         }
         catch ( final Throwable t )
@@ -254,6 +279,8 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     private String myExampleCode;
 
     private SimpleLexer mySyntaxLexer;
+
+    private ScriptSupport myScriptSupport;
 
     private LanguageConfiguration myLanguageConfiguration;
 
@@ -294,4 +321,6 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     private static final String[] REQUIRED_ENTRIES = { NAME, DESCRIPTION, SYNTAX_DEFINITION };
 
     private static final Logger LOG = LoggerFactory.getLogger();
+
+    private static final String SCRIPT_CLASS_PATH = "ScriptClassPath";
 }

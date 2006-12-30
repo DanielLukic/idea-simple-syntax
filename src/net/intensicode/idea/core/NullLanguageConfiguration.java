@@ -8,9 +8,9 @@ import net.intensicode.idea.config.LanguageConfiguration;
 /**
  * TODO: Describe this!
  */
-final class NullLanguageConfiguration implements LanguageConfiguration
+public final class NullLanguageConfiguration implements LanguageConfiguration
 {
-    static final NullLanguageConfiguration INSTANCE = new NullLanguageConfiguration();
+    public static final NullLanguageConfiguration INSTANCE = new NullLanguageConfiguration();
 
     public final Language getLanguage()
     {

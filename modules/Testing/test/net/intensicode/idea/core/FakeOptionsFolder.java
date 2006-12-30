@@ -55,7 +55,10 @@ public final class FakeOptionsFolder implements OptionsFolder
 
     public final String readFileIntoString( final String aRelativeFileName ) throws IOException
     {
-        final InputStreamReader reader = new InputStreamReader( streamFile( aRelativeFileName ) );
+        final InputStream stream = streamFile( aRelativeFileName );
+        if ( stream == null ) throw new FileNotFoundException( aRelativeFileName );
+
+        final InputStreamReader reader = new InputStreamReader( stream );
         return ReaderUtils.readIntoString( reader );
     }
 

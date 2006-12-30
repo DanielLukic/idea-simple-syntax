@@ -2,13 +2,11 @@ package net.intensicode.idea.config.loaded;
 
 import com.intellij.lang.refactoring.JavaNamesValidator;
 import com.intellij.lang.refactoring.NamesValidator;
-import com.intellij.openapi.diagnostic.Logger;
 import net.intensicode.idea.config.ConfigurationProperties;
 import net.intensicode.idea.config.NamesValidatorConfiguration;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.ScriptSupport;
 import net.intensicode.idea.system.SystemContext;
-import net.intensicode.idea.util.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,7 +34,7 @@ final class LoadedNamesValidatorConfiguration implements NamesValidatorConfigura
     public final NamesValidator createExternalImplementation()
     {
         final String scriptFileName = myProperties.getProperty( NAMES_VALIDATOR_ID );
-        final ScriptSupport scriptSupport = mySystemContext.getScriptSupport();
+        final ScriptSupport scriptSupport = mySystemContext.createScriptSupport( new ArrayList<String>() );
         try
         {
             return ( NamesValidator ) scriptSupport.createObject( scriptFileName, NamesValidator.class );

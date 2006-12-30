@@ -8,15 +8,17 @@ import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * TODO: Describe this!
  */
 public final class ProductionScriptSupport implements ScriptSupport
 {
-    public ProductionScriptSupport( final SystemContext aSystemContext )
+    public ProductionScriptSupport( final SystemContext aSystemContext, final List<String> aClassPathEntries )
     {
         mySystemContext = aSystemContext;
+        myClassPathEntries = aClassPathEntries;
     }
 
     // From ScriptSupport
@@ -26,12 +28,12 @@ public final class ProductionScriptSupport implements ScriptSupport
         if ( aScriptFileName.endsWith( ".groovy" ) )
         {
             LOG.info( "Executing Groovy script" );
-            return new GroovyContext( mySystemContext ).createObject( aScriptFileName, aTargetClass );
+            return new GroovyContext( mySystemContext, myClassPathEntries ).createObject( aScriptFileName, aTargetClass );
         }
         else if ( aScriptFileName.endsWith( ".ruby" ) || aScriptFileName.endsWith( ".rb" ) )
         {
             LOG.info( "Executing JRuby script" );
-            return new RubyContext( mySystemContext ).createObject( aScriptFileName, aTargetClass );
+            return new RubyContext( mySystemContext, myClassPathEntries ).createObject( aScriptFileName, aTargetClass );
         }
         else
         {
@@ -42,6 +44,8 @@ public final class ProductionScriptSupport implements ScriptSupport
 
 
     private final SystemContext mySystemContext;
+
+    private final List<String> myClassPathEntries;
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

@@ -40,7 +40,10 @@ public final class TestRubyLexer extends TestCase
 
     private final ArrayList<SimpleToken> getLexerOutput() throws IOException
     {
-        final RubyContext context = new RubyContext( new FakeSystemContext( this, "config" ) );
+        final ArrayList<String> classPath = new ArrayList<String>();
+        classPath.add( "lib-ruby" );
+
+        final RubyContext context = new RubyContext( new FakeSystemContext( this, "config" ), classPath );
         final SimpleLexer lexer = ( SimpleLexer ) context.createObject( "Ruby/Syntax.rb", SimpleLexer.class );
 
         final String testData = StreamUtils.loadIntoString( getClass().getResourceAsStream( "TestScript.rb" ) );

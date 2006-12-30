@@ -40,7 +40,7 @@ public final class TestGroovyLexer extends TestCase
 
     private final ArrayList<SimpleToken> getLexerOutput() throws IOException
     {
-        final GroovyContext context = new GroovyContext( new FakeSystemContext( this, "config" ) );
+        final GroovyContext context = new GroovyContext( new FakeSystemContext( this, "config" ), new ArrayList<String>() );
         final SimpleLexer lexer = ( SimpleLexer ) context.createObject( "Ruby/Syntax.groovy", SimpleLexer.class );
 
         final String testData = StreamUtils.loadIntoString( getClass().getResourceAsStream( "TestScript.rb" ) );

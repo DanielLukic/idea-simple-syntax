@@ -15,13 +15,15 @@ import java.lang.reflect.Proxy;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TODO: Describe this!
  */
 public final class GroovyContext implements ScriptSupport
 {
-    public GroovyContext( final SystemContext aSystemContext )
+    public GroovyContext( final SystemContext aSystemContext, final List<String> aClassPathEntries )
     {
         myFolder = aSystemContext.getOptionsFolder();
 
@@ -31,11 +33,17 @@ public final class GroovyContext implements ScriptSupport
 
         try
         {
-            final URL url1 = myFolder.getConfigurationFolder().toURL();
-            final URL url2 = new File( myFolder.getConfigurationFolder(), "lib-groovy" ).toURL();
-            final ClassLoader fuckedLoader = new URLClassLoader( new URL[]{ url2, url1 }, getClass().getClassLoader() );
+            final ArrayList<URL> urls = new ArrayList<URL>();
+            for ( final String entry : aClassPathEntries )
+            {
+                urls.add( new File( myFolder.getConfigurationFolder(), entry ).toURL() );
+            }
 
-            final GroovyClassLoader loader = new GroovyClassLoader( fuckedLoader );
+            final URL[] urlArray = urls.toArray( new URL[urls.size()] );
+            final ClassLoader parentLoader = getClass().getClassLoader();
+            final ClassLoader chainedLoader = new URLClassLoader( urlArray, parentLoader );
+
+            final GroovyClassLoader loader = new GroovyClassLoader( chainedLoader );
             loader.addClasspath( myFolder.getConfigurationFolder().getPath() );
 
             myShell = new GroovyShell( loader, binding );

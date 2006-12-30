@@ -44,9 +44,13 @@ public final class ActionInstallTest extends TestCase
             }
         };
 
-        for ( int idx = 0; idx < expected.size(); idx++ )
+        for ( final String check : expected )
         {
-            assertEquals( expected.get( idx ), context.writtenFiles.get( idx ) );
+            assertTrue( context.writtenFiles.contains( check ) );
+        }
+        for ( final String check : context.writtenFiles )
+        {
+            assertTrue( expected.contains( check ) );
         }
     }
 
@@ -81,7 +85,7 @@ public final class ActionInstallTest extends TestCase
             return this;
         }
 
-        public ScriptSupport getScriptSupport()
+        public ScriptSupport createScriptSupport( List<String> aClassPathEntries )
         {
             throw new RuntimeException( "NYI" );
         }

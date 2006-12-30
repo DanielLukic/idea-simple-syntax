@@ -2,6 +2,7 @@ package net.intensicode.idea.config;
 
 import net.intensicode.idea.core.ConfigurableAttributes;
 import net.intensicode.idea.syntax.SimpleLexer;
+import net.intensicode.idea.system.ScriptSupport;
 
 import javax.swing.*;
 import java.util.List;
@@ -43,6 +44,8 @@ public interface InstanceConfiguration
     LanguageConfiguration getLanguageConfiguration();
 
     ConfigurableAttributes getAttributes();
+
+    ScriptSupport getScriptSupport();
 
     SimpleLexer getLexer();
 }

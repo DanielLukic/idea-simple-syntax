@@ -6,6 +6,7 @@ import net.intensicode.idea.core.FakeSystemContext;
 import net.intensicode.idea.scripting.GroovyContext;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public final class TestSourcing extends TestCase
 {
@@ -14,7 +15,7 @@ public final class TestSourcing extends TestCase
         final GroovyShell shell = new GroovyShell();
 
         final FakeSystemContext systemContext = new FakeSystemContext( this );
-        shell.getContext().setVariable( "context", new GroovyContext( systemContext ) );
+        shell.getContext().setVariable( "context", new GroovyContext( systemContext, new ArrayList<String>() ) );
 
         final Object result = shell.evaluate( readScript( "Script1.groovy" ), "Script1" );
         assertEquals( "BUSTED STUFF", result.toString() );

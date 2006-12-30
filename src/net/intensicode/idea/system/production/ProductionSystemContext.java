@@ -5,6 +5,8 @@ import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import net.intensicode.idea.system.*;
 
+import java.util.List;
+
 
 
 /**
@@ -17,15 +19,6 @@ public final class ProductionSystemContext implements SystemContext
     }
 
     // From SystemContext
-
-    public final ScriptSupport getScriptSupport()
-    {
-        if ( myScriptSupport == null )
-        {
-            myScriptSupport = new ProductionScriptSupport( this );
-        }
-        return myScriptSupport;
-    }
 
     public final OptionsFolder getOptionsFolder()
     {
@@ -47,14 +40,17 @@ public final class ProductionSystemContext implements SystemContext
         return FileTypeManager.getInstance();
     }
 
+    public final ScriptSupport createScriptSupport( final List<String> aClassPathEntries )
+    {
+        return new ProductionScriptSupport( this, aClassPathEntries );
+    }
+
     public final TextAttributesKey createTextAttributesKey( final String aTokenID, final TextAttributes aAttributes )
     {
         return TextAttributesKey.createTextAttributesKey( aTokenID, aAttributes );
     }
 
 
-
-    private ScriptSupport myScriptSupport;
 
     private final OptionsFolder myOptionsFolder = new ProductionOptionsFolder();
 

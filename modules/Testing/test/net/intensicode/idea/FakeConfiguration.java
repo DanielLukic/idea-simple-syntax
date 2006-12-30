@@ -2,7 +2,9 @@ package net.intensicode.idea;
 
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.core.ConfigurableAttributes;
+import net.intensicode.idea.core.NullLanguageConfiguration;
 import net.intensicode.idea.syntax.SimpleLexer;
+import net.intensicode.idea.system.ScriptSupport;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -34,17 +36,17 @@ public class FakeConfiguration implements InstanceConfiguration
 
     public String getDescription()
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
     public String getExampleCode()
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
     public FileTypeConfiguration getFileTypeConfiguration()
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
     public final NamesValidatorConfiguration getNamesValidatorConfiguration()
@@ -54,7 +56,7 @@ public class FakeConfiguration implements InstanceConfiguration
 
     public Icon getIcon()
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
     public String getName()
@@ -74,27 +76,31 @@ public class FakeConfiguration implements InstanceConfiguration
 
     public String getTokenAttributes( String aTokenID )
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
     public String getTokenDescription( String aTokenID )
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
+    public final ScriptSupport getScriptSupport()
+    {
+        throw new RuntimeException( "NYI" );
+    }
 
     public ConfigurableAttributes getAttributes()
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 
     public LanguageConfiguration getLanguageConfiguration()
     {
-        return null;
+        return NullLanguageConfiguration.INSTANCE;
     }
 
     public SimpleLexer getLexer()
     {
-        return null;
+        throw new RuntimeException( "NYI" );
     }
 }
