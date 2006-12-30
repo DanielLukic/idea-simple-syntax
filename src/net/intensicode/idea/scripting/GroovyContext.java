@@ -36,7 +36,8 @@ public final class GroovyContext implements ScriptSupport
             final ArrayList<URL> urls = new ArrayList<URL>();
             for ( final String entry : aClassPathEntries )
             {
-                urls.add( new File( myFolder.getConfigurationFolder(), entry ).toURL() );
+                final File file = new File( myFolder.getConfigurationFolder(), entry );
+                urls.add( new File( file.getAbsolutePath() ).toURL() );
             }
 
             final URL[] urlArray = urls.toArray( new URL[urls.size()] );
