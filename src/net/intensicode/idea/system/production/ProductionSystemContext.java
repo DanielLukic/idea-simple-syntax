@@ -1,10 +1,12 @@
 package net.intensicode.idea.system.production;
 
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import net.intensicode.idea.system.*;
 
+import java.io.File;
 import java.util.List;
 
 
@@ -19,6 +21,12 @@ public final class ProductionSystemContext implements SystemContext
     }
 
     // From SystemContext
+
+    public File getPluginFolder()
+    {
+        final File pluginFolder = new File( PathManager.getPluginsPath(), "SimpleSyntax" );
+        return new File( pluginFolder, "classes" );
+    }
 
     public final OptionsFolder getOptionsFolder()
     {

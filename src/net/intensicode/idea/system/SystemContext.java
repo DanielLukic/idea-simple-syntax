@@ -4,6 +4,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 
+import java.io.File;
 import java.util.List;
 
 
@@ -13,6 +14,8 @@ import java.util.List;
  */
 public interface SystemContext
 {
+    File getPluginFolder();
+
     OptionsFolder getOptionsFolder();
 
     ResourceLoader getResourceLoader();

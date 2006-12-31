@@ -6,6 +6,7 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import net.intensicode.idea.system.*;
 import net.intensicode.idea.system.production.ProductionScriptSupport;
 
+import java.io.File;
 import java.util.List;
 
 
@@ -28,6 +29,11 @@ public final class FakeSystemContext implements SystemContext
     }
 
     // From SystemContext
+
+    public File getPluginFolder()
+    {
+        return new File( "config" );
+    }
 
     public OptionsFolder getOptionsFolder()
     {

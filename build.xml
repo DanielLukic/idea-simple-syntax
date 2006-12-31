@@ -23,9 +23,12 @@
     <property name="dir.build.tests" value="${dir.build}/tests"/>
     <property name="dir.build.zip" value="${dir.build.expanded}/${output.name}/lib"/>
 
+    <property name="dist.file.config.name" value="${output.name}-config.zip"/>
+
     <property name="dist.file.jar" value="${dir.build.dist}/${output.name}.jar"/>
     <property name="dist.file.zip" value="${dir.build.dist}/${output.name}.zip"/>
     <property name="dist.file.full" value="${dir.build.dist}/${output.name}-dist.zip"/>
+    <property name="dist.file.config" value="${dir.build.dist}/${dist.file.config.name}"/>
 
 
     <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
@@ -95,10 +98,14 @@
     </target>
 
     <target name="_package_core" depends="_build_classes">
+        <jar jarfile="${dist.file.config}">
+            <fileset dir="${dir.config}" includes="**/*"/>
+        </jar>
         <jar jarfile="${dist.file.jar}">
             <fileset dir="${dir.build.classes}" includes="**/*"/>
             <fileset dir="${dir.resources}" includes="**/*"/>
             <fileset dir="${dir.config}" includes="**/*"/>
+            <fileset dir="${dir.build.dist}" includes="${dist.file.config.name}"/>
             <fileset dir="." includes="META-INF/**/*"/>
         </jar>
     </target>
@@ -112,7 +119,7 @@
         </copy>
         <copy todir="${dir.build.zip}/../">
             <fileset dir="." includes="COPYING"/>
-            <fileset dir="." includes="LICENSE.txt"/>
+            <fileset dir="." includes="LICENSE"/>
         </copy>
         <zip zipfile="${dist.file.zip}">
             <fileset dir="${dir.build.zip}/../.."/>

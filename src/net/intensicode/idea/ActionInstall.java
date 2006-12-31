@@ -2,19 +2,17 @@ package net.intensicode.idea;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.diagnostic.Logger;
-import net.intensicode.idea.system.*;
+import com.intellij.openapi.options.ConfigurationException;
+import net.intensicode.idea.system.ResourceLoader;
+import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.system.production.ProductionSystemContext;
-import net.intensicode.idea.util.LoggerFactory;
-import net.intensicode.idea.util.ReaderUtils;
+import net.intensicode.idea.util.ClassPathInstaller;
+import net.intensicode.idea.util.CopyHandler;
+import net.intensicode.idea.util.ZipStreamInstaller;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.File;
 import java.io.InputStream;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.zip.ZipInputStream;
 
 
 
@@ -30,16 +28,8 @@ public final class ActionInstall extends AnAction
 
     public ActionInstall( final SystemContext aSystemContext )
     {
-        final SystemContext context = aSystemContext;
-        myErrorHandler = context.getErrorHandler();
-        myResourceLoader = context.getResourceLoader();
-        myOptionsFolder = context.getOptionsFolder();
-
-        addMatcher( ".*Icon:\\s*(.+)" );
-        addMatcher( ".*ExampleCode:\\s*(.+)" );
-        addMatcher( ".*KeywordFile:\\s*(.+)" );
-        addMatcher( ".*NamesValidator:\\s*(.+)" );
-        addMatcher( ".*SyntaxDefinition:\\s*(.+)" );
+        mySystemContext = aSystemContext;
+        myResourceLoader = aSystemContext.getResourceLoader();
     }
 
     // From AnAction
@@ -48,116 +38,39 @@ public final class ActionInstall extends AnAction
     {
         try
         {
-            final ArrayList<String> copiedFiles = new ArrayList<String>();
-            copyResource( "Ruby.config", copiedFiles );
-            copyResource( "lib-groovy/jparsec/LexerAdapter.groovy", copiedFiles );
-            copyResource( "lib-groovy/jparsec/LexerBase.groovy", copiedFiles );
-            copyResource( "lib-ruby/jparsec/LexerAdapter.rb", copiedFiles );
-            copyResource( "lib-ruby/jparsec/LexerBase.rb", copiedFiles );
+            final CopyHandler copyHandler = new CopyHandler( mySystemContext );
 
-            //final String classPath = System.getProperty( "java.class.path" );
-            //final String separator = System.getProperty( "path.separator" );
-            //final String[] entries = classPath.split( separator );
-            //for ( final String entry : entries )
-            //{
-            //    if ( entry.contains( "SimpleSyntax" ) == false ) continue;
-            //    LOG.info( "CP: " + entry );
-            //}
-        }
-        catch ( final Throwable t )
-        {
-            myErrorHandler.onSimpleSyntaxInstallFailed( t );
-        }
-
-        myAllConfirmedFlag = false;
-    }
-
-    // Implementation
-
-    private final void addMatcher( final String aPattern )
-    {
-        myMatchers.add( Pattern.compile( aPattern ).matcher( "" ) );
-    }
-
-    private final void copyResource( final String aResourceName, final ArrayList<String> aCopiedFiles ) throws IOException
-    {
-        if ( aCopiedFiles.contains( aResourceName ) )
-        {
-            return;
-        }
-
-        if ( myResourceLoader.isAvailable( aResourceName ) == false )
-        {
-            throw new FileNotFoundException( aResourceName );
-        }
-
-        LOG.debug( "Installing " + aResourceName );
-
-        final InputStream stream = myResourceLoader.stream( aResourceName );
-        try
-        {
-            final boolean writeConfirmed = confirmWrite( aResourceName );
-            if ( writeConfirmed )
+            if ( myResourceLoader.isAvailable( SIMPLE_SYNTAX_CONFIG_ZIP ) )
             {
-                myOptionsFolder.writeFileFromStream( aResourceName, stream );
-                aCopiedFiles.add( aResourceName );
-
-                final Reader config = myResourceLoader.read( aResourceName );
-                for ( final String line : ReaderUtils.readLines( config ) )
-                {
-                    final String fileName = extractFileName( line );
-                    if ( fileName != null ) copyResource( fileName, aCopiedFiles );
-                }
+                final InputStream inputStream = myResourceLoader.stream( SIMPLE_SYNTAX_CONFIG_ZIP );
+                final ZipInputStream zipStream = new ZipInputStream( inputStream );
+                new ZipStreamInstaller( copyHandler ).install( zipStream );
+            }
+            else
+            {
+                final String configFolderPath = getConfigFolderPath();
+                final File configFolder = new File( configFolderPath );
+                new ClassPathInstaller( copyHandler ).install( configFolder );
             }
         }
         catch ( final Throwable t )
         {
-            myErrorHandler.onSimpleSyntaxInstallFailed( t );
-        }
-        finally
-        {
-            stream.close();
+            mySystemContext.getErrorHandler().onSimpleSyntaxInstallFailed( t );
         }
     }
 
-    private final boolean confirmWrite( final String aResourceName ) throws IOException
+    // Implementation
+
+    private final String getConfigFolderPath() throws ConfigurationException
     {
-        if ( myAllConfirmedFlag ) return true;
-        if ( myOptionsFolder.fileExists( aResourceName ) == false ) return true;
-
-        final Confirmation confirmation = myErrorHandler.onFileReplaceConfirmation( aResourceName );
-        if ( confirmation == Confirmation.ALL ) return myAllConfirmedFlag = true;
-        if ( confirmation == Confirmation.YES ) return true;
-        if ( confirmation == Confirmation.NO ) return false;
-        if ( confirmation == Confirmation.CANCEL ) throw new IOException( "Installation cancelled" );
-
-        throw new RuntimeException( "NYI" );
-    }
-
-    private final String extractFileName( final String aLine )
-    {
-        for ( final Matcher matcher : myMatchers )
-        {
-            if ( matcher.reset( aLine ).matches() == false ) continue;
-
-            final String fileName = matcher.group( 1 );
-            if ( myResourceLoader.isAvailable( fileName ) ) return fileName;
-        }
-        return null;
+        return mySystemContext.getPluginFolder().getPath();
     }
 
 
 
-    private boolean myAllConfirmedFlag = false;
-
-    private final OptionsFolder myOptionsFolder;
+    private final SystemContext mySystemContext;
 
     private final ResourceLoader myResourceLoader;
 
-    private final SystemErrorHandler myErrorHandler;
-
-    private final ArrayList<Matcher> myMatchers = new ArrayList<Matcher>();
-
-
-    private static final Logger LOG = LoggerFactory.getLogger();
+    private static final String SIMPLE_SYNTAX_CONFIG_ZIP = "SimpleSyntax-config.zip";
 }

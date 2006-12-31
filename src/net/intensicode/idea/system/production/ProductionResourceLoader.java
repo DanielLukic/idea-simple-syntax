@@ -51,6 +51,7 @@ final class ProductionResourceLoader implements ResourceLoader
 
     private final String makeResourcePath( final String aResourcePath )
     {
+        if ( aResourcePath.startsWith( "/" ) ) return aResourcePath;
         return "/" + aResourcePath;
     }
 }
