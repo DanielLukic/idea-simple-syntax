@@ -1,4 +1,4 @@
-package scripting.groovy;
+package scripting;
 
 import groovy.lang.Closure;
 import groovy.lang.GroovyShell;
@@ -7,7 +7,7 @@ import org.codehaus.groovy.control.CompilationFailedException;
 
 
 
-public final class TestGroovy extends TestCase
+public final class GroovyTest extends TestCase
 {
     public final void testCreate() throws CompilationFailedException
     {

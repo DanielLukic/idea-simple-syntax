@@ -1,4 +1,4 @@
-package scripting.parser;
+package scripting;
 
 import groovy.lang.GroovyObject;
 import groovy.lang.GroovyShell;
@@ -6,7 +6,7 @@ import jfun.parsec.Tok;
 import junit.framework.TestCase;
 import org.codehaus.groovy.control.CompilationFailedException;
 
-public final class TestGroovyCalculator extends TestCase
+public final class GroovyCalculatorTest extends TestCase
 {
     public final void testParser() throws CompilationFailedException
     {

@@ -1,3 +1,10 @@
+/*
+ * These variables are available:
+ * context: includes a source() and currentDir() function
+ * currentDir: is a File representing the config/options/SimpleSyntax folder
+ * systemContext: references the shared SystemContext object of the plugin
+ * configuration: is the LanguageConfiguration for this script
+ */
 
 import jfun.parsec.*;
 import jfun.parsec.tokens.*;
@@ -36,4 +43,4 @@ class MyRubySyntax extends jparsec.LexerBase
         }
     }
 
-return new MyRubySyntax().lexer()
+return new MyRubySyntax().lexer( configuration )

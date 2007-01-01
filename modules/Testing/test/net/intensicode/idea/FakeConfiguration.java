@@ -1,9 +1,8 @@
 package net.intensicode.idea;
 
+import com.intellij.lexer.Lexer;
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.core.ConfigurableAttributes;
-import net.intensicode.idea.core.NullLanguageConfiguration;
-import net.intensicode.idea.syntax.SimpleLexer;
 import net.intensicode.idea.system.ScriptSupport;
 
 import javax.swing.*;
@@ -96,10 +95,10 @@ public class FakeConfiguration implements InstanceConfiguration
 
     public LanguageConfiguration getLanguageConfiguration()
     {
-        return NullLanguageConfiguration.INSTANCE;
+        return new FakeLanguageConfiguration();
     }
 
-    public SimpleLexer getLexer()
+    public Lexer getLexer()
     {
         throw new RuntimeException( "NYI" );
     }

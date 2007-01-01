@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,6 +31,7 @@ public final class GroovyContext implements ScriptSupport
         final Binding binding = new Binding();
         binding.setVariable( "context", this );
         binding.setVariable( "currentDir", myFolder.getConfigurationFolder() );
+        binding.setVariable( "systemContext", aSystemContext );
 
         try
         {
@@ -67,8 +69,13 @@ public final class GroovyContext implements ScriptSupport
 
     // ScriptSupport
 
-    public final Object createObject( final String aScriptFileName, final Class aTargetClass ) throws IOException
+    public final Object createObject( final String aScriptFileName, final Class aTargetClass, final HashMap<String, Object> aVariables ) throws IOException
     {
+        for ( final String name : aVariables.keySet() )
+        {
+            myShell.setVariable( name, aVariables.get( name ) );
+        }
+
         final Object result = source( aScriptFileName );
         try
         {

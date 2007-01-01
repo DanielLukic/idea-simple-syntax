@@ -1,4 +1,4 @@
-package scripting.ruby;
+package scripting;
 
 import junit.framework.TestCase;
 import org.jruby.IRuby;
@@ -8,7 +8,7 @@ import org.jruby.ast.Node;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public final class TestJRuby extends TestCase
+public final class RubyTest extends TestCase
 {
     public final void testEval()
     {

@@ -1,4 +1,0 @@
-
-# comment
-
-return "this"

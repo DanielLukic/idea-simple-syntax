@@ -1,7 +1,7 @@
 package net.intensicode.idea.config;
 
+import com.intellij.lexer.Lexer;
 import net.intensicode.idea.core.ConfigurableAttributes;
-import net.intensicode.idea.syntax.SimpleLexer;
 import net.intensicode.idea.system.ScriptSupport;
 
 import javax.swing.*;
@@ -47,5 +47,5 @@ public interface InstanceConfiguration
 
     ScriptSupport getScriptSupport();
 
-    SimpleLexer getLexer();
+    Lexer getLexer();
 }

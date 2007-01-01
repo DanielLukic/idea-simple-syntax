@@ -8,11 +8,13 @@ import jfun.parsec.tokens.Tokenizers
 
 import java.util.ArrayList
 
+import net.intensicode.idea.syntax.SimpleLexerAdapter
+
 
 
 class LexerBase
 {
-    def lexer()
+    def lexer( aLanguageConfiguration )
     {
         setup()
 
@@ -21,18 +23,21 @@ class LexerBase
         {
             parsers[ idx ] = myRuleStack.get( idx )
         }
-        parsers[ parsers.length - 1 ] = _s( "UNRECOGNIZED", Scanners.anyChar() )
+        parsers[ parsers.length - 1 ] = _s( "BAD_CHARACTER", Scanners.anyChar() )
 
         def l_all = Parsers.alt( parsers )
         def s_whitespace = Scanners.isWhitespaces().many()
         def lexer = Lexers.lexeme( s_whitespace, l_all )
 
         // We use a Groovy adapter here:
-        return new LexerAdapter( lexer )
+        def adaptedLexer = new LexerAdapter( lexer )
+        return new SimpleLexerAdapter( aLanguageConfiguration, adaptedLexer )
 
         // We could also use the Java class
         // "net.intensicode.idea.syntax.JParsecLexerAdapter"
-        // instead.
+        // instead:
+        //def adaptedLexer = new net.intensicode.idea.syntax.JParsecLexerAdapter( lexer )
+        //return new net.intensicode.idea.syntax.LexerAdapter( adaptedLexer )
     }
 
     def setup()

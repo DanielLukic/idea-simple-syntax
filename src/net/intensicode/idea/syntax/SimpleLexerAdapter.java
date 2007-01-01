@@ -10,9 +10,9 @@ import net.intensicode.idea.util.LoggerFactory;
 /**
  * TODO: Describe this!
  */
-public final class LexerAdapter implements Lexer
+public final class SimpleLexerAdapter implements Lexer
 {
-    public LexerAdapter( final LanguageConfiguration aLanguageConfiguration, final SimpleLexer aLexer )
+    public SimpleLexerAdapter( final LanguageConfiguration aLanguageConfiguration, final SimpleLexer aLexer )
     {
         myLanguageConfiguration = aLanguageConfiguration;
         myLexer = aLexer;
@@ -108,7 +108,7 @@ public final class LexerAdapter implements Lexer
         if ( foundToken == null )
         {
             LOG.debug( "myLexer found no token - advancing with myTokenType = UNRECOGNIZED" );
-            myTokenType = myLanguageConfiguration.getToken( "UNRECOGNIZED" );
+            myTokenType = myLanguageConfiguration.getToken( "BAD_CHARACTER" );
             return;
         }
 
@@ -118,7 +118,7 @@ public final class LexerAdapter implements Lexer
         {
             myTokenStart = aStartOffset;
             myTokenEnd = foundToken.start;
-            myTokenType = myLanguageConfiguration.getToken( "WHITESPACE" );
+            myTokenType = myLanguageConfiguration.getToken( "WHITE_SPACE" );
             return;
         }
 

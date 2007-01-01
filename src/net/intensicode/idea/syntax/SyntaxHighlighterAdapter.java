@@ -6,7 +6,6 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.InstanceConfiguration;
-import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.core.ConfigurableAttributes;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
@@ -30,9 +29,7 @@ public final class SyntaxHighlighterAdapter implements SyntaxHighlighter
         if ( myLexer == null )
         {
             LOG.info( "Creating highlighting lexer" );
-            final LanguageConfiguration languageConfiguration = myConfiguration.getLanguageConfiguration();
-            final SimpleLexer lexer = myConfiguration.getLexer();
-            myLexer = new LexerAdapter( languageConfiguration, lexer );
+            myLexer = myConfiguration.getLexer();
         }
         return myLexer;
     }

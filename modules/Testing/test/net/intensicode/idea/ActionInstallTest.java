@@ -19,12 +19,10 @@ public final class ActionInstallTest extends TestCase
 
     public static final void validateInstallation( final VirtualSystemContext aContext )
     {
-        assertEquals( "", aContext.confirmations.toString() );
-        assertEquals( aContext.writtenFiles.toString(), 12, aContext.writtenFiles.size() );
-
         final ArrayList<String> expected = new ArrayList<String>()
         {
             {
+                add( "idea-flex.skeleton" );
                 add( "Ruby.config" );
                 add( "Ruby/Icon.png" );
                 add( "Ruby/ExampleCode.rb" );
@@ -39,6 +37,9 @@ public final class ActionInstallTest extends TestCase
                 add( "lib-ruby/jparsec/LexerBase.rb" );
             }
         };
+
+        assertEquals( "", aContext.confirmations.toString() );
+        assertEquals( aContext.writtenFiles.toString(), expected.size(), aContext.writtenFiles.size() );
 
         for ( final String check : expected )
         {

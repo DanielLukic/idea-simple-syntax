@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -29,18 +30,31 @@ public final class RubyContext implements Callback, ScriptSupport
 
     // ScriptSupport
 
-    public final Object createObject( final String aScriptFileName, final Class aTargetClass ) throws IOException
+    public final Object createObject( final String aScriptFileName, final Class aTargetClass, final HashMap<String, Object> aVariables ) throws IOException
     {
         final OptionsFolder folder = mySystemContext.getOptionsFolder();
         final String script = folder.readFileIntoString( aScriptFileName );
 
         final IRuby runtime = Ruby.getDefaultInstance();
-        runtime.getTopSelf().defineSingletonMethod( "source", this );
-        runtime.setCurrentDirectory( new File( folder.getConfigurationFolder().getPath() ).getAbsolutePath() );
+
+        final File configFolder = new File( folder.getConfigurationFolder().getPath() );
+        runtime.setCurrentDirectory( configFolder.getAbsolutePath() );
+
+        final List loadPath = runtime.getLoadService().getLoadPath();
         for ( final String entry : myClassPathEntries )
         {
             final File file = new File( folder.getConfigurationFolder(), entry );
-            runtime.getLoadService().getLoadPath().add( file.getAbsolutePath() );
+            loadPath.add( file.getAbsolutePath() );
+        }
+
+        final IRubyObject topSelf = runtime.getTopSelf();
+        topSelf.defineSingletonMethod( "source", this );
+
+        addVariable( runtime, "currentDir", configFolder );
+        addVariable( runtime, "systemContext", mySystemContext );
+        for ( final String name : aVariables.keySet() )
+        {
+            addVariable( runtime, name, aVariables.get( name ) );
         }
 
         final IRubyObject result = runtime.evalScript( script );
@@ -80,6 +94,26 @@ public final class RubyContext implements Callback, ScriptSupport
     public final Arity getArity()
     {
         return Arity.singleArgument();
+    }
+
+    // Implementation
+
+    private final void addVariable( final IRuby aRuntime, final String aName, final Object aJavaObject )
+    {
+        final IRubyObject rubyObject = JavaUtil.convertJavaToRuby( aRuntime, aJavaObject );
+        final IRubyObject topSelf = aRuntime.getTopSelf();
+        topSelf.defineSingletonMethod( aName, new Callback()
+        {
+            public final IRubyObject execute( final IRubyObject aReceiver, final IRubyObject[] aArguments )
+            {
+                return rubyObject;
+            }
+
+            public final Arity getArity()
+            {
+                return Arity.noArguments();
+            }
+        } );
     }
 
 

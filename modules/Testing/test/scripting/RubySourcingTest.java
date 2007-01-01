@@ -1,4 +1,4 @@
-package scripting.ruby;
+package scripting;
 
 import jfun.parsec.Parser;
 import jfun.parsec.Tok;
@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
-public final class TestSourcing extends TestCase
+public final class RubySourcingTest extends TestCase
 {
     public final void testSource()
     {

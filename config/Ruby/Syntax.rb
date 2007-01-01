@@ -1,6 +1,9 @@
 
 # This script is executed in the 'options/SimpleSyntax' folder. You may also use the global function 'source' to read
-# and evaluate a Ruby script.
+# and evaluate a Ruby script. These variables are available, too:
+# currentDir: is a File representing the config/options/SimpleSyntax folder
+# systemContext: references the shared SystemContext object of the plugin
+# configuration: is the LanguageConfiguration for this script
 
 require "jparsec/LexerBase.rb"
 
@@ -30,4 +33,4 @@ regex "SYMBOL",                 /\:\w+\b/
 regex "IDENTIFIER",             /\b[a-z]\w*\b/
 regex "NUMBER",                 /\b(?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)\b/
 
-return lexer
+return lexer( configuration )

@@ -1,7 +1,7 @@
 package net.intensicode.idea.core;
 
+import com.intellij.lexer.Lexer;
 import net.intensicode.idea.config.*;
-import net.intensicode.idea.syntax.SimpleLexer;
 import net.intensicode.idea.system.ScriptSupport;
 
 import javax.swing.*;
@@ -92,7 +92,7 @@ final class NullInstanceConfiguration implements InstanceConfiguration
         throw new RuntimeException( "NYI" );
     }
 
-    public final SimpleLexer getLexer()
+    public final Lexer getLexer()
     {
         throw new RuntimeException( "NYI" );
     }

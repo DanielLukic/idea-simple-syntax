@@ -10,6 +10,7 @@ import net.intensicode.idea.system.SystemContext;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -37,7 +38,8 @@ final class LoadedNamesValidatorConfiguration implements NamesValidatorConfigura
         final ScriptSupport scriptSupport = mySystemContext.createScriptSupport( new ArrayList<String>() );
         try
         {
-            return ( NamesValidator ) scriptSupport.createObject( scriptFileName, NamesValidator.class );
+            final HashMap<String, Object> variables = new HashMap<String, Object>();
+            return ( NamesValidator ) scriptSupport.createObject( scriptFileName, NamesValidator.class, variables );
         }
         catch ( final Throwable t )
         {

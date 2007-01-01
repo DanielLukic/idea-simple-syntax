@@ -1,4 +1,4 @@
-package scripting.groovy;
+package scripting;
 
 import groovy.lang.GroovyShell;
 import junit.framework.TestCase;
@@ -8,7 +8,7 @@ import net.intensicode.idea.scripting.GroovyContext;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public final class TestSourcing extends TestCase
+public final class GroovySourcingTest extends TestCase
 {
     public final void testRecognizer() throws Exception
     {

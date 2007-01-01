@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import net.intensicode.idea.config.CommentConfiguration;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.syntax.SimpleLexer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,7 +51,6 @@ public final class LoadedConfigurationTest extends TestCase
 
         assertEquals( "Block comment", configuration.getTokenDescription( "BLOCK_COMMENT" ) );
 
-        final SimpleLexer lexer = configuration.getLexer();
-        assertNotNull( lexer );
+        assertNotNull( configuration.getLexer() );
     }
 }

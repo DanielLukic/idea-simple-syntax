@@ -3,6 +3,7 @@ package net.intensicode.idea.config.loaded;
 import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.TokenType;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.core.ConfigurableLanguage;
@@ -38,7 +39,18 @@ final class LoadedLanguageConfiguration implements LanguageConfiguration
     {
         if ( myTokens.containsKey( aTokenId ) == false )
         {
+            if ( aTokenId.toString().equals( "WHITE_SPACE" ) )
+            {
+                myTokens.put( aTokenId, TokenType.WHITE_SPACE );
+            }
+            else if ( aTokenId.toString().equals( "BAD_CHARACTER" ) )
+            {
+                myTokens.put( aTokenId, TokenType.BAD_CHARACTER );
+            }
+            else
+            {
             myTokens.put( aTokenId, new GenericElementType( aTokenId, getLanguage() ) );
+            }
         }
         return myTokens.get( aTokenId );
     }

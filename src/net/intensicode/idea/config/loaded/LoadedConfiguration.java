@@ -1,8 +1,11 @@
 package net.intensicode.idea.config.loaded;
 
+import com.intellij.lexer.Lexer;
 import com.intellij.openapi.diagnostic.Logger;
 import jfun.parsec.Lexers;
+import jfun.parsec.Parser;
 import jfun.parsec.Scanners;
+import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
 import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
 import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
@@ -10,7 +13,7 @@ import net.intensicode.idea.config.loaded.parser.KnownIDConsumer;
 import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
 import net.intensicode.idea.core.ConfigurableAttributes;
 import net.intensicode.idea.syntax.JParsecLexerAdapter;
-import net.intensicode.idea.syntax.SimpleLexer;
+import net.intensicode.idea.syntax.SimpleLexerAdapter;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.ScriptSupport;
 import net.intensicode.idea.system.SystemContext;
@@ -169,7 +172,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
         return myScriptSupport;
     }
 
-    public final SimpleLexer getLexer()
+    public final Lexer getLexer()
     {
         LOG.info( "getLexer " + mySyntaxLexer );
         if ( mySyntaxLexer == null )
@@ -259,26 +262,33 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
         return classPath;
     }
 
-    private final SimpleLexer createLexer()
+    private final Lexer createLexer()
     {
         try
         {
+            final HashMap<String, Object> variables = new HashMap<String, Object>();
+            variables.put( "configuration", getLanguageConfiguration() );
+
             final String fileName = getProperty( SYNTAX_DEFINITION );
             final ScriptSupport scriptSupport = getScriptSupport();
-            return ( SimpleLexer ) scriptSupport.createObject( fileName, SimpleLexer.class );
+            return ( Lexer ) scriptSupport.createObject( fileName, Lexer.class, variables );
         }
         catch ( final Throwable t )
         {
             mySystemContext.getErrorHandler().onConfigurationError( t );
-            return new JParsecLexerAdapter( Lexers.lexeme( Scanners.isWhitespaces(), Lexers.word() ) );
+
+            final LanguageConfiguration configuration = getLanguageConfiguration();
+            final Parser<Tok[]> lexer = Lexers.lexeme( Scanners.isWhitespaces(), Lexers.word() );
+            final JParsecLexerAdapter parsecLexer = new JParsecLexerAdapter( lexer );
+            return new SimpleLexerAdapter( configuration, parsecLexer );
         }
     }
 
 
 
-    private String myExampleCode;
+    private Lexer mySyntaxLexer;
 
-    private SimpleLexer mySyntaxLexer;
+    private String myExampleCode;
 
     private ScriptSupport myScriptSupport;
 

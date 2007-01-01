@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * TODO: Describe this!
@@ -53,7 +54,8 @@ public final class GroovyContextTest extends TestCase
     {
         final FakeSystemContext systemContext = new FakeSystemContext( this, "modules/Testing/test-groovy" );
         final GroovyContext groovyContext = new GroovyContext( systemContext, new ArrayList<String>() );
-        final Object result = groovyContext.createObject( "FilePathTest4.groovy", Serializable.class );
+        final HashMap<String, Object> variables = new HashMap<String, Object>();
+        final Object result = groovyContext.createObject( "FilePathTest4.groovy", Serializable.class, variables );
         assertNotNull( result );
         assertEquals( "MyFilePathTest4", result.toString() );
     }

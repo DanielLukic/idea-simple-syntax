@@ -13,13 +13,16 @@ include_class "jfun.parsec.pattern.Patterns"
 
 include_class "jfun.parsec.tokens.Tokenizers"
 
+include_class "net.intensicode.idea.syntax.JParsecLexerAdapter"
+include_class "net.intensicode.idea.syntax.SimpleLexerAdapter"
+
 
 
 $rules = []
 
-def lexer()
+def lexer( aLanguageConfiguration )
     all_rules = $rules.dup
-    all_rules << _s( "UNRECOGNIZED", Scanners.anyChar() )
+    all_rules << _s( "BAD_CHARACTER", Scanners.anyChar() )
 
     parsers = Parser[].new( all_rules.length )
     all_rules.each_index do |idx|
@@ -31,11 +34,13 @@ def lexer()
     lexer = Lexers.lexeme( s_whitespace, l_all )
 
     # We use a pure Ruby LexerAdapter here:
-    return LexerAdapter.new( lexer )
+    #adaptedLexer = LexerAdapter.new( lexer )
 
     # For better performance the Java class
     # "net.intensicode.idea.syntax.JParsecLexerAdapter"
-    # should be used instead.
+    # should be used instead:
+    adaptedLexer = JParsecLexerAdapter.new( lexer )
+    return SimpleLexerAdapter.new( aLanguageConfiguration, adaptedLexer )
 end
 
 def store( aRule )
