@@ -26,23 +26,16 @@ public final class CopyHandler
         myOptionsFolder = context.getOptionsFolder();
     }
 
-    public final void copy( final InputStream aStream, final String aResourceName )
+    public final void copy( final InputStream aStream, final String aResourceName ) throws IOException
     {
         if ( myCopiedFiles.contains( aResourceName ) ) return;
 
         LOG.debug( "Installing " + aResourceName );
-        try
+        final boolean writeConfirmed = confirmWrite( aResourceName );
+        if ( writeConfirmed )
         {
-            final boolean writeConfirmed = confirmWrite( aResourceName );
-            if ( writeConfirmed )
-            {
-                myOptionsFolder.writeFileFromStream( aResourceName, aStream );
-                myCopiedFiles.add( aResourceName );
-            }
-        }
-        catch ( final Throwable t )
-        {
-            myErrorHandler.onSimpleSyntaxInstallFailed( t );
+            myOptionsFolder.writeFileFromStream( aResourceName, aStream );
+            myCopiedFiles.add( aResourceName );
         }
     }
 
@@ -51,6 +44,7 @@ public final class CopyHandler
     private final boolean confirmWrite( final String aResourceName ) throws IOException
     {
         if ( myAllConfirmedFlag ) return true;
+        if ( myAllDeclinedFlag ) return false;
         if ( myOptionsFolder.fileExists( aResourceName ) == false ) return true;
 
         final Confirmation confirmation = myErrorHandler.onFileReplaceConfirmation( aResourceName );
@@ -59,10 +53,18 @@ public final class CopyHandler
         if ( confirmation == Confirmation.NO ) return false;
         if ( confirmation == Confirmation.CANCEL ) throw new IOException( "Installation cancelled" );
 
+        if ( confirmation == Confirmation.NONE )
+        {
+            myAllDeclinedFlag = true;
+            return false;
+        }
+        
         throw new RuntimeException( "NYI" );
     }
 
 
+
+    private boolean myAllDeclinedFlag = false;
 
     private boolean myAllConfirmedFlag = false;
 

@@ -19,21 +19,27 @@ public final class LexerTest extends TestCase
     public final void testGroovyLexer() throws IOException
     {
         final GroovySupport support = new GroovySupport( createContext(), createClassPath( "lib-groovy" ) );
-        validate( support, "Ruby/Syntax.groovy" );
+        validateRuby( support, "Ruby/Syntax.groovy", "TestScript.rb" );
     }
 
     public final void testRubyLexer() throws IOException
     {
         final RubySupport support = new RubySupport( createContext(), createClassPath( "lib-ruby" ) );
-        validate( support, "Ruby/Syntax.rb" );
+        validateRuby( support, "Ruby/Syntax.rb", "TestScript.rb" );
+    }
+
+    public final void testGroovyPythonLexer() throws IOException
+    {
+        final GroovySupport support = new GroovySupport( createContext(), createClassPath( "lib-groovy" ) );
+        validatePython( support, "Python/Syntax.groovy", "TestScript.py" );
     }
 
     // Implemention
 
-    private final void validate( final ScriptSupport aScriptSupport, final String aScriptName ) throws IOException
+    private final void validateRuby( final ScriptSupport aScriptSupport, final String aScriptName, final String aTestScript ) throws IOException
     {
         final Lexer lexer = createLexer( aScriptSupport, aScriptName );
-        final ArrayList<SimpleToken> tokens = getLexerOutput( lexer );
+        final ArrayList<SimpleToken> tokens = getLexerOutput( lexer, aTestScript );
 
         assertNotNull( tokens );
         assertEquals( 7, tokens.size() );
@@ -45,6 +51,22 @@ public final class LexerTest extends TestCase
         check( "DOUBLE_QUOTED_STRING", 22, 28, tokens.get( 4 ) );
         check( "BAD_CHARACTER", 28, 29, tokens.get( 5 ) );
         check( "BAD_CHARACTER", 29, 30, tokens.get( 6 ) );
+    }
+
+    private final void validatePython( final ScriptSupport aScriptSupport, final String aScriptName, final String aTestScript ) throws IOException
+    {
+        final Lexer lexer = createLexer( aScriptSupport, aScriptName );
+        final ArrayList<SimpleToken> tokens = getLexerOutput( lexer, aTestScript );
+
+        assertNotNull( tokens );
+        assertEquals( 6, tokens.size() );
+
+        check( "END_OF_LINE_COMMENT", 2, 11, tokens.get( 0 ) );
+        check( "LINE_BREAK", 11, 15, tokens.get( 1 ) );
+        check( "RETURN_KEYWORD", 15, 21, tokens.get( 2 ) );
+        check( "SPACE", 21, 22, tokens.get( 3 ) );
+        check( "STRING_LITERAL", 22, 28, tokens.get( 4 ) );
+        check( "LINE_BREAK", 28, 30, tokens.get( 5 ) );
     }
 
     private final void check( final String aID, final int aStart, final int aEnd, final SimpleToken aToken )
@@ -73,9 +95,9 @@ public final class LexerTest extends TestCase
         return ( Lexer ) aContext.createObject( aScriptName, variables, Lexer.class );
     }
 
-    private final ArrayList<SimpleToken> getLexerOutput( final Lexer aLexer ) throws IOException
+    private final ArrayList<SimpleToken> getLexerOutput( final Lexer aLexer, final String aTestScript ) throws IOException
     {
-        final String testData = StreamUtils.loadIntoString( getClass().getResourceAsStream( "TestScript.rb" ) );
+        final String testData = StreamUtils.loadIntoString( getClass().getResourceAsStream( aTestScript ) );
         aLexer.start( testData.toCharArray(), 0, testData.length() );
 
         final ArrayList<SimpleToken> tokens = new ArrayList<SimpleToken>();

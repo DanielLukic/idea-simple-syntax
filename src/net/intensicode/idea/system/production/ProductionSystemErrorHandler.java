@@ -65,7 +65,8 @@ final class ProductionSystemErrorHandler implements SystemErrorHandler
         if ( result == 0 ) return Confirmation.YES;
         if ( result == 1 ) return Confirmation.ALL;
         if ( result == 2 ) return Confirmation.NO;
-        if ( result == 3 ) return Confirmation.CANCEL;
+        if ( result == 3 ) return Confirmation.NONE;
+        if ( result == 4 ) return Confirmation.CANCEL;
         throw new RuntimeException( "NYI" );
     }
 

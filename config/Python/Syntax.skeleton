@@ -1,23 +1,22 @@
   /** initial size of the lookahead buffer */
---- private static final int ZZ_BUFFERSIZE = ...;
+--- private final int ZZ_BUFFERSIZE = ...;
 
   /** lexical states */
 ---  lexical states, charmap
 
   /* error codes */
-  private static final int ZZ_UNKNOWN_ERROR = 0;
-  private static final int ZZ_NO_MATCH = 1;
-  private static final int ZZ_PUSHBACK_2BIG = 2;
-  private static final char[] EMPTY_BUFFER = new char[0];
-  private static final int YYEOF = -1;
-  private static java.io.Reader zzReader = null; // Fake
+  private final int ZZ_UNKNOWN_ERROR = 0;
+  private final int ZZ_NO_MATCH = 1;
+  private final int ZZ_PUSHBACK_2BIG = 2;
+  private final char[] EMPTY_BUFFER = new char[0];
+  private final int YYEOF = -1;
 
   /* error messages for the codes above */
-  private static final String ZZ_ERROR_MSG[] = {
+  private final String[] ZZ_ERROR_MSG = [
     "Unkown internal scanner error",
     "Error: could not match input",
     "Error: pushback value was too large"
-  };
+  ];
 
 --- isFinal list
   /** the current state of the DFA */
@@ -83,7 +82,7 @@
    *
    * @exception   java.io.IOException  if any I/O-Error occurs
    */
-  private boolean zzRefill() throws java.io.IOException {
+  private boolean zzRefill() throws IOException {
     return true;
   }
 
@@ -244,3 +243,5 @@
 --- main
 
 }
+
+return new GroovyPythonLexer( configuration );

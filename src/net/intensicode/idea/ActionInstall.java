@@ -61,7 +61,7 @@ public final class ActionInstall extends AnAction
 
     // Implementation
 
-    private final String getConfigFolderPath() throws ConfigurationException
+    private final String getConfigFolderPath()
     {
         return mySystemContext.getPluginFolder().getPath();
     }

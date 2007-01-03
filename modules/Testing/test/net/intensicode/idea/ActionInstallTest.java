@@ -22,7 +22,6 @@ public final class ActionInstallTest extends TestCase
         final ArrayList<String> expected = new ArrayList<String>()
         {
             {
-                add( "idea-flex.skeleton" );
                 add( "Ruby.config" );
                 add( "Ruby/Icon.png" );
                 add( "Ruby/ExampleCode.rb" );
@@ -31,6 +30,14 @@ public final class ActionInstallTest extends TestCase
                 add( "Ruby/NamesValidator.groovy" );
                 add( "Ruby/Syntax.rb" );
                 add( "Ruby/Syntax.groovy" );
+
+                add( "Python.config" );
+                add( "Python/ExampleCode.py" );
+                add( "Python/Icon.png" );
+                add( "Python/Syntax.flex" );
+                add( "Python/Syntax.groovy" );
+                add( "Python/Syntax.skeleton" );
+
                 add( "lib-groovy/jparsec/LexerAdapter.groovy" );
                 add( "lib-groovy/jparsec/LexerBase.groovy" );
                 add( "lib-ruby/jparsec/LexerAdapter.rb" );

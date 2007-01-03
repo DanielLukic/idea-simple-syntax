@@ -7,9 +7,11 @@
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
         languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
         ///
-        Credits: Includes the wonderful Groovy, JRuby and JParsec systems.
+        Credits: Includes the wonderful Groovy, JRuby and JParsec systems. Also included are
+        a few files from the pythonid Python plugin.
     </description>
     <change-notes>
+        [ V0.19 ] Added support for dynamic JFlex-based syntax definitions. Added Python example configuration
         [ V0.18 ] Switched to Groovy and JRuby lexer configuration using JParsec.
         [ V0.17 ] Fully fixed for IDEA 6.0. Now highlighting of files works properly again.
         [ V0.16 ] Fixed for IDEA 6.0. No more crashing IDEA 6.0 and later.
