@@ -1,11 +1,11 @@
-package scripting;
+package scripting.lexing;
 
 import com.intellij.lexer.Lexer;
 import junit.framework.TestCase;
 import net.intensicode.idea.FakeLanguageConfiguration;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.scripting.GroovyContext;
-import net.intensicode.idea.scripting.RubyContext;
+import net.intensicode.idea.scripting.GroovySupport;
+import net.intensicode.idea.scripting.RubySupport;
 import net.intensicode.idea.syntax.SimpleToken;
 import net.intensicode.idea.system.ScriptSupport;
 import net.intensicode.idea.util.StreamUtils;
@@ -18,14 +18,14 @@ public final class LexerTest extends TestCase
 {
     public final void testGroovyLexer() throws IOException
     {
-        final GroovyContext context = new GroovyContext( createContext(), createClassPath( "lib-groovy" ) );
-        validate( context, "Ruby/Syntax.groovy" );
+        final GroovySupport support = new GroovySupport( createContext(), createClassPath( "lib-groovy" ) );
+        validate( support, "Ruby/Syntax.groovy" );
     }
 
     public final void testRubyLexer() throws IOException
     {
-        final RubyContext context = new RubyContext( createContext(), createClassPath( "lib-ruby" ) );
-        validate( context, "Ruby/Syntax.rb" );
+        final RubySupport support = new RubySupport( createContext(), createClassPath( "lib-ruby" ) );
+        validate( support, "Ruby/Syntax.rb" );
     }
 
     // Implemention
@@ -70,7 +70,7 @@ public final class LexerTest extends TestCase
     {
         final HashMap<String, Object> variables = new HashMap<String, Object>();
         variables.put( "configuration", new FakeLanguageConfiguration() );
-        return ( Lexer ) aContext.createObject( aScriptName, Lexer.class, variables );
+        return ( Lexer ) aContext.createObject( aScriptName, variables, Lexer.class );
     }
 
     private final ArrayList<SimpleToken> getLexerOutput( final Lexer aLexer ) throws IOException

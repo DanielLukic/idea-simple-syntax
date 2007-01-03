@@ -1,9 +1,9 @@
-package scripting;
+package scripting.groovy;
 
 import groovy.lang.GroovyShell;
 import junit.framework.TestCase;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.scripting.GroovyContext;
+import net.intensicode.idea.scripting.GroovySupport;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public final class GroovySourcingTest extends TestCase
         final GroovyShell shell = new GroovyShell();
 
         final FakeSystemContext systemContext = new FakeSystemContext( this );
-        shell.getContext().setVariable( "context", new GroovyContext( systemContext, new ArrayList<String>() ) );
+        shell.getContext().setVariable( "context", new GroovySupport( systemContext, new ArrayList<String>() ) );
 
         final Object result = shell.evaluate( readScript( "Script1.groovy" ), "Script1" );
         assertEquals( "BUSTED STUFF", result.toString() );

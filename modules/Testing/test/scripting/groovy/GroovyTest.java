@@ -1,4 +1,4 @@
-package scripting;
+package scripting.groovy;
 
 import groovy.lang.Closure;
 import groovy.lang.GroovyShell;

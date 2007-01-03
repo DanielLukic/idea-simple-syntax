@@ -271,7 +271,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
 
             final String fileName = getProperty( SYNTAX_DEFINITION );
             final ScriptSupport scriptSupport = getScriptSupport();
-            return ( Lexer ) scriptSupport.createObject( fileName, Lexer.class, variables );
+            return ( Lexer ) scriptSupport.createObject( fileName, variables, Lexer.class );
         }
         catch ( final Throwable t )
         {

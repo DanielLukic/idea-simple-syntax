@@ -1,10 +1,10 @@
-package scripting;
+package scripting.ruby;
 
 import jfun.parsec.Parser;
 import jfun.parsec.Tok;
 import junit.framework.TestCase;
 import net.intensicode.idea.core.FakeSystemContext;
-import net.intensicode.idea.scripting.RubyContext;
+import net.intensicode.idea.scripting.RubySupport;
 import net.intensicode.idea.syntax.JParsecLexerAdapter;
 import net.intensicode.idea.syntax.SimpleToken;
 import org.jruby.IRuby;
@@ -52,7 +52,7 @@ public final class RubySourcingTest extends TestCase
     {
         final IRuby runtime = Ruby.getDefaultInstance();
         final FakeSystemContext systemContext = new FakeSystemContext( this );
-        runtime.getTopSelf().defineSingletonMethod( "source", new RubyContext( systemContext, new ArrayList<String>() ) );
+        runtime.getTopSelf().defineSingletonMethod( "source", new RubySupport( systemContext, new ArrayList<String>() ) );
         return runtime;
     }
 

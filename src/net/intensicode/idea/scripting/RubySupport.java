@@ -5,6 +5,7 @@ import net.intensicode.idea.system.ScriptSupport;
 import net.intensicode.idea.system.SystemContext;
 import org.jruby.IRuby;
 import org.jruby.Ruby;
+import org.jruby.javasupport.Java;
 import org.jruby.javasupport.JavaUtil;
 import org.jruby.runtime.Arity;
 import org.jruby.runtime.builtin.IRubyObject;
@@ -14,50 +15,68 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 /**
  * TODO: Describe this!
  */
-public final class RubyContext implements Callback, ScriptSupport
+public final class RubySupport implements Callback, ScriptSupport
 {
-    public RubyContext( final SystemContext aSystemContext, final List<String> aClassPathEntries )
+    public RubySupport( final SystemContext aSystemContext )
+    {
+        this( aSystemContext, new ArrayList<String>() );
+    }
+
+    public RubySupport( final SystemContext aSystemContext, final List<String> aClassPathEntries )
     {
         mySystemContext = aSystemContext;
         myClassPathEntries = aClassPathEntries;
+
+        myRuntime = Ruby.newInstance( System.in, System.out, System.err );
     }
 
     // ScriptSupport
 
-    public final Object createObject( final String aScriptFileName, final Class aTargetClass, final HashMap<String, Object> aVariables ) throws IOException
+    public final Object createObject( final String aScriptFileName, final HashMap<String, Object> aVariables, final Class aTargetClass ) throws IOException
     {
         final OptionsFolder folder = mySystemContext.getOptionsFolder();
         final String script = folder.readFileIntoString( aScriptFileName );
 
-        final IRuby runtime = Ruby.getDefaultInstance();
-
         final File configFolder = new File( folder.getConfigurationFolder().getPath() );
-        runtime.setCurrentDirectory( configFolder.getAbsolutePath() );
+        myRuntime.setCurrentDirectory( configFolder.getAbsolutePath() );
 
-        final List loadPath = runtime.getLoadService().getLoadPath();
+        final List loadPath = myRuntime.getLoadService().getLoadPath();
         for ( final String entry : myClassPathEntries )
         {
             final File file = new File( folder.getConfigurationFolder(), entry );
             loadPath.add( file.getAbsolutePath() );
         }
 
-        final IRubyObject topSelf = runtime.getTopSelf();
+        final IRubyObject topSelf = myRuntime.getTopSelf();
         topSelf.defineSingletonMethod( "source", this );
 
-        addVariable( runtime, "currentDir", configFolder );
-        addVariable( runtime, "systemContext", mySystemContext );
+        aVariables.put( "currentDir", configFolder );
+        aVariables.put( "systemContext", mySystemContext );
         for ( final String name : aVariables.keySet() )
         {
-            addVariable( runtime, name, aVariables.get( name ) );
+            topSelf.defineSingletonMethod( name, new Callback()
+            {
+                public IRubyObject execute( IRubyObject aReceiver, IRubyObject[] aArguments )
+                {
+                    final IRubyObject rubyObject = JavaUtil.convertJavaToRuby( myRuntime, aVariables.get( name ) );
+                    return Java.java_to_ruby( aReceiver, rubyObject );
+                }
+
+                public Arity getArity()
+                {
+                    return Arity.noArguments();
+                }
+            } );
         }
 
-        final IRubyObject result = runtime.evalScript( script );
+        final IRubyObject result = myRuntime.evalScript( script );
         if ( result == null ) throw new ScriptingException( "Script did not create result object" );
 
         try
@@ -68,10 +87,11 @@ public final class RubyContext implements Callback, ScriptSupport
         {
             final ClassLoader loader = getClass().getClassLoader();
             final Class[] interfaces = new Class[]{ aTargetClass };
-            final InvocationHandler handler = new RubyInvocationHandler( runtime, result );
+            final InvocationHandler handler = new RubyInvocationHandler( myRuntime, result );
             return Proxy.newProxyInstance( loader, interfaces, handler );
         }
     }
+
 
     // From Callback
 
@@ -96,27 +116,9 @@ public final class RubyContext implements Callback, ScriptSupport
         return Arity.singleArgument();
     }
 
-    // Implementation
-
-    private final void addVariable( final IRuby aRuntime, final String aName, final Object aJavaObject )
-    {
-        final IRubyObject rubyObject = JavaUtil.convertJavaToRuby( aRuntime, aJavaObject );
-        final IRubyObject topSelf = aRuntime.getTopSelf();
-        topSelf.defineSingletonMethod( aName, new Callback()
-        {
-            public final IRubyObject execute( final IRubyObject aReceiver, final IRubyObject[] aArguments )
-            {
-                return rubyObject;
-            }
-
-            public final Arity getArity()
-            {
-                return Arity.noArguments();
-            }
-        } );
-    }
 
 
+    private final IRuby myRuntime;
 
     private final SystemContext mySystemContext;
 

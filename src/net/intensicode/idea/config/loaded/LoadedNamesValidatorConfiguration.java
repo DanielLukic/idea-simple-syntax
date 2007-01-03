@@ -39,7 +39,7 @@ final class LoadedNamesValidatorConfiguration implements NamesValidatorConfigura
         try
         {
             final HashMap<String, Object> variables = new HashMap<String, Object>();
-            return ( NamesValidator ) scriptSupport.createObject( scriptFileName, NamesValidator.class, variables );
+            return ( NamesValidator ) scriptSupport.createObject( scriptFileName, variables, NamesValidator.class );
         }
         catch ( final Throwable t )
         {

@@ -22,9 +22,9 @@ import java.util.List;
 /**
  * TODO: Describe this!
  */
-public final class GroovyContext implements ScriptSupport
+public final class GroovySupport implements ScriptSupport
 {
-    public GroovyContext( final SystemContext aSystemContext, final List<String> aClassPathEntries )
+    public GroovySupport( final SystemContext aSystemContext, final List<String> aClassPathEntries )
     {
         myFolder = aSystemContext.getOptionsFolder();
 
@@ -69,7 +69,7 @@ public final class GroovyContext implements ScriptSupport
 
     // ScriptSupport
 
-    public final Object createObject( final String aScriptFileName, final Class aTargetClass, final HashMap<String, Object> aVariables ) throws IOException
+    public final Object createObject( final String aScriptFileName, final HashMap<String, Object> aVariables, final Class aTargetClass ) throws IOException
     {
         for ( final String name : aVariables.keySet() )
         {
@@ -89,8 +89,6 @@ public final class GroovyContext implements ScriptSupport
             return Proxy.newProxyInstance( loader, interfaces, handler );
         }
     }
-
-
 
     private final GroovyShell myShell;
 

@@ -8,8 +8,5 @@ import java.util.HashMap;
  */
 public interface ScriptSupport
 {
-    /**
-     * Executes a script and transforms returned object into a target class instance - if necessary.
-     */
-    Object createObject( String aScriptFileName, Class aTargetClass, final HashMap<String, Object> aVariables ) throws IOException;
+    Object createObject( String aScriptFileName, HashMap<String, Object> aVariables, Class aTargetClass ) throws IOException;
 }

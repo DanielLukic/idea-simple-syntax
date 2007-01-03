@@ -22,6 +22,6 @@ public final class FakeLanguageConfiguration implements LanguageConfiguration
 
     public IElementType getToken( Object aTokenId )
     {
-        return new FakeElementType( aTokenId, null );
+        return new FakeElementType( aTokenId );
     }
 }

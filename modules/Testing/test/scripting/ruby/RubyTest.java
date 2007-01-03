@@ -1,4 +1,4 @@
-package scripting;
+package scripting.ruby;
 
 import junit.framework.TestCase;
 import org.jruby.IRuby;

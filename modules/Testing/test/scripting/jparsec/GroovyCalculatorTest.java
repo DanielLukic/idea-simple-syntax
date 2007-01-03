@@ -1,4 +1,4 @@
-package scripting;
+package scripting.jparsec;
 
 import groovy.lang.GroovyObject;
 import groovy.lang.GroovyShell;
