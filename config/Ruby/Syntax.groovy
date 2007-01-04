@@ -6,6 +6,8 @@
  * configuration: is the LanguageConfiguration for this script
  */
 
+package Ruby;
+
 import jfun.parsec.*;
 import jfun.parsec.tokens.*;
 import jfun.parsec.pattern.*;
@@ -40,6 +42,11 @@ class MyRubySyntax extends jparsec.LexerBase
         regex "SYMBOL",                 /\:\w+\b/
         regex "IDENTIFIER",             /\b[a-z]\w*\b/
         regex "NUMBER",                 /\b(?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)\b/
+
+        regex "WHITE_SPACE",            /[ \t]/
+        regex "EOL",                    /[\n\r]/
+
+        regex "UNKOWN",                 /[^ \n\r]+/
         }
     }
 

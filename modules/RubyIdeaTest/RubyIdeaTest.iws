@@ -155,7 +155,17 @@
     <option name="myCurrentFavoritesList" value="RubyIdeaTest" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Example.config" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Example.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="676" selection-end="676" vertical-scroll-proportion="0.77389985">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -297,7 +307,7 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" PackagesPane="false" Scope="false" Favorites="false" />
+      <showStructure PackagesPane="false" ProjectPane="false" Scope="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -318,16 +328,6 @@
   <component name="RecentsManager" />
   <component name="RestoreUpdateTree" />
   <component name="RunManager">
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="" />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -362,6 +362,16 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <module name="" />
     </configuration>
   </component>
   <component name="ScopeViewComponent">
@@ -564,6 +574,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Documents and Settings/Daniel/.IntelliJIdea60/sandbox/config/options/SimpleSyntax/SimpleSyntax.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.077389985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Documents and Settings/Daniel/.IntelliJIdea60/sandbox/config/options/SimpleSyntax/SimpleSyntax/Syntax.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="16" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.8376328">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Toast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="4" selection-start="27" selection-end="27" vertical-scroll-proportion="0.051593322">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Toast.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -571,9 +602,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Toast.py">
+    <entry file="file://$PROJECT_DIR$/src/Example.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="506" selection-end="506" vertical-scroll-proportion="0.5675266">
+        <state line="30" column="0" selection-start="676" selection-end="676" vertical-scroll-proportion="0.77389985">
           <folding />
         </state>
       </provider>
