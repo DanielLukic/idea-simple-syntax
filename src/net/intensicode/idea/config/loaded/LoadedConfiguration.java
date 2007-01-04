@@ -7,16 +7,11 @@ import jfun.parsec.Parser;
 import jfun.parsec.Scanners;
 import jfun.parsec.Tok;
 import net.intensicode.idea.config.*;
-import net.intensicode.idea.config.loaded.parser.AssignmentConsumer;
-import net.intensicode.idea.config.loaded.parser.ConfigurationParser;
-import net.intensicode.idea.config.loaded.parser.KnownIDConsumer;
-import net.intensicode.idea.config.loaded.parser.PropertyConsumer;
+import net.intensicode.idea.config.loaded.parser.*;
 import net.intensicode.idea.core.ConfigurableAttributes;
 import net.intensicode.idea.syntax.JParsecLexerAdapter;
 import net.intensicode.idea.syntax.SimpleLexerAdapter;
-import net.intensicode.idea.system.OptionsFolder;
-import net.intensicode.idea.system.ScriptSupport;
-import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.system.*;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
 
@@ -149,7 +144,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     {
         if ( myLanguageConfiguration == null )
         {
-            myLanguageConfiguration = new LoadedLanguageConfiguration( mySystemContext, this );
+            myLanguageConfiguration = new LoadedLanguageConfiguration( this );
         }
         return myLanguageConfiguration;
     }
@@ -158,7 +153,8 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     {
         if ( myConfigurableAttributes == null )
         {
-            myConfigurableAttributes = new ConfigurableAttributes( mySystemContext, this );
+            final Aggregations aggregations = new Aggregations( myAggregations );
+            myConfigurableAttributes = new ConfigurableAttributes( mySystemContext, this, aggregations );
         }
         return myConfigurableAttributes;
     }
@@ -174,9 +170,10 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
 
     public final Lexer getLexer()
     {
-        LOG.info( "getLexer " + mySyntaxLexer );
         if ( mySyntaxLexer == null )
         {
+            final ProgressHandler handler = mySystemContext.getProgressHandler();
+            final ProgressHandle handle = handler.startLexerScript();
             try
             {
                 mySyntaxLexer = createLexer();
@@ -185,6 +182,10 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
             {
                 LOG.info( t.toString() );
                 LOG.error( t );
+            }
+            finally
+            {
+                handle.done();
             }
         }
         return mySyntaxLexer;
@@ -218,6 +219,7 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
 
         final ConfigurationParser parser = new ConfigurationParser();
         parser.addConsumer( new PropertyConsumer( myProperties ) );
+        parser.addConsumer( new AggregationConsumer( myAggregations, "aggregations" ) );
         parser.addConsumer( new AssignmentConsumer( myAttributes, "attributes" ) );
         parser.addConsumer( new AssignmentConsumer( myDescriptions, "descriptions" ) );
         parser.addConsumer( new KnownIDConsumer( myKnownTokenIDs, "descriptions" ) );
@@ -310,6 +312,8 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     private final ArrayList<String> myKnownTokenIDs = new ArrayList<String>();
 
     private final HashMap<String, String> myProperties = new HashMap<String, String>();
+
+    private final HashMap<String, String> myAggregations = new HashMap<String, String>();
 
     private final HashMap<String, String> myAttributes = new HashMap<String, String>();
 

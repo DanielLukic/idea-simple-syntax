@@ -31,7 +31,7 @@
         [ V0.2 ] Implemented syntax configuration loading.
         [ V0.1 ] Initial release with hardcoded Ruby syntax.
     </change-notes>
-    <version>0.18</version>
+    <version>0.19</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
     <idea-version since-build="6107"/>
     <application-components>

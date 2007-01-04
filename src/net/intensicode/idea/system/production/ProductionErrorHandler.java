@@ -5,7 +5,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileTypes.FileNameMatcher;
 import com.intellij.openapi.ui.Messages;
 import net.intensicode.idea.system.Confirmation;
-import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.ErrorHandler;
 import net.intensicode.idea.util.LoggerFactory;
 
 import java.util.List;
@@ -15,13 +15,13 @@ import java.util.List;
 /**
  * TODO: Describe this!
  */
-final class ProductionSystemErrorHandler implements SystemErrorHandler
+final class ProductionErrorHandler implements ErrorHandler
 {
-    ProductionSystemErrorHandler()
+    ProductionErrorHandler()
     {
     }
 
-    // From SystemErrorHandler
+    // From ErrorHandler
 
     public final void onScriptingError( final Throwable aThrowable )
     {

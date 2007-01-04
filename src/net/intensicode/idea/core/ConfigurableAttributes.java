@@ -5,23 +5,19 @@ import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.psi.tree.IElementType;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
+import net.intensicode.idea.config.loaded.Aggregations;
 import net.intensicode.idea.system.SystemContext;
 
 import java.util.HashMap;
 
 /**
- * Adapter between IDEA Language objects and our LanguageConfiguration. Takes care of the IDEA OpenAPI quirks:
- * <ul>
- * <li>Circumvent the global Language registry by creating unique subclasses for each LanguageConfiguration.</li>
- * <li>Create and manage unique IElementType/GenericElementType instances (defined tokens).</li>
- * <li>Manage ConfigurableTextAttributes to make TextAttributesKey instances appear dynamic (color settings).</li>
- * </ul>
+ * TODO: Describe this!
  */
 public final class ConfigurableAttributes
 {
-    public ConfigurableAttributes( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
+    public ConfigurableAttributes( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration, final Aggregations aAggregations )
     {
-        reset( aSystemContext, aConfiguration );
+        reset( aSystemContext, aConfiguration, aAggregations );
     }
 
     public final TextAttributesKey getTextAttributesKey( final String aTokenID )
@@ -45,21 +41,25 @@ public final class ConfigurableAttributes
 
     // Implementation
 
-    private final void reset( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
+    private final void reset( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration, final Aggregations aAggregations )
     {
         mySystemContext = aSystemContext;
         myConfiguration = aConfiguration;
+        myAggregations = aAggregations;
 
         myTokenHighlights.clear();
         myTextAttributesKeys.clear();
 
         final LanguageConfiguration languageConfiguration = myConfiguration.getLanguageConfiguration();
-
-        for ( final String token : aConfiguration.getKnownTokenIDs() )
+        for ( final String tokenID : aConfiguration.getKnownTokenIDs() )
         {
-            final IElementType elementType = languageConfiguration.getToken( token );
-            final TextAttributesKey attributesKey = getTextAttributesKey( token );
-            myTokenHighlights.put( elementType, new TextAttributesKey[]{ attributesKey } );
+            final String[] subTokens = myAggregations.getSubTokens( tokenID );
+            for ( final String token : subTokens )
+            {
+                final IElementType elementType = languageConfiguration.getToken( token );
+                final TextAttributesKey attributesKey = getTextAttributesKey( tokenID );
+                myTokenHighlights.put( elementType, new TextAttributesKey[]{ attributesKey } );
+            }
         }
     }
 
@@ -98,6 +98,8 @@ public final class ConfigurableAttributes
     }
 
 
+
+    private Aggregations myAggregations;
 
     private SystemContext mySystemContext;
 

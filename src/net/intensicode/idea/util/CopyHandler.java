@@ -8,7 +8,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import net.intensicode.idea.system.Confirmation;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.SystemContext;
-import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.ErrorHandler;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,7 +58,7 @@ public final class CopyHandler
             myAllDeclinedFlag = true;
             return false;
         }
-        
+
         throw new RuntimeException( "NYI" );
     }
 
@@ -70,7 +70,7 @@ public final class CopyHandler
 
     private final OptionsFolder myOptionsFolder;
 
-    private final SystemErrorHandler myErrorHandler;
+    private final ErrorHandler myErrorHandler;
 
     private final ArrayList<String> myCopiedFiles = new ArrayList<String>();
 

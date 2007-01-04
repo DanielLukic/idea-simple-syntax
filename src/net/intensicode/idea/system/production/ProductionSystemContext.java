@@ -28,6 +28,11 @@ public final class ProductionSystemContext implements SystemContext
         return new File( pluginFolder, "classes" );
     }
 
+    public final ErrorHandler getErrorHandler()
+    {
+        return myErrorHandler;
+    }
+
     public final OptionsFolder getOptionsFolder()
     {
         return myOptionsFolder;
@@ -38,9 +43,9 @@ public final class ProductionSystemContext implements SystemContext
         return myResourceLoader;
     }
 
-    public final SystemErrorHandler getErrorHandler()
+    public final ProgressHandler getProgressHandler()
     {
-        return mySystemErrorHandler;
+        return myProgressHandler;
     }
 
     public final FileTypeManager getFileTypeManager()
@@ -60,9 +65,11 @@ public final class ProductionSystemContext implements SystemContext
 
 
 
+    private final ErrorHandler myErrorHandler = new ProductionErrorHandler();
+
     private final OptionsFolder myOptionsFolder = new ProductionOptionsFolder();
 
-    private final ProductionResourceLoader myResourceLoader = new ProductionResourceLoader();
+    private final ResourceLoader myResourceLoader = new ProductionResourceLoader();
 
-    private final ProductionSystemErrorHandler mySystemErrorHandler = new ProductionSystemErrorHandler();
+    private final ProgressHandler myProgressHandler = new ProductionProgressHandler();
 }

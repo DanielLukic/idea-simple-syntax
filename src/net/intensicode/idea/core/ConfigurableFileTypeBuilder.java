@@ -9,7 +9,7 @@ import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.system.Confirmation;
 import net.intensicode.idea.system.SystemContext;
-import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.ErrorHandler;
 import net.intensicode.idea.util.LoggerFactory;
 
 import java.util.ArrayList;
@@ -107,7 +107,7 @@ public final class ConfigurableFileTypeBuilder
 
     private final SystemContext myContext;
 
-    private final SystemErrorHandler myErrorHandler;
+    private final ErrorHandler myErrorHandler;
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

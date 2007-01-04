@@ -2,7 +2,7 @@ package net.intensicode.idea.core;
 
 import com.intellij.openapi.fileTypes.FileNameMatcher;
 import net.intensicode.idea.system.Confirmation;
-import net.intensicode.idea.system.SystemErrorHandler;
+import net.intensicode.idea.system.ErrorHandler;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * TODO: Describe this!
  */
-public final class FakeSystemErrorHandler implements SystemErrorHandler
+public final class FakeErrorHandler implements ErrorHandler
 {
     public final void onConfigurationError( final Throwable aThrowable )
     {

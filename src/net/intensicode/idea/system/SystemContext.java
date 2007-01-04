@@ -16,11 +16,13 @@ public interface SystemContext
 {
     File getPluginFolder();
 
+    ErrorHandler getErrorHandler();
+
     OptionsFolder getOptionsFolder();
 
     ResourceLoader getResourceLoader();
 
-    SystemErrorHandler getErrorHandler();
+    ProgressHandler getProgressHandler();
 
     FileTypeManager getFileTypeManager();
 

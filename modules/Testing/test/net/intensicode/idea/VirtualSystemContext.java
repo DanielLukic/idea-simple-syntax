@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * TODO: Describe this!
  */
-public final class VirtualSystemContext implements SystemContext, SystemErrorHandler, ResourceLoader, OptionsFolder
+public final class VirtualSystemContext implements SystemContext, ErrorHandler, ResourceLoader, OptionsFolder
 {
     public final StringBuilder confirmations = new StringBuilder();
 
@@ -31,17 +31,12 @@ public final class VirtualSystemContext implements SystemContext, SystemErrorHan
         return new File( "config" );
     }
 
-    public TextAttributesKey createTextAttributesKey( String aTokenID, TextAttributes aAttributes )
-    {
-        throw new RuntimeException( "NYI" );
-    }
-
-    public SystemErrorHandler getErrorHandler()
+    public ErrorHandler getErrorHandler()
     {
         return this;
     }
 
-    public FileTypeManager getFileTypeManager()
+    public final ProgressHandler getProgressHandler()
     {
         throw new RuntimeException( "NYI" );
     }
@@ -56,12 +51,22 @@ public final class VirtualSystemContext implements SystemContext, SystemErrorHan
         return this;
     }
 
+    public FileTypeManager getFileTypeManager()
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
     public ScriptSupport createScriptSupport( List<String> aClassPathEntries )
     {
         throw new RuntimeException( "NYI" );
     }
 
-    // From SystemErrorHandler
+    public TextAttributesKey createTextAttributesKey( String aTokenID, TextAttributes aAttributes )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    // From ErrorHandler
 
     public void forgetConfirmationAnswers()
     {

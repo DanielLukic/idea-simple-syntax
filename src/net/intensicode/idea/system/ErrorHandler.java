@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * TODO: Describe this!
  */
-public interface SystemErrorHandler
+public interface ErrorHandler
 {
     void onScriptingError( Throwable aThrowable );
 

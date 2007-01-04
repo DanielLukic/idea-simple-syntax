@@ -35,19 +35,24 @@ public final class FakeSystemContext implements SystemContext
         return new File( "config" );
     }
 
+    public ErrorHandler getErrorHandler()
+    {
+        return new FakeErrorHandler();
+    }
+
     public OptionsFolder getOptionsFolder()
     {
         return myOptionsFolder;
     }
 
+    public ProgressHandler getProgressHandler()
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
     public ResourceLoader getResourceLoader()
     {
         return new FakeResourceLoader( myReferenceObject );
-    }
-
-    public SystemErrorHandler getErrorHandler()
-    {
-        return new FakeSystemErrorHandler();
     }
 
     public FileTypeManager getFileTypeManager()
