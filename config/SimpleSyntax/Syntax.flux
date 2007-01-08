@@ -1,34 +1,4 @@
 
-package simplesyntax;
-
-import com.intellij.lexer.FlexLexer;
-import com.intellij.psi.tree.IElementType;
-
-%%
-
-%class SimpleSyntaxLexer
-%implements FlexLexer
-%unicode
-%function advance
-%type IElementType
-%eof{  return;
-%eof}
-%{
-def myLanguageConfiguration;
-
-def sym( aID ) {
-    return myLanguageConfiguration.getToken( aID );
-}
-
-SimpleSyntaxLexer( aLanguageConfiguration ) {
-    myLanguageConfiguration = aLanguageConfiguration;
-    ZZ_ACTION = zzUnpackAction();
-    ZZ_ROWMAP = zzUnpackRowMap();
-    ZZ_TRANS = zzUnpackTrans();
-    ZZ_ATTRIBUTE = zzUnpackAttribute();
-}
-%}
-
 WS = [ \t]*
 EOL = [\n\r]+
 

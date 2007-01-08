@@ -22,26 +22,31 @@ public final class ActionInstallTest extends TestCase
         final ArrayList<String> expected = new ArrayList<String>()
         {
             {
-                add( "Ruby.config" );
-                add( "Ruby/Icon.png" );
-                add( "Ruby/ExampleCode.rb" );
-                add( "Ruby/Keywords.txt" );
-                add( "Ruby/NamesValidator.rb" );
-                add( "Ruby/NamesValidator.groovy" );
-                add( "Ruby/Syntax.rb" );
-                add( "Ruby/Syntax.groovy" );
-
-                add( "Python.config" );
-                add( "Python/ExampleCode.py" );
-                add( "Python/Icon.png" );
-                add( "Python/Syntax.flex" );
-                add( "Python/Syntax.groovy" );
-                add( "Python/Syntax.skeleton" );
-
+                add( "lib-groovy/flux/FluxBuilder.groovy" );
+                add( "lib-groovy/flux/TagReplacer.groovy" );
                 add( "lib-groovy/jparsec/LexerAdapter.groovy" );
                 add( "lib-groovy/jparsec/LexerBase.groovy" );
                 add( "lib-ruby/jparsec/LexerAdapter.rb" );
                 add( "lib-ruby/jparsec/LexerBase.rb" );
+
+                add( "ParsecDemo/Keywords.txt" );
+                add( "ParsecDemo/Syntax.groovy" );
+                add( "ParsecDemo/Syntax.rb" );
+
+                add( "Ruby/ExampleCode.rb" );
+                add( "Ruby/Icon.png" );
+                add( "Ruby/Syntax.flux" );
+                add( "Ruby/Syntax.groovy" );
+
+                add( "SimpleSyntax/Example.config" );
+                add( "SimpleSyntax/Icon.png" );
+                add( "SimpleSyntax/Syntax.flux" );
+                add( "SimpleSyntax/Syntax.groovy" );
+
+                add( "FluxSyntax.header" );
+                add( "FluxSyntax.skeleton" );
+                add( "Ruby.config" );
+                add( "SimpleSyntax.config" );
             }
         };
 

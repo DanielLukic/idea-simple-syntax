@@ -2,6 +2,7 @@ package net.intensicode.idea.core;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.markup.TextAttributes;
+import com.intellij.openapi.editor.markup.EffectType;
 import net.intensicode.idea.util.LoggerFactory;
 
 import java.awt.Color;
@@ -41,6 +42,7 @@ final class ConfigurableTextAttributes extends TextAttributes
             if ( isColor( part ) ) setColor( part );
             else if ( isBold( part ) ) setFontType( Font.BOLD );
             else if ( isItalic( part ) ) setFontType( Font.ITALIC );
+            else if ( isUnderline( part ) ) super.setEffectType( EffectType.LINE_UNDERSCORE );
             else LOG.error( "Unknown attribute tag: " + part + " in " + aAttributesSpec );
         }
     }
@@ -76,6 +78,11 @@ final class ConfigurableTextAttributes extends TextAttributes
     private static final boolean isItalic( final String aPart )
     {
         return aPart.equalsIgnoreCase( "ITALIC" );
+    }
+
+    private static final boolean isUnderline( final String aPart )
+    {
+        return aPart.equalsIgnoreCase( "UNDERLINE" );
     }
 
 

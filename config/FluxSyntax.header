@@ -1,0 +1,77 @@
+
+package simplesyntax;
+
+import com.intellij.lexer.FlexLexer;
+import com.intellij.psi.tree.IElementType;
+
+%%
+
+%class <<<CLASSNAME>>>
+%implements FlexLexer
+%unicode
+%function advance
+%type IElementType
+%eof{  return;
+%eof}
+%{
+def myLanguageConfiguration;
+
+def myStringDelimiter;
+
+def myStringCounter = 0
+
+def myStates = [ YYINITIAL ]
+
+def processStringData( aPushBackLength )
+    {
+    if ( myStringCounter > 0 )
+    {
+        yypushback( aPushBackLength )
+        zzStartRead -= myStringCounter
+        myStringCounter = 0
+        return true
+        }
+    }
+
+def onEndOfString( aPushBackLength, aDataToken, aEndToken )
+    {
+    if ( myStringCounter > 0 )
+    {
+        yypushback( aPushBackLength )
+        zzStartRead -= myStringCounter
+        myStringCounter = 0
+        return sym( aDataToken );
+        }
+    pop(STRING_Q); return sym( aEndToken );
+    }
+
+def sym( aID ) {
+    return myLanguageConfiguration.getToken( aID );
+}
+
+def push( aState ) {
+    myStates << aState
+    yybegin( aState )
+}
+
+def pop( aState ) {
+    while ( myStates.size() > 1 ) {
+        def oldState = myStates.pop()
+        if ( oldState == YYINITIAL || oldState == aState ) {
+            def newState = myStates.get( myStates.size() - 1 )
+            yybegin( newState )
+            return
+        }
+    }
+    return myStates.get( myStates.size() - 1 )
+}
+
+<<<CLASSNAME>>>( aLanguageConfiguration ) {
+    myLanguageConfiguration = aLanguageConfiguration
+
+    ZZ_ACTION = zzUnpackAction()
+    ZZ_ROWMAP = zzUnpackRowMap()
+    ZZ_TRANS = zzUnpackTrans()
+    ZZ_ATTRIBUTE = zzUnpackAttribute()
+}
+%}

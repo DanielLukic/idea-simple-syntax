@@ -35,8 +35,18 @@ public final class ConfigurableAttributes
     public final TextAttributesKey[] getTokenHighlights( final IElementType tokenType )
     {
         final TextAttributesKey[] keys = myTokenHighlights.get( tokenType );
-        if ( keys == null ) return NO_TEXT_ATTRIBUTES;
-        return keys;
+        if ( keys != null ) return keys;
+
+        final String tokenID = myAggregations.findMatch( tokenType.toString() );
+        if ( tokenID == null )
+        {
+            return NO_TEXT_ATTRIBUTES;
+        }
+
+        final TextAttributesKey attributesKey = getTextAttributesKey( tokenID );
+        myTokenHighlights.put( tokenType, new TextAttributesKey[]{ attributesKey } );
+
+        return myTokenHighlights.get( tokenType );
     }
 
     // Implementation
@@ -47,14 +57,14 @@ public final class ConfigurableAttributes
         myConfiguration = aConfiguration;
         myAggregations = aAggregations;
 
+        myTextAttributes.clear();
         myTokenHighlights.clear();
         myTextAttributesKeys.clear();
 
         final LanguageConfiguration languageConfiguration = myConfiguration.getLanguageConfiguration();
         for ( final String tokenID : aConfiguration.getKnownTokenIDs() )
         {
-            final String[] subTokens = myAggregations.getSubTokens( tokenID );
-            for ( final String token : subTokens )
+            for ( final String token : myAggregations.getSubTokens( tokenID ) )
             {
                 final IElementType elementType = languageConfiguration.getToken( token );
                 final TextAttributesKey attributesKey = getTextAttributesKey( tokenID );

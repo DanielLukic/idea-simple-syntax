@@ -1,7 +1,7 @@
 
 # This script is executed in the 'options/SimpleSyntax' folder. You may also use the global function 'source' to read
 # and evaluate a Ruby script. These variables are available, too:
-# currentDir: is a File representing the config/options/SimpleSyntax folder
+# configFolder: is a File representing the config/options/SimpleSyntax folder
 # systemContext: references the shared SystemContext object of the plugin
 # configuration: is the LanguageConfiguration for this script
 
@@ -21,7 +21,7 @@ regex "SPECIAL_QUOTED_STRING",  /%[qQ](.).*\1/
 regex "SINGLE_QUOTED_STRING",   /\'(?:[^\'\n\r]|\\')*\'/
 regex "DOUBLE_QUOTED_STRING",   /\"(?:[^\"\n\r]|\\")*\"/
 
-keywords = IO.readlines( 'Ruby/Keywords.txt' ).map { |k| k.chop }
+keywords = IO.readlines( 'ParsecDemo/Keywords.txt' ).map { |k| k.chop }
 keywords.each { |k| regex "KEYWORD", /\b#{k}\b/ }
 
 regex "REGEX_SLASHED",          /(?m:\/(?:[^\/\n\r]|\\\/)*\/)/

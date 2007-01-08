@@ -30,7 +30,7 @@ public final class GroovySupport implements ScriptSupport
 
         final Binding binding = new Binding();
         binding.setVariable( "context", this );
-        binding.setVariable( "currentDir", myFolder.getConfigurationFolder() );
+        binding.setVariable( "configFolder", myFolder.getConfigurationFolder() );
         binding.setVariable( "systemContext", aSystemContext );
 
         try

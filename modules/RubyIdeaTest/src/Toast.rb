@@ -9,20 +9,23 @@ class Toast
 
    attr_reader :w00t # simple line comment
 
-   def cheese( args )
+   def cheese( args, more = "THIS" )
        @mogg = args
        schlupp1 = 'rupp'
-       schnuff2 = "hussle #{hummel}"
+       schnuff2 = "hussle #{hummel}" + test
        that = 4.2
        thuz = 0xABcd
    end
 
    DONT_CHANGE = ILikeYouJustTheWayYouAre.new
 
-   def huzzle( thiz, that )
-       @@schmogg = @mogg + thiz * that
-       %Q!rumsel #{pumsel} testerle!
-       %Q{rumsel \#\{pumsel\} testerle}
+   def huzzle( thiz, that, test = 10 )
+       @@schmogg = @mogg + thiz * that / 10
+       @something = AnotherSide.of_mine
+
+       %Q!rumsel #{pumsel} testerle!    # test1
+       %Q{rumsel more of this testerle} # test2
+       %Q<rumsel #{pumsel} testerle>    # test3
    end
 
    # A check for regex..

@@ -95,9 +95,9 @@ public final class ConfigurableColorSettingsPage implements ColorSettingsPage
     {
         if ( myAttributesDescriptors == null ) return;
 
-        //final int availableTokens = myConfiguration.getKnownTokenIDs().size();
-        //final int availableDescriptors = myAttributesDescriptors.length;
-        //if ( availableTokens == availableDescriptors ) return;
+        final int availableTokens = myConfiguration.getKnownTokenIDs().size();
+        final int availableDescriptors = myAttributesDescriptors.length;
+        if ( availableTokens == availableDescriptors ) return;
 
         myAttributesDescriptors = null;
     }

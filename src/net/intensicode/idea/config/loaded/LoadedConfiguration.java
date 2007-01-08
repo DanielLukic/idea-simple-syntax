@@ -11,7 +11,9 @@ import net.intensicode.idea.config.loaded.parser.*;
 import net.intensicode.idea.core.ConfigurableAttributes;
 import net.intensicode.idea.syntax.JParsecLexerAdapter;
 import net.intensicode.idea.syntax.SimpleLexerAdapter;
-import net.intensicode.idea.system.*;
+import net.intensicode.idea.system.OptionsFolder;
+import net.intensicode.idea.system.ScriptSupport;
+import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import net.intensicode.idea.util.ReaderUtils;
 
@@ -172,8 +174,6 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
     {
         if ( mySyntaxLexer == null )
         {
-            final ProgressHandler handler = mySystemContext.getProgressHandler();
-            final ProgressHandle handle = handler.startLexerScript();
             try
             {
                 mySyntaxLexer = createLexer();
@@ -182,10 +182,6 @@ public final class LoadedConfiguration implements InstanceConfiguration, Configu
             {
                 LOG.info( t.toString() );
                 LOG.error( t );
-            }
-            finally
-            {
-                handle.done();
             }
         }
         return mySyntaxLexer;
