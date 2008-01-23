@@ -1,1 +1,1 @@
-return "BUSTED"
+"BUSTED"

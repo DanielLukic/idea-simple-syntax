@@ -16,7 +16,7 @@ import jfun.parsec.pattern.*;
 
 class MyRubySyntax extends jparsec.LexerBase
     {
-    protected void setup()
+    void setup()
         {
         def s_block_open = Scanners.isPattern( Patterns.regex( /(?m:^=begin)/ ), "BLOCK_OPEN" )
         def s_block_close = Scanners.isPattern( Patterns.regex( /(?m:^=end$)/ ), "BLOCK_CLOSE" )

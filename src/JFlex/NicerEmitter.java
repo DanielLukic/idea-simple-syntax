@@ -277,7 +277,7 @@ public final class NicerEmitter implements EmitterAPI
 
     private String zzBufferLAccess( String idx )
     {
-        if ( Options.char_at )
+        if ( Options.dump )
         {
             return "zzBufferL.charAt(" + idx + ")";
         }

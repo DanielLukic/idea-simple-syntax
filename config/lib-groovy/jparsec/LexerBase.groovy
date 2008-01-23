@@ -12,7 +12,7 @@ import net.intensicode.idea.syntax.SimpleLexerAdapter
 
 
 
-class LexerBase
+abstract class LexerBase
 {
     def lexer( aLanguageConfiguration )
     {
@@ -40,9 +40,7 @@ class LexerBase
         //return new net.intensicode.idea.syntax.LexerAdapter( adaptedLexer )
     }
 
-    def setup()
-    {
-    }
+    abstract void setup();
 
     def regex( aTokenID, aRegex )
     {

@@ -33,4 +33,4 @@ regex "SYMBOL",                 /\:\w+\b/
 regex "IDENTIFIER",             /\b[a-z]\w*\b/
 regex "NUMBER",                 /\b(?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)\b/
 
-return lexer( configuration )
+lexer( configuration )

@@ -59,7 +59,7 @@ public final class GroovySupport implements ScriptSupport
 
     public final Object source( final String aScriptName ) throws FileNotFoundException
     {
-        return myShell.evaluate( myFolder.streamFile( aScriptName ) );
+        return myShell.evaluate( myFolder.streamFile( aScriptName ), aScriptName );
     }
 
     public final File getCurrentDir()

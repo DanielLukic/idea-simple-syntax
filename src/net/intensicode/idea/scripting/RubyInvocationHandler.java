@@ -1,6 +1,6 @@
 package net.intensicode.idea.scripting;
 
-import org.jruby.IRuby;
+import org.jruby.Ruby;
 import org.jruby.javasupport.JavaUtil;
 import org.jruby.runtime.builtin.IRubyObject;
 
@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  */
 public class RubyInvocationHandler implements InvocationHandler
 {
-    public RubyInvocationHandler( final IRuby aRuntime, final IRubyObject aObject )
+    public RubyInvocationHandler( final Ruby aRuntime, final IRubyObject aObject )
     {
         myRuntime = aRuntime;
         myObject = aObject;
@@ -30,7 +30,7 @@ public class RubyInvocationHandler implements InvocationHandler
         return JavaUtil.convertRubyToJava( result );
     }
 
-    private final IRuby myRuntime;
+    private final Ruby myRuntime;
 
     private final IRubyObject myObject;
 }

@@ -3,11 +3,13 @@ package net.intensicode.idea.scripting;
 import net.intensicode.idea.system.OptionsFolder;
 import net.intensicode.idea.system.ScriptSupport;
 import net.intensicode.idea.system.SystemContext;
-import org.jruby.IRuby;
 import org.jruby.Ruby;
+import org.jruby.RubyModule;
+import org.jruby.RubyString;
 import org.jruby.javasupport.Java;
 import org.jruby.javasupport.JavaUtil;
 import org.jruby.runtime.Arity;
+import org.jruby.runtime.Block;
 import org.jruby.runtime.builtin.IRubyObject;
 import org.jruby.runtime.callback.Callback;
 
@@ -47,26 +49,27 @@ public final class RubySupport implements Callback, ScriptSupport
         final File configFolder = new File( folder.getConfigurationFolder().getPath() );
         myRuntime.setCurrentDirectory( configFolder.getAbsolutePath() );
 
-        final List loadPath = myRuntime.getLoadService().getLoadPath();
+        final IRubyObject loadPath = myRuntime.getLoadService().getLoadPath();
         for ( final String entry : myClassPathEntries )
         {
             final File file = new File( folder.getConfigurationFolder(), entry );
-            loadPath.add( file.getAbsolutePath() );
+            final IRubyObject path = RubyString.newString( myRuntime, file.getAbsolutePath() );
+            loadPath.callMethod( myRuntime.getCurrentContext(), "<<", path );
         }
 
-        final IRubyObject topSelf = myRuntime.getTopSelf();
-        topSelf.defineSingletonMethod( "source", this );
+        final RubyModule kernel = myRuntime.getKernel();
+        kernel.defineMethod( "source", this );
 
         aVariables.put( "currentDir", configFolder );
         aVariables.put( "systemContext", mySystemContext );
         for ( final String name : aVariables.keySet() )
         {
-            topSelf.defineSingletonMethod( name, new Callback()
+            kernel.defineMethod( name, new Callback()
             {
-                public IRubyObject execute( IRubyObject aReceiver, IRubyObject[] aArguments )
+                public IRubyObject execute( IRubyObject aReceiver, IRubyObject[] aArguments, Block aBlock )
                 {
                     final IRubyObject rubyObject = JavaUtil.convertJavaToRuby( myRuntime, aVariables.get( name ) );
-                    return Java.java_to_ruby( aReceiver, rubyObject );
+                    return Java.java_to_ruby( aReceiver, rubyObject, aBlock );
                 }
 
                 public Arity getArity()
@@ -95,15 +98,16 @@ public final class RubySupport implements Callback, ScriptSupport
 
     // From Callback
 
-    public final IRubyObject execute( final IRubyObject aReceiver, final IRubyObject[] aArguments )
+    public final IRubyObject execute( final IRubyObject aReceiver, final IRubyObject[] aArguments, Block aBlock )
     {
-        final IRuby ruby = aReceiver.getRuntime();
+        final Ruby ruby = aReceiver.getRuntime();
         try
         {
             final String fileName = aArguments[ 0 ].convertToString().toString();
             final OptionsFolder folder = mySystemContext.getOptionsFolder();
             final String script = folder.readFileIntoString( fileName );
-            return ruby.eval( ruby.parse( script, folder.makeFileName( fileName ), null ) );
+            final String fullFileName = folder.makeFileName( fileName );
+            return ruby.eval( ruby.parse( script, fullFileName, null, 0 ) );
         }
         catch ( final IOException e )
         {
@@ -118,7 +122,7 @@ public final class RubySupport implements Callback, ScriptSupport
 
 
 
-    private final IRuby myRuntime;
+    private final Ruby myRuntime;
 
     private final SystemContext mySystemContext;
 

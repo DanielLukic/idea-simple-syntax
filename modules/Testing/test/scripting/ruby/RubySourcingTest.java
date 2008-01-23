@@ -7,7 +7,6 @@ import net.intensicode.idea.core.FakeSystemContext;
 import net.intensicode.idea.scripting.RubySupport;
 import net.intensicode.idea.syntax.JParsecLexerAdapter;
 import net.intensicode.idea.syntax.SimpleToken;
-import org.jruby.IRuby;
 import org.jruby.Ruby;
 import org.jruby.ast.Node;
 import org.jruby.javasupport.JavaUtil;
@@ -21,10 +20,10 @@ public final class RubySourcingTest extends TestCase
 {
     public final void testSource()
     {
-        final IRuby runtime = createRuby();
+        final Ruby runtime = createRuby();
 
         final String scriptName = "Script2.rb";
-        final Node node = runtime.parse( readScript( scriptName ), scriptName, null );
+        final Node node = runtime.parse( readScript( scriptName ), scriptName, null, 0 );
 
         final Object result = runtime.eval( node );
         assertNotNull( result );
@@ -33,10 +32,10 @@ public final class RubySourcingTest extends TestCase
 
     public final void testLexerStuff()
     {
-        final IRuby runtime = createRuby();
+        final Ruby runtime = createRuby();
 
         final String scriptName = "Script3.rb";
-        final Node node = runtime.parse( readScript( scriptName ), scriptName, null );
+        final Node node = runtime.parse( readScript( scriptName ), scriptName, null, 0 );
 
         final IRubyObject result = runtime.eval( node );
         final Parser<Tok[]> lexerImpl = ( Parser<Tok[]> ) JavaUtil.convertRubyToJava( result, Parser.class );
@@ -48,11 +47,11 @@ public final class RubySourcingTest extends TestCase
         assertNotNull( token );
     }
 
-    private final IRuby createRuby()
+    private final Ruby createRuby()
     {
-        final IRuby runtime = Ruby.getDefaultInstance();
+        final Ruby runtime = Ruby.getDefaultInstance();
         final FakeSystemContext systemContext = new FakeSystemContext( this );
-        runtime.getTopSelf().defineSingletonMethod( "source", new RubySupport( systemContext, new ArrayList<String>() ) );
+        runtime.getKernel().defineMethod( "source", new RubySupport( systemContext, new ArrayList<String>() ) );
         return runtime;
     }
 

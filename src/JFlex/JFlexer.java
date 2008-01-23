@@ -19,7 +19,7 @@ public final class JFlexer
     {
         myEmitterAPI = aEmitterAPI;
 
-        Options.char_at = true;
+        Options.dump = true;
         Options.no_backup = true;
         Options.gen_method = Options.TABLE;
     }
