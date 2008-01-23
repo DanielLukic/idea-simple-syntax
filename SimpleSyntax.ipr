@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4" relativePaths="true">
+<project relativePaths="true" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
     <buildFile url="file://$PROJECT_DIR$/build.xml">
@@ -61,6 +61,15 @@
         <option name="METHODS_ORDER_WEIGHT" value="2" />
         <option name="INNER_CLASSES_ORDER_WEIGHT" value="3" />
         <option name="SPACE_WITHIN_ANNOTATION_PARENTHESES" value="true" />
+        <ADDITIONAL_INDENT_OPTIONS fileType="js">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
       </value>
     </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
@@ -70,11 +79,12 @@
     <option name="DEPLOY_AFTER_MAKE" value="0" />
     <resourceExtensions />
   </component>
-  <component name="DataSourceManagerImpl" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
-  <component name="DependencyValidationManager" />
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
     <option name="GENERATE_NO_WARNINGS" value="true" />
@@ -90,14 +100,46 @@
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
   <component name="EntryPointsManager">
-    <entry_points />
+    <entry_points version="2.0" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
     <option name="OUTPUT_DIRECTORY" />
   </component>
-  <component name="GUI Designer component loader factory" />
+  <component name="FacetAutodetectingManager">
+    <autodetection-disabled>
+      <facet-type id="JRUBY">
+        <modules>
+          <module name="SimpleSyntax">
+            <files>
+              <file url="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.rb" />
+              <file url="file://$PROJECT_DIR$/config/Ruby/ExampleCode.rb" />
+              <file url="file://$PROJECT_DIR$/config/lib-ruby/jparsec/LexerAdapter.rb" />
+              <file url="file://$PROJECT_DIR$/config/lib-ruby/jparsec/LexerBase.rb" />
+            </files>
+          </module>
+          <module name="Testing">
+            <files>
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/scripting/ToastIt.rb" />
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/scripting/lexing/SimpleString.rb" />
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/scripting/lexing/SpecialString.rb" />
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/scripting/ruby/LexerStuff.rb" />
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script1.rb" />
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script2.rb" />
+              <file url="file://$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script3.rb" />
+            </files>
+          </module>
+          <module name="RubyIdeaTest">
+            <files>
+              <file url="file://$PROJECT_DIR$/modules/RubyIdeaTest/src/String.rb" />
+              <file url="file://$PROJECT_DIR$/modules/RubyIdeaTest/src/Toast.rb" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+    </autodetection-disabled>
+  </component>
   <component name="IdProvider" IDEtalkID="FB553B35799C91276AFE1B5666B359C5" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
@@ -107,27 +149,10 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
-        <used_levels>
-          <error>
-            <option name="myName" value="ERROR" />
-            <option name="myVal" value="300" />
-          </error>
-          <warning>
-            <option name="myName" value="WARNING" />
-            <option name="myVal" value="200" />
-          </warning>
-          <information>
-            <option name="myName" value="INFO" />
-            <option name="myVal" value="100" />
-          </information>
-          <server>
-            <option name="myName" value="SERVER PROBLEM" />
-            <option name="myVal" value="100" />
-          </server>
-        </used_levels>
         <inspection_tool class="RedundantTypeArguments" level="WARNING" enabled="false" />
         <inspection_tool class="ConstantConditions" level="WARNING" enabled="false">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+          <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
         <inspection_tool class="UnusedAssignment" level="WARNING" enabled="false">
           <option name="REPORT_PREFIX_EXPRESSIONS" value="false" />
@@ -135,9 +160,12 @@
           <option name="REPORT_REDUNDANT_INITIALIZER" value="true" />
         </inspection_tool>
         <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
-        <inspection_tool class="SuspiciousMethodCalls" level="WARNING" enabled="false" />
+        <inspection_tool class="SuspiciousMethodCalls" level="WARNING" enabled="false">
+          <option name="REPORT_CONVERTIBLE_METHOD_CALLS" value="true" />
+        </inspection_tool>
       </profile>
     </profiles>
+    <list size="0" />
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -298,6 +326,7 @@
       </item>
     </group>
   </component>
+  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" filepath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" />
@@ -305,8 +334,16 @@
       <module fileurl="file://$PROJECT_DIR$/modules/Testing/Testing.iml" filepath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 6107 Stripped" project-jdk-type="IDEA JDK" />
-  <component name="ProjectRunConfigurationManager" />
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA SDK" project-jdk-type="IDEA JDK">
+    <output url="file://$PROJECT_DIR$/build" />
+  </component>
+  <component name="ResourceManagerContainer">
+    <option name="myResourceBundles">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+  </component>
   <component name="RmicSettings">
     <option name="IS_EANABLED" value="false" />
     <option name="DEBUGGING_INFO" value="true" />
@@ -314,8 +351,10 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="StarteamVcsAdapter" />
-  <component name="VssVcs" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+  </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
       <value>
@@ -323,12 +362,10 @@
       </value>
     </option>
   </component>
-  <component name="libraryTable" />
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="true" />
     <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="true" />
     <option name="DEFAULT_LAYOUT_MANAGER" value="GridLayoutManager" />
   </component>
-  <UsedPathMacros />
 </project>
 

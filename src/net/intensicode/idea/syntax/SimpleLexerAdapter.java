@@ -27,7 +27,12 @@ public final class SimpleLexerAdapter implements Lexer
 
     public final char[] getBuffer()
     {
-        return myBuffer;
+        return myCharBuffer;
+    }
+
+    public CharSequence getBufferSequence()
+    {
+        return myCharSequence;
     }
 
     public final int getBufferEnd()
@@ -75,21 +80,39 @@ public final class SimpleLexerAdapter implements Lexer
         start( buffer, startOffset, endOffset, 0 );
     }
 
+    public void start( final CharSequence aCharSequence, final int startOffset, final int endOffset, final int initialState )
+    {
+        myCharBuffer = new char[aCharSequence.length()];
+        myCharSequence = aCharSequence;
+
+        final int length = aCharSequence.length();
+        for ( int idx = 0; idx < length; idx++ ) myCharBuffer[ idx ] = myCharSequence.charAt( idx );
+
+        start( startOffset, endOffset, initialState );
+    }
+
     public final void start( char[] buffer, int startOffset, int endOffset, int initialState )
     {
-        myBuffer = buffer;
+        myCharBuffer = buffer;
+        myCharSequence = new String( myCharBuffer );
+
+        start( startOffset, endOffset, initialState );
+    }
+
+    // Implementation
+
+    private final void start( int startOffset, int endOffset, int initialState )
+    {
         myStartOffset = startOffset;
         myEndOffset = endOffset;
 
         myTokenType = null;
         myTokenStart = myTokenEnd = startOffset;
 
-        myLexer.start( buffer, startOffset, endOffset );
+        myLexer.start( myCharBuffer, startOffset, endOffset );
 
         advance();
     }
-
-    // Implementation
 
     private final void updateTokenType( final int aStartOffset )
     {
@@ -129,7 +152,9 @@ public final class SimpleLexerAdapter implements Lexer
 
 
 
-    private char[] myBuffer;
+    private CharSequence myCharSequence;
+
+    private char[] myCharBuffer;
 
     private int myStartOffset;
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4" relativePaths="true" type="PLUGIN_MODULE">
+<module relativePaths="true" type="PLUGIN_MODULE" version="4">
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/META-INF/plugin.xml" />
-  <component name="ModuleRootManager" />
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
     <output url="file://$MODULE_DIR$/../../build/tests" />
     <exclude-output />
     <output-test url="file://$MODULE_DIR$/../../build/tests" />
@@ -31,6 +30,10 @@
       </library>
     </orderEntry>
     <orderEntryProperties />
+  </component>
+  <component name="PluginUploader.PluginUploadConfigurable">
+    <option name="ARCHIVE_PATH" />
+    <option name="PLUGIN_ID" />
   </component>
   <component name="PluginUploader.UploadConfigurable">
     <option name="_archivePath" />

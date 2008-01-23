@@ -65,6 +65,19 @@
     return getTokenStart() + yylength();
   }
 
+  public void reset(CharSequence buffer, int start, int end, int initialState){
+    zzBuffer = buffer;
+    zzCurrentPos = zzMarkedPos = zzStartRead = start;
+    zzPushbackPos = 0;
+    zzAtEOF  = false;
+    zzAtBOL = true;
+    zzEndRead = end;
+    myStates.clear()
+    myStringCounter = 0
+    myInitialState = initialState;
+    push(initialState);
+  }
+
   public void reset(CharSequence buffer, int initialState){
     zzBuffer = buffer;
     zzCurrentPos = zzMarkedPos = zzStartRead = 0;
@@ -74,6 +87,7 @@
     zzEndRead = buffer.length();
     myStates.clear()
     myStringCounter = 0
+    myInitialState = initialState;
     push(initialState);
   }
 

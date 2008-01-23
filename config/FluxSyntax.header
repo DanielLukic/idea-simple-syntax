@@ -20,6 +20,8 @@ def myStringDelimiter;
 
 def myStringCounter = 0
 
+def myInitialState = 0;
+
 def myStates = [ YYINITIAL ]
 
 def processStringData( aPushBackLength )

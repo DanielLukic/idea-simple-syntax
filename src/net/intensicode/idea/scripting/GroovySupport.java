@@ -39,7 +39,7 @@ public final class GroovySupport implements ScriptSupport
             for ( final String entry : aClassPathEntries )
             {
                 final File file = new File( myFolder.getConfigurationFolder(), entry );
-                urls.add( new File( file.getAbsolutePath() ).toURL() );
+                urls.add( new File( file.getAbsolutePath() ).toURI().toURL() );
             }
 
             final URL[] urlArray = urls.toArray( new URL[urls.size()] );

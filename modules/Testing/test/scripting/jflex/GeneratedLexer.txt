@@ -470,6 +470,16 @@ void setLanguage(Object language) {
     return getTokenStart() + yylength();
   }
 
+  public void reset(CharSequence buffer, int start, int end, int initialState){
+    zzBuffer = buffer;
+    zzCurrentPos = zzMarkedPos = zzStartRead = start;
+    zzPushbackPos = 0;
+    zzAtEOF  = false;
+    zzAtBOL = true;
+    zzEndRead = end;
+    yybegin(initialState);
+  }
+
   public void reset(CharSequence buffer, int initialState){
     zzBuffer = buffer;
     zzCurrentPos = zzMarkedPos = zzStartRead = 0;

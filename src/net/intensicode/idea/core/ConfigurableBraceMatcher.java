@@ -8,6 +8,8 @@ import net.intensicode.idea.config.BracesConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
 import net.intensicode.idea.util.LoggerFactory;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,11 @@ final class ConfigurableBraceMatcher implements PairedBraceMatcher
     public final BracePair[] getPairs()
     {
         return myPairs;
+    }
+
+    public final boolean isPairedBracesAllowedBeforeType( @NotNull final IElementType aIElementType, @Nullable final IElementType aIElementType1 )
+    {
+        return false;
     }
 
     // Implementation

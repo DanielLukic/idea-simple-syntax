@@ -20,9 +20,9 @@ public final class JFlexTest extends TestCase
         final JFlexer flexer = new JFlexer().setSkeleton( skeleton );
 
         final Reader input = read( "Python.flex" );
-        final String result = flexer.generate( input );
+        final String result = clean( flexer.generate( input ) );
 
-        final String expected = retrieve( "Python.expected" );
+        final String expected = clean( retrieve( "Python.expected" ) );
         assertEquals( expected, result );
     }
 
@@ -40,5 +40,13 @@ public final class JFlexTest extends TestCase
     private final InputStream stream( final String aResourceName )
     {
         return getClass().getResourceAsStream( aResourceName );
+    }
+
+    private static final String clean( final String aString )
+    {
+        final String first = aString.replace( '\r', '\n' );
+        final String clean = first.replaceAll( "\n\n", "\n" );
+        if ( clean.equals( aString ) ) return aString;
+        return clean( clean );
     }
 }

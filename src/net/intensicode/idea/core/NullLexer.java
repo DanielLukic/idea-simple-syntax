@@ -26,6 +26,11 @@ public final class NullLexer implements Lexer
         throw new RuntimeException( "NYI" );
     }
 
+    public CharSequence getBufferSequence()
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
     public LexerPosition getCurrentPosition()
     {
         throw new RuntimeException( "NYI" );
@@ -67,6 +72,11 @@ public final class NullLexer implements Lexer
     }
 
     public void start( char[] buffer, int startOffset, int endOffset, int initialState )
+    {
+        throw new RuntimeException( "NYI" );
+    }
+
+    public void start( final CharSequence aCharSequence, final int i, final int i1, final int i2 )
     {
         throw new RuntimeException( "NYI" );
     }
