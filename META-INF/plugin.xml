@@ -3,14 +3,17 @@
     <name>Simple Syntax Highlighting</name>
     <description>
         Provides simple syntax highlighting based on user-definable configuration files. Use
-        'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting. Clone files
+        'Init SimpleSyntax' from Tools menu to install syntax highlighting. Clone files
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
-        languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
+        languages. Use 'Reload SimpleSyntax' from Tools menu to reload configuration changes.
         ///
-        Credits: Includes the wonderful Groovy, JRuby and JParsec systems. Also included are
-        a few files from the pythonid Python plugin.
+        See http://idea-simsyn.tigris.org for more information.
+        ///
+        Credits: Includes the wonderful Groovy, JRuby, JFlex and JParsec systems. Also included
+        are a few files from the pythonid Python plugin as an example.
     </description>
     <change-notes>
+        [ V0.20 ] Fixed for IDEA version 7. Removed dynamic ColorSettingsPage because it breaks IDEA.
         [ V0.19 ] Added support for dynamic JFlex-based syntax definitions. Added Python example configuration
         [ V0.18 ] Switched to Groovy and JRuby lexer configuration using JParsec.
         [ V0.17 ] Fully fixed for IDEA 6.0. Now highlighting of files works properly again.
@@ -31,7 +34,7 @@
         [ V0.2 ] Implemented syntax configuration loading.
         [ V0.1 ] Initial release with hardcoded Ruby syntax.
     </change-notes>
-    <version>0.19</version>
+    <version>0.20</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
     <idea-version since-build="6107"/>
     <application-components>

@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <style type="text/css">
+        /* <![CDATA[ */
+        @import "http://www.tigris.org/branding/css/tigris.css";
+        @import "http://www.tigris.org/branding/css/inst.css";
+        /*  ]]> */
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://www.tigris.org/branding/css/print.css" media="print"/>
+    <script src="http://www.tigris.org/branding/scripts/tigris.js" type="text/javascript">
+    </script>
+    <title>Example: JParsec and Ruby</title>
+</head>
+
+<body>
+
+<div class="h2" id="longdescription">
+
+<h2>Example: JParsec and Ruby</h2>
+
+<p>
+    See <a href="http://idea-simsyn.tigris.org/source/browse/idea-simsyn/trunk/config/">trunk/config</a> for the
+    files shown below.
+</p>
+
+<p>
+    Configuration of the JParsec and Ruby based highlighting example:
+</p>
+
+<pre style="margin-left:1em;padding-left:1em;overflow:auto;background:#F0F8E8;border:solid 1px;"><code>
+    [SimpleSyntax:V1.1]
+
+    # Script Support
+    ScriptClassPath: lib-groovy,lib-ruby
+
+    # General Settings
+    Name: Ruby
+    Icon: Ruby/Icon.png
+    Description: Ruby Script
+    ExampleCode: Ruby/ExampleCode.rb
+
+    # Braces Configuration
+    Braces.Pairs: (),[]
+    Braces.Structural: {}
+
+    # Commenter Configuration
+    Comment.Line: #
+    Comment.BlockPrefix:
+    Comment.BlockSuffix:
+
+    # FileType Configuration
+    FileType.Icon: Ruby/Icon.png
+    FileType.Extensions: rb, ruby
+    FileType.DefaultExtension: rb
+
+    # Syntax Definition
+    SyntaxDefinition: ParsecDemo/Syntax.rb
+
+    # Element Descriptions
+    descriptions[ LINE_COMMENT ] = Line comment
+    descriptions[ DOC_COMMENT ] = Documentation
+    descriptions[ SPECIAL_QUOTED_STRING ] = Special Quoted String
+    descriptions[ SINGLE_QUOTED_STRING ] = Single Quoted String
+    descriptions[ DOUBLE_QUOTED_STRING ] = Double Quoted String
+    descriptions[ REGEX_SLASHED ] = Regular Expression
+    descriptions[ OPERATOR ] = Operator
+    descriptions[ KEYWORD ] = Keyword
+    descriptions[ CONSTANT ] = Constant
+    descriptions[ CLASS_NAME ] = Class Name
+    descriptions[ CLASS_VARIABLE ] = Class Variable
+    descriptions[ INSTANCE_VARIABLE ] = Instance Variable
+    descriptions[ SYMBOL ] = Symbols
+    descriptions[ IDENTIFIER ] = Identifier
+    descriptions[ NUMBER ] = Number
+
+    # Element Default Attributes
+    attributes[ LINE_COMMENT ] = #008000
+    attributes[ DOC_COMMENT ] = #008000,BOLD
+    attributes[ SPECIAL_QUOTED_STRING ] = #008080
+    attributes[ SINGLE_QUOTED_STRING ] = #008080
+    attributes[ DOUBLE_QUOTED_STRING ] = #008080
+    attributes[ REGEX_SLASHED ] = #400080,BOLD
+    attributes[ KEYWORD ] = #7070FF
+    attributes[ CONSTANT ] = #800080
+    attributes[ SYMBOL ] = #101060
+    attributes[ NUMBER ] = #800080
+
+</code></pre>
+
+<p>
+    The lexer configuration referenced above.
+</p>
+
+<pre style="margin-left:1em;padding-left:1em;overflow:auto;background:#F0F8E8;border:solid 1px;"><code>
+
+    # This script is executed in the 'options/SimpleSyntax' folder. You may also use the global function 'source' to read
+    # and evaluate a Ruby script. These variables are available, too:
+    # configFolder: is a File representing the config/options/SimpleSyntax folder
+    # systemContext: references the shared SystemContext object of the plugin
+    # configuration: is the LanguageConfiguration for this script
+
+    require "jparsec/LexerBase.rb"
+
+    s_block_open = Scanners.isPattern( Patterns.regex( /(?m:^=begin)/.source ), "BLOCK_OPEN" )
+    s_block_close = Scanners.isPattern( Patterns.regex( /(?m:^=end$)/.source ), "BLOCK_CLOSE" )
+    s_block_commented = Scanners.anyChar()
+
+    scanner "DOC_COMMENT",          Scanners.isBlockComment( s_block_open, s_block_close, s_block_commented )
+
+    regex "LINE_COMMENT",           /(?m:#.*$)/
+    regex "SPECIAL_QUOTED_STRING",  /%[qQ]\{(?:(?:\\\})|(?:[^\}]))*\}/
+    regex "SPECIAL_QUOTED_STRING",  /%[qQ]\[(?:(?:\\\])|(?:[^\]]))*\]/
+    regex "SPECIAL_QUOTED_STRING",  /%[qQ]\((?:(?:\\\))|(?:[^\)]))*\)/
+    regex "SPECIAL_QUOTED_STRING",  /%[qQ](.).*\1/
+    regex "SINGLE_QUOTED_STRING",   /\'(?:[^\'\n\r]|\\')*\'/
+    regex "DOUBLE_QUOTED_STRING",   /\"(?:[^\"\n\r]|\\")*\"/
+
+    keywords = IO.readlines( 'ParsecDemo/Keywords.txt' ).map { |k| k.chop }
+    keywords.each { |k| regex "KEYWORD", /\b#{k}\b/ }
+
+    regex "REGEX_SLASHED",          /(?m:\/(?:[^\/\n\r]|\\\/)*\/)/
+    regex "CONSTANT",               /\b[A-Z][A-Z_]*\b/
+    regex "CLASS_NAME",             /\b[A-Z]*(?:(?:[A-Z][a-z_]+)|[A-Z])+\b/
+    regex "INSTANCE_VARIABLE",      /@[a-z_]+\b/
+    regex "CLASS_VARIABLE",         /@@[a-z_]+\b/
+    regex "SYMBOL",                 /\:\w+\b/
+    regex "IDENTIFIER",             /\b[a-z]\w*\b/
+    regex "NUMBER",                 /\b(?:0x[0-9A-Fa-f]+)|(?:[0-9]+(?:\.[0-9]+)?)\b/
+
+    lexer( configuration )
+
+</code></pre>
+
+</div>
+
+</body>
+
+</html>
