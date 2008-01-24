@@ -24,7 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-1.0.3-src.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/config/Ruby.config" afterPath="$PROJECT_DIR$/config/Ruby.offline" />
     </list>
     <list name="IDEA Config" comment="" />
   </component>
@@ -341,7 +343,7 @@
     <option name="referencePos" value="0" />
   </component>
   <component name="RestoreUpdateTree">
-    <UpdateInfo date="1/24/08 12:43 PM" ActionInfo="_Update">
+    <UpdateInfo date="1/24/08 1:42 PM" ActionInfo="_Update">
       <UpdatedFiles>
         <FILE-GROUP>
           <option name="myUpdateName" value="Updated from server" />
@@ -384,7 +386,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="MODIFIED" />
-          <PATH>$PROJECT_DIR$/SimpleSyntax.iws</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Skipped" />
@@ -427,6 +428,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="LOCALLY_REMOVED" />
+          <PATH>$PROJECT_DIR$/config/Ruby.config</PATH>
         </FILE-GROUP>
       </UpdatedFiles>
     </UpdateInfo>
@@ -465,6 +467,20 @@
       <module name="SimpleSyntax" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -698,7 +714,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated documentation to cover JFlex based stuff and changes for IDEA version 7." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed JRuby sources from lib folder." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -724,6 +740,7 @@
     <MESSAGE value="Removed" />
     <MESSAGE value="Removed ConfigurableColorSettingsPage - fixing the PermGen OutOfMemory error." />
     <MESSAGE value="Updated documentation to cover JFlex based stuff and changes for IDEA version 7." />
+    <MESSAGE value="Removed JRuby sources from lib folder." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -800,20 +817,6 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableColorSettingsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="27" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.36017898">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="24" selection-start="3214" selection-end="3214" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="223" column="0" selection-start="6815" selection-end="6815" vertical-scroll-proportion="-1.9284116">
@@ -898,16 +901,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby.config">
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="29" selection-start="0" selection-end="1620" vertical-scroll-proportion="0.541387">
+        <state line="28" column="13" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.5298165">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/config/Ruby/Syntax.flux">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.5298165">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/Ruby/Syntax.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="27" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.70469797">
           <folding />
         </state>
       </provider>

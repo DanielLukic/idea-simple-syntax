@@ -45,7 +45,7 @@ public final class ActionInstallTest extends TestCase
 
                 add( "FluxSyntax.header" );
                 add( "FluxSyntax.skeleton" );
-                add( "Ruby.config" );
+                add( "Ruby.offline" );
                 add( "SimpleSyntax.config" );
             }
         };
