@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ConfigTest.zip" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ConfigTest.zip" />
     </list>
     <list name="IDEA Config" comment="" />
   </component>
@@ -340,11 +340,103 @@
     <option name="referenceOn" value="false" />
     <option name="referencePos" value="0" />
   </component>
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="1/24/08 1:54 PM" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+          <PATH>$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ConfigTest.zip</PATH>
+          <PATH>$PROJECT_DIR$/SimpleSyntax.iws</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
   <component name="RubyDocSettings">
     <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="Plugin.SimpleSyntaxPlugin">
+  <component name="RunManager" selected="JUnit.Run all unit tests">
     <tempConfiguration default="false" name="ParsecLexerTest.testGroovyLexer" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <pattern value="scripting.lexing.*" />
       <module name="Testing" />
@@ -478,9 +570,9 @@
       </method>
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ParsecLexerTest.testGroovyLexer" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Run all unit tests" />
-      <item index="2" class="java.lang.String" itemvalue="Plugin.SimpleSyntaxPlugin" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.Run all unit tests" />
+      <item index="1" class="java.lang.String" itemvalue="Plugin.SimpleSyntaxPlugin" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ParsecLexerTest.testGroovyLexer" />
     </list>
   </component>
   <component name="ScopeViewComponent">
@@ -578,12 +670,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.41822916" order="4" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="1" x="63" y="390" width="1546" height="561" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="4" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="8" x="78" y="140" width="1779" height="958" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3286385" order="8" x="78" y="140" width="1779" height="958" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32862523" order="8" x="56" y="629" width="1816" height="488" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="0" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.38923267" order="6" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.38923267" order="6" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" order="6" x="68" y="406" width="1575" height="510" />
@@ -621,7 +713,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deactivated Ruby configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated tests to run with deactivated Ruby configuration." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -649,6 +741,8 @@
     <MESSAGE value="Updated documentation to cover JFlex based stuff and changes for IDEA version 7." />
     <MESSAGE value="Removed JRuby sources from lib folder." />
     <MESSAGE value="Deactivated Ruby configuration." />
+    <MESSAGE value="Updated plugin descriptor." />
+    <MESSAGE value="Updated tests to run with deactivated Ruby configuration." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -725,20 +819,6 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="0" selection-start="6815" selection-end="6815" vertical-scroll-proportion="-1.9284116">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/jdk1.6.0_03/src.zip!/javax/swing/ComboBoxModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="17" selection-start="715" selection-end="715" vertical-scroll-proportion="0.38478747">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="18" selection-start="635" selection-end="635" vertical-scroll-proportion="0.45861298">
@@ -816,13 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="27" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.70469797">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/SimpleSyntax.config">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.24608502">
@@ -833,6 +906,27 @@
     <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="17" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.9334862">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ZipStreamInstallerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="941" selection-end="941" vertical-scroll-proportion="0.590604">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="31" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.63982105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="32" selection-start="2227" selection-end="2227" vertical-scroll-proportion="0.803132">
           <folding />
         </state>
       </provider>
