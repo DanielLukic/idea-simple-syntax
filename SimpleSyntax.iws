@@ -24,11 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/examples/SimpleSyntax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/examples" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/examples/JParsecRuby.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-1.0.3-src.zip" afterPath="" />
     </list>
     <list name="IDEA Config" comment="" />
   </component>
@@ -874,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="11" selection-start="574" selection-end="574" vertical-scroll-proportion="-0.33715597">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/examples/JParsecRuby.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="504" selection-end="504" vertical-scroll-proportion="0.40366971">
@@ -912,6 +901,13 @@
     <entry file="file://$PROJECT_DIR$/config/Ruby.config">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="29" selection-start="0" selection-end="1620" vertical-scroll-proportion="0.541387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="13" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.5298165">
           <folding />
         </state>
       </provider>

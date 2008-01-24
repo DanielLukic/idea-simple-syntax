@@ -86,9 +86,7 @@
           <root url="jar://$MODULE_DIR$/lib/jruby-1.0.3.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/lib/jruby-1.0.3-src.zip!/jruby-1.0.3/src" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
