@@ -32,7 +32,7 @@
 
 
     <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
-        <classpath>
+        <classpath id="classpath.junit">
             <pathelement location="${dir.ant}/ant-junit.jar"/>
             <pathelement location="${dir.ant}/junit.jar"/>
         </classpath>
@@ -58,6 +58,7 @@
         <pathelement location="${dir.tests}"/>
         <pathelement location="${dir.config}"/>
         <path refid="classpath.build"/>
+        <path refid="classpath.junit"/>
     </path>
 
 
@@ -87,7 +88,7 @@
             <classpath refid="classpath.test"/>
             <formatter type="brief" usefile="false"/>
             <formatter type="xml" usefile="true"/>
-            <batchtest fork="yes" todir="${dir.build}">
+            <batchtest fork="no" todir="${dir.build}">
                 <fileset dir="${dir.tests}">
                     <include name="**/Test*.java"/>
                     <include name="**/*Test.java"/>

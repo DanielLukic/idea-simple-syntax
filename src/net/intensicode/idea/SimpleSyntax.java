@@ -3,21 +3,16 @@ package net.intensicode.idea;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.options.ConfigurationException;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.loaded.LoadedConfiguration;
 import net.intensicode.idea.system.OptionsFolder;
-import net.intensicode.idea.system.production.ProductionSystemContext;
 import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.system.production.ProductionSystemContext;
 import net.intensicode.idea.util.LoggerFactory;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-
-import javax.swing.Icon;
-import javax.swing.JComponent;
 
 
 
@@ -70,56 +65,57 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
         } );
     }
 
+    @NotNull
     public final String getComponentName()
     {
         return "net.intensicode.idea.SimpleSyntax";
     }
 
-    // From Configurable
-
-    public final String getDisplayName()
-    {
-        return myUI.getDisplayName();
-    }
-
-    @Nullable
-    @NonNls
-    public final String getHelpTopic()
-    {
-        return myUI.getHelpTopic();
-    }
-
-    public final Icon getIcon()
-    {
-        return myUI.getIcon();
-    }
-
-    // From UnnamedConfigurable
-
-    public final void apply() throws ConfigurationException
-    {
-        myUI.apply();
-    }
-
-    public final JComponent createComponent()
-    {
-        return myUI.createComponent();
-    }
-
-    public final void disposeUIResources()
-    {
-        myUI.disposeUIResources();
-    }
-
-    public final boolean isModified()
-    {
-        return myUI.isModified();
-    }
-
-    public final void reset()
-    {
-        myUI.reset();
-    }
+    //// From Configurable
+    //
+    //public final String getDisplayName()
+    //{
+    //    return myUI.getDisplayName();
+    //}
+    //
+    //@Nullable
+    //@NonNls
+    //public final String getHelpTopic()
+    //{
+    //    return myUI.getHelpTopic();
+    //}
+    //
+    //public final Icon getIcon()
+    //{
+    //    return myUI.getIcon();
+    //}
+    //
+    //// From UnnamedConfigurable
+    //
+    //public final void apply() throws ConfigurationException
+    //{
+    //    myUI.apply();
+    //}
+    //
+    //public final JComponent createComponent()
+    //{
+    //    return myUI.createComponent();
+    //}
+    //
+    //public final void disposeUIResources()
+    //{
+    //    myUI.disposeUIResources();
+    //}
+    //
+    //public final boolean isModified()
+    //{
+    //    return myUI.isModified();
+    //}
+    //
+    //public final void reset()
+    //{
+    //    myUI.reset();
+    //}
 
     // Implementation
 
@@ -142,7 +138,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
         }
     }
 
-    private final ArrayList<InstanceConfiguration>  loadConfigurations()
+    private final ArrayList<InstanceConfiguration> loadConfigurations()
     {
         final OptionsFolder optionsFolder = mySystemContext.getOptionsFolder();
         final String[] fileNames = optionsFolder.findConfigurations();
@@ -194,7 +190,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
 
     private final ArrayList<SimpleSyntaxInstance> myInstances = new ArrayList<SimpleSyntaxInstance>();
 
-    private final SimpleSyntaxUI myUI = new SimpleSyntaxUI( mySystemContext, myInstances );
+    //private final SimpleSyntaxUI myUI = new SimpleSyntaxUI( mySystemContext, myInstances );
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

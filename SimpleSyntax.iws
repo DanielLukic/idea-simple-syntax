@@ -23,55 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JFlex/NicerEmitter.java" afterPath="$PROJECT_DIR$/src/JFlex/NicerEmitter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-0.9.2.COPYING.CPL" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib-api/extensions.jar" afterPath="$PROJECT_DIR$/lib-api/extensions.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iml" afterPath="$PROJECT_DIR$/SimpleSyntax.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script1.rb" afterPath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script1.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy" afterPath="$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/groovy-1.5.1-LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/JFlex-1.4.1-COPYRIGHT.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script3.rb" afterPath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script3.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovySupport.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovySupport.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/groovy-all-1.0-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-0.9.2.COPYING.GPL" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/JFlex.jar" afterPath="$PROJECT_DIR$/lib/JFlex-1.4.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib-api/openapi.jar" afterPath="$PROJECT_DIR$/lib-api/openapi.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/asm-2.2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubyTest.java" afterPath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JFlex/JFlexer.java" afterPath="$PROJECT_DIR$/src/JFlex/JFlexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/groovy-1.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jruby-1.0.3.jar" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-0.9.2.COPYING" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/lib-groovy/jparsec/LexerBase.groovy" afterPath="$PROJECT_DIR$/config/lib-groovy/jparsec/LexerBase.groovy" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-0.9.2.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script2.rb" afterPath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script2.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/Testing.iml" afterPath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/scripting/ToastIt.rb" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/scripting/ToastIt.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.ipr" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jparsec-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jparsec-1.2-LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib-api/annotations.jar" afterPath="$PROJECT_DIR$/lib-api/annotations.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxUI.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.GPL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubySourcingTest.java" afterPath="$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubySourcingTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/groovy-all-1.0.jar" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.CPL" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/antlr-2.7.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.LGPL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubySupport.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubySupport.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jfunutil-0.9.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/JFlex-1.4.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubyInvocationHandler.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubyInvocationHandler.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jruby-0.9.2.COPYING.LGPL" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JFlex/GroovyEmitter.java" afterPath="$PROJECT_DIR$/src/JFlex/GroovyEmitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntax.java" afterPath="$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntax.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jruby-1.0.3-src.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/backport-util-concurrent.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/ParsecDemo/Syntax.rb" afterPath="$PROJECT_DIR$/config/ParsecDemo/Syntax.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jparsec-1.1-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jparsec-1.1.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Ruby.config" afterPath="$PROJECT_DIR$/config/Ruby.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/SimpleSyntax.config" afterPath="$PROJECT_DIR$/config/SimpleSyntax.config" />
     </list>
     <list name="IDEA Config" comment="" />
   </component>
@@ -320,7 +279,7 @@
       <showLibraryContents />
       <hideEmptyPackages PackagesPane="false" />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
+      <showStructure Favorites="false" Scope="false" PackagesPane="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -331,8 +290,8 @@
     <property name="vcs_file_view_treeWidth4" value="301" />
     <property name="vcs_file_view_treeWidth1" value="302" />
     <property name="vcs_file_view_treeWidth0" value="302" />
-    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
     <property name="vcs_file_view_treeWidth3" value="301" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
     <property name="vcs_file_view_treeWidth2" value="301" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="vcs_file_view_treeOrder2" value="2" />
@@ -350,10 +309,10 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="vcs_file_view_flatWidth2" value="173" />
     <property name="vcs_file_view_flatOrder1" value="1" />
-    <property name="vcs_file_view_flatWidth3" value="174" />
     <property name="vcs_file_view_flatOrder4" value="4" />
-    <property name="vcs_file_view_flatWidth4" value="172" />
+    <property name="vcs_file_view_flatWidth3" value="174" />
     <property name="vcs_file_view_flatOrder3" value="3" />
+    <property name="vcs_file_view_flatWidth4" value="172" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="RunManagerConfig.compileBeforeRunning" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -386,145 +345,6 @@
     <option name="autoUpdate" value="true" />
     <option name="referenceOn" value="false" />
     <option name="referencePos" value="0" />
-  </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="1/23/08 11:05 PM" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-          <PATH>$PROJECT_DIR$/config/lib-groovy/jparsec/LexerBase.groovy</PATH>
-          <PATH>$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy</PATH>
-          <PATH>$PROJECT_DIR$/config/ParsecDemo/Syntax.rb</PATH>
-          <PATH>$PROJECT_DIR$/lib-api/annotations.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib-api/extensions.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib-api/openapi.jar</PATH>
-          <PATH>$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.ipr</PATH>
-          <PATH>$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iws</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/scripting/ToastIt.rb</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubySourcingTest.java</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubyTest.java</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script1.rb</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script2.rb</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script3.rb</PATH>
-          <PATH>$PROJECT_DIR$/modules/Testing/Testing.iml</PATH>
-          <PATH>$PROJECT_DIR$/SimpleSyntax.iml</PATH>
-          <PATH>$PROJECT_DIR$/SimpleSyntax.iws</PATH>
-          <PATH>$PROJECT_DIR$/src/JFlex/GroovyEmitter.java</PATH>
-          <PATH>$PROJECT_DIR$/src/JFlex/JFlexer.java</PATH>
-          <PATH>$PROJECT_DIR$/src/JFlex/NicerEmitter.java</PATH>
-          <PATH>$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovySupport.java</PATH>
-          <PATH>$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubyInvocationHandler.java</PATH>
-          <PATH>$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubySupport.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-          <PATH>$PROJECT_DIR$/lib/antlr-2.7.6.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/asm-2.2.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/backport-util-concurrent.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-1.0.3-src.zip</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-          <PATH>$PROJECT_DIR$/lib/groovy-1.5.1-LICENSE.txt</PATH>
-          <PATH>$PROJECT_DIR$/lib/groovy-1.5.1.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/JFlex-1.4.1-COPYRIGHT.txt</PATH>
-          <PATH>$PROJECT_DIR$/lib/JFlex-1.4.1.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/jfunutil-0.9.1.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/jparsec-1.2-LICENSE.txt</PATH>
-          <PATH>$PROJECT_DIR$/lib/jparsec-1.2.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.CPL</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.GPL</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.LGPL</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-1.0.3-COPYING.txt</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-1.0.3.jar</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-          <PATH>$PROJECT_DIR$/lib/groovy-all-1.0-LICENSE.txt</PATH>
-          <PATH>$PROJECT_DIR$/lib/groovy-all-1.0.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/JFlex.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/jparsec-1.1-LICENSE.txt</PATH>
-          <PATH>$PROJECT_DIR$/lib/jparsec-1.1.jar</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-0.9.2.COPYING</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-0.9.2.COPYING.CPL</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-0.9.2.COPYING.GPL</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-0.9.2.COPYING.LGPL</PATH>
-          <PATH>$PROJECT_DIR$/lib/jruby-0.9.2.jar</PATH>
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
   </component>
   <component name="RubyDocSettings">
     <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
@@ -750,12 +570,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.41822916" order="4" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="1" x="63" y="390" width="1546" height="561" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="4" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3286385" order="8" x="78" y="140" width="1779" height="958" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="8" x="78" y="140" width="1779" height="958" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32862523" order="8" x="56" y="629" width="1816" height="488" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="0" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.38923267" order="6" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.38923267" order="6" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" order="6" x="68" y="406" width="1575" height="510" />
@@ -769,8 +589,8 @@
       <window_info id="File View" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" order="2" x="49" y="48" width="1523" height="923" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="IDEtalk History" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974698" order="3" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
@@ -793,7 +613,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated libraries to latest stable versions. Still contains the PermGen: space OutOfMemory error." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed ConfigurableColorSettingsPage - fixing the PermGen OutOfMemory error." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -816,6 +636,8 @@
     <MESSAGE value="Added support for aggregated tokens: aggregations[ KEYWORD ] = ... can be used to map several keyword tokens from the lexer onto the same KEYWORD highlights." />
     <MESSAGE value="Fixed for iDEA version 7." />
     <MESSAGE value="Updated libraries to latest stable versions. Still contains the PermGen: space OutOfMemory error." />
+    <MESSAGE value="Removed" />
+    <MESSAGE value="Removed ConfigurableColorSettingsPage - fixing the PermGen OutOfMemory error." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -892,114 +714,114 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/scripting/ruby/Script2.rb">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0738255">
+        <state line="16" column="4" selection-start="655" selection-end="655" vertical-scroll-proportion="0.17406143">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/scripting/ruby/RubySourcingTest.java">
+    <entry file="file://$PROJECT_DIR$/COPYING">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.48098433">
+        <state line="6" column="0" selection-start="340" selection-end="340" vertical-scroll-proportion="0.147651">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/scripting/RubySupportTest.java">
+    <entry file="jar:///media/kubuntu/usr/local/idea/lib/src/src_openapi.zip!/com/intellij/openapi/options/UnnamedConfigurable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.753915">
+        <state line="24" column="17" selection-start="768" selection-end="768" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/scripting/lexing/SimpleString.rb">
+    <entry file="jar:///media/kubuntu/usr/local/idea/lib/src/src_openapi.zip!/com/intellij/openapi/options/Configurable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.098434">
+        <state line="32" column="44" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/scripting/lexing/SpecialString.rb">
+    <entry file="jar:///media/kubuntu/usr/local/idea/lib/src/src_openapi.zip!/com/intellij/openapi/diagnostic/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="45" selection-end="45" vertical-scroll-proportion="0.049217">
+        <state line="42" column="23" selection-start="1294" selection-end="1294" vertical-scroll-proportion="-0.5995526">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/scripting/lexing/JFlexLexerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/InstanceConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.33333334">
+        <state line="14" column="17" selection-start="276" selection-end="276" vertical-scroll-proportion="0.34451902">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/lib-ruby/jparsec/LexerAdapter.rb">
+    <entry file="jar:///media/kubuntu/usr/local/idea/lib/src/src_openapi.zip!/com/intellij/openapi/editor/markup/TextAttributes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="23" column="13" selection-start="788" selection-end="788" vertical-scroll-proportion="-1.3298969">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/lib-ruby/jparsec/LexerBase.rb">
+    <entry file="jar:///media/kubuntu/usr/local/idea/lib/src/src_openapi.zip!/com/intellij/openapi/editor/colors/TextAttributesKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="69" column="16" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.13172966">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby/ExampleCode.rb">
+    <entry file="jar:///media/kubuntu/usr/local/idea/lib/src/src_openapi.zip!/com/intellij/openapi/options/colors/AttributesDescriptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="26" column="26" selection-start="955" selection-end="955" vertical-scroll-proportion="0.3665521">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby.config">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/core/ConfigurableColorSettingsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.852349">
+        <state line="50" column="27" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.36017898">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.rb">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.8277405">
+        <state line="123" column="24" selection-start="3214" selection-end="3214" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/lib-groovy/jparsec/LexerBase.groovy">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/LoadedConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="232" selection-end="232" vertical-scroll-proportion="0.22147651">
+        <state line="223" column="0" selection-start="6815" selection-end="6815" vertical-scroll-proportion="-1.9284116">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy">
+    <entry file="jar:///usr/local/jdk1.6.0_03/src.zip!/javax/swing/ComboBoxModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="4" selection-start="473" selection-end="473" vertical-scroll-proportion="0.3492605">
+        <state line="20" column="17" selection-start="715" selection-end="715" vertical-scroll-proportion="0.38478747">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/scripting/lexing/ParsecLexerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="673" selection-end="673" vertical-scroll-proportion="0.38255033">
+        <state line="20" column="18" selection-start="635" selection-end="635" vertical-scroll-proportion="0.45861298">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/scripting/RubySupport.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntax.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="67" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.55480987">
+        <state line="16" column="0" selection-start="669" selection-end="669" vertical-scroll-proportion="0.393736">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovySupport.java">
+    <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="80" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.33333334">
+        <state line="29" column="20" selection-start="1376" selection-end="1376" vertical-scroll-proportion="0.3325688">
           <folding />
         </state>
       </provider>
