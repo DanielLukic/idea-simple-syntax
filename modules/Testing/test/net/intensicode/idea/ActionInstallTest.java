@@ -33,6 +33,11 @@ public final class ActionInstallTest extends TestCase
                 add( "ParsecDemo/Syntax.groovy" );
                 add( "ParsecDemo/Syntax.rb" );
 
+                add( "Prolog/Example.pl" );
+                add( "Prolog/Icon.png" );
+                add( "Prolog/Keywords.txt" );
+                add( "Prolog/Syntax.groovy" );
+
                 add( "Ruby/ExampleCode.rb" );
                 add( "Ruby/Icon.png" );
                 add( "Ruby/Syntax.flux" );
@@ -45,6 +50,7 @@ public final class ActionInstallTest extends TestCase
 
                 add( "FluxSyntax.header" );
                 add( "FluxSyntax.skeleton" );
+                add( "Prolog.config" );
                 add( "Ruby.offline" );
                 add( "SimpleSyntax.config" );
             }

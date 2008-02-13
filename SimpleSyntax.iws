@@ -23,8 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Prolog/Icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Prolog/Syntax.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Prolog/Keywords.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Prolog/Example.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" afterPath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iml" afterPath="$PROJECT_DIR$/SimpleSyntax.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.ipr" afterPath="$PROJECT_DIR$/SimpleSyntax.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleSyntax.iws" afterPath="$PROJECT_DIR$/SimpleSyntax.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ConfigTest.zip" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ConfigTest.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy" afterPath="$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Prolog.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ZipStreamInstallerTest.java" afterPath="$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ZipStreamInstallerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Testing/Testing.iml" afterPath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Prolog" />
     </list>
     <list name="IDEA Config" comment="" />
   </component>
@@ -284,8 +296,8 @@
     <property name="vcs_file_view_treeWidth4" value="301" />
     <property name="vcs_file_view_treeWidth1" value="302" />
     <property name="vcs_file_view_treeWidth0" value="302" />
-    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
     <property name="vcs_file_view_treeWidth3" value="301" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
     <property name="vcs_file_view_treeWidth2" value="301" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="vcs_file_view_treeOrder2" value="2" />
@@ -303,10 +315,10 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="vcs_file_view_flatWidth2" value="173" />
     <property name="vcs_file_view_flatOrder1" value="1" />
-    <property name="vcs_file_view_flatWidth3" value="174" />
     <property name="vcs_file_view_flatOrder4" value="4" />
-    <property name="vcs_file_view_flatWidth4" value="172" />
+    <property name="vcs_file_view_flatWidth3" value="174" />
     <property name="vcs_file_view_flatOrder3" value="3" />
+    <property name="vcs_file_view_flatWidth4" value="172" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="RunManagerConfig.compileBeforeRunning" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -341,7 +353,7 @@
     <option name="referencePos" value="0" />
   </component>
   <component name="RestoreUpdateTree">
-    <UpdateInfo date="1/24/08 1:54 PM" ActionInfo="_Update">
+    <UpdateInfo date="13.02.08 23:37" ActionInfo="_Update">
       <UpdatedFiles>
         <FILE-GROUP>
           <option name="myUpdateName" value="Updated from server" />
@@ -384,8 +396,14 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="MODIFIED" />
-          <PATH>$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ConfigTest.zip</PATH>
-          <PATH>$PROJECT_DIR$/SimpleSyntax.iws</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\ParsecDemo\Syntax.groovy</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\modules\RubyIdeaTest\RubyIdeaTest.iml</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\modules\Testing\test\net\intensicode\idea\ActionInstallTest.java</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\modules\Testing\test\net\intensicode\idea\util\ZipStreamInstallerTest.java</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\modules\Testing\Testing.iml</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\SimpleSyntax.iml</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\SimpleSyntax.ipr</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\SimpleSyntax.iws</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Skipped" />
@@ -421,6 +439,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="LOCALLY_ADDED" />
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\Prolog</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\Prolog\Example.pl</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\Prolog\Icon.png</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\Prolog\Keywords.txt</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\Prolog\Syntax.groovy</PATH>
+          <PATH>K:\home\dl\Projects\SimpleSyntax\config\Prolog.config</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Locally removed" />
@@ -437,65 +461,6 @@
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
   <component name="RunManager" selected="JUnit.Run all unit tests">
-    <tempConfiguration default="false" name="ParsecLexerTest.testGroovyLexer" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="scripting.lexing.*" />
-      <module name="Testing" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="scripting.lexing" />
-      <option name="MAIN_CLASS_NAME" value="scripting.lexing.ParsecLexerTest" />
-      <option name="METHOD_NAME" value="testGroovyLexer" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </tempConfiguration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5000" />
-    </configuration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -518,10 +483,12 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="SimpleSyntax" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5000" />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -535,44 +502,41 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
-    <configuration default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <module name="SimpleSyntax" />
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
+      <module name="" />
       <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
-    <configuration default="false" name="SimpleSyntaxPlugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="SimpleSyntax" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
     </configuration>
-    <list size="3">
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Run all unit tests" />
       <item index="1" class="java.lang.String" itemvalue="Plugin.SimpleSyntaxPlugin" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ParsecLexerTest.testGroovyLexer" />
     </list>
   </component>
   <component name="ScopeViewComponent">
@@ -638,7 +602,7 @@
     <option name="UPDATE_RUN_STATUS" value="true" />
     <option name="UPDATE_RECURSIVELY" value="true" />
     <option name="MERGE_DRY_RUN" value="false" />
-    <configuration useDefault="true">$PROJECT_DIR$/../../.subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\Daniel\Application Data\Subversion</configuration>
     <upgradeMode>auto</upgradeMode>
   </component>
   <component name="TodoView" selected-index="0">
@@ -662,26 +626,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="114" y="38" width="1628" height="1058" extended-state="0" />
+    <frame x="-4" y="-4" width="1928" height="1175" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.41822916" order="4" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="1" x="63" y="390" width="1546" height="561" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="4" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3286385" order="8" x="78" y="140" width="1779" height="958" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" order="8" x="78" y="140" width="1779" height="958" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32862523" order="8" x="56" y="629" width="1816" height="488" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="0" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.38923267" order="6" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.3890625" order="6" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" order="6" x="68" y="406" width="1575" height="510" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.52063787" order="2" x="25" y="514" width="1826" height="584" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Tasks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="IDE talk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -689,8 +653,8 @@
       <window_info id="File View" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" order="2" x="49" y="48" width="1523" height="923" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="IDEtalk History" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974698" order="3" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
@@ -713,7 +677,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated tests to run with deactivated Ruby configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added something that looks like a Prolog syntax." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -743,6 +707,7 @@
     <MESSAGE value="Deactivated Ruby configuration." />
     <MESSAGE value="Updated plugin descriptor." />
     <MESSAGE value="Updated tests to run with deactivated Ruby configuration." />
+    <MESSAGE value="Added something that looks like a Prolog syntax." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -819,114 +784,114 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntaxInstance.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovyInvocationHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="18" selection-start="635" selection-end="635" vertical-scroll-proportion="0.45861298">
+        <state line="44" column="0" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.868">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/SimpleSyntax.java">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/JParsecLexerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="669" selection-end="669" vertical-scroll-proportion="0.393736">
+        <state line="104" column="1" selection-start="2968" selection-end="2968" vertical-scroll-proportion="0.846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/JParsecLexerBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="20" selection-start="1376" selection-end="1376" vertical-scroll-proportion="0.3325688">
+        <state line="57" column="13" selection-start="1523" selection-end="1523" vertical-scroll-proportion="0.626">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/SimpleSyntax/Syntax.flux">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/SimpleLexerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="177" selection-end="177" vertical-scroll-proportion="0.295302">
+        <state line="102" column="0" selection-start="2494" selection-end="2494" vertical-scroll-proportion="0.264">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/SimpleSyntax/Syntax.groovy">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovySupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="329" vertical-scroll-proportion="0.0">
+        <state line="24" column="19" selection-start="674" selection-end="674" vertical-scroll-proportion="-0.386">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/examples/JParsecRuby.html">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/ConfigurationParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="504" selection-end="504" vertical-scroll-proportion="0.40366971">
+        <state line="31" column="65" selection-start="806" selection-end="806" vertical-scroll-proportion="0.531">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/examples/SimpleSyntax.html">
+    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/AssignmentConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="46" selection-start="489" selection-end="489" vertical-scroll-proportion="0.3027523">
+        <state line="25" column="55" selection-start="623" selection-end="623" vertical-scroll-proportion="0.428">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="33" selection-start="5244" selection-end="5244" vertical-scroll-proportion="0.3027523">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="430" selection-end="430" vertical-scroll-proportion="0.17225951">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby/Syntax.flux">
+    <entry file="file://$PROJECT_DIR$/config/Prolog/Keywords.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Ruby/Syntax.groovy">
+    <entry file="file://$PROJECT_DIR$/config/Prolog/Example.pl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/SimpleSyntax.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.24608502">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="17" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.9334862">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ZipStreamInstallerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="941" selection-end="941" vertical-scroll-proportion="0.590604">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="31" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.63982105">
+        <state line="11" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.242">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="32" selection-start="2227" selection-end="2227" vertical-scroll-proportion="0.803132">
+        <state line="52" column="34" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.55">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="6" selection-start="548" selection-end="548" vertical-scroll-proportion="0.33299494">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Keywords.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="11" selection-start="465" selection-end="465" vertical-scroll-proportion="0.333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ClassPathInstallerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="24" selection-start="897" selection-end="897" vertical-scroll-proportion="0.528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ZipStreamInstallerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.868">
           <folding />
         </state>
       </provider>

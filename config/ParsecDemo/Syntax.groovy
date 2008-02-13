@@ -1,15 +1,18 @@
 /*
+ * Example syntax configuration using the JParsec based approach.
+ *
+ * NOTE: You have to create a class in here. Make sure it has a unique name!
+ *
  * These variables are available:
  * context: includes a source() and currentDir() function
- * currentDir: is a File representing the config/options/SimpleSyntax folder
+ * configFolder: is a File representing the config/options/SimpleSyntax folder
  * systemContext: references the shared SystemContext object of the plugin
  * configuration: is the LanguageConfiguration for this script
  */
 
-package RubyDemo;
+package ParsecDemo;
 
 import jfun.parsec.*;
-import jfun.parsec.tokens.*;
 import jfun.parsec.pattern.*;
 
 
