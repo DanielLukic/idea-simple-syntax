@@ -1,8 +1,8 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin url="http://idea-simsyn.tigris.org/">
-    <name>Simple Syntax Highlighting</name>
+    <name>Extended Syntax Highlighting for IDEA7</name>
     <description>
-        Provides simple syntax highlighting based on user-definable configuration files. Use
+        Provides extended syntax highlighting based on user-definable configuration files. Use
         'Init SimpleSyntax' from Tools menu to install syntax highlighting. Clone files
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
         languages. Use 'Reload SimpleSyntax' from Tools menu to reload configuration changes.
