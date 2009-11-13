@@ -7,6 +7,9 @@
         in your IDEA 'config/options/SimpleSyntax' folder to enable highlighting for other
         languages. Use 'Reload SimpleSyntax' form Tools menu to reload configuration changes.
         ///
+        In contrast to the Simple Syntax Highlighting plugin, this one uses more advanced lexer
+        definitions. Sorry for the lack of documentation.
+        ///
         Credits: Includes the wonderful Groovy, JRuby and JParsec systems. Also included are
         a few files from the pythonid Python plugin.
     </description>
