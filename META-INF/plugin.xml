@@ -1,6 +1,6 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin url="http://idea-simsyn.tigris.org/">
-    <name>Simple Syntax Highlighting</name>
+    <name>Simple Syntax Highlighting for IDEA6</name>
     <description>
         Provides simple syntax highlighting based on user-definable configuration files. Use
         'Init SimpleSyntax' from Tools menu to install Ruby syntax highlighting. Clone files
@@ -30,7 +30,7 @@
     </change-notes>
     <version>0.17</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
-    <idea-version since-build="6107"/>
+    <idea-version since-build="5000" until-build="6499"/>
     <application-components>
         <component>
             <implementation-class>net.intensicode.idea.SimpleSyntax</implementation-class>
