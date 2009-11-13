@@ -33,7 +33,7 @@
     </change-notes>
     <version>0.19</version>
     <vendor email="simplesyntax@intensicode.net" url="http://www.intensicode.net">IntensiCode</vendor>
-    <idea-version since-build="6107"/>
+    <idea-version since-build="5000" until-build="6499"/>
     <application-components>
         <component>
             <implementation-class>net.intensicode.idea.SimpleSyntax</implementation-class>
