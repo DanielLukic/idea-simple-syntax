@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4" relativePaths="true" type="PLUGIN_MODULE">
+<module relativePaths="true" type="PLUGIN_MODULE" version="4">
   <component name="BuildJarSettings">
     <containerInfo>
       <containerElement type="library" level="module">
@@ -13,11 +13,10 @@
     <setting name="mainClass" value="" />
   </component>
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/META-INF/plugin.xml" />
-  <component name="ModuleRootManager" />
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes" />
-    <exclude-output />
     <output-test url="file://$MODULE_DIR$/build/tests" />
+    <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/config" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/res" isTestSource="false" />
@@ -107,7 +106,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntryProperties />
   </component>
   <component name="PluginUploader.UploadConfigurable">
     <option name="_archivePath" value="D:\Intensicode\SimpleSyntax\build\dist\SimpleSyntax.zip" />
