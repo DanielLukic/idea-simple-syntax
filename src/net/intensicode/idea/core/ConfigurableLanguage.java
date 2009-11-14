@@ -67,42 +67,6 @@ public /*dynamic*/ class ConfigurableLanguage extends Language
         return ( ConfigurableLanguage ) DynamicClassFactory.newInstance( className, clazz, aConfiguration );
     }
 
-    // From Language
-
-    public void associateFileType( FileType type )
-    {
-        LOG.info( "associateFileType" );
-        super.associateFileType( type );
-    }
-
-    @Nullable
-    public Annotator getAnnotator()
-    {
-        LOG.info( "getAnnotator" );
-        return super.getAnnotator();
-    }
-
-    @Nullable
-    public FileType getAssociatedFileType()
-    {
-        LOG.info( "getAssociatedFileType" );
-        return super.getAssociatedFileType();
-    }
-
-    @Nullable
-    public ExternalAnnotator getExternalAnnotator()
-    {
-        LOG.info( "getExternalAnnotator" );
-        return super.getExternalAnnotator();
-    }
-
-    @Nullable
-    public ImportOptimizer getImportOptimizer()
-    {
-        LOG.info( "getImportOptimizer" );
-        return super.getImportOptimizer();
-    }
-
     @NotNull
     public String getID()
     {
@@ -114,13 +78,6 @@ public /*dynamic*/ class ConfigurableLanguage extends Language
     {
         LOG.info( "getMimeTypes" );
         return super.getMimeTypes();
-    }
-
-    @NotNull
-    public SurroundDescriptor[] getSurroundDescriptors()
-    {
-        LOG.info( "getSurroundDescriptors" );
-        return super.getSurroundDescriptors();
     }
 
     @NotNull
@@ -139,60 +96,6 @@ public /*dynamic*/ class ConfigurableLanguage extends Language
             myWordCompletionTokenSet = TokenSet.create( types );
         }
         return myWordCompletionTokenSet;
-    }
-
-    @Nullable
-    public final ParserDefinition getParserDefinition()
-    {
-        LOG.info( "getParserDefinition" );
-        return super.getParserDefinition();
-    }
-
-    public final FileViewProvider createViewProvider( final VirtualFile file, final PsiManager manager, final boolean physical )
-    {
-        LOG.info( "createViewProvider" );
-        return super.createViewProvider( file, manager, physical );
-    }
-
-    public final DocumentationProvider getDocumentationProvider()
-    {
-        LOG.info( "getDocumentationProvider" );
-        return super.getDocumentationProvider();
-    }
-
-    @NotNull
-    public final FindUsagesProvider getFindUsagesProvider()
-    {
-        LOG.info( "getFindUsagesProvider" );
-        return super.getFindUsagesProvider();
-    }
-
-    @Nullable
-    public final FoldingBuilder getFoldingBuilder()
-    {
-        LOG.info( "getFoldingBuilder" );
-        return super.getFoldingBuilder();
-    }
-
-    @Nullable
-    public final FormattingModelBuilder getFormattingModelBuilder()
-    {
-        LOG.info( "getFormattingModelBuilder" );
-        return super.getFormattingModelBuilder();
-    }
-
-    @NotNull
-    public final RefactoringSupportProvider getRefactoringSupportProvider()
-    {
-        LOG.info( "getRefactoringSupportProvider" );
-        return super.getRefactoringSupportProvider();
-    }
-
-    @Nullable
-    public final StructureViewBuilder getStructureViewBuilder( final PsiFile psiFile )
-    {
-        LOG.info( "getStructureViewBuilder" );
-        return super.getStructureViewBuilder( psiFile );
     }
 
     @NotNull
