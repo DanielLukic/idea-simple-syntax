@@ -22,7 +22,7 @@
     <option name="USER" value="" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="" />
+    <list default="true" name="Default" comment="" />
     <list name="IDEA Config" comment="" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
@@ -256,44 +256,6 @@
           <option name="myItemId" value="SimpleSyntax" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Testing" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="SimpleSyntax" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="SimpleSyntax" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="SimpleSyntax" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="SimpleSyntax" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="idea-simple-syntax" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="SimpleSyntax" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="RubyIdeaTest" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
       </PATH>
     </subPane>
   </component>
@@ -308,7 +270,7 @@
       <showLibraryContents />
       <hideEmptyPackages PackagesPane="false" />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
+      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -316,9 +278,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="vcs_file_view_flatOrder5" value="5" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="vcs_file_view_treeWidth4" value="301" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="vcs_file_view_treeWidth1" value="302" />
     <property name="vcs_file_view_treeWidth0" value="302" />
@@ -338,9 +300,9 @@
     <property name="vcs_file_view_flatWidth0" value="340" />
     <property name="vcs_file_view_flatWidth1" value="476" />
     <property name="vcs_file_view_flatOrder2" value="2" />
-    <property name="GoToClass.includeLibraries" value="false" />
     <property name="vcs_file_view_flatWidth2" value="173" />
     <property name="vcs_file_view_flatOrder1" value="1" />
+    <property name="GoToClass.includeLibraries" value="false" />
     <property name="vcs_file_view_flatOrder4" value="4" />
     <property name="vcs_file_view_flatWidth3" value="174" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -462,9 +424,8 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="2">
+    <list size="1">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Run all unit tests" />
-      <item index="1" class="java.lang.String" itemvalue="Plugin.SimpleSyntaxPlugin" />
     </list>
   </component>
   <component name="ScopeViewComponent">
@@ -533,7 +494,7 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <configuration useDefault="true">$PROJECT_DIR$/../../../.subversion</configuration>
+    <configuration useDefault="true">$PROJECT_DIR$/../../.subversion</configuration>
     <upgradeMode>auto</upgradeMode>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
@@ -559,26 +520,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1170" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1021" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.41822916" sideWeight="0.5" order="4" side_tool="false" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" sideWeight="0.5" order="1" side_tool="false" x="63" y="390" width="1546" height="561" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.41822916" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" />
-      <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" />
+      <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3286385" sideWeight="0.5" order="8" side_tool="false" x="78" y="140" width="1779" height="958" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32862523" sideWeight="0.5" order="8" side_tool="false" x="56" y="629" width="1816" height="488" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.3890625" sideWeight="0.5" order="6" side_tool="false" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.3892857" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
+      <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" sideWeight="0.5" order="6" side_tool="false" x="68" y="406" width="1575" height="510" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.52063787" sideWeight="0.5" order="2" side_tool="false" x="25" y="514" width="1826" height="584" />
-      <window_info id="Profile CPU" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" />
-      <window_info id="Profile Memory" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Tasks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
       <window_info id="IDE talk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
@@ -595,6 +555,8 @@
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
+      <window_info id="Profile CPU" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
+      <window_info id="Profile Memory" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986766" sideWeight="0.5" order="8" side_tool="false" x="378" y="109" width="1459" height="958" />
     </layout>
   </component>
@@ -724,112 +686,108 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovyInvocationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.868">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/src/com/intellij/spellchecker/options/SpellCheckerOptions.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/JParsecLexerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="1" selection-start="2968" selection-end="2968" vertical-scroll-proportion="0.846">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/lang/properties/editor/ResourceBundleEditor.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/JParsecLexerBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="13" selection-start="1523" selection-end="1523" vertical-scroll-proportion="0.626">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/syntax/SimpleLexerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="2494" selection-end="2494" vertical-scroll-proportion="0.264">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/scripting/GroovySupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="674" selection-end="674" vertical-scroll-proportion="-0.386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/ConfigurationParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="65" selection-start="806" selection-end="806" vertical-scroll-proportion="0.531">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/config/loaded/parser/AssignmentConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="55" selection-start="623" selection-end="623" vertical-scroll-proportion="0.428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Prolog/Keywords.txt">
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/lang/properties/editor/ResourceBundleEditor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Prolog/Example.pl">
+    <entry file="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/src/com/intellij/spellchecker/options/SpellCheckerConfigurable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.242" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/intensicode/idea/ActionInstall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="34" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.55">
+        <state line="31" column="19" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.rb">
+    <entry file="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/src/com/intellij/spellchecker/SpellCheckerManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.066">
+        <state line="34" column="13" selection-start="1416" selection-end="1416" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Syntax.groovy">
+    <entry file="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/src/com/intellij/spellchecker/options/SpellCheckerOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="6" selection-start="548" selection-end="548" vertical-scroll-proportion="0.33299494">
+        <state line="169" column="0" selection-start="4641" selection-end="4641" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ParsecDemo/Keywords.txt">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/fileTypes/SyntaxHighlighterBase.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/ActionInstallTest.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/lexer/LayeredLexer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="11" selection-start="465" selection-end="465" vertical-scroll-proportion="0.333">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ClassPathInstallerTest.java">
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/lang/properties/parsing/_PropertiesLexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="897" selection-end="897" vertical-scroll-proportion="0.528">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/Testing/test/net/intensicode/idea/util/ZipStreamInstallerTest.java">
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/lang/properties/parsing/PropertiesLexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.868">
+        <state line="27" column="23" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/lang/properties/PropertiesHighlightingLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="23" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/lang/properties/PropertiesHighlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="37" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/src/com/intellij/openapi/options/colors/pages/PropertiesColorsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="38" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/IntelliLangExamplePlugin/src/org/intellij/plugins/intelliLang/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/IntelliLangExamplePlugin/src/org/intellij/plugins/intelliLang/AdvancedSettingsUI.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/IntelliLangExamplePlugin/src/org/intellij/plugins/intelliLang/SettingsUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="20" selection-start="2385" selection-end="2385" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

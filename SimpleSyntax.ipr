@@ -124,6 +124,15 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="rhtml">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="xml">
           <option name="INDENT_SIZE" value="4" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
@@ -400,9 +409,13 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/modules/IntelliLangExamplePlugin/IntelliLang.iml" filepath="$PROJECT_DIR$/modules/IntelliLangExamplePlugin/IntelliLang.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" filepath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleSyntax.iml" filepath="$PROJECT_DIR$/SimpleSyntax.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/Testing/Testing.iml" filepath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/GroovyExamplePlugin/jetgroovy.iml" filepath="$PROJECT_DIR$/modules/GroovyExamplePlugin/jetgroovy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/properties.iml" filepath="$PROJECT_DIR$/modules/PropertiesExamplePlugin/properties.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/spellchecker.iml" filepath="$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/spellchecker.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 9886" project-jdk-type="IDEA JDK">
@@ -433,16 +446,6 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="SimpleSyntaxPlugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="SimpleSyntax" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
@@ -463,6 +466,10 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$/modules/GroovyExamplePlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/IntelliLangExamplePlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/PropertiesExamplePlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/SpellCheckerExamplePlugin" vcs="Git" />
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
