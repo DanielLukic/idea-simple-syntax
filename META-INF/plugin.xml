@@ -44,14 +44,8 @@
             <implementation-class>net.intensicode.idea.SimpleSyntax</implementation-class>
         </component>
     </application-components>
-    <actions>
-        <action id="SimpleSyntaxInstall" class="net.intensicode.idea.ActionInstall"
-                text="Init SimpleSyntax" description="Install the default SimpleSyntax configuration for Ruby">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-        </action>
-        <action id="SimpleSyntaxReload" class="net.intensicode.idea.ActionReload"
-                text="Reload SimpleSyntax" description="Purge and reload the SimpleSyntax configurations">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-        </action>
-    </actions>
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable implementation="net.intensicode.idea.SimpleSyntaxUI"/>
+        <colorSettingsPage implementation="net.intensicode.idea.core.HardCodedColorSettingsPage"/>
+    </extensions>
 </idea-plugin>
