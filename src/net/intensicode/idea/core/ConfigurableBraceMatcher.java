@@ -4,6 +4,7 @@ import com.intellij.lang.BracePair;
 import com.intellij.lang.PairedBraceMatcher;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.PsiFile;
 import net.intensicode.idea.config.BracesConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.LanguageConfiguration;
@@ -36,6 +37,11 @@ final class ConfigurableBraceMatcher implements PairedBraceMatcher
 
     // From PairedBraceMatcher
 
+    public int getCodeConstructStart( final PsiFile aPsiFile, final int i )
+    {
+        return 0;
+    }
+
     public final BracePair[] getPairs()
     {
         return myPairs;
@@ -62,7 +68,7 @@ final class ConfigurableBraceMatcher implements PairedBraceMatcher
             final char right = pair.charAt( 1 );
             final IElementType leftToken = myLanguage.getToken( new String( new char[]{ left } ) );
             final IElementType rightToken = myLanguage.getToken( new String( new char[]{ right } ) );
-            result.add( new BracePair( left, leftToken, right, rightToken, aStructural ) );
+            result.add( new BracePair( leftToken, rightToken, aStructural ) );
         }
         return result;
     }
