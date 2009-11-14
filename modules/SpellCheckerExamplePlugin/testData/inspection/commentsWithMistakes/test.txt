@@ -1,0 +1,1 @@
+simple <TYPO descr="Typo: In word 'ttest'">ttest</TYPO> file (just plain text)
