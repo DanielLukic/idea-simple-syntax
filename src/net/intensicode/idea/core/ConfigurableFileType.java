@@ -76,13 +76,6 @@ public class ConfigurableFileType extends LanguageFileType
         return myConfiguration.getFileTypeConfiguration().getDefaultExtension();
     }
 
-    @Nullable
-    public final StructureViewBuilder getStructureViewBuilder( final @NotNull VirtualFile aFile, final @NotNull Project aProject )
-    {
-        LOG.info( "getStructureViewBuilder" );
-        return super.getStructureViewBuilder( aFile, aProject );
-    }
-
     public final String getCharset( @NotNull final VirtualFile aFile )
     {
         LOG.info( "getCharset " + aFile );
