@@ -3,7 +3,13 @@ package net.intensicode.idea;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.ComponentConfig;
+import com.intellij.openapi.extensions.PluginId;
 import net.intensicode.idea.system.SystemContext;
+import net.intensicode.idea.system.production.ProductionSystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -22,6 +28,24 @@ import java.util.ArrayList;
  */
 public final class SimpleSyntaxUI implements Configurable, ListModel
 {
+    public SimpleSyntaxUI()
+    {
+        final Application application = ApplicationManager.getApplication();
+        LOG.info( "app.getComponent " + application.getComponent( "SimpleSyntax" ) );
+        LOG.info( "app.getComponent " + application.getComponent( "net.intensicode.idea.SimpleSyntax" ) );
+        LOG.info( "app.getComponent " + application.getComponent( SimpleSyntax.class ) );
+        LOG.info( "app.getConfig " + application.getConfig( SimpleSyntax.class ) );
+        LOG.info( "app.getPlugin " + application.getPlugin( PluginId.getId( "SimpleSyntax" )) );
+        LOG.info( "app.getPlugin " + application.getPlugin( PluginId.getId( "Simple Syntax Highlighting" )) );
+
+        final ComponentConfig configuration = application.getConfig( SimpleSyntax.class );
+
+        final SimpleSyntax simpleSyntax = application.getComponent( SimpleSyntax.class );
+
+        mySystemContext = new ProductionSystemContext();
+        myInstances = new ArrayList<SimpleSyntaxInstance>();
+    }
+
     public SimpleSyntaxUI( final SystemContext aSystemContext, final ArrayList<SimpleSyntaxInstance> aInstances )
     {
         mySystemContext = aSystemContext;
