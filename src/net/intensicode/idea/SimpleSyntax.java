@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 
 /**
- * TODO: Describe this!
+ * TODO: Describe <code>this</code>!
  */
-public final class SimpleSyntax implements ApplicationComponent/*, Configurable*/
+public final class SimpleSyntax implements ApplicationComponent
 {
     public SimpleSyntax()
     {
@@ -29,7 +29,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
 
     public final void initComponent()
     {
-        if ( initialize() == false ) return;
+        if ( !initialize() ) return;
 
         ApplicationManager.getApplication().runWriteAction( new Runnable()
         {
@@ -45,13 +45,13 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
 
     public final void disposeComponent()
     {
-        if ( myInitStatus == false ) return;
+        if ( !myInitStatus ) return;
 
         ApplicationManager.getApplication().runWriteAction( new Runnable()
         {
             public final void run()
             {
-                if ( myInitStatus == false ) return;
+                if ( !myInitStatus ) return;
 
                 for ( final SimpleSyntaxInstance instance : myInstances )
                 {
@@ -71,55 +71,9 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
         return "net.intensicode.idea.SimpleSyntax";
     }
 
-    //// From Configurable
-    //
-    //public final String getDisplayName()
-    //{
-    //    return myUI.getDisplayName();
-    //}
-    //
-    //@Nullable
-    //@NonNls
-    //public final String getHelpTopic()
-    //{
-    //    return myUI.getHelpTopic();
-    //}
-    //
-    //public final Icon getIcon()
-    //{
-    //    return myUI.getIcon();
-    //}
-    //
-    //// From UnnamedConfigurable
-    //
-    //public final void apply() throws ConfigurationException
-    //{
-    //    myUI.apply();
-    //}
-    //
-    //public final JComponent createComponent()
-    //{
-    //    return myUI.createComponent();
-    //}
-    //
-    //public final void disposeUIResources()
-    //{
-    //    myUI.disposeUIResources();
-    //}
-    //
-    //public final boolean isModified()
-    //{
-    //    return myUI.isModified();
-    //}
-    //
-    //public final void reset()
-    //{
-    //    myUI.reset();
-    //}
-
     // Implementation
 
-    private synchronized final boolean initialize()
+    private synchronized boolean initialize()
     {
         if ( myInitStatus ) return true;
         try
@@ -138,7 +92,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
         }
     }
 
-    private final ArrayList<InstanceConfiguration> loadConfigurations()
+    private ArrayList<InstanceConfiguration> loadConfigurations()
     {
         final OptionsFolder optionsFolder = mySystemContext.getOptionsFolder();
         final String[] fileNames = optionsFolder.findConfigurations();
@@ -166,7 +120,7 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
         return configurations;
     }
 
-    private final boolean isAlreadyDefined( final InstanceConfiguration aNewConfig, final ArrayList<InstanceConfiguration> aResult )
+    private boolean isAlreadyDefined( final InstanceConfiguration aNewConfig, final ArrayList<InstanceConfiguration> aResult )
     {
         for ( final InstanceConfiguration config : aResult )
         {
@@ -189,8 +143,6 @@ public final class SimpleSyntax implements ApplicationComponent/*, Configurable*
     private final SystemContext mySystemContext = new ProductionSystemContext();
 
     private final ArrayList<SimpleSyntaxInstance> myInstances = new ArrayList<SimpleSyntaxInstance>();
-
-    //private final SimpleSyntaxUI myUI = new SimpleSyntaxUI( mySystemContext, myInstances );
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }
