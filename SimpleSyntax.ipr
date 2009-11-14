@@ -10,6 +10,7 @@
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
       <properties />
     </buildFile>
   </component>
@@ -409,12 +410,10 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/modules/IntelliLangExamplePlugin/IntelliLang.iml" filepath="$PROJECT_DIR$/modules/IntelliLangExamplePlugin/IntelliLang.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" filepath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleSyntax.iml" filepath="$PROJECT_DIR$/SimpleSyntax.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/Testing/Testing.iml" filepath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/GroovyExamplePlugin/jetgroovy.iml" filepath="$PROJECT_DIR$/modules/GroovyExamplePlugin/jetgroovy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modules/PropertiesExamplePlugin/properties.iml" filepath="$PROJECT_DIR$/modules/PropertiesExamplePlugin/properties.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/spellchecker.iml" filepath="$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/spellchecker.iml" />
     </modules>
   </component>
@@ -422,7 +421,7 @@
     <output url="file://$PROJECT_DIR$/build" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+    <configuration default="false" name="Run all unit tests" type="JUnit" factoryName="JUnit" enabled="false" merge="false" sample_coverage="true" runner="emma">
       <module name="SimpleSyntax" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -440,6 +439,19 @@
         <value defaultName="wholeProject" />
       </option>
       <envs />
+      <RunnerSettings RunnerId="Profile CPU">
+        <option name="startFromMode" value="MAIN_CLASS" />
+        <option name="otherClassesToStartFrom" value="" />
+        <option name="profileNewRunnables" value="true" />
+        <option name="filteringMode" value="EXCLUDE" />
+        <option name="filterIncludeClasses" value="" />
+        <option name="filterExcludeClasses" value="java.*, javax.*,&#10;sun.*, sunw.*, com.sun.*" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Profile Memory">
+        <option name="profileAllocMode" value="ALLOC_AND_GC" />
+        <option name="profileAllocInterval" value="10" />
+        <option name="recordAllocTraces" value="false" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
@@ -467,8 +479,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$/modules/GroovyExamplePlugin" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/IntelliLangExamplePlugin" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/PropertiesExamplePlugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/modules/SpellCheckerExamplePlugin" vcs="Git" />
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
