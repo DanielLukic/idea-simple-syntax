@@ -13,6 +13,7 @@ import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 
@@ -23,6 +24,11 @@ public final class SimpleSyntax implements ApplicationComponent
 {
     public SimpleSyntax()
     {
+    }
+
+    public Iterator<SimpleSyntaxInstance> instances()
+    {
+        return myInstances.iterator();
     }
 
     // From ApplicationComponent
