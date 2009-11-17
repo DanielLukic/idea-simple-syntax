@@ -34,7 +34,6 @@ final class SimpleSyntaxInstance
     {
         LOG.info( "Initializing " + myConfiguration.getName() );
         registerFileType();
-        //registerColorSettingsPage();
     }
 
     final void dispose()
@@ -59,27 +58,6 @@ final class SimpleSyntaxInstance
 
         myFileType = fileType;
     }
-
-    //private final void registerColorSettingsPage()
-    //{
-    //    final ColorSettingsPages instance = ColorSettingsPages.getInstance();
-    //    if ( instance == null ) return;
-    //
-    //    for ( final ColorSettingsPage page : instance.getRegisteredPages() )
-    //    {
-    //        if ( page instanceof ConfigurableColorSettingsPage == false ) continue;
-    //
-    //        final ConfigurableColorSettingsPage oldPage = ( ConfigurableColorSettingsPage ) page;
-    //        if ( oldPage.getDisplayName().equals( myConfiguration.getName() ) == false ) continue;
-    //
-    //        LOG.info( "Updating color settings page for " + getName() );
-    //        oldPage.reset( myConfiguration );
-    //        return;
-    //    }
-    //
-    //    LOG.info( "Registering color settings page for " + getName() );
-    //    instance.registerPage( new ConfigurableColorSettingsPage( myConfiguration ) );
-    //}
 
     private final void unregisterFileType()
     {
