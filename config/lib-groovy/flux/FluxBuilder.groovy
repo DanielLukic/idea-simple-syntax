@@ -28,7 +28,7 @@ class FluxBuilder
 
         def flexer = new JFlexer( new GroovyEmitter() ).setSkeleton( skeleton )
         def code = flexer.generate( new StringReader( syntax ) )
-        File.createTempFile( "FluxBuilder-", ".java" ).write( code )
+        File.createTempFile( "FluxBuilder-", ".groovy" ).write( code )
 
         return code + "\nreturn " + aClassName + ".class\n"
         }
