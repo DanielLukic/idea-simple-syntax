@@ -13,21 +13,13 @@ import net.intensicode.idea.util.LoggerFactory;
 
 
 
-/**
- * TODO: Describe this!
- */
-final class SimpleSyntaxInstance
+final class SimpleSyntaxInstance implements LoadedInstance
 {
     SimpleSyntaxInstance( final SystemContext aSystemContext, final InstanceConfiguration aConfiguration )
     {
         mySystemContext = aSystemContext;
         myConfiguration = aConfiguration;
         myFileTypeBuilder = new ConfigurableFileTypeBuilder( aSystemContext );
-    }
-
-    final String getName()
-    {
-        return myConfiguration.getName();
     }
 
     final void init()
@@ -40,6 +32,13 @@ final class SimpleSyntaxInstance
     {
         LOG.info( "Disposing " + getName() );
         unregisterFileType();
+    }
+
+    // From LoadedInstance
+
+    public final String getName()
+    {
+        return myConfiguration.getName();
     }
 
     // Implementation

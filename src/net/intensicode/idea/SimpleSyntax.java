@@ -3,6 +3,9 @@ package net.intensicode.idea;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.extensions.Extensions;
+import com.intellij.openapi.extensions.ExtensionPoint;
+import com.intellij.ExtensionPoints;
 import net.intensicode.idea.config.FileTypeConfiguration;
 import net.intensicode.idea.config.InstanceConfiguration;
 import net.intensicode.idea.config.loaded.LoadedConfiguration;
@@ -14,21 +17,19 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 
 
-/**
- * TODO: Describe <code>this</code>!
- */
-public final class SimpleSyntax implements ApplicationComponent
+public final class SimpleSyntax implements SimpleSyntaxAPI, ApplicationComponent
 {
-    public SimpleSyntax()
-    {
-    }
+    // From SimpleSyntaxAPI
 
-    public Iterator<SimpleSyntaxInstance> instances()
+    public List<LoadedInstance> loadedInstances()
     {
-        return myInstances.iterator();
+        final List<LoadedInstance> clonedList = new ArrayList<LoadedInstance>();
+        clonedList.addAll( myInstances );
+        return clonedList;
     }
 
     // From ApplicationComponent
@@ -148,7 +149,7 @@ public final class SimpleSyntax implements ApplicationComponent
 
     private final SystemContext mySystemContext = new ProductionSystemContext();
 
-    private final ArrayList<SimpleSyntaxInstance> myInstances = new ArrayList<SimpleSyntaxInstance>();
+    private final List<SimpleSyntaxInstance> myInstances = new ArrayList<SimpleSyntaxInstance>();
 
     private static final Logger LOG = LoggerFactory.getLogger();
 }

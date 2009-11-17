@@ -57,6 +57,8 @@
         <option name="PARAMETER_NAME_PREFIX" value="a" />
         <option name="GENERATE_FINAL_LOCALS" value="true" />
         <option name="GENERATE_FINAL_PARAMETERS" value="true" />
+        <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="2" />
+        <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="2" />
         <option name="FIELDS_ORDER_WEIGHT" value="4" />
         <option name="CONSTRUCTORS_ORDER_WEIGHT" value="1" />
         <option name="METHODS_ORDER_WEIGHT" value="2" />
@@ -81,6 +83,15 @@
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="gsp">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="haml">
           <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
           <option name="TAB_SIZE" value="4" />
@@ -404,7 +415,6 @@
       <module fileurl="file://$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" filepath="$PROJECT_DIR$/modules/RubyIdeaTest/RubyIdeaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleSyntax.iml" filepath="$PROJECT_DIR$/SimpleSyntax.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/Testing/Testing.iml" filepath="$PROJECT_DIR$/modules/Testing/Testing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/spellchecker.iml" filepath="$PROJECT_DIR$/modules/SpellCheckerExamplePlugin/spellchecker.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 9886" project-jdk-type="IDEA JDK">
@@ -469,7 +479,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$/modules/GroovyExamplePlugin" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/SpellCheckerExamplePlugin" vcs="Git" />
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
