@@ -3,16 +3,20 @@ package net.intensicode.idea;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ComponentConfig;
 import com.intellij.openapi.extensions.PluginId;
+import com.jgoodies.forms.layout.FormLayout;
 import net.intensicode.idea.system.SystemContext;
 import net.intensicode.idea.system.production.ProductionSystemContext;
 import net.intensicode.idea.util.LoggerFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -20,13 +24,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 
-/**
- * TODO: Describe this!
- */
-public final class SimpleSyntaxUI implements Configurable, ListModel
+public final class SimpleSyntaxUI extends SettingsEditor implements Configurable, ListModel
 {
     public SimpleSyntaxUI()
     {
@@ -38,12 +40,12 @@ public final class SimpleSyntaxUI implements Configurable, ListModel
         LOG.info( "app.getPlugin " + application.getPlugin( PluginId.getId( "SimpleSyntax" )) );
         LOG.info( "app.getPlugin " + application.getPlugin( PluginId.getId( "Simple Syntax Highlighting" )) );
 
-        final ComponentConfig configuration = application.getConfig( SimpleSyntax.class );
-
-        final SimpleSyntax simpleSyntax = application.getComponent( SimpleSyntax.class );
-
         mySystemContext = new ProductionSystemContext();
         myInstances = new ArrayList<SimpleSyntaxInstance>();
+
+        final SimpleSyntax simpleSyntax = application.getComponent( SimpleSyntax.class );
+        final Iterator<SimpleSyntaxInstance> instances = simpleSyntax.instances();
+        while ( instances.hasNext() ) myInstances.add( instances.next() );
     }
 
     public SimpleSyntaxUI( final SystemContext aSystemContext, final ArrayList<SimpleSyntaxInstance> aInstances )
@@ -52,39 +54,44 @@ public final class SimpleSyntaxUI implements Configurable, ListModel
         myInstances = aInstances;
     }
 
-    // From Configurable
+    // From SettingsEditor
 
-    public final String getDisplayName()
+    protected void resetEditorFrom( final Object o )
     {
-        return "SimpleSyntax";
     }
 
-    @Nullable
-    @NonNls
-    public final String getHelpTopic()
+    protected void applyEditorTo( final Object o ) throws ConfigurationException
     {
-        return null;
     }
 
-    public final Icon getIcon()
+    @NotNull
+    protected JComponent createEditor()
     {
-        return null;
-    }
+        final JLabel myNameLabel = new JLabel( "Label" );
+        final JTextField myNameField = new JTextField();
 
-    // From UnnamedConfigurable
+        final JLabel myDescriptionLabel = new JLabel( "Description" );
+        final JTextField myDescriptionField = new JTextField();
 
-    public final void apply() throws ConfigurationException
-    {
-        LOG.info( "apply" );
-    }
+        final JLabel myKindLabel = new JLabel( "Configuration Kind" );
+        final JComboBox myKindBox = new JComboBox( new String[]{"Keywords only", "Groovy JFlex", "Groovy JParsec", "JRuby JParsec"} );
+        
+        final JPanel basicSettings = new JPanel( new GridLayout(0, 2 ) );
+        basicSettings.add( myNameLabel );
+        basicSettings.add( myNameField );
+        basicSettings.add( myDescriptionLabel );
+        basicSettings.add( myDescriptionField );
+        basicSettings.add( myKindLabel );
+        basicSettings.add( myKindBox );
 
-    public final JComponent createComponent()
-    {
-        LOG.info( "createComponent" );
+        final JEditorPane configEditor = new JEditorPane();
+        final JTextArea information = new JTextArea();
+        information.setEditable( false );
 
-        myEditorPane = new JEditorPane();
-        myEditorPane.setEnabled( false );
-        myEditorPane.setPreferredSize( new Dimension( 640, 480 ) );
+        final JPanel configuration = new JPanel( new BorderLayout( ) );
+        configuration.add( basicSettings, BorderLayout.NORTH );
+        configuration.add( configEditor, BorderLayout.CENTER );
+        configuration.add( information, BorderLayout.SOUTH );
 
         myInstanceList = new JList( this );
         myInstanceList.setAutoscrolls( true );
@@ -93,27 +100,66 @@ public final class SimpleSyntaxUI implements Configurable, ListModel
         myInstanceList.setSelectionMode( ListSelectionModel.SINGLE_SELECTION );
         myInstanceList.getSelectionModel().addListSelectionListener( new InstanceSelection() );
 
+        final JScrollPane instances = new JScrollPane( myInstanceList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED );
+
+        final JPanel myConfigButtons = new JPanel( new GridLayout( 0, 3 ) );
+        myConfigButtons.add( new JButton( "Add") );
+        myConfigButtons.add( new JButton( "Clone") );
+        myConfigButtons.add( new JButton( "Remove") );
+
+        final JPanel selector = new JPanel( new BorderLayout() );
+        selector.add( instances, BorderLayout.CENTER );
+        selector.add( myConfigButtons, BorderLayout.SOUTH );
+
         final JPanel panel = new JPanel( new BorderLayout() );
-        final JScrollPane scrollPane = new JScrollPane( myInstanceList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED );
-        panel.add( scrollPane, BorderLayout.WEST );
-        panel.add( myEditorPane, BorderLayout.CENTER );
+        panel.add( selector, BorderLayout.WEST );
+        panel.add( configuration, BorderLayout.CENTER );
 
         return panel;
     }
 
-    public final void disposeUIResources()
+    protected void disposeEditor()
     {
-        LOG.info( "disposeUIResources" );
     }
 
-    public final boolean isModified()
+    // From Configurable
+
+    @Nls
+    public String getDisplayName()
+    {
+        return "Simple Syntax";
+    }
+
+    public Icon getIcon()
+    {
+        return null;
+    }
+
+    public String getHelpTopic()
+    {
+        return null;
+    }
+
+    public JComponent createComponent()
+    {
+        return createEditor();
+    }
+
+    public boolean isModified()
     {
         return false;
     }
 
-    public final void reset()
+    public void apply() throws ConfigurationException
     {
-        LOG.info( "reset" );
+    }
+
+    public void reset()
+    {
+    }
+
+    public void disposeUIResources()
+    {
     }
 
     // From ListModel
@@ -144,8 +190,6 @@ public final class SimpleSyntaxUI implements Configurable, ListModel
 
 
     private JList myInstanceList;
-
-    private JEditorPane myEditorPane;
 
     private final SystemContext mySystemContext;
 
