@@ -46,6 +46,5 @@
     </application-components>
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable implementation="net.intensicode.idea.SimpleSyntaxUI"/>
-        <colorSettingsPage implementation="net.intensicode.idea.core.HardCodedColorSettingsPage"/>
     </extensions>
 </idea-plugin>
